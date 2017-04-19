@@ -1,10 +1,10 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.4.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "pronos",
+  "version": "0.1.0",
+  "description": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/mbernardeau/pronos.git"
   },
   "engines": {
     "npm": ">=3",
@@ -92,7 +92,8 @@
     "plugins": [
       "redux-saga",
       "react",
-      "jsx-a11y"
+      "jsx-a11y",
+      "lodash"
     ],
     "parserOptions": {
       "ecmaVersion": 6,
@@ -265,6 +266,7 @@
     "eslint-import-resolver-webpack": "0.8.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-lodash": "^2.4.0",
     "eslint-plugin-react": "6.7.1",
     "eslint-plugin-redux-saga": "0.1.5",
     "eventsource-polyfill": "0.9.6",
