@@ -212,7 +212,6 @@
     "firebase": "^3.8.0",
     "fontfaceobserver": "^2.0.9",
     "immutable": "3.8.1",
-    "intl": "1.2.5",
     "invariant": "2.2.2",
     "ip": "^1.1.5",
     "lodash": "^4.17.4",

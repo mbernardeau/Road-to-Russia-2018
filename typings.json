@@ -1,5 +1,19 @@
 {
   "globalDependencies": {
-    "material-ui": "registry:dt/material-ui#0.16.0+20170323194905"
+    "firebase": "registry:dt/firebase#2.4.1+20160510002910",
+    "fontfaceobserver": "registry:dt/fontfaceobserver#0.0.0+20161005184000",
+    "immutable": "registry:dt/immutable#3.8.1+20161028131303",
+    "ip": "registry:dt/ip#0.0.0+20161128184045",
+    "material-ui": "registry:dt/material-ui#0.16.0+20170323194905",
+    "node": "registry:dt/node#7.0.0+20170322231424",
+    "react-router": "registry:dt/react-router#4.0.0+20170323201651",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-saga": "registry:dt/redux-saga#0.9.1+20160703120921",
+    "reselect": "registry:dt/reselect#2.0.2+20160510002910",
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750"
+  },
+  "globalDevDependencies": {
+    "cheerio": "registry:dt/cheerio#0.22.0+20170310073758",
+    "sinon": "registry:dt/sinon#1.16.1+20161208163514"
   }
 }
