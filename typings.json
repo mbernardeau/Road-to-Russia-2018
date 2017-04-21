@@ -1,3 +1,5 @@
 {
-  "globalDependencies": {}
+  "globalDependencies": {
+    "material-ui": "registry:dt/material-ui#0.16.0+20170323194905"
+  }
 }
