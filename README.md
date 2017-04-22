@@ -4,17 +4,17 @@ Pronostics pour la coupe du monde 2018
 
 <div align="center">
   <!-- Dependency Status -->
-  <a href="https://david-dm.org/mbernardeau/pronos">
-    <img src="https://david-dm.org/mbernardeau/pronos.svg" alt="Dependency Status" />
+  <a href="https://david-dm.org/mbernardeau/Road-to-Russia-2018">
+    <img src="https://david-dm.org/mbernardeau/Road-to-Russia-2018.svg" alt="Dependency Status" />
   </a>
   <!-- devDependency Status -->
-  <a href="https://david-dm.org/mbernardeau/pronos#info=devDependencies">
-    <img src="https://david-dm.org/mbernardeau/pronos/dev-status.svg" alt="devDependency Status" />
+  <a href="https://david-dm.org/mbernardeau/Road-to-Russia-2018#info=devDependencies">
+    <img src="https://david-dm.org/mbernardeau/Road-to-Russia-2018/dev-status.svg" alt="devDependency Status" />
   </a>
 
   <!-- Build Status -->
-  <a href="https://circleci.com/gh/mbernardeau/pronos">
-    <img src="https://circleci.com/gh/mbernardeau/pronos.svg?style=svg" alt="Build Status" />
+  <a href="https://circleci.com/gh/mbernardeau/Road-to-Russia-2018">
+    <img src="https://circleci.com/gh/mbernardeau/Road-to-Russia-2018.svg?style=svg" alt="Build Status" />
   </a>
 
 </div>
