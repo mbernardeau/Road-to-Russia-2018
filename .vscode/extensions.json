@@ -3,8 +3,9 @@
   // for the documentation about the extensions.json format
   "recommendations": [
     // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-    "msjsdiag.debugger-for-chrome",
     "dbaeumer.vscode-eslint",
-    "jvitor83.typings-autoinstaller"
+    "EQuimper.react-native-react-redux",
+    "jvitor83.typings-autoinstaller",
+    "msjsdiag.debugger-for-chrome"
   ]
 }
