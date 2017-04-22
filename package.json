@@ -176,7 +176,8 @@
       "express",
       "ip",
       "minimist",
-      "sanitize.css"
+      "sanitize.css",
+      "react-icons"
     ],
     "include": [
       "core-js",
@@ -220,6 +221,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-helmet": "^5.0.3",
+    "react-icons": "^2.2.3",
     "react-redux": "^5.0.4",
     "react-router": "3.0.0",
     "react-router-redux": "4.0.6",
