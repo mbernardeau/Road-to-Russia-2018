@@ -11,14 +11,32 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, {
+  Component,
+} from 'react';
 import AppBar from 'material-ui/AppBar';
+import Dialog from 'material-ui/Dialog';
+import firebase from 'firebase';
+import ConnectionModal from './ConnectionModal';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
+export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     children: React.PropTypes.node,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      connected: false,
+    };
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => this.setState({
+      connected: !!user,
+      user,
+    }));
+  }
 
   render() {
     return (
@@ -26,7 +44,16 @@ export default class App extends React.PureComponent { // eslint-disable-line re
         <AppBar
           title="Road to Russia 2018"
         />
+        <Dialog
+          title="Connexion"
+          modal={false}
+          open={!this.state.connected}
+          onRequestClose={this.handleClose}
+        >
+          <ConnectionModal />
+        </Dialog>
         <div>
+          <pre>{JSON.stringify(this.state.user)}</pre>
           {React.Children.toArray(this.props.children)}
         </div>
       </div>
