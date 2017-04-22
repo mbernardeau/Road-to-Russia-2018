@@ -10,11 +10,13 @@
  */
 
 import React from 'react';
+// Exemple use of scoped SCSS
+import styles from './Hompage.scss';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <h1>
+      <h1 className={styles.title}>
         This is component
       </h1>
     );

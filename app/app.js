@@ -35,7 +35,7 @@ import 'file-loader?name=[name].[ext]!./.htaccess';
 import configureStore from './store';
 
 // Import CSS reset and Global Styles
-import './global-styles';
+import './app.css';
 
 // Import root routes
 import createRoutes from './routes';

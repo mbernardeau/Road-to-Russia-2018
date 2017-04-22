@@ -24,8 +24,20 @@ module.exports = (options) => ({
       // they will be a part of our compilation either way.
       // So, no need for ExtractTextPlugin here.
       test: /\.css$/,
-      include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
+    }, {
+      test: /\.scss$/,
+      use: [
+        { loader: 'style-loader' },
+        {
+          loader: 'css-loader',
+          options: { modules: true, localIdentName: '[path]_[local]__[hash:base64:5]' },
+        },
+        {
+          loader: 'sass-loader',
+          options: { includePaths: [path.resolve(__dirname, './app')] },
+        },
+      ],
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
