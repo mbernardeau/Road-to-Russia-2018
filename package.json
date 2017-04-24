@@ -90,7 +90,6 @@
       "es6": true
     },
     "plugins": [
-      "redux-saga",
       "react",
       "jsx-a11y",
       "lodash"
@@ -154,8 +153,6 @@
       "react/self-closing-comp": 0,
       "react/require-default-props": 0,
       "react/no-array-index-key": 1,
-      "redux-saga/no-yield-in-race": 2,
-      "redux-saga/yield-effects": 2,
       "require-yield": 0,
       "import/no-webpack-loader-syntax": 0
     },
@@ -229,7 +226,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "redux": "3.6.0",
     "redux-immutable": "^4.0.0",
-    "redux-saga": "^0.14.6",
+    "redux-thunk": "^2.2.0",
     "reselect": "^3.0.0",
     "sanitize.css": "^5.0.0",
     "warning": "3.0.0",
@@ -263,7 +260,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-lodash": "^2.4.0",
     "eslint-plugin-react": "^6.10.3",
-    "eslint-plugin-redux-saga": "^0.3.0",
     "eventsource-polyfill": "0.9.6",
     "exports-loader": "^0.6.4",
     "file-loader": "^0.11.1",
