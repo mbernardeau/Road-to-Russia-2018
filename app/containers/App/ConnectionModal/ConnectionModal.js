@@ -1,6 +1,7 @@
 import React, {
   Component,
 } from 'react';
+import { firebaseConnect } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -8,9 +9,12 @@ import FaGoogle from 'react-icons/lib/fa/google';
 
 import styles from './ConnectionModal.scss';
 
+@firebaseConnect()
 class ConnectionModal extends Component {
   static propTypes = {
-    authenticate: PropTypes.func.isRequired,
+    firebase: PropTypes.shape({
+      login: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   constructor(props) {
@@ -20,11 +24,14 @@ class ConnectionModal extends Component {
   }
 
   authenticateWithGoogle() {
-    this.props.authenticate('google');
+    this.props.firebase.login({
+      provider: 'google',
+      type: 'popup',
+    });
   }
 
   authenticateWithFacebook() {
-    this.props.authenticate('facebook');
+    // this.props.authenticate('facebook');
   }
 
   render() {

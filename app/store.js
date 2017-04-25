@@ -5,6 +5,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
+import { reactReduxFirebase } from 'react-redux-firebase';
 import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
@@ -21,6 +22,24 @@ export default function configureStore(initialState = {}, history) {
     applyMiddleware(...middlewares),
   ];
 
+  const firebaseConfig = {
+    apiKey: 'AIzaSyBqwxcPPEW5SQRYX039izgmJMWiktauCkg',
+    authDomain: 'pronostics-47048.firebaseapp.com',
+    databaseURL: 'https://pronostics-47048.firebaseio.com',
+    projectId: 'pronostics-47048',
+    storageBucket: 'pronostics-47048.appspot.com',
+    messagingSenderId: '1000074404628',
+  };
+
+  const reduxFirebaseConfig = {
+    userProfile: 'users', // firebase root where user profiles are stored
+    enableLogging: true, // enable/disable Firebase's database logging
+  };
+
+  const createStoreWithFirebase = compose(
+    reactReduxFirebase(firebaseConfig, reduxFirebaseConfig)
+  )(createStore);
+
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
@@ -30,7 +49,7 @@ export default function configureStore(initialState = {}, history) {
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
   /* eslint-enable */
 
-  const store = createStore(
+  const store = createStoreWithFirebase(
     createReducer(),
     fromJS(initialState),
     composeEnhancers(...enhancers)

@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { pathToJS } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import ConnectionModal from '../ConnectionModal';
+import User from './User';
 
 import styles from './ConnectionWidget.scss';
 
+@connect(
+  // Map state to props
+  (state) => ({
+    authError: pathToJS(state.get('firebase'), 'authError'),
+    auth: pathToJS(state.get('firebase'), 'auth'),
+    user: pathToJS(state.get('firebase'), 'profile'),
+  })
+)
 class ConnectionWidget extends Component {
   static propTypes = {
     user: PropTypes.object,
@@ -48,7 +59,7 @@ class ConnectionWidget extends Component {
           <ConnectionModal />
         </Dialog>
 
-        {user && 'Connected'}
+        {user && <User />}
         {!user && <FlatButton label="Se connecter" className={styles.text} onClick={this.openConnectionModal} />}
       </div>
     );

@@ -16,7 +16,6 @@ import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import firebase from 'firebase';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import 'sanitize.css/sanitize.css';
@@ -61,17 +60,6 @@ const rootRoute = {
   component: App,
   childRoutes: createRoutes(store),
 };
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyBqwxcPPEW5SQRYX039izgmJMWiktauCkg',
-  authDomain: 'pronostics-47048.firebaseapp.com',
-  databaseURL: 'https://pronostics-47048.firebaseio.com',
-  projectId: 'pronostics-47048',
-  storageBucket: 'pronostics-47048.appspot.com',
-  messagingSenderId: '1000074404628',
-};
-firebase.initializeApp(firebaseConfig);
-
 
 injectTapEventPlugin();
 

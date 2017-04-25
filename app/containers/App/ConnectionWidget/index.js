@@ -1,3 +1,3 @@
-import ConnectionWidget from './ConnectionWidgetContainer';
+import ConnectionWidget from './ConnectionWidget';
 
 export default ConnectionWidget;
