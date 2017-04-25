@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import FaGoogle from 'react-icons/lib/fa/google';
-
+import FaFacebook from 'react-icons/lib/fa/facebook';
 import styles from './ConnectionModal.scss';
 
 @firebaseConnect()
@@ -31,7 +31,10 @@ class ConnectionModal extends Component {
   }
 
   authenticateWithFacebook() {
-    // this.props.authenticate('facebook');
+    this.props.firebase.login({
+      provider: 'facebook',
+      type: 'popup',
+    });
   }
 
   render() {
@@ -40,9 +43,17 @@ class ConnectionModal extends Component {
         <RaisedButton
           label="Connexion avec Google"
           labelPosition="after"
+          style={{ marginBottom: 10 }}
           primary
           onClick={this.authenticateWithGoogle}
           icon={<FaGoogle />}
+        />
+        <RaisedButton
+          label="Connexion avec Facebook"
+          labelPosition="after"
+          secondary
+          onClick={this.authenticateWithFacebook}
+          icon={<FaFacebook />}
         />
       </div>
     );
