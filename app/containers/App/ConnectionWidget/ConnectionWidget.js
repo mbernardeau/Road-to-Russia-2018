@@ -49,7 +49,7 @@ class ConnectionWidget extends Component {
     const { user } = this.props;
 
     return (
-      <div className={styles.text}>
+      <div className={styles.container}>
         <Dialog
           title="Connexion"
           modal={false}
@@ -59,8 +59,17 @@ class ConnectionWidget extends Component {
           <ConnectionModal />
         </Dialog>
 
-        {user && <User />}
-        {!user && <FlatButton label="Se connecter" className={styles.text} onClick={this.openConnectionModal} />}
+        {user &&
+          <User />
+        }
+
+        {!user &&
+          <FlatButton
+            label="Se connecter"
+            labelStyle={{ color: 'white', fontSize: 16 }}
+            onClick={this.openConnectionModal}
+          />
+        }
       </div>
     );
   }

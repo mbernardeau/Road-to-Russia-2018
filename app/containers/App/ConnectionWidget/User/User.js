@@ -1,5 +1,5 @@
 import React, {
-  Component,
+  PureComponent,
 } from 'react';
 import { pathToJS, firebaseConnect } from 'react-redux-firebase';
 import { connect } from 'react-redux';
@@ -11,6 +11,8 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
+import styles from './User.scss';
+
 @firebaseConnect()
 @connect(
   // Map state to props
@@ -18,7 +20,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
     user: pathToJS(state.get('firebase'), 'profile'),
   })
 )
-class User extends Component { // eslint-disable-line react/prefer-stateless-function
+class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     user: PropTypes.shape({
       avatarUrl: PropTypes.string.isRequired,
@@ -34,10 +36,10 @@ class User extends Component { // eslint-disable-line react/prefer-stateless-fun
     const { logout } = firebase;
 
     return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className={styles.userContainer}>
         <Avatar src={user.avatarUrl} style={{ marginRight: 10 }} />
 
-        <span style={{ color: 'white' }}>{user.displayName}</span>
+        <span className={styles.username}>{user.displayName}</span>
 
         <IconMenu
           iconButtonElement={<IconButton><MoreVertIcon color="white" /></IconButton>}
