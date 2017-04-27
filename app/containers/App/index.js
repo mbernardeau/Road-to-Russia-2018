@@ -11,23 +11,39 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, {
+  Component,
+} from 'react';
+
+import { connect } from 'react-redux';
+import { pathToJS } from 'react-redux-firebase';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
+import ConnectionWidget from './ConnectionWidget';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-
+@connect(
+  // Map state to props
+  (state) => ({
+    user: pathToJS(state.get('firebase'), 'profile'),
+  })
+)
+export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
-    children: React.PropTypes.node,
+    children: PropTypes.node,
+    user: PropTypes.object,
   };
 
   render() {
+    const { children, user } = this.props;
+
     return (
       <div>
         <AppBar
           title="Road to Russia 2018"
+          iconElementRight={<ConnectionWidget />}
         />
         <div>
-          {React.Children.toArray(this.props.children)}
+          {!!user && React.Children.toArray(children)}
         </div>
       </div>
     );
