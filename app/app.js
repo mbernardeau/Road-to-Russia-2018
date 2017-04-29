@@ -41,6 +41,9 @@ import './app.css';
 // Import root routes
 import createRoutes from './routes';
 
+import theme from './theme';
+
+
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
 // Optionally, this could be changed to leverage a created history
@@ -66,7 +69,7 @@ injectTapEventPlugin();
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={theme}>
         <Router
           history={history}
           routes={rootRoute}

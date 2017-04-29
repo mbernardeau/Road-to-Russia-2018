@@ -22,7 +22,7 @@ export default class Stadiums extends React.PureComponent { // eslint-disable-li
     const { stadium } = this.props;
 
     return (
-      <Card style={{ marginTop: 15, marginBottom: 0, width: 500 }}>
+      <Card style={{ marginTop: 15, marginBottom: 15, width: 400 }}>
         <CardTitle
           title={stadium.name}
           subtitle={stadium.city}
