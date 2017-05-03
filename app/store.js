@@ -33,7 +33,7 @@ export default function configureStore(initialState = {}, history) {
 
   const reduxFirebaseConfig = {
     userProfile: 'users', // firebase root where user profiles are stored
-    enableLogging: true, // enable/disable Firebase's database logging
+    enableLogging: false, // enable/disable Firebase's database logging
   };
 
   const createStoreWithFirebase = compose(
