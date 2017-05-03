@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const fs = require('fs');
 const csv = require('fast-csv');
-const serviceAccount = require('./pronostics-47048-firebase-adminsdk-5jyex-7a0e84ce6a');
+const serviceAccount = require('./pronostics-47048-firebase-adminsdk-5jyex-2c08d51542');
 const _ = require('lodash');
 const moment = require('moment');
 
@@ -29,6 +29,8 @@ fs.createReadStream('./data/Equipe.csv')
     db.ref().child('teams').child(dataKey).update(_.omit(teamObj, ['index']));
   });
 
+let i = 0;
+
 db.ref().child('stadiums').once('value', (stadiumsSnap) => {
   const stadiums = stadiumsSnap.val();
 
@@ -38,17 +40,15 @@ db.ref().child('stadiums').once('value', (stadiumsSnap) => {
     delimiter: ';',
   }))
   .on('data', (matchRow) => {
-    const dataKey = db.ref().child('teams').push().key;
+    const dataKey = db.ref().child('matches').push().key;
     const teamAKey = _.findKey(teamsSaved, { index: matchRow.PaysA });
     const teamBKey = _.findKey(teamsSaved, { index: matchRow.PaysB });
     const stadium = _.findKey(stadiums, { name: matchRow.Stade });
 
     const matchObj = {
       phase: matchRow.Phase,
-      teams: {
-        A: teamAKey,
-        B: teamBKey,
-      },
+      teamA: teamAKey,
+      teamB: teamBKey,
       odds: {
         1: Number.parseFloat(matchRow.Cote1),
         N: Number.parseFloat(matchRow.CoteN),
@@ -63,6 +63,6 @@ db.ref().child('stadiums').once('value', (stadiumsSnap) => {
     db.ref().child('matches').child(dataKey).update(matchObj);
   })
   .on('finish', () => {
-    process.exit(0);
+    // process.exit(0);
   });
 });
