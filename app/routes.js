@@ -34,6 +34,38 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/stadiums',
+      name: 'stadiums',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Stadiums'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/matches',
+      name: 'matches',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Matches'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

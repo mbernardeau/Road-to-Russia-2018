@@ -27,7 +27,7 @@ const populates = [
 )
 export default class Matches extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
-    matches: PropTypes.array,
+    matches: PropTypes.object,
   }
 
   render() {
