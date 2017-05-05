@@ -11,7 +11,9 @@
 
 import React from 'react';
 
-import Stadiums from '../Stadiums';
+import {
+  Link,
+ } from 'react-router';
 
 // Exemple use of scoped SCSS
 // import styles from './Homepage.scss';
@@ -20,7 +22,13 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
   render() {
     return (
       <div>
-        <Stadiums />
+        <p>Ceci sera la page d&lsquo;accueil.</p>
+        <p>Disponibles:
+          <ul>
+            <li><Link to="/stadiums">Stades</Link></li>
+            <li><Link to="/matches">Matches</Link></li>
+          </ul>
+        </p>
       </div>
     );
   }

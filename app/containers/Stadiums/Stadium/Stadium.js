@@ -6,35 +6,32 @@ import {
   CardTitle,
 } from 'material-ui/Card';
 
-export default class Stadiums extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  static propTypes = {
-    stadium: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
-      photo: PropTypes.shape({
-        url: PropTypes.string.isRequired,
-        credit: PropTypes.string,
-      }),
+
+const Stadium = ({ stadium }) => (
+  <Card style={{ marginTop: 15, marginBottom: 15, width: 400 }}>
+    <CardTitle
+      title={stadium.name}
+      subtitle={stadium.city}
+    />
+    {stadium.photo &&
+      <CardMedia
+        overlay={<CardTitle title={stadium.name} subtitle={stadium.photo.credit} />}
+      >
+        <img src={stadium.photo.url} alt={stadium.name} />
+      </CardMedia>
+    }
+  </Card>
+);
+
+Stadium.propTypes = {
+  stadium: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    photo: PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      credit: PropTypes.string,
     }),
-  }
+  }),
+};
 
-  render() {
-    const { stadium } = this.props;
-
-    return (
-      <Card style={{ marginTop: 15, marginBottom: 15, width: 400 }}>
-        <CardTitle
-          title={stadium.name}
-          subtitle={stadium.city}
-        />
-        {stadium.photo &&
-          <CardMedia
-            overlay={<CardTitle title={stadium.name} subtitle={stadium.photo.credit} />}
-          >
-            <img src={stadium.photo.url} alt={stadium.name} />
-          </CardMedia>
-        }
-      </Card>
-    );
-  }
-}
+export default Stadium;
