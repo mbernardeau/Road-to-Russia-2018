@@ -93,7 +93,7 @@ module.exports = (options) => ({
     new webpack.NamedModulesPlugin(),
   ]),
   resolve: {
-    modules: ['app', 'node_modules'],
+    modules: ['app', 'node_modules', 'app/assets'],
     extensions: [
       '.js',
       '.jsx',

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isObject } from 'lodash';
 
-import Flag from '../../../components/Flag';
+import Flag from 'components/Flag';
 
 const Match = ({ match }) => {
   if (!isObject(match.teamA)) {
