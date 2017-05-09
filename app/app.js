@@ -17,6 +17,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import moment from 'moment';
 
 import 'sanitize.css/sanitize.css';
 
@@ -43,6 +44,8 @@ import createRoutes from './routes';
 
 import theme from './theme';
 
+// Set moment locale for the whole app
+moment.locale('fr');
 
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router

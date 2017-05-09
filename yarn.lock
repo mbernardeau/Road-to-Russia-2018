@@ -6529,6 +6529,12 @@ react-icons@^2.2.3:
   dependencies:
     react-icon-base "2.0.7"
 
+react-placeholder@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-placeholder/-/react-placeholder-1.0.2.tgz#f65d92049d38b84d88a1e2e3353cf831a281373e"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
