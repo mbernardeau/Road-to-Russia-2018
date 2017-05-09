@@ -19,3 +19,7 @@ deployment:
     commands:
       - npm run build
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+  greenkeeper:
+    branch: /greenkeeper\/.*/
+    commands:
+      - yarn run update-yarn-lock-file
