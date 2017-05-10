@@ -10,13 +10,28 @@
       }
     },
     "stadiums": {
+      // Section write is limited to admins
       ".write": "root.child('admins').child(auth.uid).val() == true"
     },
     "teams": {
+      // Section write is limited to admins
       ".write": "root.child('admins').child(auth.uid).val() == true"
     },
     "matches": {
+      // Section write is limited to admins
       ".write": "root.child('admins').child(auth.uid).val() == true"
+    },
+    "bets": {
+      "$matchId": {
+        "users": {
+          "$uid": {
+            // Grants write access if:
+            // - The node is associated with the current user
+            // - The match begin date is before now
+            ".write": "$uid == auth.uid && root.child('matches').child($matchId).child('dateTime').val() < now"
+          }
+        }
+      }
     }
   }
 }

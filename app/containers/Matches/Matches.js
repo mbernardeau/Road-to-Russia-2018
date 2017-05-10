@@ -36,7 +36,7 @@ export default class Matches extends React.Component { // eslint-disable-line re
     return (
       <div className={styles.container}>
         {
-          _.map(matches, (match, key) => <Match match={match} key={key} />)
+          _.map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)
         }
       </div>
     );
