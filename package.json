@@ -38,7 +38,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --ignore-pattern populate",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
-    "update-yarn-lock-file": "./internals/update-lockfile",
+    "update-yarn-lock-file": "sh ./internals/update-lockfile",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
