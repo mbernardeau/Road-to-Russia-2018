@@ -10,8 +10,8 @@ dependencies:
   cache_directories:
     - ~/.cache/yarn
   override:
-    - yarn
-    - cd functions && yarn
+    - yarn --pure-lockfile
+    - cd functions && yarn --pure-lockfile
 
 deployment:
   production:
