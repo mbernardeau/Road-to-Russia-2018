@@ -5,8 +5,6 @@ import React, {
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
 
 import {
   Card,
@@ -15,6 +13,7 @@ import {
 
 import {
   pathToJS,
+  dataToJS,
   isLoaded,
   firebaseConnect,
 } from 'react-redux-firebase';
@@ -22,26 +21,28 @@ import {
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import Flag from 'components/Flag';
 import placeholder from 'components/Placeholder';
+
+import Bet from './Bet';
 
 import styles from './Match.scss';
 
-
-const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n} primaryText={`${n}`} />);
+const empty = {};
 
 class Match extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      bet: props.bet || {
-        teamA: null,
-        teamB: null,
-      },
+      bet: props.bet,
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      bet: nextProps.bet || empty,
+    });
+  }
 
   isBetValid = () => {
     const scoreValidator = (score) => _.isNumber(score) && score >= 0;
@@ -72,6 +73,7 @@ class Match extends Component {
 
   render() {
     const { match } = this.props;
+    const { bet } = this.state;
 
     return (
       <Card style={{ marginTop: 7, marginBottom: 7 }}>
@@ -79,32 +81,8 @@ class Match extends Component {
           title={moment.unix(match.dateTime).format('LLLL')}
         />
         <div className={styles.match}>
-          <div className={styles.countryFlag}>
-            {match.teamA.name}
-            <Flag country={match.teamA.code} style={{ width: 70, height: 40 }} />
-          </div>
-          <SelectField
-            value={this.state.bet.teamA}
-            onChange={this.handleTeamAChange}
-          >
-            {menuItems}
-          </SelectField>
-          <div>{
-            this.isBetValid() ?
-              'valide' :
-              'invalide'
-            }
-          </div>
-          <SelectField
-            value={this.state.bet.teamB}
-            onChange={this.handleTeamBChange}
-          >
-            {menuItems}
-          </SelectField>
-          <div className={styles.countryFlag}>
-            {match.teamB.name}
-            <Flag country={match.teamB.code} style={{ width: 70, height: 40 }} />
-          </div>
+          <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
+          <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} direction="rtl" />
         </div>
       </Card>
     );
@@ -129,6 +107,10 @@ Match.propTypes = {
   saveBet: PropTypes.func.isRequired,
 };
 
+Match.defaultProps = {
+  bet: empty,
+};
+
 export default compose(
   connect((state) => ({
     userId: pathToJS(state.get('firebase'), 'auth').uid,
@@ -138,7 +120,7 @@ export default compose(
   ),
   connect((state, { matchId, userId, firebase }) => {
     const path = `bets/${matchId}/users/${userId}`;
-    const bet = pathToJS(state.get('firebase'), path);
+    const bet = dataToJS(state.get('firebase'), path);
 
     return {
       bet,
