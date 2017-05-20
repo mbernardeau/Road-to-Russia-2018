@@ -5,6 +5,7 @@ import React, {
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
+import { lazyload } from 'react-lazyload';
 
 import {
   Card,
@@ -59,10 +60,10 @@ class Match extends Component {
         ...this.state.bet,
         [`team${team}`]: value,
       },
-    }, this.saveBet);
+    }, this.saveBetIfValid);
   };
 
-  saveBet = () => {
+  saveBetIfValid = () => {
     if (this.isBetValid()) {
       this.props.saveBet(this.state.bet);
     }
@@ -111,22 +112,28 @@ Match.defaultProps = {
   bet: empty,
 };
 
+const generateFirebasePath = ({ matchId, userId }) => `bets/${matchId}/users/${userId}`;
+
 export default compose(
+  lazyload({
+    height: 150,
+    once: true,
+    offset: 300,
+  }),
   connect((state) => ({
     userId: pathToJS(state.get('firebase'), 'auth').uid,
   })),
   firebaseConnect(
-    ({ matchId, userId }) => ({ path: `bets/${matchId}/users/${userId}` })
+    (props) => ({ path: generateFirebasePath(props) })
   ),
-  connect((state, { matchId, userId, firebase }) => {
-    const path = `bets/${matchId}/users/${userId}`;
-    const bet = dataToJS(state.get('firebase'), path);
-
-    return {
-      bet,
-      saveBet: (newBet) => firebase.set(path, newBet),
-    };
-  }),
+  connect(
+    (state, { firebase, ...props }) => ({
+      bet: dataToJS(state.get('firebase'), generateFirebasePath(props)),
+    }),
+    (dispatch, { firebase, ...props }) => ({
+      saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),
+    }),
+  ),
   placeholder({
     isLoaded: ({ match }) => isLoaded(match),
   })
