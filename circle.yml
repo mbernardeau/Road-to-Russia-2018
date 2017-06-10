@@ -7,6 +7,7 @@ machine:
 dependencies:
   pre:
     - npm i firebase-tools -g
+    - firebase --version
   cache_directories:
     - ~/.cache/yarn
   override:

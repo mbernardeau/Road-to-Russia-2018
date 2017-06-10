@@ -1,0 +1,21 @@
+.countryFlag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.teamName {
+  text-align: center;
+}
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+}
