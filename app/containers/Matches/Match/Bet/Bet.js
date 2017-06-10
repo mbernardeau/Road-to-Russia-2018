@@ -26,18 +26,20 @@ const renderValue = (value) => (<div style={{ textAlign: 'center', width: '100%'
 const Bet = ({ team, betValue, onBetValueUpdated, direction }) => (
   <Reversible direction={direction} className={styles.bet}>
     <div className={styles.countryFlag}>
-      {team.name}
+      <span className={styles.teamName}>{team.name}</span>
       <Flag country={team.code} style={{ width: 70, height: 40 }} />
     </div>
-    <SelectField
-      style={{ width: 60 }}
-      value={betValue}
-      selectionRenderer={renderValue}
-      onChange={onBetValueUpdated}
-      menuItemStyle={{ textAlign: 'center', width: 60 }}
-    >
-      {menuItems}
-    </SelectField>
+    <div className={styles.selectContainer}>
+      <SelectField
+        style={{ width: 60 }}
+        value={betValue}
+        selectionRenderer={renderValue}
+        onChange={onBetValueUpdated}
+        menuItemStyle={{ textAlign: 'center', width: 60 }}
+      >
+        {menuItems}
+      </SelectField>
+    </div>
   </Reversible>
 );
 

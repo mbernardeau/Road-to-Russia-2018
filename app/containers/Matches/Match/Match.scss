@@ -1,7 +1,6 @@
 .match {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 50% 50%;
   margin-top: 15px;
   margin-bottom: 15px;
 }

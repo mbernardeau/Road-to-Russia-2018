@@ -45,6 +45,10 @@ class Match extends Component {
     });
   }
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.bet !== nextProps.bet;
+  }
+
   isBetValid = () => {
     const scoreValidator = (score) => _.isNumber(score) && score >= 0;
 
@@ -127,8 +131,8 @@ export default compose(
     (props) => ({ path: generateFirebasePath(props) })
   ),
   connect(
-    (state, { firebase, ...props }) => ({
-      bet: dataToJS(state.get('firebase'), generateFirebasePath(props)),
+    (state, ownProps) => ({
+      bet: dataToJS(state.get('firebase'), generateFirebasePath(ownProps)),
     }),
     (dispatch, { firebase, ...props }) => ({
       saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),

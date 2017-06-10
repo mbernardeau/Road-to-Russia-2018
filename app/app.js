@@ -20,6 +20,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import moment from 'moment';
 
 import 'sanitize.css/sanitize.css';
+import 'expose-loader?Perf!react-addons-perf';
 
 // Import root app
 import App from 'containers/App';
