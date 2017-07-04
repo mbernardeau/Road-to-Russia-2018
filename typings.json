@@ -15,6 +15,7 @@
   },
   "globalDevDependencies": {
     "cheerio": "registry:dt/cheerio#0.22.0+20170310073758",
+    "react-addons-perf": "registry:dt/react-addons-perf#15.1.0+20160619031933",
     "sinon": "registry:dt/sinon#1.16.1+20161208163514"
   }
 }
