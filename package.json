@@ -213,7 +213,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "chalk": "2.0.0",
-    "compression": "1.6.2",
+    "compression": "1.7.0",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
     "firebase": "^4.1.2",
