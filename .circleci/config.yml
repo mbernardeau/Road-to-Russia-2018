@@ -1,0 +1,40 @@
+version: 2
+jobs:
+    build:
+      docker:
+        - image: circleci/node:7.10.1
+
+      steps:
+        - checkout
+        - run:
+            name: check-npm-version
+            command: npm --version
+        - restore_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
+        - run:
+            name: install-firebase-tools
+            command: sudo npm i firebase-tools -g
+        - run:
+            name: check-firebase-tools-version
+            command: firebase --version
+        - run:
+            name: npm-install
+            command: npm install
+        - run:
+            name: npm-install-funttions
+            command: cd functions && npm install
+        - save_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
+            paths:
+              - ./node_modules
+        - run:
+            name: test
+            command: npm test
+        - run:
+            name: build
+            command: npm run build
+        - deploy:
+            command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+              fi
