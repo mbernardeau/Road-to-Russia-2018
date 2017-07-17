@@ -7,8 +7,8 @@ jobs:
       steps:
         - checkout
         - run:
-            name: update-npm
-            command: sudo npm install -g npm@latest
+            name: check-npm-version
+            command: npm --version
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run:
