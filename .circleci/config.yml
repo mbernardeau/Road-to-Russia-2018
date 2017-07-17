@@ -21,7 +21,7 @@ jobs:
             name: npm-install
             command: npm install
         - run:
-            name: npm-install-funttions
+            name: npm-install-functions
             command: cd functions && npm install
         - save_cache:
             key: dependency-cache-{{ checksum "package.json" }}
@@ -34,6 +34,7 @@ jobs:
             name: build
             command: npm run build
         - deploy:
+            name: deploy to Firebase
             command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 firebase deploy --token=$FIREBASE_TOKEN --non-interactive
