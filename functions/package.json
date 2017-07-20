@@ -1,6 +1,7 @@
 {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "name": "roadtorussia-functions",
+  "description": "Road to Russia 2018 - Cloud Functions for Firebase",
+  "version": "0.1.0",
   "dependencies": {
     "firebase-admin": "^5.0.1",
     "firebase-functions": "^0.6.0"

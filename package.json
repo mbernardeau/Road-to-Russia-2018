@@ -1,16 +1,15 @@
 {
   "name": "roadtorussia",
   "version": "0.1.0",
-  "description": "",
+  "description": "Road to Russia 2018",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mbernardeau/pronos.git"
+    "url": "git://github.com/mbernardeau/Road-to-Russia-2018.git"
   },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
