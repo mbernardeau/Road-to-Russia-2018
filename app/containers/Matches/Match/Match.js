@@ -35,18 +35,20 @@ class Match extends Component {
     super(props);
 
     this.state = {
-      bet: props.bet,
+      bet: empty,
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      bet: nextProps.bet || empty,
-    });
+    if (!this.state.bet || this.state.bet === empty) {
+      this.setState({
+        bet: nextProps.bet || empty,
+      });
+    }
   }
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.bet !== nextProps.bet;
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.bet.teamA !== nextState.bet.teamA || this.state.bet.teamB !== nextState.bet.teamB;
   }
 
   isBetValid = () => {
@@ -89,6 +91,7 @@ class Match extends Component {
           <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
           <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} direction="rtl" />
         </div>
+        <span>{this.isBetValid() ? 'Enregistré' : 'Invalide' }</span>
       </Card>
     );
   }
