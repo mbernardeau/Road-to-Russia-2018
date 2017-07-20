@@ -12,6 +12,10 @@ import {
   CardHeader,
 } from 'material-ui/Card';
 
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import CheckIcon from 'material-ui/svg-icons/navigation/check';
+import ClearIcon from 'material-ui/svg-icons/content/clear';
+
 import {
   pathToJS,
   dataToJS,
@@ -87,11 +91,15 @@ class Match extends Component {
         <CardHeader
           title={moment.unix(match.dateTime).format('LLLL')}
         />
+
         <div className={styles.match}>
           <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
           <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} direction="rtl" />
         </div>
-        <span>{this.isBetValid() ? 'Enregistré' : 'Invalide' }</span>
+
+        <FloatingActionButton style={{ height: '20' }} mini backgroundColor={this.isBetValid() ? 'green' : 'red'} zDepth={0}>
+          {this.isBetValid() ? <CheckIcon /> : <ClearIcon />}
+        </FloatingActionButton>
       </Card>
     );
   }
