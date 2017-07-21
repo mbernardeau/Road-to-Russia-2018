@@ -6561,10 +6561,6 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
-react-display-name@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-display-name/-/react-display-name-0.2.0.tgz#0e1f7086e45a32d07764df35ed32ff16f1259790"
-
 react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
@@ -6623,9 +6619,9 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-redux-firebase@^1.5.0-rc.1:
-  version "1.5.0-rc.1"
-  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-1.5.0-rc.1.tgz#c820141afe179f21a1388a44b28e64cb6edd774e"
+react-redux-firebase@1.5.0-rc.2:
+  version "1.5.0-rc.2"
+  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-1.5.0-rc.2.tgz#5af4b4b7f397899d9e19d721dc857d1eb1f6dd1f"
   dependencies:
     es6-promise "^4.1.0"
     firebase "^3.9.0"
@@ -6634,7 +6630,6 @@ react-redux-firebase@^1.5.0-rc.1:
     jwt-decode "^2.2.0"
     lodash "^4.17.4"
     prop-types "^15.5.8"
-    react-display-name "^0.2.0"
 
 react-redux@^5.0.5:
   version "5.0.5"
