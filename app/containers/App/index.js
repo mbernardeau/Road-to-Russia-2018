@@ -17,20 +17,29 @@ import React, {
 
 import { connect } from 'react-redux';
 import { pathToJS } from 'react-redux-firebase';
+
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
+
+import { toggleMenu } from 'redux/actions';
+
+import NavigationMenu from './NavigationMenu';
 import ConnectionWidget from './ConnectionWidget';
 
 @connect(
   // Map state to props
   (state) => ({
     user: pathToJS(state.get('firebase'), 'profile'),
+  }),
+  (dispatch) => ({
+    toggleMenu: () => dispatch(toggleMenu()),
   })
 )
-export default class App extends Component { // eslint-disable-line react/prefer-stateless-function
+export default class App extends Component {
   static propTypes = {
     children: PropTypes.node,
     user: PropTypes.object,
+    toggleMenu: PropTypes.func.isRequired,
   };
 
   render() {
@@ -40,8 +49,10 @@ export default class App extends Component { // eslint-disable-line react/prefer
       <div>
         <AppBar
           title="Road to Russia 2018"
+          onLeftIconButtonTouchTap={this.props.toggleMenu}
           iconElementRight={<ConnectionWidget />}
         />
+        <NavigationMenu />
         <div>
           {!!user && React.Children.toArray(children)}
         </div>

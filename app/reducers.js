@@ -7,7 +7,7 @@ import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { firebaseStateReducer } from 'react-redux-firebase';
-
+import localReducers from './redux/reducers';
 /*
  * routeReducer
  *
@@ -43,6 +43,7 @@ export default function createReducer(asyncReducers) {
   return combineReducers({
     route: routeReducer,
     firebase: firebaseStateReducer,
+    ...localReducers,
     ...asyncReducers,
   });
 }

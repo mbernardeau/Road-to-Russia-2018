@@ -13,7 +13,7 @@ import React from 'react';
 
 import {
   Link,
- } from 'react-router';
+} from 'react-router';
 
 // Exemple use of scoped SCSS
 // import styles from './Homepage.scss';
