@@ -266,7 +266,7 @@
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-import-resolver-webpack": "^0.8.3",
