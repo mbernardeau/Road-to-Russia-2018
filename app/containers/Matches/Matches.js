@@ -18,7 +18,7 @@ const populates = [
 ];
 
 @firebaseConnect([
-  { path: 'matches', populates },
+  { path: 'matches', populates, queryParams: ['orderByChild=dateTime'] },
 ])
 @connect(
   (state) => ({
@@ -36,7 +36,7 @@ export default class Matches extends React.Component { // eslint-disable-line re
     return (
       <div className={styles.container}>
         {
-          _.map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)
+          _.reverse(_.map(matches, (match, key) => <Match match={match} key={key} matchId={key} />))
         }
       </div>
     );
