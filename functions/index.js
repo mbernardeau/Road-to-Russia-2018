@@ -9,7 +9,7 @@ const functions = require('firebase-functions');
 exports.onBetUpdated = functions.database.ref('/bets/{matchId}/users/{uid}')
   .onWrite((event) =>
     event.data.ref.child('lastModified').once('value', (snap) =>
-         !snap.exists() && // Only perform update if lastModified node does not exist
+      !snap.exists() && // Only perform update if lastModified node does not exist
          event.data.ref.child('lastModified').set(event.timestamp)
     )
-);
+  );
