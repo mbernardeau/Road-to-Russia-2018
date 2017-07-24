@@ -3,7 +3,7 @@ import {
   red700, red500, red300,
   blue700, blue500, blue300,
   white, darkBlack,
- } from 'material-ui/styles/colors';
+} from 'material-ui/styles/colors';
 
 
 export default getMuiTheme({
