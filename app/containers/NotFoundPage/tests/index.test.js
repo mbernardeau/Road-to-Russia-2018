@@ -1,15 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ReactShallowRenderer from 'react-test-renderer/shallow';
 
 import NotFoundPage from '../index';
 
+const renderer = new ReactShallowRenderer();
+
 describe('<NotFoundPage />', () => {
   it('should render the page message', () => {
-    const renderedComponent = shallow(
+    const renderedComponent = renderer.render(
       <NotFoundPage />
     );
-    expect(renderedComponent.contains(
-      'Page non trouvée'
-    )).toEqual(true);
+    expect(renderedComponent.props.children).toContain('Page non trouvée');
   });
 });
