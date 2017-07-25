@@ -18,7 +18,7 @@ import localReducers from './redux/reducers';
 
 // Initial routing state
 const routeInitialState = fromJS({
-  locationBeforeTransitions: null,
+  location: null,
 });
 
 /**
@@ -29,7 +29,7 @@ function routeReducer(state = routeInitialState, action) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
       return state.merge({
-        locationBeforeTransitions: action.payload,
+        location: action.payload,
       });
     default:
       return state;
@@ -37,13 +37,13 @@ function routeReducer(state = routeInitialState, action) {
 }
 
 /**
- * Creates the main reducer with the asynchronously loaded ones
+ * Creates the main reducer with the dynamically injected ones
  */
-export default function createReducer(asyncReducers) {
+export default function createReducer(injectedReducers) {
   return combineReducers({
     route: routeReducer,
     firebase: firebaseStateReducer,
     ...localReducers,
-    ...asyncReducers,
+    ...injectedReducers,
   });
 }

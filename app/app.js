@@ -12,21 +12,17 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { useScroll } from 'react-router-scroll';
+import { ConnectedRouter } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import moment from 'moment';
+import createHistory from 'history/createBrowserHistory';
 
 import 'sanitize.css/sanitize.css';
 import 'expose-loader?Perf!react-addons-perf';
 
 // Import root app
 import App from 'containers/App';
-
-// Import selector for `syncHistoryWithStore`
-import { makeSelectLocationState } from 'containers/App/selectors';
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
@@ -40,8 +36,6 @@ import configureStore from './store';
 // Import CSS reset and Global Styles
 import './app.css';
 
-// Import root routes
-import createRoutes from './routes';
 
 import theme from './theme';
 
@@ -53,20 +47,8 @@ moment.locale('fr');
 // Optionally, this could be changed to leverage a created history
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
 const initialState = {};
-const store = configureStore(initialState, browserHistory);
-
-// Sync history and store, as the react-router-redux reducer
-// is under the non-default key ('routing'), selectLocationState
-// must be provided for resolving how to retrieve the 'route' in the state
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: makeSelectLocationState(),
-});
-
-// Set up the router, wrapping all Routes in the App component
-const rootRoute = {
-  component: App,
-  childRoutes: createRoutes(store),
-};
+const history = createHistory();
+const store = configureStore(initialState, history);
 
 injectTapEventPlugin();
 
@@ -74,15 +56,9 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <MuiThemeProvider muiTheme={theme}>
-        <Router
-          history={history}
-          routes={rootRoute}
-          render={
-            // Scroll to top when going to a new page, imitating default browser
-            // behaviour
-            applyRouterMiddleware(useScroll())
-          }
-        />
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
       </MuiThemeProvider>
     </Provider>,
     document.getElementById('app')

@@ -12,9 +12,7 @@ import {
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import MenuItem from 'material-ui/MenuItem';
-import {
-  browserHistory,
-} from 'react-router';
+import { withRouter } from 'react-router';
 
 @connect(
   // Map state to props
@@ -26,16 +24,23 @@ import {
     setMenuStatus: (open) => dispatch(setMenuStatus(open)),
   })
 )
+@withRouter
 export default class NavigationMenu extends Component {
   static propTypes = {
     open: PropTypes.bool.isRequired,
     closeMenu: PropTypes.func.isRequired,
     setMenuStatus: PropTypes.func.isRequired,
+    history: PropTypes.shape({
+      location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+      }).isRequired,
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   goTo = (to) => () => {
-    if (browserHistory.getCurrentLocation().pathname !== to) {
-      browserHistory.push(to);
+    if (this.props.history.location.pathname !== to) {
+      this.props.history.push(to);
     }
     this.props.closeMenu();
   }

@@ -21,8 +21,13 @@ import { pathToJS } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 
-import { toggleMenu } from 'redux/actions';
+import HomePage from 'containers/HomePage/Loadable';
+import StadiumsPage from 'containers/Stadiums/Loadable';
+import MatchesPage from 'containers/Matches/Loadable';
+import NotFoundPage from 'containers/NotFoundPage';
 
+import { toggleMenu } from 'redux/actions';
+import { Switch, Route } from 'react-router-dom';
 import NavigationMenu from './NavigationMenu';
 import ConnectionWidget from './ConnectionWidget';
 
@@ -37,13 +42,12 @@ import ConnectionWidget from './ConnectionWidget';
 )
 export default class App extends Component {
   static propTypes = {
-    children: PropTypes.node,
     user: PropTypes.object,
     toggleMenu: PropTypes.func.isRequired,
   };
 
   render() {
-    const { children, user } = this.props;
+    const { user } = this.props;
 
     return (
       <div>
@@ -53,9 +57,14 @@ export default class App extends Component {
           iconElementRight={<ConnectionWidget />}
         />
         <NavigationMenu />
-        <div>
-          {!!user && React.Children.toArray(children)}
-        </div>
+        {!!user &&
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/stadiums" component={StadiumsPage} />
+            <Route path="/matches" component={MatchesPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        }
       </div>
     );
   }

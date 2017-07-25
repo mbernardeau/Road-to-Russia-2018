@@ -13,7 +13,7 @@ import React from 'react';
 
 import {
   Link,
-} from 'react-router';
+} from 'react-router-dom';
 
 // Exemple use of scoped SCSS
 // import styles from './Homepage.scss';
@@ -23,12 +23,12 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <div>
         <p>Ceci sera la page d&lsquo;accueil.</p>
-        <p>Disponibles:
+        <div>Disponibles:
           <ul>
             <li><Link to="/stadiums">Stades</Link></li>
             <li><Link to="/matches">Matches</Link></li>
           </ul>
-        </p>
+        </div>
       </div>
     );
   }
