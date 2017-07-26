@@ -11,10 +11,10 @@ import styles from './ConnectionWidget.scss';
 
 @connect(
   // Map state to props
-  (state) => ({
-    authError: pathToJS(state.get('firebase'), 'authError'),
-    auth: pathToJS(state.get('firebase'), 'auth'),
-    user: pathToJS(state.get('firebase'), 'profile'),
+  ({ firebase }) => ({
+    authError: pathToJS(firebase, 'authError'),
+    auth: pathToJS(firebase, 'auth'),
+    user: pathToJS(firebase, 'profile'),
   })
 )
 class ConnectionWidget extends Component {

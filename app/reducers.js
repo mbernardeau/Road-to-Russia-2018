@@ -3,8 +3,7 @@
  * If we were to do this in store.js, reducers wouldn't be hot reloadable.
  */
 
-import { combineReducers } from 'redux-immutable';
-import { fromJS } from 'immutable';
+import { combineReducers } from 'redux';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { firebaseStateReducer } from 'react-redux-firebase';
 import localReducers from './redux/reducers';
@@ -17,9 +16,9 @@ import localReducers from './redux/reducers';
  */
 
 // Initial routing state
-const routeInitialState = fromJS({
+const routeInitialState = {
   location: null,
-});
+};
 
 /**
  * Merge route into the global application state
@@ -28,9 +27,10 @@ function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
-      return state.merge({
+      return {
+        ...state,
         location: action.payload,
-      });
+      };
     default:
       return state;
   }

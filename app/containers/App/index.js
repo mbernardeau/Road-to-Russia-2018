@@ -33,8 +33,8 @@ import ConnectionWidget from './ConnectionWidget';
 
 @connect(
   // Map state to props
-  (state) => ({
-    user: pathToJS(state.get('firebase'), 'profile'),
+  ({ firebase }) => ({
+    user: pathToJS(firebase, 'profile'),
   }),
   (dispatch) => ({
     toggleMenu: () => dispatch(toggleMenu()),

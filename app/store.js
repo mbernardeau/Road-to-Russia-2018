@@ -3,7 +3,6 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import { reactReduxFirebase } from 'react-redux-firebase';
 import thunk from 'redux-thunk';
@@ -51,7 +50,7 @@ export default function configureStore(initialState = {}, history) {
 
   const store = createStoreWithFirebase(
     createReducer(),
-    fromJS(initialState),
+    initialState,
     composeEnhancers(...enhancers)
   );
 

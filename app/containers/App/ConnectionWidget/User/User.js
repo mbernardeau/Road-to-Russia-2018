@@ -16,8 +16,8 @@ import styles from './User.scss';
 @firebaseConnect()
 @connect(
   // Map state to props
-  (state) => ({
-    user: pathToJS(state.get('firebase'), 'profile'),
+  ({ firebase }) => ({
+    user: pathToJS(firebase, 'profile'),
   })
 )
 class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function

@@ -16,8 +16,8 @@ import { withRouter } from 'react-router';
 
 @connect(
   // Map state to props
-  (state) => ({
-    ...state.get('nav'),
+  ({ nav }) => ({
+    ...nav,
   }),
   (dispatch) => ({
     closeMenu: () => dispatch(closeMenu()),

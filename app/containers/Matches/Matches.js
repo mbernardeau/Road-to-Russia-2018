@@ -21,8 +21,8 @@ const populates = [
   { path: 'matches', populates, queryParams: ['orderByChild=dateTime'] },
 ])
 @connect(
-  (state) => ({
-    matches: populatedDataToJS(state.get('firebase'), 'matches', populates),
+  ({ firebase }) => ({
+    matches: populatedDataToJS(firebase, 'matches', populates),
   })
 )
 export default class Matches extends React.Component { // eslint-disable-line react/prefer-stateless-function

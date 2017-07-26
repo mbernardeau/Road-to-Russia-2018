@@ -135,15 +135,15 @@ export default compose(
     once: true,
     offset: 300,
   }),
-  connect((state) => ({
-    userId: pathToJS(state.get('firebase'), 'auth').uid,
+  connect(({ firebase }) => ({
+    userId: pathToJS(firebase, 'auth').uid,
   })),
   firebaseConnect(
     (props) => ({ path: generateFirebasePath(props) })
   ),
   connect(
-    (state, ownProps) => ({
-      bet: dataToJS(state.get('firebase'), generateFirebasePath(ownProps)),
+    ({ firebase }, ownProps) => ({
+      bet: dataToJS(firebase, generateFirebasePath(ownProps)),
     }),
     (dispatch, { firebase, ...props }) => ({
       saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),

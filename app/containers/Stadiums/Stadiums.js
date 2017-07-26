@@ -15,8 +15,8 @@ import Stadium from './Stadium';
   'stadiums',
 ])
 @connect(
-  (state) => ({
-    stadiums: dataToJS(state.get('firebase'), 'stadiums'),
+  ({ firebase }) => ({
+    stadiums: dataToJS(firebase, 'stadiums'),
   })
 )
 export default class Stadiums extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
