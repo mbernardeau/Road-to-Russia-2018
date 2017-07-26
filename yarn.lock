@@ -3883,6 +3883,10 @@ immutable@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
+immutadot@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/immutadot/-/immutadot-0.2.0.tgz#0133b4b423b5a6685e2ccd729afa7053e0b2b35d"
+
 import-inspector@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/import-inspector/-/import-inspector-2.0.0.tgz#ce75fdb6a277d2800effe097e2295bc8690b2923"

@@ -1,4 +1,9 @@
 import {
+  toggle,
+  set,
+} from 'immutadot';
+
+import {
   OPEN_MENU,
   CLOSE_MENU,
   TOGGLE_MENU,
@@ -10,18 +15,9 @@ const initState = {
 
 export default (state = initState, action) => {
   const actions = {
-    [OPEN_MENU]: () => ({
-      ...state,
-      open: true,
-    }),
-    [CLOSE_MENU]: () => ({
-      ...state,
-      open: false,
-    }),
-    [TOGGLE_MENU]: () => ({
-      ...state,
-      open: !state.open,
-    }),
+    [OPEN_MENU]: () => set(state, 'open', true),
+    [CLOSE_MENU]: () => set(state, 'open', false),
+    [TOGGLE_MENU]: () => toggle(state, 'open'),
   };
 
   return actions[action.type] ? actions[action.type]() : state;
