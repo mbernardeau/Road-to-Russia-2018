@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Flag from 'components/Flag';
+import { imgUrl } from 'components/Flag';
 import Reversible from 'components/Reversible';
 
 import PropTypes from 'prop-types';
@@ -15,32 +15,47 @@ import styles from './Bet.scss';
  */
 const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n} primaryText={`${n}`} />);
 
+const selectValueStyle = {
+  textAlign: 'center',
+  width: '100%',
+  color: 'white',
+  fontSize: 'bold',
+};
+
 /**
  * Pure mini-component to render inner value of the select field choices
  * @param {number} value Value to render
  *
  * @return {React.ReactElement}
  */
-const renderValue = (value) => (<div style={{ textAlign: 'center', width: '100%' }}>{ value }</div>);
+const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
+
+const flagStyles = (country) => ({
+  backgroundImage: `linear-gradient(
+                      rgba(0, 0, 0, 0.5),
+                      rgba(0, 0, 0, 0.5)
+                    ),
+                    url(${imgUrl(country)})`,
+  backgroundSize: 'cover',
+});
 
 const Bet = ({ team, betValue, onBetValueUpdated, direction }) => (
-  <Reversible direction={direction} className={styles.bet}>
-    <div className={styles.countryFlag}>
-      <span className={styles.teamName}>{team.name}</span>
-      <Flag country={team.code} style={{ width: 70, height: 40 }} />
-    </div>
-    <div className={styles.selectContainer}>
-      <SelectField
-        style={{ width: 60 }}
-        value={betValue}
-        selectionRenderer={renderValue}
-        onChange={onBetValueUpdated}
-        menuItemStyle={{ textAlign: 'center', width: 60 }}
-      >
-        {menuItems}
-      </SelectField>
-    </div>
-  </Reversible>
+  <div style={flagStyles(team.code)}>
+    <Reversible direction={direction} className={styles.bet}>
+      <h2 className={styles.teamName}>{team.name}</h2>
+      <div className={styles.selectContainer}>
+        <SelectField
+          style={{ width: 60, color: 'white' }}
+          value={betValue}
+          selectionRenderer={renderValue}
+          onChange={onBetValueUpdated}
+          menuItemStyle={{ textAlign: 'center', width: 60 }}
+        >
+          {menuItems}
+        </SelectField>
+      </div>
+    </Reversible>
+  </div>
 );
 
 

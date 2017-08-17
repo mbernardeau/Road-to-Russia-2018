@@ -3,30 +3,15 @@ import React, {
 } from 'react';
 
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import _ from 'lodash';
-import { lazyload } from 'react-lazyload';
 
 import {
   Card,
-  CardHeader,
 } from 'material-ui/Card';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import CheckIcon from 'material-ui/svg-icons/navigation/check';
 import ClearIcon from 'material-ui/svg-icons/content/clear';
-
-import {
-  pathToJS,
-  dataToJS,
-  isLoaded,
-  firebaseConnect,
-} from 'react-redux-firebase';
-
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-
-import placeholder from 'components/Placeholder';
 
 import Bet from './Bet';
 
@@ -87,17 +72,12 @@ class Match extends Component {
     const { bet } = this.state;
 
     return (
-      <Card style={{ marginTop: 7, marginBottom: 7 }}>
-        <CardHeader
-          title={moment.unix(match.dateTime).format('LLLL')}
-        />
-
+      <Card style={{ marginTop: 7, marginBottom: 7, width: 1000 }} containerStyle={{ height: 250, position: 'relative' }}>
         <div className={styles.match}>
           <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
           <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} direction="rtl" />
         </div>
-
-        <FloatingActionButton style={{ height: '20' }} mini backgroundColor={this.isBetValid() ? 'green' : 'red'} zDepth={0}>
+        <FloatingActionButton style={{ position: 'absolute', bottom: 5, left: 5, opacity: 0.8 }} mini backgroundColor={this.isBetValid() ? 'green' : 'red'} zDepth={0}>
           {this.isBetValid() ? <CheckIcon /> : <ClearIcon />}
         </FloatingActionButton>
       </Card>
@@ -127,29 +107,5 @@ Match.defaultProps = {
   bet: empty,
 };
 
-const generateFirebasePath = ({ matchId, userId }) => `bets/${matchId}/users/${userId}`;
 
-export default compose(
-  lazyload({
-    height: 150,
-    once: true,
-    offset: 300,
-  }),
-  connect(({ firebase }) => ({
-    userId: pathToJS(firebase, 'auth').uid,
-  })),
-  firebaseConnect(
-    (props) => ({ path: generateFirebasePath(props) })
-  ),
-  connect(
-    ({ firebase }, ownProps) => ({
-      bet: dataToJS(firebase, generateFirebasePath(ownProps)),
-    }),
-    (dispatch, { firebase, ...props }) => ({
-      saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),
-    }),
-  ),
-  placeholder({
-    isLoaded: ({ match }) => isLoaded(match),
-  })
-)(Match);
+export default Match;

@@ -1,3 +1,3 @@
-import Match from './Match';
+import Match from './MatchContainer';
 
 export default Match;

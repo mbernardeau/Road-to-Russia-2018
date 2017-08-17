@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Flag = ({ country, className, style }) => {
-  const imgUrl = require(`assets/flags/${country}.svg`); // eslint-disable-line global-require
+export const imgUrl = (country) => require(`assets/flags/${country}.svg`); // eslint-disable-line global-require
 
-  return <img src={imgUrl} alt={country} className={className} style={style} />;
-};
+const Flag = ({ country, className, style }) => (
+  <img src={imgUrl(country)} alt={country} className={className} style={style} />
+);
 
 Flag.propTypes = {
   country: PropTypes.string,
