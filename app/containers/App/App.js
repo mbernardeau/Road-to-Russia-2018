@@ -42,18 +42,21 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           title="Road to Russia 2018"
           onLeftIconButtonTouchTap={toggleMenu}
           iconElementRight={<ConnectionWidget />}
+          style={{ position: 'fixed' }}
         />
 
         <NavigationMenu />
 
-        {!isEmpty(user) &&
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/stadiums" component={StadiumsPage} />
-            <Route path="/matches" component={MatchesPage} />
-            <Route component={NotFoundPage} />
-          </Switch>
-        }
+        <div style={{ paddingTop: 70 }}>
+          {!isEmpty(user) &&
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/stadiums" component={StadiumsPage} />
+              <Route path="/matches" component={MatchesPage} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          }
+        </div>
       </div>
     );
   }
