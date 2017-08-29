@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = require('./webpack.base.babel')({
   // In production, we skip all hot-reloading stuff
@@ -65,6 +66,23 @@ module.exports = require('./webpack.base.babel')({
       safeToUseOptionalCaches: true,
 
       AppCache: false,
+    }),
+
+    new WebpackPwaManifest({
+      name: 'Road to Russia 2018',
+      short_name: 'Russia 2018',
+      theme_color: '#d32f2f',
+      background_color: '#f9f6ed',
+      display: 'fullscreen',
+      orientation: 'portrait',
+      Scope: '/',
+      start_url: '/',
+      icons: [
+        {
+          src: path.resolve('app/assets/icons/icon-512x512.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+      ],
     }),
   ],
 

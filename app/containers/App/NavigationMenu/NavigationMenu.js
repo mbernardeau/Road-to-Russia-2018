@@ -14,6 +14,13 @@ import Divider from 'material-ui/Divider';
 import MenuItem from 'material-ui/MenuItem';
 import { withRouter } from 'react-router';
 
+import WorldCupImg from 'assets/2018_FIFA_WC.svg';
+
+const imgStyle = {
+  width: '100%',
+  marginBottom: 3,
+};
+
 @connect(
   // Map state to props
   ({ nav }) => ({
@@ -49,7 +56,7 @@ export default class NavigationMenu extends Component {
     return (
       <Drawer open={this.props.open} docked={false} onRequestChange={(open) => this.props.setMenuStatus(open)}>
         <MenuItem onClick={this.goTo('/')}>
-          <strong>Accueil</strong>
+          <img src={WorldCupImg} style={imgStyle} alt="Accueil" />
         </MenuItem>
         <Divider />
         <MenuItem onClick={this.goTo('/stadiums')}>
