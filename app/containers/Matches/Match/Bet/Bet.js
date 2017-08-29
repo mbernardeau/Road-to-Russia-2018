@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { imgUrl } from 'components/Flag';
-import Reversible from 'components/Reversible';
 
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -39,28 +38,25 @@ const flagStyles = (country) => ({
   backgroundSize: 'cover',
 });
 
-const Bet = ({ team, betValue, onBetValueUpdated, direction }) => (
-  <div style={flagStyles(team.code)}>
-    <Reversible direction={direction} className={styles.bet}>
-      <h2 className={styles.teamName}>{team.name}</h2>
-      <div className={styles.selectContainer}>
-        <SelectField
-          style={{ width: 60, color: 'white' }}
-          value={betValue}
-          selectionRenderer={renderValue}
-          onChange={onBetValueUpdated}
-          menuItemStyle={{ textAlign: 'center', width: 60 }}
-        >
-          {menuItems}
-        </SelectField>
-      </div>
-    </Reversible>
+const Bet = ({ team, betValue, onBetValueUpdated }) => (
+  <div style={flagStyles(team.code)} className={styles.bet}>
+    <h2 className={styles.teamName}>{team.name}</h2>
+    <div className={styles.selectContainer}>
+      <SelectField
+        style={{ width: 60, color: 'white' }}
+        value={betValue}
+        selectionRenderer={renderValue}
+        onChange={onBetValueUpdated}
+        menuItemStyle={{ textAlign: 'center', width: 60 }}
+      >
+        {menuItems}
+      </SelectField>
+    </div>
   </div>
 );
 
 
 Bet.propTypes = {
-  direction: PropTypes.oneOf(['rtl', 'ltr']),
   team: PropTypes.shape({
     name: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
