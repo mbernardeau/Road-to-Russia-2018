@@ -36,7 +36,9 @@ export default function configureStore(initialState = {}, history) {
     enableLogging: false, // enable/disable Firebase's database logging
   };
 
-  firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
 
   const createStoreWithFirebase = compose(
     reactReduxFirebase(firebase, reduxFirebaseConfig)
