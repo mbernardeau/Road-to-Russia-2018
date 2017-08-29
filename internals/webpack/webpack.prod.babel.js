@@ -73,7 +73,7 @@ module.exports = require('./webpack.base.babel')({
       short_name: 'Russia 2018',
       theme_color: '#d32f2f',
       background_color: '#f9f6ed',
-      display: 'fullscreen',
+      display: 'minimal-ui',
       orientation: 'portrait',
       Scope: '/',
       start_url: '/',
