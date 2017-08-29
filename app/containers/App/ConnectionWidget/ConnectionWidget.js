@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { pathToJS } from 'react-redux-firebase';
+import { isEmpty } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
@@ -9,14 +8,6 @@ import User from './User';
 
 import styles from './ConnectionWidget.scss';
 
-@connect(
-  // Map state to props
-  ({ firebase }) => ({
-    authError: pathToJS(firebase, 'authError'),
-    auth: pathToJS(firebase, 'auth'),
-    user: pathToJS(firebase, 'profile'),
-  })
-)
 class ConnectionWidget extends Component {
   static propTypes = {
     user: PropTypes.object,
@@ -59,11 +50,11 @@ class ConnectionWidget extends Component {
           <ConnectionModal />
         </Dialog>
 
-        {user &&
+        {!isEmpty(user) &&
           <User />
         }
 
-        {!user &&
+        {isEmpty(user) &&
           <FlatButton
             label="Se connecter"
             labelStyle={{ color: 'white', fontSize: 16 }}

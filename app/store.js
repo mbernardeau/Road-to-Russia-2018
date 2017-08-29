@@ -5,6 +5,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import { reactReduxFirebase } from 'react-redux-firebase';
+import * as firebase from 'firebase';
 import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
@@ -35,8 +36,10 @@ export default function configureStore(initialState = {}, history) {
     enableLogging: false, // enable/disable Firebase's database logging
   };
 
+  firebase.initializeApp(firebaseConfig);
+
   const createStoreWithFirebase = compose(
-    reactReduxFirebase(firebaseConfig, reduxFirebaseConfig)
+    reactReduxFirebase(firebase, reduxFirebaseConfig)
   )(createStore);
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose

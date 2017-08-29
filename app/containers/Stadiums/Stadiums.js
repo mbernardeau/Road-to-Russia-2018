@@ -1,34 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  dataToJS,
-  firebaseConnect,
-} from 'react-redux-firebase';
-import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import styles from './Stadiums.scss';
 
 import Stadium from './Stadium';
 
-@firebaseConnect([
-  'stadiums',
-])
-@connect(
-  ({ firebase }) => ({
-    stadiums: dataToJS(firebase, 'stadiums'),
-  })
-)
-export default class Stadiums extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  static propTypes = {
-    stadiums: PropTypes.object,
-  }
+const Stadiums = ({ stadiums }) => (
+  <div className={styles.container}>
+    {_.map(stadiums, (stadium, key) => <Stadium stadium={stadium} key={key} />) }
+  </div>
+);
 
-  render() {
-    return (
-      <div className={styles.container}>
-        {_.map(this.props.stadiums, (stadium, key) => <Stadium stadium={stadium} key={key} />) }
-      </div>
-    );
-  }
-}
+Stadiums.propTypes = {
+  stadiums: PropTypes.object,
+};
+
+export default Stadiums;
