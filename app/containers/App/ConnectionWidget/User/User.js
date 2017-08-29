@@ -1,8 +1,6 @@
 import React, {
   PureComponent,
 } from 'react';
-import { pathToJS, firebaseConnect } from 'react-redux-firebase';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Avatar from 'material-ui/Avatar';
@@ -13,13 +11,6 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 import styles from './User.scss';
 
-@firebaseConnect()
-@connect(
-  // Map state to props
-  ({ firebase }) => ({
-    user: pathToJS(firebase, 'profile'),
-  })
-)
 class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     user: PropTypes.shape({
