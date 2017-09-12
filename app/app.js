@@ -18,6 +18,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import moment from 'moment';
 import createHistory from 'history/createBrowserHistory';
 
+import { StyleRoot } from 'radium';
+
 import 'sanitize.css/sanitize.css';
 import 'expose-loader?Perf!react-addons-perf';
 
@@ -55,9 +57,11 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <MuiThemeProvider muiTheme={theme}>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
+        <StyleRoot>
+          <ConnectedRouter history={history}>
+            <App />
+          </ConnectedRouter>
+        </StyleRoot>
       </MuiThemeProvider>
     </Provider>,
     document.getElementById('app')

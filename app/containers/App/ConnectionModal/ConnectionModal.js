@@ -1,15 +1,12 @@
 import React, {
   Component,
 } from 'react';
-import { firebaseConnect } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 
 import RaisedButton from 'material-ui/RaisedButton';
 import FaGoogle from 'react-icons/lib/fa/google';
 import FaFacebook from 'react-icons/lib/fa/facebook';
-import styles from './ConnectionModal.scss';
 
-@firebaseConnect()
 class ConnectionModal extends Component {
   static propTypes = {
     firebase: PropTypes.shape({
@@ -39,11 +36,11 @@ class ConnectionModal extends Component {
 
   render() {
     return (
-      <div className={styles.connectionContainer}>
+      <div style={styles.container}>
         <RaisedButton
           label="Connexion avec Google"
           labelPosition="after"
-          style={{ marginBottom: 10 }}
+          style={styles.button}
           primary
           onClick={this.authenticateWithGoogle}
           icon={<FaGoogle />}
@@ -51,6 +48,7 @@ class ConnectionModal extends Component {
         <RaisedButton
           label="Connexion avec Facebook"
           labelPosition="after"
+          style={styles.button}
           secondary
           onClick={this.authenticateWithFacebook}
           icon={<FaFacebook />}
@@ -59,5 +57,17 @@ class ConnectionModal extends Component {
     );
   }
 }
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
+  button: {
+    marginBottom: 10,
+  },
+};
 
 export default ConnectionModal;
