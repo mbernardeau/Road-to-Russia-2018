@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { imgUrl } from 'components/Flag';
+import Flag from 'components/Flag';
 
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -17,7 +17,6 @@ const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n} primaryT
 const selectValueStyle = {
   textAlign: 'center',
   width: '100%',
-  color: 'white',
   fontSize: 'bold',
 };
 
@@ -29,21 +28,19 @@ const selectValueStyle = {
  */
 const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
 
-const flagStyles = (country) => ({
-  backgroundImage: `linear-gradient(
-                      rgba(0, 0, 0, 0.5),
-                      rgba(0, 0, 0, 0.5)
-                    ),
-                    url(${imgUrl(country)})`,
-  backgroundSize: 'cover',
-});
+const flagStyles = {
+  height: '1em',
+};
 
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
-  <div style={flagStyles(team.code)} className={styles.bet}>
-    <h2 className={styles.teamName}>{team.name}</h2>
+  <div className={styles.bet}>
+    <div style={{ display: 'flex' }}>
+      <Flag country={team.code} style={flagStyles} />
+      <div className={styles.teamName}>{team.name}</div>
+    </div>
     <div className={styles.selectContainer}>
       <SelectField
-        style={{ width: 60, color: 'white' }}
+        style={{ width: 60 }}
         value={betValue}
         selectionRenderer={renderValue}
         onChange={onBetValueUpdated}

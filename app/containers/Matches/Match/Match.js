@@ -7,10 +7,12 @@ import _ from 'lodash';
 
 import {
   Card,
+  CardText,
 } from 'material-ui/Card';
 
 import Bet from './Bet';
 import ValidIcon from './ValidIcon';
+
 import styles from './Match.scss';
 
 const empty = {};
@@ -68,12 +70,13 @@ class Match extends Component {
     const { bet } = this.state;
 
     return (
-      <Card style={{ marginTop: 7, marginBottom: 7, width: '100%' }} containerStyle={{ height: 150, position: 'relative' }}>
-        <div className={styles.match}>
-          <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
-          <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
-        </div>
-
+      <Card style={{ marginTop: 7, marginBottom: 7, width: '100%' }} containerStyle={{ position: 'relative' }}>
+        <CardText>
+          <div className={styles.match}>
+            <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
+            <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
+          </div>
+        </CardText>
         <ValidIcon valid={this.isBetValid()} />
       </Card>
     );
