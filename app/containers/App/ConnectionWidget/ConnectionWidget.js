@@ -6,8 +6,6 @@ import Dialog from 'material-ui/Dialog';
 import ConnectionModal from '../ConnectionModal';
 import User from './User';
 
-import styles from './ConnectionWidget.scss';
-
 class ConnectionWidget extends Component {
   static propTypes = {
     user: PropTypes.object,
@@ -40,7 +38,7 @@ class ConnectionWidget extends Component {
     const { user } = this.props;
 
     return (
-      <div className={styles.container}>
+      <div style={styles.container}>
         <Dialog
           title="Connexion"
           modal={false}
@@ -57,7 +55,7 @@ class ConnectionWidget extends Component {
         {isEmpty(user) &&
           <FlatButton
             label="Se connecter"
-            labelStyle={{ color: 'white', fontSize: 16 }}
+            labelStyle={styles.connectionLabel}
             onClick={this.openConnectionModal}
           />
         }
@@ -65,5 +63,18 @@ class ConnectionWidget extends Component {
     );
   }
 }
+
+const styles = {
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    height: '85%',
+  },
+
+  connectionLabel: {
+    color: 'white',
+    fontSize: 16,
+  },
+};
 
 export default ConnectionWidget;

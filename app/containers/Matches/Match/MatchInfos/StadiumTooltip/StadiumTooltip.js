@@ -2,31 +2,45 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-const textContainerStyles = {
-  display: 'flex',
-  color: 'white',
-  textShadow: '0 1px 0 rgba(0,0,0,.2)',
-  justifyContent: 'space-around',
-};
-
 const StadiumTooltip = ({ stadium }) => (
-  <div style={{ width: 200 }}>
-    <div style={textContainerStyles}>
-      <div style={{ textAlign: 'center' }}>
+  <div style={styles.container}>
+    <div style={styles.textContainer}>
+      <div style={styles.stadiumText}>
         { stadium.name }
       </div>
-      <div style={{ textAlign: 'center' }}>•</div>
-      <div style={{ textAlign: 'center' }}>
+      <div style={styles.stadiumText}>•</div>
+      <div style={styles.stadiumText}>
         { stadium.city }
       </div>
     </div>
-    {stadium.photo && <img style={{ width: '100%' }} src={stadium.photo.url} alt={stadium.name} />}
-    <div style={textContainerStyles}>
+    {stadium.photo && <img style={styles.img} src={stadium.photo.url} alt={stadium.name} />}
+    <div style={styles.textContainer}>
       <div>Capacité</div>
       <div>{stadium.capacity.toLocaleString('fr')} places</div>
     </div>
   </div>
 );
+
+const styles = {
+  container: {
+    width: 200,
+  },
+
+  textContainer: {
+    display: 'flex',
+    color: 'white',
+    textShadow: '0 1px 0 rgba(0,0,0,.2)',
+    justifyContent: 'space-around',
+  },
+
+  stadiumText: {
+    textAlign: 'center',
+  },
+
+  img: {
+    width: '100%',
+  },
+};
 
 StadiumTooltip.propTypes = {
   stadium: PropTypes.shape({

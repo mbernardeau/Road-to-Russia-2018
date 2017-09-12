@@ -1,3 +1,3 @@
-import ConnectionModal from './ConnectionModal';
+import ConnectionModal from './ConnectionModalContainer';
 
 export default ConnectionModal;

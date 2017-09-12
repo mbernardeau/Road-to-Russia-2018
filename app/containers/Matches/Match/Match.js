@@ -16,8 +16,6 @@ import Bet from './Bet';
 import ValidIcon from './ValidIcon';
 import MatchInfos from './MatchInfos';
 
-import styles from './Match.scss';
-
 const empty = {};
 
 class Match extends Component {
@@ -73,9 +71,9 @@ class Match extends Component {
     const { bet } = this.state;
 
     return (
-      <Card style={{ zIndex: 'initial', marginTop: 7, marginBottom: 7, width: '100%' }} containerStyle={{ position: 'relative' }}>
+      <Card style={styles.card} containerStyle={styles.cardContainer}>
         <CardText>
-          <div className={styles.match}>
+          <div style={styles.match}>
             <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
             <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
@@ -87,6 +85,26 @@ class Match extends Component {
     );
   }
 }
+
+const styles = {
+  match: {
+    display: 'grid',
+    gridTemplateColumns: '50% 50%',
+    height: '100%',
+    marginBottom: 10,
+  },
+
+  card: {
+    zIndex: 'initial',
+    marginTop: 7,
+    marginBottom: 7,
+    width: '100%',
+  },
+
+  cardContainer: {
+    position: 'relative',
+  },
+};
 
 Match.propTypes = {
   match: PropTypes.shape({
