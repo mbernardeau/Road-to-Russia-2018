@@ -7,8 +7,6 @@ import _ from 'lodash';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import styles from './Bet.scss';
-
 /**
  * Render menu items once (from 0 to 10 goals)
  */
@@ -28,29 +26,62 @@ const selectValueStyle = {
  */
 const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
 
-const flagStyles = {
-  height: '1em',
-};
-
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
-  <div className={styles.bet}>
-    <div style={{ display: 'flex' }}>
-      <Flag country={team.code} style={flagStyles} />
-      <div className={styles.teamName}>{team.name}</div>
+  <div style={styles.bet}>
+    <div style={styles.betTitle}>
+      <Flag country={team.code} style={styles.flag} />
+      <div style={styles.teamName}>{team.name}</div>
     </div>
-    <div className={styles.selectContainer}>
+    <div style={styles.selectContainer}>
       <SelectField
-        style={{ width: 60 }}
+        style={styles.selector}
         value={betValue}
         selectionRenderer={renderValue}
         onChange={onBetValueUpdated}
-        menuItemStyle={{ textAlign: 'center', width: 60 }}
+        menuItemStyle={styles.selectorItem}
       >
         {menuItems}
       </SelectField>
     </div>
   </div>
 );
+
+const styles = {
+  bet: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+
+  betTitle: {
+    display: 'flex',
+  },
+
+  teamName: {
+    textAlign: 'center',
+    fontSize: '1.3em',
+    paddingLeft: '10px',
+  },
+
+  selectContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+
+  selector: {
+    width: 60,
+  },
+
+  selectorItem: {
+    textAlign: 'center',
+    width: 60,
+  },
+
+  flag: {
+    height: '1.3em',
+  },
+};
 
 
 Bet.propTypes = {

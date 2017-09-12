@@ -15,9 +15,6 @@ import {
   Link,
 } from 'react-router-dom';
 
-// Exemple use of scoped SCSS
-// import styles from './Homepage.scss';
-
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (

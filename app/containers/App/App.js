@@ -42,12 +42,12 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           title="Road to Russia 2018"
           onLeftIconButtonTouchTap={toggleMenu}
           iconElementRight={<ConnectionWidget />}
-          style={{ position: 'fixed' }}
+          style={styles.appbar}
         />
 
         <NavigationMenu />
 
-        <div style={{ paddingTop: 70 }}>
+        <div style={styles.content}>
           {!isEmpty(user) &&
             <Switch>
               <Route exact path="/" component={HomePage} />
@@ -61,5 +61,15 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     );
   }
 }
+
+const styles = {
+  appbar: {
+    position: 'fixed',
+  },
+
+  content: {
+    paddingTop: 70,
+  },
+};
 
 export default App;

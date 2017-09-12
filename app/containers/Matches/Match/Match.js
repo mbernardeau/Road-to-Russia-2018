@@ -10,10 +10,11 @@ import {
   CardText,
 } from 'material-ui/Card';
 
+import Divider from 'material-ui/Divider';
+
 import Bet from './Bet';
 import ValidIcon from './ValidIcon';
-
-import styles from './Match.scss';
+import MatchInfos from './MatchInfos';
 
 const empty = {};
 
@@ -66,22 +67,44 @@ class Match extends Component {
   handleTeamBChange = this.handleChange('B');
 
   render() {
-    const { match } = this.props;
+    const { match, matchId } = this.props;
     const { bet } = this.state;
 
     return (
-      <Card style={{ marginTop: 7, marginBottom: 7, width: '100%' }} containerStyle={{ position: 'relative' }}>
+      <Card style={styles.card} containerStyle={styles.cardContainer}>
         <CardText>
-          <div className={styles.match}>
+          <div style={styles.match}>
             <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
             <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
+          <Divider />
+          <MatchInfos match={match} matchId={matchId} />
         </CardText>
         <ValidIcon valid={this.isBetValid()} />
       </Card>
     );
   }
 }
+
+const styles = {
+  match: {
+    display: 'grid',
+    gridTemplateColumns: '50% 50%',
+    height: '100%',
+    marginBottom: 10,
+  },
+
+  card: {
+    zIndex: 'initial',
+    marginTop: 7,
+    marginBottom: 7,
+    width: '100%',
+  },
+
+  cardContainer: {
+    position: 'relative',
+  },
+};
 
 Match.propTypes = {
   match: PropTypes.shape({
@@ -99,6 +122,7 @@ Match.propTypes = {
     teamB: PropTypes.number,
   }),
   saveBet: PropTypes.func.isRequired,
+  matchId: PropTypes.string,
 };
 
 Match.defaultProps = {

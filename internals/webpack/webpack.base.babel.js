@@ -26,19 +26,6 @@ module.exports = (options) => ({
       test: /\.css$/,
       loaders: ['style-loader', 'css-loader'],
     }, {
-      test: /\.scss$/,
-      use: [
-        { loader: 'style-loader' },
-        {
-          loader: 'css-loader',
-          options: { modules: true, localIdentName: '[path]_[local]__[hash:base64:5]' },
-        },
-        {
-          loader: 'sass-loader',
-          options: { includePaths: [path.resolve(__dirname, './app')] },
-        },
-      ],
-    }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {

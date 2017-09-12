@@ -3,13 +3,13 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
+import Radium from 'radium';
+
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-
-import styles from './User.scss';
 
 class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
@@ -27,10 +27,10 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
     const { logout } = firebase;
 
     return (
-      <div className={styles.userContainer}>
-        <Avatar src={user.avatarUrl} style={{ marginRight: 10 }} />
+      <div style={styles.user}>
+        <Avatar src={user.avatarUrl} style={styles.avatar} />
 
-        <span className={styles.username}>{user.displayName}</span>
+        <span style={styles.username}>{user.displayName}</span>
 
         <IconMenu
           iconButtonElement={<IconButton><MoreVertIcon color="white" /></IconButton>}
@@ -44,4 +44,24 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
   }
 }
 
-export default User;
+const styles = {
+  username: {
+    color: 'white',
+    fontSize: '18px',
+
+    '@media screen and (max-width: 640px)': {
+      display: 'none',
+    },
+  },
+
+  user: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+
+  avatar: {
+    marginRight: 10,
+  },
+};
+
+export default Radium(User);

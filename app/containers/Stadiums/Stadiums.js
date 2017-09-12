@@ -2,15 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import styles from './Stadiums.scss';
-
 import Stadium from './Stadium';
 
 const Stadiums = ({ stadiums }) => (
-  <div className={styles.container}>
+  <div style={styles.container}>
     {_.map(stadiums, (stadium, key) => <Stadium stadium={stadium} key={key} />) }
   </div>
 );
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    margin: '0 15px',
+  },
+};
 
 Stadiums.propTypes = {
   stadiums: PropTypes.object,

@@ -8,7 +8,7 @@ import {
 
 
 const Stadium = ({ stadium }) => (
-  <Card style={{ marginTop: 15, marginBottom: 15, width: 400 }}>
+  <Card style={styles.card}>
     <CardTitle
       title={stadium.name}
       subtitle={stadium.city}
@@ -22,6 +22,14 @@ const Stadium = ({ stadium }) => (
     }
   </Card>
 );
+
+const styles = {
+  card: {
+    arginTop: 15,
+    marginBottom: 15,
+    width: 400,
+  },
+};
 
 Stadium.propTypes = {
   stadium: PropTypes.shape({
