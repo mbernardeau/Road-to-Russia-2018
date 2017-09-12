@@ -16,10 +16,10 @@ const iconStyles = {
 const ValidIcon = ({ valid }) => (
   <div>
     {valid ?
-      <CheckIcon style={iconStyles} color="green" data-tip="Paris enregistré !" /> :
-      <ClearIcon style={iconStyles} color="red" data-tip="Paris invalide !" />
+      <CheckIcon style={iconStyles} color="green" data-tip="Paris enregistré !" data-type="success" /> :
+      <ClearIcon style={iconStyles} color="red" data-tip="Paris invalide !" data-type="error" />
     }
-    <ReactTooltip type={valid ? 'success' : 'error'} effect="solid" />
+    <ReactTooltip effect="solid" />
   </div>
 );
 
