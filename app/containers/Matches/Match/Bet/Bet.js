@@ -29,7 +29,7 @@ const selectValueStyle = {
 const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
 
 const flagStyles = {
-  height: '1em',
+  height: '1.3em',
 };
 
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
