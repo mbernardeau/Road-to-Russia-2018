@@ -5769,9 +5769,26 @@ node-notifier@^5.0.2:
     shellwords "^0.1.0"
     which "^1.2.12"
 
-node-plop@=0.7.1, node-plop@^0.7.1:
+node-plop@=0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.7.1.tgz#0e545a2f0f8bf35d57892ec99c845bfcc6a8731c"
+  dependencies:
+    change-case "^2.3.1"
+    co "^4.6.0"
+    colors "^1.1.2"
+    core-js "^2.4.1"
+    del "^2.2.1"
+    globby "^6.1.0"
+    handlebars "^4.0.5"
+    inquirer "^1.2.0"
+    lodash.get "^4.4.2"
+    mkdirp "^0.5.1"
+    pify "^2.3.0"
+    resolve "^1.2.0"
+
+node-plop@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.8.0.tgz#a1fd74dfc58b7fab813b6aac34c77cf6d7ab7df8"
   dependencies:
     change-case "^2.3.1"
     co "^4.6.0"
