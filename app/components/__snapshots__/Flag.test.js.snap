@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Flag renders correctly 1`] = `
+<img
+  alt="ru"
+  className={undefined}
+  src="mock_image"
+  style={undefined}
+/>
+`;
+
+exports[`components/Flag should pass className and style to underlying component 1`] = `
+<img
+  alt="ru"
+  className="test-image"
+  src="mock_image"
+  style={
+    Object {
+      "marginTop": 4,
+    }
+  }
+/>
+`;
