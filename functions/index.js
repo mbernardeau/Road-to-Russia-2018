@@ -14,3 +14,7 @@ const onBetUpdated = (event) => event.data.ref.child('lastModified').once('value
 
 exports.onBetCreated = functions.database.ref('/bets/{matchId}/users/{uid}').onCreate(onBetUpdated);
 exports.onBetUpdated = functions.database.ref('/bets/{matchId}/users/{uid}').onUpdate(onBetUpdated);
+
+// exports onGroupApply = functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
+//   event =>
+// )
