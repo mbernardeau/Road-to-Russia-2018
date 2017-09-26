@@ -41,6 +41,7 @@
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage && codecov",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
@@ -203,7 +204,7 @@
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/internals/testing/test-bundler.js",
-    "testRegex": "tests/.*\\.test\\.js$"
+    "testRegex": ".*\\.test\\.js$"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -262,6 +263,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cheerio": "^0.22",
     "circular-dependency-plugin": "^4.2.0",
+    "codecov": "^2.3.0",
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.6.1",

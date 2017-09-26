@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Flag passes props to the underlying div 1`] = `
+<div
+  style={
+    Object {
+      "margin": 1,
+    }
+  }
+>
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+</div>
+`;
+
+exports[`components/Flag renders correctly when no direction specified 1`] = `
+<div>
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+</div>
+`;
+
+exports[`components/Flag renders correctly with ltr 1`] = `
+<div>
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+</div>
+`;
+
+exports[`components/Flag renders correctly with rtl 1`] = `
+<div>
+  <div>
+    2
+  </div>
+  <div>
+    1
+  </div>
+</div>
+`;

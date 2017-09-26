@@ -12,7 +12,7 @@ const Reversible = ({ direction, children, ...rest }) => {
 Reversible.propTypes = {
   direction: PropTypes.oneOf(['rtl', 'ltr']),
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(React.PropTypes.node),
+    PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
 };
