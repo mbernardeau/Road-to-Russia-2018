@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 
-
-import CheckIcon from 'material-ui/svg-icons/navigation/check';
-import ClearIcon from 'material-ui/svg-icons/content/clear';
+import CheckIcon from 'material-ui-icons/Check';
+import ClearIcon from 'material-ui-icons/Clear';
 
 const iconStyles = {
   position: 'absolute',

@@ -5,9 +5,8 @@ import React, {
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import {
-  Card,
-  CardText,
+import Card, {
+  CardContent,
 } from 'material-ui/Card';
 
 import Divider from 'material-ui/Divider';
@@ -72,14 +71,14 @@ class Match extends Component {
 
     return (
       <Card style={styles.card} containerStyle={styles.cardContainer}>
-        <CardText>
+        <CardContent>
           <div style={styles.match}>
             <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
             <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
           <Divider />
           <MatchInfos match={match} matchId={matchId} />
-        </CardText>
+        </CardContent>
         <ValidIcon valid={this.isBetValid()} />
       </Card>
     );

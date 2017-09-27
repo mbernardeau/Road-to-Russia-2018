@@ -1,24 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
+import Card, {
   CardMedia,
-  CardTitle,
+  CardContent,
 } from 'material-ui/Card';
-
+import Typography from 'material-ui/Typography';
 
 const Stadium = ({ stadium }) => (
   <Card style={styles.card}>
-    <CardTitle
-      title={stadium.name}
-      subtitle={stadium.city}
-    />
+    <CardContent>
+      <Typography type="headline">
+        {stadium.name}
+      </Typography>
+      <Typography type="body1">
+        {stadium.city}
+      </Typography>
+    </CardContent>
     {stadium.photo &&
       <CardMedia
-        overlay={<CardTitle title={stadium.name} subtitle={stadium.photo.credit} />}
-      >
-        <img src={stadium.photo.url} alt={stadium.name} />
-      </CardMedia>
+        style={{ height: 200 }}
+        image={stadium.photo.url}
+        title={stadium.name}
+      />
     }
   </Card>
 );

@@ -13,7 +13,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import moment from 'moment';
 import createHistory from 'history/createBrowserHistory';
@@ -21,7 +20,7 @@ import createHistory from 'history/createBrowserHistory';
 import { StyleRoot } from 'radium';
 
 import 'sanitize.css/sanitize.css';
-import 'expose-loader?Perf!react-addons-perf';
+// import 'expose-loader?Perf!react-addons-perf';
 
 // Import root app
 import App from 'containers/App';
@@ -51,12 +50,10 @@ const initialState = {};
 const history = createHistory();
 const store = configureStore(initialState, history);
 
-injectTapEventPlugin();
-
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <MuiThemeProvider muiTheme={theme}>
+      <MuiThemeProvider theme={theme}>
         <StyleRoot>
           <ConnectedRouter history={history}>
             <App />

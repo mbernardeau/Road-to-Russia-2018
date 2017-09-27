@@ -4,13 +4,13 @@ import Flag from 'components/Flag';
 
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import Select from 'material-ui/Select';
+import { MenuItem } from 'material-ui/Menu';
 
 /**
  * Render menu items once (from 0 to 10 goals)
  */
-const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n} primaryText={`${n}`} />);
+const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuItem>);
 
 const selectValueStyle = {
   textAlign: 'center',
@@ -33,15 +33,15 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
       <div style={styles.teamName}>{team.name}</div>
     </div>
     <div style={styles.selectContainer}>
-      <SelectField
+      <Select
         style={styles.selector}
-        value={betValue}
-        selectionRenderer={renderValue}
+        value={betValue || ''}
+        renderValue={renderValue}
         onChange={onBetValueUpdated}
         menuItemStyle={styles.selectorItem}
       >
         {menuItems}
-      </SelectField>
+      </Select>
     </div>
   </div>
 );

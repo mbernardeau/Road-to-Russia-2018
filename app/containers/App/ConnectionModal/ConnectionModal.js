@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 import FaGoogle from 'react-icons/lib/fa/google';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 
@@ -37,22 +37,25 @@ class ConnectionModal extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <RaisedButton
-          label="Connexion avec Google"
-          labelPosition="after"
+        <Button
           style={styles.button}
           primary
           onClick={this.authenticateWithGoogle}
-          icon={<FaGoogle />}
-        />
-        <RaisedButton
-          label="Connexion avec Facebook"
-          labelPosition="after"
+          raised
+        >
+          <FaGoogle />&nbsp;
+          Connexion avec Google
+        </Button>
+
+        <Button
           style={styles.button}
           secondary
           onClick={this.authenticateWithFacebook}
-          icon={<FaFacebook />}
-        />
+          raised
+        >
+          <FaFacebook />&nbsp;
+          Connexion avec Facebook
+        </Button>
       </div>
     );
   }

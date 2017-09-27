@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { isEmpty } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import Dialog from 'material-ui/Dialog';
 import ConnectionModal from '../ConnectionModal';
 import User from './User';
@@ -53,11 +53,12 @@ class ConnectionWidget extends Component {
         }
 
         {isEmpty(user) &&
-          <FlatButton
-            label="Se connecter"
-            labelStyle={styles.connectionLabel}
+          <Button
+            style={styles.connectionLabel}
             onClick={this.openConnectionModal}
-          />
+          >
+            Se connecter
+          </Button>
         }
       </div>
     );
