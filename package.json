@@ -64,7 +64,8 @@
     ],
     "plugins": [
       "transform-decorators-legacy",
-      "react-hot-loader/babel"
+      "react-hot-loader/babel",
+      "transform-react-jsx-source"
     ],
     "env": {
       "production": {
@@ -256,6 +257,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
