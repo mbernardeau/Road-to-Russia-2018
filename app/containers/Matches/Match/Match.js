@@ -70,16 +70,16 @@ class Match extends Component {
     const { bet } = this.state;
 
     return (
-      <Card style={styles.card} containerStyle={styles.cardContainer}>
-        <CardContent>
+      <Card style={styles.card}>
+        <CardContent style={styles.cardContainer}>
           <div style={styles.match}>
             <Bet team={match.teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
             <Bet team={match.teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
           <Divider />
           <MatchInfos match={match} matchId={matchId} />
+          <ValidIcon valid={this.isBetValid()} />
         </CardContent>
-        <ValidIcon valid={this.isBetValid()} />
       </Card>
     );
   }

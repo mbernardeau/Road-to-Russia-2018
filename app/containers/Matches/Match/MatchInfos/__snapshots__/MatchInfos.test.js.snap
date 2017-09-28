@@ -14,41 +14,244 @@ exports[`Containers/Match/StadiumTooltip renders correctly 1`] = `
   }
 >
   <div
-    data-for="tt-dateTimematchid1"
-    data-tip={true}
+    className="MuiTooltip-root-1"
   >
-    in a day
-  </div>
-  <div
-    className="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  >
-    
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      in a day
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
+        id={undefined}
+        role="tooltip"
+      >
+        December 23, 2016 4:22 AM
+      </div>
+    </div>
   </div>
   <div>
     •
   </div>
   <div
-    data-for="tt-stadiummatchid1"
-    data-tip={true}
+    className="MuiTooltip-root-1"
   >
-    Stade Krestovski
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      Stade Krestovski
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
+        id={undefined}
+        role="tooltip"
+      >
+        <div
+          style={
+            Object {
+              "width": 200,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Stade Krestovski
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              •
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Saint-Pétersbourg
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div>
+              Capacité
+            </div>
+            <div>
+              69 500
+               places
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div>
     •
   </div>
   <div
-    data-for="tt-stadiummatchid1"
-    data-place="left"
-    data-tip={true}
+    className="MuiTooltip-root-1"
   >
-    Saint-Pétersbourg
-  </div>
-  <div
-    className="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
-  >
-    
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      Saint-Pétersbourg
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipLeft-5"
+        id={undefined}
+        role="tooltip"
+      >
+        <div
+          style={
+            Object {
+              "width": 200,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Stade Krestovski
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              •
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Saint-Pétersbourg
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div>
+              Capacité
+            </div>
+            <div>
+              69 500
+               places
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

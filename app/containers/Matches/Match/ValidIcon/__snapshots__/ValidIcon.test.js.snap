@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Containers/Match/ValidIcon renders correctly when invalid 1`] = `
-<div>
+<div
+  className="MuiTooltip-root-1"
+>
   <svg
+    aria-describedby={undefined}
     aria-hidden="true"
-    className="MuiSvgIcon-root-1"
+    className="MuiSvgIcon-root-10"
     color="red"
-    data-for="tt-valid"
-    data-tip="Paris invalide !"
-    data-type="error"
     focusable="false"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     style={
       Object {
         "left": 5,
@@ -25,24 +31,45 @@ exports[`Containers/Match/ValidIcon renders correctly when invalid 1`] = `
     />
   </svg>
   <div
-    className="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
+    className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+    data-placement={undefined}
+    data-x-out-of-boundaries={undefined}
+    style={
+      Object {
+        "opacity": 0,
+        "pointerEvents": "none",
+        "position": "absolute",
+      }
+    }
   >
-    
+    <div
+      aria-hidden={true}
+      className="MuiTooltip-tooltip-4 MuiTooltip-tooltipRight-6"
+      id={undefined}
+      role="tooltip"
+    >
+      Paris invalide
+    </div>
   </div>
 </div>
 `;
 
 exports[`Containers/Match/ValidIcon renders correctly when valid 1`] = `
-<div>
+<div
+  className="MuiTooltip-root-1"
+>
   <svg
+    aria-describedby={undefined}
     aria-hidden="true"
-    className="MuiSvgIcon-root-1"
+    className="MuiSvgIcon-root-10"
     color="green"
-    data-for="tt-valid"
-    data-tip="Paris enregistré !"
-    data-type="success"
     focusable="false"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     style={
       Object {
         "left": 5,
@@ -58,10 +85,25 @@ exports[`Containers/Match/ValidIcon renders correctly when valid 1`] = `
     />
   </svg>
   <div
-    className="__react_component_tooltip place-top type-dark "
-    data-id="tooltip"
+    className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+    data-placement={undefined}
+    data-x-out-of-boundaries={undefined}
+    style={
+      Object {
+        "opacity": 0,
+        "pointerEvents": "none",
+        "position": "absolute",
+      }
+    }
   >
-    
+    <div
+      aria-hidden={true}
+      className="MuiTooltip-tooltip-4 MuiTooltip-tooltipRight-6"
+      id={undefined}
+      role="tooltip"
+    >
+      Paris enregistré
+    </div>
   </div>
 </div>
 `;
