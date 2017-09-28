@@ -11,3 +11,6 @@ npm-debug.log
 
 typings/
 .chrome
+
+# Never commit a file that could be the admin sdk cert
+*adminsdk*.json
