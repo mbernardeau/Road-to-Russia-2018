@@ -22,8 +22,6 @@ exports[`Containers/Match/StadiumTooltip renders correctly 1`] = `
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
     >
       dans un jour
     </div>
@@ -61,8 +59,6 @@ exports[`Containers/Match/StadiumTooltip renders correctly 1`] = `
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
     >
       Stade Krestovski
     </div>
@@ -163,8 +159,6 @@ exports[`Containers/Match/StadiumTooltip renders correctly 1`] = `
       onFocus={[Function]}
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
     >
       Saint-Pétersbourg
     </div>

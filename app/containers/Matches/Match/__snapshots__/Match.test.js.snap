@@ -247,8 +247,6 @@ exports[`Containers/Match renders correctly 1`] = `
           onFocus={[Function]}
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
         >
           dans 2 ans
         </div>
@@ -286,8 +284,6 @@ exports[`Containers/Match renders correctly 1`] = `
           onFocus={[Function]}
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
         >
           Stade de Kaliningrad
         </div>
@@ -397,8 +393,6 @@ exports[`Containers/Match renders correctly 1`] = `
           onFocus={[Function]}
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
         >
           Kaliningrad
         </div>
