@@ -3,28 +3,14 @@ import React from 'react';
 import Flag from 'components/Flag';
 
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
 
-/**
- * Render menu items once (from 0 to 10 goals)
- */
-const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n} primaryText={`${n}`} />);
+import {
+  map,
+  range,
+} from 'lodash';
 
-const selectValueStyle = {
-  textAlign: 'center',
-  width: '100%',
-  fontSize: 'bold',
-};
-
-/**
- * Pure mini-component to render inner value of the select field choices
- * @param {number} value Value to render
- *
- * @return {React.ReactElement}
- */
-const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
+import Select from 'material-ui/Select';
+import { MenuItem } from 'material-ui/Menu';
 
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
   <div style={styles.bet}>
@@ -33,15 +19,14 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
       <div style={styles.teamName}>{team.name}</div>
     </div>
     <div style={styles.selectContainer}>
-      <SelectField
-        style={styles.selector}
-        value={betValue}
-        selectionRenderer={renderValue}
+      <Select
+        type="number"
+        value={betValue || ''}
+        renderValue={renderValue}
         onChange={onBetValueUpdated}
-        menuItemStyle={styles.selectorItem}
       >
         {menuItems}
-      </SelectField>
+      </Select>
     </div>
   </div>
 );
@@ -69,13 +54,9 @@ const styles = {
     alignItems: 'center',
   },
 
-  selector: {
-    width: 60,
-  },
-
-  selectorItem: {
+  selectValueStyle: {
     textAlign: 'center',
-    width: 60,
+    width: '100%',
   },
 
   flag: {
@@ -83,6 +64,18 @@ const styles = {
   },
 };
 
+/**
+ * Render menu items once (from 0 to 10 goals)
+ */
+const menuItems = map(range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuItem>);
+
+/**
+ * Pure mini-component to render inner value of the select field choices
+ * @param {number} value Value to render
+ *
+ * @return {React.ReactElement}
+ */
+const renderValue = (value) => (<div style={styles.selectValueStyle}>{ value }</div>);
 
 Bet.propTypes = {
   team: PropTypes.shape({

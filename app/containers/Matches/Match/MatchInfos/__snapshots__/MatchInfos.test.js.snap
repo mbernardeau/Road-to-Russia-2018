@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Containers/Match/StadiumTooltip renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "color": "darkgray",
+      "display": "flex",
+      "fontSize": "0.9em",
+      "justifyContent": "space-around",
+      "marginTop": "10px",
+      "textShadow": "0 1px 0 rgba(0,0,0,.1)",
+    }
+  }
+>
+  <div
+    className="MuiTooltip-root-1"
+  >
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      dans un jour
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
+        id={undefined}
+        role="tooltip"
+      >
+        23 décembre 2016 04:22
+      </div>
+    </div>
+  </div>
+  <div>
+    •
+  </div>
+  <div
+    className="MuiTooltip-root-1"
+  >
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      Stade Krestovski
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
+        id={undefined}
+        role="tooltip"
+      >
+        <div
+          style={
+            Object {
+              "width": 200,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Stade Krestovski
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              •
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Saint-Pétersbourg
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div>
+              Capacité
+            </div>
+            <div>
+              69500
+               places
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    •
+  </div>
+  <div
+    className="MuiTooltip-root-1"
+  >
+    <div
+      aria-describedby={undefined}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+    >
+      Saint-Pétersbourg
+    </div>
+    <div
+      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
+      data-placement={undefined}
+      data-x-out-of-boundaries={undefined}
+      style={
+        Object {
+          "opacity": 0,
+          "pointerEvents": "none",
+          "position": "absolute",
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipLeft-5"
+        id={undefined}
+        role="tooltip"
+      >
+        <div
+          style={
+            Object {
+              "width": 200,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Stade Krestovski
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              •
+            </div>
+            <div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Saint-Pétersbourg
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "justifyContent": "space-around",
+                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+              }
+            }
+          >
+            <div>
+              Capacité
+            </div>
+            <div>
+              69500
+               places
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

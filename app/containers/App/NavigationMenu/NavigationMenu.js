@@ -6,12 +6,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   closeMenu,
-  setMenuStatus,
 } from 'redux/actions';
 
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
-import MenuItem from 'material-ui/MenuItem';
+import List, { ListItem, ListItemText } from 'material-ui/List';
 import { withRouter } from 'react-router';
 
 import WorldCupImg from 'assets/2018_FIFA_WC.svg';
@@ -28,7 +27,6 @@ const imgStyle = {
   }),
   (dispatch) => ({
     closeMenu: () => dispatch(closeMenu()),
-    setMenuStatus: (open) => dispatch(setMenuStatus(open)),
   })
 )
 @withRouter
@@ -36,7 +34,6 @@ export default class NavigationMenu extends Component {
   static propTypes = {
     open: PropTypes.bool.isRequired,
     closeMenu: PropTypes.func.isRequired,
-    setMenuStatus: PropTypes.func.isRequired,
     history: PropTypes.shape({
       location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
@@ -54,17 +51,19 @@ export default class NavigationMenu extends Component {
 
   render() {
     return (
-      <Drawer open={this.props.open} docked={false} onRequestChange={(open) => this.props.setMenuStatus(open)}>
-        <MenuItem onClick={this.goTo('/')}>
-          <img src={WorldCupImg} style={imgStyle} alt="Accueil" />
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={this.goTo('/stadiums')}>
-          Stades
-        </MenuItem>
-        <MenuItem onClick={this.goTo('/matches')}>
-          Matches
-        </MenuItem>
+      <Drawer open={this.props.open} onRequestClose={() => this.props.closeMenu()}>
+        <List>
+          <ListItem button onClick={this.goTo('/')}>
+            <img src={WorldCupImg} style={imgStyle} alt="Accueil" />
+          </ListItem>
+          <Divider />
+          <ListItem button onClick={this.goTo('/stadiums')}>
+            <ListItemText primary="Stades" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/matches')}>
+            <ListItemText primary="Matches" />
+          </ListItem>
+        </List>
       </Drawer>
     );
   }

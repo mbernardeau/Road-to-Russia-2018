@@ -15,6 +15,10 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
 
 import HomePage from 'containers/HomePage/Loadable';
 import StadiumsPage from 'containers/Stadiums/Loadable';
@@ -38,12 +42,17 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 
     return (
       <div>
-        <AppBar
-          title="Road to Russia 2018"
-          onLeftIconButtonTouchTap={toggleMenu}
-          iconElementRight={<ConnectionWidget />}
-          style={styles.appbar}
-        />
+        <AppBar>
+          <Toolbar style={styles.toolbar}>
+            <IconButton color="contrast" aria-label="Menu" onClick={toggleMenu}>
+              <MenuIcon />
+            </IconButton>
+            <Typography type="title" color="inherit">
+              Road to Russia 2018
+            </Typography>
+            <ConnectionWidget />
+          </Toolbar>
+        </AppBar>
 
         <NavigationMenu />
 
@@ -63,8 +72,8 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 }
 
 const styles = {
-  appbar: {
-    position: 'fixed',
+  toolbar: {
+    justifyContent: 'space-between',
   },
 
   content: {

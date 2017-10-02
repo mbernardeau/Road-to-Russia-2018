@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactTooltip from 'react-tooltip';
 
+import Tooltip from 'material-ui/Tooltip';
 
-import CheckIcon from 'material-ui/svg-icons/navigation/check';
-import ClearIcon from 'material-ui/svg-icons/content/clear';
+import CheckIcon from 'material-ui-icons/Check';
+import ClearIcon from 'material-ui-icons/Clear';
 
 const iconStyles = {
   position: 'absolute',
@@ -13,14 +13,15 @@ const iconStyles = {
   opacity: 0.8,
 };
 
+const getTooltipText = (valid) => valid ? 'Paris enregistré' : 'Paris invalide';
+
 const ValidIcon = ({ valid }) => (
-  <div>
+  <Tooltip title={getTooltipText(valid)} placement="right">
     {valid ?
-      <CheckIcon style={iconStyles} color="green" data-tip="Paris enregistré !" data-type="success" data-for="tt-valid" /> :
-      <ClearIcon style={iconStyles} color="red" data-tip="Paris invalide !" data-type="error" data-for="tt-valid" />
+      <CheckIcon style={iconStyles} color="green" /> :
+      <ClearIcon style={iconStyles} color="red" />
     }
-    <ReactTooltip id="tt-valid" effect="solid" />
-  </div>
+  </Tooltip>
 );
 
 ValidIcon.propTypes = {

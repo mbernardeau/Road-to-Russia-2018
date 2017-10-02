@@ -7,9 +7,8 @@ import Radium from 'radium';
 
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Menu, { MenuItem } from 'material-ui/Menu';
+import MoreVertIcon from 'material-ui-icons/MoreVert';
 
 class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
@@ -22,6 +21,20 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
     }).isRequired,
   };
 
+  state = {
+    anchorEl: null,
+    open: false,
+  };
+
+  handleClick = (event) => {
+    this.setState({ open: true, anchorEl: event.currentTarget });
+  };
+
+  handleRequestClose = () => {
+    this.setState({ open: false });
+  };
+
+
   render() {
     const { user, firebase } = this.props;
     const { logout } = firebase;
@@ -32,13 +45,24 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
 
         <span style={styles.username}>{user.displayName}</span>
 
-        <IconMenu
-          iconButtonElement={<IconButton><MoreVertIcon color="white" /></IconButton>}
+        <IconButton
+          aria-label="Plus"
+          aria-owns={this.state.open ? 'long-menu' : null}
+          aria-haspopup="true"
+          onClick={this.handleClick}
+        >
+          <MoreVertIcon color="white" />
+        </IconButton>
+
+        <Menu
+          open={this.state.open}
+          anchorEl={this.state.anchorEl}
+          onRequestClose={this.handleRequestClose}
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
           targetOrigin={{ horizontal: 'right', vertical: 'top' }}
         >
-          <MenuItem primaryText="Se déconnecter" onClick={logout} />
-        </IconMenu>
+          <MenuItem onClick={logout}>Se déconnecter</MenuItem>
+        </Menu>
       </div>
     );
   }

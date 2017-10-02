@@ -7,6 +7,9 @@ jobs:
       steps:
         - checkout
         - run:
+            name: Set timezone to Europe/Paris
+            command: sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+        - run:
             name: add-yarn-gloabl-to-path
             command: echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
         - run:
