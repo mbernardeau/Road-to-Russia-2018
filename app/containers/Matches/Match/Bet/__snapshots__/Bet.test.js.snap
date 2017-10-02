@@ -50,12 +50,6 @@ exports[`Containers/Match/Bet renders correctly 1`] = `
   >
     <div
       className="MuiInput-root-6 MuiInput-inkbar-8 MuiInput-underline-14"
-      menuItemStyle={
-        Object {
-          "textAlign": "center",
-          "width": 60,
-        }
-      }
       onBlur={[Function]}
       onFocus={[Function]}
       style={

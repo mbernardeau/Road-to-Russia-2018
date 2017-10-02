@@ -47,7 +47,7 @@ class Match extends Component {
     });
   }
 
-  handleChange = (team) => (event, index, value) => {
+  handleChange = (team) => ({ target: { value } }) => {
     this.setState({
       bet: {
         ...this.state.bet,

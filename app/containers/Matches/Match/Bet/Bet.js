@@ -3,28 +3,12 @@ import React from 'react';
 import Flag from 'components/Flag';
 
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import {
+  map,
+  range,
+} from 'lodash';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
-
-/**
- * Render menu items once (from 0 to 10 goals)
- */
-const menuItems = _.map(_.range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuItem>);
-
-const selectValueStyle = {
-  textAlign: 'center',
-  width: '100%',
-  fontSize: 'bold',
-};
-
-/**
- * Pure mini-component to render inner value of the select field choices
- * @param {number} value Value to render
- *
- * @return {React.ReactElement}
- */
-const renderValue = (value) => (<div style={selectValueStyle}>{ value }</div>);
 
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
   <div style={styles.bet}>
@@ -35,10 +19,10 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
     <div style={styles.selectContainer}>
       <Select
         style={styles.selector}
+        type="number"
         value={betValue || ''}
         renderValue={renderValue}
         onChange={onBetValueUpdated}
-        menuItemStyle={styles.selectorItem}
       >
         {menuItems}
       </Select>
@@ -78,11 +62,29 @@ const styles = {
     width: 60,
   },
 
+  selectValueStyle: {
+    textAlign: 'center',
+    width: '100%',
+    fontSize: 'bold',
+  },
+
   flag: {
     height: '1.3em',
   },
 };
 
+/**
+ * Render menu items once (from 0 to 10 goals)
+ */
+const menuItems = map(range(11), (n) => <MenuItem style={styles.selectorItem} value={n} key={n}>{n}</MenuItem>);
+
+/**
+ * Pure mini-component to render inner value of the select field choices
+ * @param {number} value Value to render
+ *
+ * @return {React.ReactElement}
+ */
+const renderValue = (value) => (<div style={styles.selectValueStyle}>{ value }</div>);
 
 Bet.propTypes = {
   team: PropTypes.shape({
