@@ -3,10 +3,12 @@ import React from 'react';
 import Flag from 'components/Flag';
 
 import PropTypes from 'prop-types';
+
 import {
   map,
   range,
 } from 'lodash';
+
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
 
@@ -18,7 +20,6 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
     </div>
     <div style={styles.selectContainer}>
       <Select
-        style={styles.selector}
         type="number"
         value={betValue || ''}
         renderValue={renderValue}
@@ -53,19 +54,9 @@ const styles = {
     alignItems: 'center',
   },
 
-  selector: {
-    width: 60,
-  },
-
-  selectorItem: {
-    textAlign: 'center',
-    width: 60,
-  },
-
   selectValueStyle: {
     textAlign: 'center',
     width: '100%',
-    fontSize: 'bold',
   },
 
   flag: {
@@ -76,7 +67,7 @@ const styles = {
 /**
  * Render menu items once (from 0 to 10 goals)
  */
-const menuItems = map(range(11), (n) => <MenuItem style={styles.selectorItem} value={n} key={n}>{n}</MenuItem>);
+const menuItems = map(range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuItem>);
 
 /**
  * Pure mini-component to render inner value of the select field choices
