@@ -20,15 +20,15 @@ const MatchInfos = ({ match }) => {
 
   return (
     <div style={containerStyles}>
-      <Tooltip title={dateTime.format('LLL')}>
+      <Tooltip title={dateTime.format('LLL')} disableTriggerTouch>
         <div>{ dateTime.fromNow() }</div>
       </Tooltip>
       <div>•</div>
-      <Tooltip title={<StadiumTooltip stadium={match.stadium} />}>
+      <Tooltip title={<StadiumTooltip stadium={match.stadium} />} disableTriggerTouch>
         <div>{ match.stadium.name }</div>
       </Tooltip>
       <div>•</div>
-      <Tooltip title={<StadiumTooltip stadium={match.stadium} />} placement="left">
+      <Tooltip title={<StadiumTooltip stadium={match.stadium} />} placement="left" disableTriggerTouch>
         <div>{ match.stadium.city }</div>
       </Tooltip>
     </div>

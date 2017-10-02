@@ -19,6 +19,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import Radium from 'radium';
 
 import HomePage from 'containers/HomePage/Loadable';
 import StadiumsPage from 'containers/Stadiums/Loadable';
@@ -47,9 +48,11 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
             <IconButton color="contrast" aria-label="Menu" onClick={toggleMenu}>
               <MenuIcon />
             </IconButton>
-            <Typography type="title" color="inherit">
-              Road to Russia 2018
-            </Typography>
+            <div style={styles.appbarTitle}>
+              <Typography type="title" color="inherit">
+                Road to Russia 2018
+              </Typography>
+            </div>
             <ConnectionWidget />
           </Toolbar>
         </AppBar>
@@ -79,6 +82,12 @@ const styles = {
   content: {
     paddingTop: 70,
   },
+
+  appbarTitle: {
+    '@media screen and (max-width: 390px)': {
+      display: 'none',
+    },
+  },
 };
 
-export default App;
+export default Radium(App);
