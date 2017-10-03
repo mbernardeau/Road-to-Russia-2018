@@ -1,4 +1,7 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+
+admin.initializeApp(functions.config().firebase);
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -15,6 +18,11 @@ const onBetUpdated = (event) => event.data.ref.child('lastModified').once('value
 exports.onBetCreated = functions.database.ref('/bets/{matchId}/users/{uid}').onCreate(onBetUpdated);
 exports.onBetUpdated = functions.database.ref('/bets/{matchId}/users/{uid}').onUpdate(onBetUpdated);
 
-// exports onGroupApply = functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
-//   event =>
-// )
+exports.onGroupApply = functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
+  (event) => {
+    const uid = event.params.uid;
+    const groupId = event.params.groupId;
+
+    return admin.database().ref(`groups/${groupId}/awaitingMembers/${uid}`).set(true);
+  }
+);

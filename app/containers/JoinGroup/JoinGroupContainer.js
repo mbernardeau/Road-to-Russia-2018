@@ -16,7 +16,7 @@ export default compose(
       uid,
     }),
     (dispatch, { firebase }) => ({
-      applyInGroup: (uid, { id }) => firebase.set(`users/${uid}/groups/${id}`, true),
+      applyInGroup: (uid, groupId) => firebase.set(`users/${uid}/groups/${groupId}`, true),
     }),
   ),
 )(JoinGroup);

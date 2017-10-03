@@ -1,64 +1,106 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import {
+  map,
+  pickBy,
+  keys,
+  includes,
+  size,
+} from 'lodash';
 
-import AutoComplete from 'material-ui/AutoComplete';
-import RaisedButton from 'material-ui/RaisedButton';
-
-const dataSourceConfig = {
-  text: 'name',
-  value: 'id',
-};
-
-const createDataSource = (groups) => _.map(groups, (value, key) => ({
-  [dataSourceConfig.text]: value.name,
-  [dataSourceConfig.value]: key,
-}));
-
+import Button from 'material-ui/Button';
+import Card, { CardActions, CardContent } from 'material-ui/Card';
+import { MenuItem } from 'material-ui/Menu';
+import Select from 'material-ui/Select';
+import Snackbar from 'material-ui/Snackbar';
+import IconButton from 'material-ui/IconButton';
+import CloseIcon from 'material-ui-icons/Close';
+import { FormControl, FormHelperText } from 'material-ui/Form';
 
 class JoinGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectionValid: false,
+      selected: '',
     };
   }
 
-  handleNewRequest = (chosenRequest, index) => {
-    if (index !== -1) {
-      this.setState({
-        selectionValid: true,
-        selected: chosenRequest,
-      });
-    } else if (this.state.selectionValid) {
-      this.setState({
-        selectionValid: false,
-      });
-    }
+  handleSelection = (event) => {
+    this.setState({
+      selected: event.target.value,
+    });
+  }
+
+  handleRequestClose = () => {
+    this.setState({
+      sent: false,
+    });
   }
 
   applyInGroup = () => {
-    if (this.state.selectionValid) {
+    if (this.state.selected) {
       this.props.applyInGroup(this.props.uid, this.state.selected);
+      this.setState({ selected: '', sent: true });
     }
   }
 
   render() {
-    const groups = createDataSource(this.props.groups);
+    const groups = pickBy(this.props.groups, (g) => !includes(keys(g.awaitingMembers), this.props.uid));
 
     return (
       <div style={styles.container}>
         <h2>Rejoindre un groupe</h2>
-        <div style={styles.fields}>
-          <AutoComplete
-            floatingLabelText="Nom du groupe"
-            dataSource={groups}
-            filter={AutoComplete.fuzzyFilter}
-            dataSourceConfig={dataSourceConfig}
-            onNewRequest={this.handleNewRequest}
+        <Card style={styles.fields}>
+          <CardContent style={styles.content}>
+            <FormControl disabled={!size(groups)} fullWidth>
+              <Select
+                value={this.state.selected}
+                onChange={this.handleSelection}
+                fullWidth
+              >
+                {map(groups, (value, key) =>
+                  <MenuItem key={key} value={key}>{value.name}</MenuItem>
+                )}
+              </Select>
+            </FormControl>
+            <FormHelperText>Rechercher un groupe</FormHelperText>
+          </CardContent>
+          <CardActions>
+            <Button
+              style={styles.button}
+              disabled={!this.state.selected}
+              onClick={this.applyInGroup}
+              color="primary"
+              raised
+            >
+              Envoyer la demande
+            </Button>
+          </CardActions>
+
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            open={this.state.sent}
+            autoHideDuration={6000}
+            onRequestClose={this.handleRequestClose}
+            SnackbarContentProps={{
+              'aria-describedby': 'message-id',
+            }}
+            message={<span id="message-id">Demande envoyée</span>}
+            action={[
+              <IconButton
+                key="close"
+                aria-label="Close"
+                color="inherit"
+                onClick={this.handleRequestClose}
+              >
+                <CloseIcon />
+              </IconButton>,
+            ]}
           />
-          <RaisedButton disabled={!this.state.selectionValid} onClick={this.applyInGroup} label="Envoyer la demande" primary />
-        </div>
+        </Card>
       </div>
     );
   }
@@ -67,12 +109,20 @@ class JoinGroup extends Component {
 const styles = {
   container: {
     textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 
   fields: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    width: '90%',
+  },
+
+  content: {
+    width: '90%',
   },
 };
 
