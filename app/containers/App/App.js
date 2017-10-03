@@ -23,7 +23,7 @@ import Radium from 'radium';
 
 import HomePage from 'containers/HomePage/Loadable';
 import StadiumsPage from 'containers/Stadiums/Loadable';
-import JoinGroupPage from 'containers/JoinGroup/Loadable';
+import GroupsPage from 'containers/Groups/Loadable';
 import MatchesPage from 'containers/Matches/Loadable';
 import NotFoundPage from 'containers/NotFoundPage';
 
@@ -66,7 +66,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
               <Route exact path="/" component={HomePage} />
               <Route path="/stadiums" component={StadiumsPage} />
               <Route path="/matches" component={MatchesPage} />
-              <Route path="/joinGroup" component={JoinGroupPage} />
+              <Route path="/joinGroup" component={GroupsPage} />
               <Route component={NotFoundPage} />
             </Switch>
           }

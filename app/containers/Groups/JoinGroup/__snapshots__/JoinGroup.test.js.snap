@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/JoinGroup renders correctly 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-shadow2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "width": "90%",
+    }
+  }
+>
+  <h2>
+    Rejoindre un groupe
+  </h2>
+  <div
+    className="MuiCardContent-root-28"
+    style={
+      Object {
+        "width": "90%",
+      }
+    }
+  >
+    <div
+      className="MuiFormControl-root-29 MuiFormControl-fullWidth-32"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      required={false}
+    >
+      <div
+        className="MuiInput-root-38 MuiInput-fullWidth-52 MuiInput-formControl-39 MuiInput-inkbar-40 MuiInput-underline-46"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="MuiSelect-root-33"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-34 MuiSelect-selectMenu-35 MuiInput-input-42 MuiInput-inputSingleline-49"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id={undefined}
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={undefined}
+            rows={undefined}
+            type="hidden"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-53 MuiSelect-icon-37"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p
+      className="MuiFormHelperText-root-58"
+    >
+      Rechercher un groupe
+    </p>
+  </div>
+  <div
+    className="MuiCardActions-root-62"
+  >
+    <button
+      className="MuiButtonBase-root-78 MuiButtonBase-disabled-79 MuiButton-root-64 MuiButton-raised-71 MuiButton-raisedPrimary-73 MuiButton-disabled-76 MuiCardActions-actionSpacing-63"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={undefined}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-66"
+      >
+        Envoyer la demande
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -15,14 +15,18 @@ const onBetUpdated = (event) => event.data.ref.child('lastModified').once('value
       event.data.ref.child('lastModified').set(event.timestamp)
 );
 
-exports.onBetCreated = functions.database.ref('/bets/{matchId}/users/{uid}').onCreate(onBetUpdated);
-exports.onBetUpdated = functions.database.ref('/bets/{matchId}/users/{uid}').onUpdate(onBetUpdated);
+exports.bets = {
+  onCreated: functions.database.ref('/bets/{matchId}/users/{uid}').onCreate(onBetUpdated),
+  onUpdated: functions.database.ref('/bets/{matchId}/users/{uid}').onUpdate(onBetUpdated),
+};
 
-exports.onGroupApply = functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
-  (event) => {
-    const uid = event.params.uid;
-    const groupId = event.params.groupId;
+exports.groups = {
+  onApply: functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
+    (event) => {
+      const uid = event.params.uid;
+      const groupId = event.params.groupId;
 
-    return admin.database().ref(`groups/${groupId}/awaitingMembers/${uid}`).set(true);
-  }
-);
+      return admin.database().ref(`groups/${groupId}/awaitingMembers/${uid}`).set(true);
+    }
+  ),
+};
