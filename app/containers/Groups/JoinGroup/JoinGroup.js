@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  map,
-  pickBy,
-  keys,
-  includes,
-  size,
-} from 'lodash';
+import { map } from 'lodash';
 
 import Button from 'material-ui/Button';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
-import Snackbar from 'material-ui/Snackbar';
-import IconButton from 'material-ui/IconButton';
-import CloseIcon from 'material-ui-icons/Close';
 import { FormControl, FormHelperText } from 'material-ui/Form';
+
+import GroupApplyOkSnackBar from './GroupApplyOkSnackBar';
 
 class JoinGroup extends Component {
   constructor(props) {
@@ -45,13 +38,13 @@ class JoinGroup extends Component {
   }
 
   render() {
-    const groups = pickBy(this.props.groups, (g) => !includes(keys(g.awaitingMembers), this.props.uid));
+    const { groups, disabled } = this.props;
 
     return (
       <Card style={styles.fields}>
         <h2>Rejoindre un groupe</h2>
         <CardContent style={styles.content}>
-          <FormControl disabled={!size(groups)} fullWidth>
+          <FormControl disabled={disabled} fullWidth>
             <Select
               value={this.state.selected}
               onChange={this.handleSelection}
@@ -77,29 +70,11 @@ class JoinGroup extends Component {
           </Button>
         </CardActions>
 
-        <Snackbar
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
+        <GroupApplyOkSnackBar
           open={this.state.sent}
-          autoHideDuration={6000}
-          onRequestClose={this.handleRequestClose}
-          SnackbarContentProps={{
-            'aria-describedby': 'message-id',
-          }}
-          message={<span id="message-id">Demande envoyée</span>}
-          action={[
-            <IconButton
-              key="close"
-              aria-label="Close"
-              color="inherit"
-              onClick={this.handleRequestClose}
-            >
-              <CloseIcon />
-            </IconButton>,
-          ]}
+          handleRequestClose={this.handleRequestClose}
         />
+
       </Card>
     );
   }
@@ -124,6 +99,7 @@ JoinGroup.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
+  disabled: PropTypes.bool,
   applyInGroup: PropTypes.func.isRequired,
   uid: PropTypes.string.isRequired,
 };
