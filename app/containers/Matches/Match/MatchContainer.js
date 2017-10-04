@@ -7,7 +7,7 @@ import { lazyload } from 'react-lazyload';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { get } from 'lodash';
-import { toDotPath } from 'helpers/PathUtils';
+import { toDotPath } from 'utils/PathUtils';
 import placeholder from 'components/Placeholder';
 
 import Match from './Match';

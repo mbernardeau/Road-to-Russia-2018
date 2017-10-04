@@ -31,7 +31,7 @@ import '!file-loader?name=[name].[ext]!./favicon.ico';
 import 'file-loader?name=[name].[ext]!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
-import configureStore from './store';
+import configureStore from 'redux/store';
 
 // Import CSS reset and Global Styles
 import './app.css';

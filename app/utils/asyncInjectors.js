@@ -4,7 +4,7 @@ import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
 import isString from 'lodash/isString';
 import invariant from 'invariant';
-import createReducer from 'reducers';
+import createReducer from 'redux/reducers';
 
 /**
  * Validate the shape of redux store
