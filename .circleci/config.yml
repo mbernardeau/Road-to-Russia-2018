@@ -10,49 +10,49 @@ jobs:
             name: Set timezone to Europe/Paris
             command: sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
         - run:
-            name: add-yarn-gloabl-to-path
+            name: Add Yarn global to $PATH
             command: echo 'export PATH=$(yarn global bin):$PATH' >> $BASH_ENV
         - run:
-            name: check path
+            name: Check path
             command: echo $PATH
         - run:
-            name: check-yarn-version
+            name: Check Yarn version
             command: yarn --version
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run:
-            name: install-firebase-tools
+            name: Install firebase-tools (global)
             command: yarn global add firebase-tools
         - run:
-            name: install-greenkeeper-lockfile
+            name: Install greenkeeper-lockfile (global)
             command: yarn global add greenkeeper-lockfile
         - run:
-            name: check-firebase-tools-version
+            name: Check firebase-tools version
             command: firebase --version
         - run:
-            name: yarn-install
+            name: Yarn install
             command: yarn
         - run:
-            name: yarn-install-functions
+            name: Yarn install for firebase functions
             command: cd functions && yarn --frozen-lockfile
         - run:
-            name: gk-lockfile-update
+            name: Update lockfile for Greenkeeper branches
             command: greenkeeper-lockfile-update
         - save_cache:
             key: dependency-cache-{{ checksum "package.json" }}
             paths:
               - ./node_modules
         - run:
-            name: test
+            name: Tests
             command: yarn run test:coverage
         - run:
-            name: build
-            command: yarn run build
+            name: Build
+            command: yarn run build:ci
         - run:
-            name: gk-lockfile-upload
+            name: Upload lockfile modification
             command: greenkeeper-lockfile-upload
         - deploy:
-            name: deploy to Firebase
+            name: Deploy to Firebase
             command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 firebase deploy --token=$FIREBASE_TOKEN --non-interactive
