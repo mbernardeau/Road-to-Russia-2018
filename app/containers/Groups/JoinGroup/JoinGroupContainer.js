@@ -10,7 +10,7 @@ import {
 
 import {
   getGroupsNotAlreadyJoined,
-  getUserHasGroupsToJoin,
+  getUserHasNoGroupsToJoin,
 } from 'redux/groups';
 
 import JoinGroup from './JoinGroup';
@@ -23,7 +23,7 @@ export default compose(
     (state) => ({
       groups: getGroupsNotAlreadyJoined(state),
       uid: getUserId(state),
-      disabled: getUserHasGroupsToJoin(state),
+      disabled: getUserHasNoGroupsToJoin(state),
     }),
     (dispatch, { firebase }) => ({
       applyInGroup: (uid, groupId) => firebase.set(`users/${uid}/groups/${groupId}`, true),

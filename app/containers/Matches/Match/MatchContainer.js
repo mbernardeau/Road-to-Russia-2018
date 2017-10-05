@@ -14,6 +14,10 @@ import {
   getUserId,
 } from 'redux/user';
 
+import {
+  getData,
+} from 'redux/firebase';
+
 import Match from './Match';
 
 const generateFirebasePath = ({ matchId, userId }) => `bets/${matchId}/users/${userId}`;
@@ -31,8 +35,8 @@ export default compose(
     (props) => ({ path: generateFirebasePath(props) })
   ),
   connect(
-    ({ firebase: { data } }, ownProps) => ({
-      bet: get(data, toDotPath(generateFirebasePath(ownProps))),
+    (state, ownProps) => ({
+      bet: get(getData(state), toDotPath(generateFirebasePath(ownProps))),
     }),
     (dispatch, { firebase, ...props }) => ({
       saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),

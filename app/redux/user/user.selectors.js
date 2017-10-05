@@ -8,20 +8,20 @@ import {
 
 export const getProfile = createSelector(
   getFirebase,
-  (firebase) => firebase.profile,
+  ({ profile }) => profile,
 );
 
 export const getAuth = createSelector(
   getFirebase,
-  (firebase) => firebase.auth,
+  ({ auth }) => auth,
 );
 
 export const getAuthError = createSelector(
   getFirebase,
-  (firebase) => firebase.authError,
+  ({ authError }) => authError,
 );
 
 export const getUserId = createSelector(
   getAuth,
-  (auth) => auth.uid,
+  ({ uid }) => uid,
 );

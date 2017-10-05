@@ -19,7 +19,7 @@ import {
 
 export const getAllGroups = createSelector(
   getData,
-  (data) => data.groups,
+  ({ groups }) => groups,
 );
 
 export const getGroupsNotAlreadyJoined = createSelector(
@@ -28,7 +28,7 @@ export const getGroupsNotAlreadyJoined = createSelector(
   (groups, uid) => pickBy(groups, (g) => !includes(keys(g.awaitingMembers), uid))
 );
 
-export const getUserHasGroupsToJoin = createSelector(
+export const getUserHasNoGroupsToJoin = createSelector(
   getGroupsNotAlreadyJoined,
   (groups) => size(groups) === 0,
 );

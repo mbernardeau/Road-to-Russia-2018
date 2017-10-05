@@ -3,6 +3,11 @@ import {
 } from 'react-redux-firebase';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+
+import {
+  getStadiums,
+} from 'redux/stadiums';
+
 import Stadiums from './Stadiums';
 
 export default compose(
@@ -10,8 +15,8 @@ export default compose(
     'stadiums',
   ]),
   connect(
-    ({ firebase: { data: { stadiums } } }) => ({
-      stadiums,
+    (state) => ({
+      stadiums: getStadiums(state),
     })
   )
 )(Stadiums);
