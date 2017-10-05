@@ -7,8 +7,6 @@ exports[`Containers/Match renders correctly 1`] = `
     Object {
       "marginBottom": 7,
       "marginTop": 7,
-      "width": "100%",
-      "zIndex": "initial",
     }
   }
 >
@@ -25,7 +23,6 @@ exports[`Containers/Match renders correctly 1`] = `
         Object {
           "display": "grid",
           "gridTemplateColumns": "50% 50%",
-          "height": "100%",
           "marginBottom": 10,
         }
       }

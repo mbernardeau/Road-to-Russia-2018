@@ -89,15 +89,12 @@ const styles = {
   match: {
     display: 'grid',
     gridTemplateColumns: '50% 50%',
-    height: '100%',
     marginBottom: 10,
   },
 
   card: {
-    zIndex: 'initial',
     marginTop: 7,
     marginBottom: 7,
-    width: '100%',
   },
 
   cardContainer: {
