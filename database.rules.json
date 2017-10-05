@@ -17,6 +17,18 @@
       // Section write is limited to admins
       ".write": "root.child('admins').child(auth.uid).val() == true"
     },
+    "groups": {
+      "$groupId": {
+        "awaitingMembers": {
+          "$user_id": {
+            // User can only write in awaiting members of each group, and only for his own id
+            ".write": "$user_id === auth.uid",
+            // Only the value 'true' is allowed
+            ".validate": "newData.isBoolean() && newData.val() == true"
+          }
+        }
+      }
+    },
     "matches": {
       // Section write is limited to admins
       ".write": "root.child('admins').child(auth.uid).val() == true",

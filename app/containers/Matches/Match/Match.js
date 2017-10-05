@@ -95,6 +95,7 @@ const styles = {
   card: {
     marginTop: 7,
     marginBottom: 7,
+    width: '100%',
   },
 
   cardContainer: {

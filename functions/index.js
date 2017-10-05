@@ -20,13 +20,14 @@ exports.bets = {
   onUpdated: functions.database.ref('/bets/{matchId}/users/{uid}').onUpdate(onBetUpdated),
 };
 
-exports.groups = {
-  onApply: functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
-    (event) => {
-      const uid = event.params.uid;
-      const groupId = event.params.groupId;
+// To use later to send email or notification to admin
 
-      return admin.database().ref(`groups/${groupId}/awaitingMembers/${uid}`).set(true);
-    }
-  ),
-};
+// exports.groups = {
+// onApply: functions.database.ref('/users/{uid}/groups/{groupId}').onCreate(
+//   (event) => {
+//     const { uid, groupId } = event.params;
+
+//     return admin.database().ref(`groups/${groupId}/awaitingMembers/${uid}`).set(true);
+//   }
+// ),
+// };
