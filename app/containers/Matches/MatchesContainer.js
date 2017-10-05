@@ -1,25 +1,23 @@
 import {
-  populate,
   firebaseConnect,
 } from 'react-redux-firebase';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import Matches from './Matches';
+import {
+  matchQuery,
+  getMatches,
+} from 'redux/matches';
 
-const populates = [
-  { child: 'stadium', root: 'stadiums' },
-  { child: 'teamA', root: 'teams' },
-  { child: 'teamB', root: 'teams' },
-];
+import Matches from './Matches';
 
 export default compose(
   firebaseConnect([
-    { path: 'matches', populates, queryParams: ['orderByChild=dateTime'] },
+    matchQuery,
   ]),
   connect(
-    ({ firebase }) => ({
-      matches: populate(firebase, 'matches', populates),
+    (state) => ({
+      matches: getMatches(state),
     })
   ),
 )(Matches);
