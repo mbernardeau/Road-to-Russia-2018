@@ -10,18 +10,22 @@ import { get } from 'lodash';
 import { toDotPath } from 'utils/PathUtils';
 import placeholder from 'components/Placeholder';
 
+import {
+  getUserId,
+} from 'redux/user';
+
 import Match from './Match';
 
 const generateFirebasePath = ({ matchId, userId }) => `bets/${matchId}/users/${userId}`;
 
 export default compose(
   lazyload({
-    height: 150,
+    height: 135,
     once: true,
     offset: 300,
   }),
-  connect(({ firebase: { auth: { uid } } }) => ({
-    userId: uid,
+  connect((state) => ({
+    userId: getUserId(state),
   })),
   firebaseConnect(
     (props) => ({ path: generateFirebasePath(props) })
