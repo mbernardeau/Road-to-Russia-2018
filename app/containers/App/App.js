@@ -66,7 +66,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
               <Route exact path="/" component={HomePage} />
               <Route path="/stadiums" component={StadiumsPage} />
               <Route path="/matches" component={MatchesPage} />
-              <Route path="/joinGroup" component={GroupsPage} />
+              <Route path="/groups" component={GroupsPage} />
               <Route component={NotFoundPage} />
             </Switch>
           }
