@@ -1,13 +1,8 @@
 /**
- * Asynchronously loads the component for Matches page
+ * Asynchronously loads the component
  */
-import React from 'react';
-import Loadable from 'react-loadable';
+import CircularProgressLoadable from 'components/CircularProgressLoadable';
 
-import { CircularProgress } from 'material-ui/Progress';
-
-export default Loadable({
+export default CircularProgressLoadable({
   loader: () => import('./index'),
-  loading: () => <CircularProgress />,
 });
-

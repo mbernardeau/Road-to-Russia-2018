@@ -1,11 +1,8 @@
 /**
- * Asynchronously loads the component for HomePage
+ * Asynchronously loads the component
  */
-import React from 'react';
-import Loadable from 'react-loadable';
-import { CircularProgress } from 'material-ui/Progress';
+import CircularProgressLoadable from 'components/CircularProgressLoadable';
 
-export default Loadable({
+export default CircularProgressLoadable({
   loader: () => import('./index'),
-  loading: () => <CircularProgress />,
 });
