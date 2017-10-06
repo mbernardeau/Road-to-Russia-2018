@@ -7,6 +7,7 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import { FormControl, FormHelperText } from 'material-ui/Form';
+import Typography from 'material-ui/Typography';
 
 import GroupApplyOkSnackBar from './GroupApplyOkSnackBar';
 
@@ -42,7 +43,13 @@ class JoinGroup extends Component {
 
     return (
       <Card style={styles.fields}>
-        <h2>Rejoindre un groupe</h2>
+
+        <Typography gutterBottom type="headline">Rejoindre un groupe</Typography>
+        <br />
+        <Typography gutterBottom type="subheading">
+          Rejoignez un groupe pour vous confrontez à vos amis, collègues, familles...
+        </Typography>
+
         <CardContent style={styles.content}>
           <FormControl disabled={disabled} fullWidth>
             <Select
@@ -55,7 +62,11 @@ class JoinGroup extends Component {
               )}
             </Select>
           </FormControl>
-          <FormHelperText>Rechercher un groupe</FormHelperText>
+          <FormHelperText>{
+            disabled ?
+              'Aucun groupe à rejoindre' :
+              'Rechercher un groupe'
+          }</FormHelperText>
         </CardContent>
 
         <CardActions>
@@ -87,6 +98,7 @@ const styles = {
     alignItems: 'center',
     width: '90%',
     marginBottom: 15,
+    padding: 15,
   },
 
   content: {
