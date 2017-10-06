@@ -7,8 +7,16 @@ import { lazyload } from 'react-lazyload';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { get } from 'lodash';
-import { toDotPath } from 'helpers/PathUtils';
+import { toDotPath } from 'utils/PathUtils';
 import placeholder from 'components/Placeholder';
+
+import {
+  getUserId,
+} from 'redux/user';
+
+import {
+  getData,
+} from 'redux/firebase';
 
 import Match from './Match';
 
@@ -16,19 +24,19 @@ const generateFirebasePath = ({ matchId, userId }) => `bets/${matchId}/users/${u
 
 export default compose(
   lazyload({
-    height: 150,
+    height: 135,
     once: true,
     offset: 300,
   }),
-  connect(({ firebase: { auth: { uid } } }) => ({
-    userId: uid,
+  connect((state) => ({
+    userId: getUserId(state),
   })),
   firebaseConnect(
     (props) => ({ path: generateFirebasePath(props) })
   ),
   connect(
-    ({ firebase: { data } }, ownProps) => ({
-      bet: get(data, toDotPath(generateFirebasePath(ownProps))),
+    (state, ownProps) => ({
+      bet: get(getData(state), toDotPath(generateFirebasePath(ownProps))),
     }),
     (dispatch, { firebase, ...props }) => ({
       saveBet: (newBet) => firebase.set(generateFirebasePath(props), newBet),

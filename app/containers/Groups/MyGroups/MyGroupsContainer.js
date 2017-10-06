@@ -5,19 +5,18 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 
 import {
-  matchQuery,
-  getMatches,
-} from 'redux/matches';
+  getUserGroups,
+} from 'redux/groups';
 
-import Matches from './Matches';
+import MyGroups from './MyGroups';
 
 export default compose(
   firebaseConnect([
-    matchQuery,
+    { path: 'groups' },
   ]),
   connect(
     (state) => ({
-      matches: getMatches(state),
-    })
+      groups: getUserGroups(state),
+    }),
   ),
-)(Matches);
+)(MyGroups);

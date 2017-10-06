@@ -50,6 +50,9 @@ export default class NavigationMenu extends Component {
           <ListItem button onClick={this.goTo('/matches')}>
             <ListItemText primary="Matches" />
           </ListItem>
+          <ListItem button onClick={this.goTo('/groups')}>
+            <ListItemText primary="Groupes" />
+          </ListItem>
         </List>
       </Drawer>
     );

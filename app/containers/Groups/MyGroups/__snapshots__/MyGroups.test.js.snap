@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Groups/MyGroups renders correctly when no group joined 1`] = `null`;
+
+exports[`Groups/MyGroups renders correctly with different groups 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-shadow2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "paddingTop": 15,
+      "width": "90%",
+    }
+  }
+>
+  <h1
+    className="MuiTypography-root-28 MuiTypography-headline-33 MuiTypography-gutterBottom-45"
+  >
+    Mes groupes
+  </h1>
+  <table
+    className="MuiTable-root-52"
+  >
+    <tbody
+      className="MuiTableBody-root-53"
+    >
+      <tr
+        className="MuiTableRow-root-54"
+      >
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <b>
+            my-test-group
+          </b>
+        </td>
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <div
+            className="MuiChip-root-66"
+            onClick={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <span
+              className="MuiChip-label-71"
+            >
+              Membre
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root-54"
+      >
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <b>
+            my-test-group-2
+          </b>
+        </td>
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <div
+            className="MuiChip-root-66"
+            onClick={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <span
+              className="MuiChip-label-71"
+            >
+              En attente
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="MuiTableRow-root-54"
+      >
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <b>
+            my-test-group-3
+          </b>
+        </td>
+        <td
+          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+        >
+          <div
+            className="MuiChip-root-66"
+            onClick={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
+          >
+            <span
+              className="MuiChip-label-71"
+            >
+              Admin
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

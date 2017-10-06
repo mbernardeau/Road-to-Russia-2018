@@ -3,7 +3,8 @@ import { compose } from 'redux';
 
 import {
   closeMenu,
-} from 'redux/actions';
+  getMenuOpen,
+} from 'redux/nav';
 
 import { withRouter } from 'react-router';
 
@@ -11,8 +12,8 @@ import NavigationMenu from './NavigationMenu';
 
 export default compose(
   connect(
-    ({ nav }) => ({
-      ...nav,
+    (state) => ({
+      open: getMenuOpen(state),
     }),
     (dispatch) => ({
       closeMenu: () => dispatch(closeMenu()),

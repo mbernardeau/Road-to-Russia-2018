@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleMenu } from 'redux/actions';
+import { toggleMenu } from 'redux/nav';
 
 import App from './App';
 

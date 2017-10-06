@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import {
+  map,
+} from 'lodash';
 
 import Stadium from './Stadium';
 
 const Stadiums = ({ stadiums }) => (
   <div style={styles.container}>
-    {_.map(stadiums, (stadium, key) => <Stadium stadium={stadium} key={key} />) }
+    {map(stadiums, (stadium, key) => <Stadium stadium={stadium} key={key} />) }
   </div>
 );
 

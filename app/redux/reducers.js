@@ -6,7 +6,10 @@
 import { combineReducers } from 'redux';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { firebaseStateReducer } from 'react-redux-firebase';
-import localReducers from './redux/reducers';
+
+import nav from './nav';
+
+
 /*
  * routeReducer
  *
@@ -43,7 +46,7 @@ export default function createReducer(injectedReducers) {
   return combineReducers({
     route: routeReducer,
     firebase: firebaseStateReducer,
-    ...localReducers,
+    nav,
     ...injectedReducers,
   });
 }

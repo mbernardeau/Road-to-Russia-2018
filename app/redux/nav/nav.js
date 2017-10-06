@@ -7,7 +7,7 @@ import {
   OPEN_MENU,
   CLOSE_MENU,
   TOGGLE_MENU,
-} from '../actions';
+} from './nav.actions';
 
 const initState = {
   open: false,
