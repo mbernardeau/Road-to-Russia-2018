@@ -19,12 +19,11 @@
     },
     "groups": {
       "$groupId": {
-        "awaitingMembers": {
+        "members": {
           "$user_id": {
-            // User can only write in awaiting members of each group, and only for his own id
-            ".write": "$user_id === auth.uid",
-            // Only the value 'true' is allowed
-            ".validate": "newData.isBoolean() && newData.val() == true"
+            // Normal User can only write its own id into 'awaiting' status
+            // Group admin can do anything
+            ".write": "($user_id === auth.uid && newData.isString() && newData.val() == 'awaiting') || (root.child('groups').child($groupId).child('admins').child(auth.uid).val() == true)"
           }
         }
       }

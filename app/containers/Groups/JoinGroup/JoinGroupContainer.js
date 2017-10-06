@@ -26,7 +26,7 @@ export default compose(
       disabled: getUserHasNoGroupsToJoin(state),
     }),
     (dispatch, { firebase }) => ({
-      applyInGroup: (uid, groupId) => firebase.set(`groups/${groupId}/awaitingMembers/${uid}`, true),
+      applyInGroup: (uid, groupId) => firebase.set(`groups/${groupId}/members/${uid}`, 'awaiting'),
     }),
   ),
 )(JoinGroup);

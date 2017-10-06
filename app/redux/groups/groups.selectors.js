@@ -22,10 +22,16 @@ export const getAllGroups = createSelector(
   ({ groups }) => groups,
 );
 
+export const getUserGroups = createSelector(
+  getAllGroups,
+  getUserId,
+  (groups, uid) => pickBy(groups, (g) => includes(keys(g.members), uid)),
+);
+
 export const getGroupsNotAlreadyJoined = createSelector(
   getAllGroups,
   getUserId,
-  (groups, uid) => pickBy(groups, (g) => !includes(keys(g.awaitingMembers), uid))
+  (groups, uid) => pickBy(groups, (g) => !includes(keys(g.members), uid))
 );
 
 export const getUserHasNoGroupsToJoin = createSelector(

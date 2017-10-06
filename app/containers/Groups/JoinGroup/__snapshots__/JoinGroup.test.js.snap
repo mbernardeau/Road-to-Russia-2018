@@ -8,6 +8,7 @@ exports[`containers/JoinGroup renders correctly 1`] = `
       "alignItems": "center",
       "display": "flex",
       "flexDirection": "column",
+      "marginBottom": 15,
       "width": "90%",
     }
   }
@@ -122,6 +123,7 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
       "alignItems": "center",
       "display": "flex",
       "flexDirection": "column",
+      "marginBottom": 15,
       "width": "90%",
     }
   }

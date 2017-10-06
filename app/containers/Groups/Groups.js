@@ -1,10 +1,12 @@
 import React from 'react';
 
 import JoinGroup from './JoinGroup';
+import MyGroups from './MyGroups';
 
 const Groups = () => (
   <div style={styles.container}>
     <JoinGroup />
+    <MyGroups />
   </div>
 );
 

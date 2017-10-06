@@ -86,6 +86,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     width: '90%',
+    marginBottom: 15,
   },
 
   content: {
