@@ -10,7 +10,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 const logger = require('../../server/logger');
 const cheerio = require('cheerio');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
-const dllPlugin = pkg.dllPlugin;
+const { dllPlugin } = pkg;
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading

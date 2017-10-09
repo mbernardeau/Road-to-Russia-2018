@@ -62,11 +62,12 @@ class JoinGroup extends Component {
               )}
             </Select>
           </FormControl>
-          <FormHelperText>{
-            disabled ?
+          <FormHelperText>
+            {disabled ?
               'Aucun groupe à rejoindre' :
               'Rechercher un groupe'
-          }</FormHelperText>
+            }
+          </FormHelperText>
         </CardContent>
 
         <CardActions>
