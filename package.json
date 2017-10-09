@@ -120,6 +120,7 @@
         2,
         "always-multiline"
       ],
+      "function-paren-newline": 0,
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -136,7 +137,14 @@
       ],
       "jsx-a11y/aria-props": 2,
       "jsx-a11y/heading-has-content": 0,
-      "jsx-a11y/href-no-hash": 2,
+      "jsx-a11y/anchor-is-valid": [
+        2,
+        {
+          "components": [ "Link" ],
+          "specialLink": [ "to" ],
+          "aspects": [ "noHref", "invalidHref", "preferButton" ]
+        }
+      ],
       "jsx-a11y/label-has-for": 2,
       "jsx-a11y/mouse-events-have-key-events": 2,
       "jsx-a11y/role-has-required-aria-props": 2,
@@ -266,12 +274,12 @@
     "codecov": "^2.3.0",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.7",
-    "eslint": "^4.6.1",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-airbnb-base": "^12.0.2",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-lodash": "^2.4.5",
     "eslint-plugin-react": "^7.4.0",
     "eventsource-polyfill": "0.9.6",
