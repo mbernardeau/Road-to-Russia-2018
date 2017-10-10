@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@firebase/webchannel-wrapper@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.1.tgz#2c4dbc15edd1de4f656d543a6f512ded7978ef72"
+
 "@types/node@^8.0.19":
   version "8.0.28"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.28.tgz#86206716f8d9251cf41692e384264cbd7058ad60"
@@ -3033,9 +3037,9 @@ expose-loader@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/expose-loader/-/expose-loader-0.7.3.tgz#35fbd3659789e4faa81f59de8b7e9fc39e466d51"
 
-express@^4.15.5:
-  version "4.16.1"
-  resolved "https://registry.yarnpkg.com/express/-/express-4.16.1.tgz#6b33b560183c9b253b7b62144df33a4654ac9ed0"
+express@^4.16.2:
+  version "4.16.2"
+  resolved "https://registry.yarnpkg.com/express/-/express-4.16.2.tgz#e35c6dfe2d64b7dca0a5cd4f21781be3299e076c"
   dependencies:
     accepts "~1.3.4"
     array-flatten "1.1.1"
@@ -3178,8 +3182,8 @@ file-entry-cache@^2.0.0:
     object-assign "^4.0.1"
 
 file-loader@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.4.tgz#5ca9384adfafe008077c3439a435b2781a889ef5"
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.5.tgz#91c25b6b6fbe56dae99f10a425fd64933b5c9daa"
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
@@ -3290,10 +3294,11 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-firebase@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.4.0.tgz#cffa34964c38ae24157ec930dbe147816fd8e3f4"
+firebase@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.5.0.tgz#e0973a9803b74c4c9d73d19f874712e6e9d16ba7"
   dependencies:
+    "@firebase/webchannel-wrapper" "^0.2.1"
     dom-storage "^2.0.2"
     faye-websocket "0.9.3"
     jsonwebtoken "^7.3.0"
@@ -4948,6 +4953,12 @@ jss-props-sort@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-5.0.0.tgz#8839c88433f64e8c1dab1a7068796f19b84f9195"
 
+jss-rtl@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/jss-rtl/-/jss-rtl-0.2.0.tgz#5466e509e8f5daf307149ce70b555dc24c57d0a3"
+  dependencies:
+    rtl-css-js "^1.6.0"
+
 jss-vendor-prefixer@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-6.0.0.tgz#be58124f0cbed76e98cc8eb5219dbb260f057d0b"
@@ -5416,9 +5427,9 @@ lolex@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/lolex/-/lolex-1.6.0.tgz#3a9a0283452a47d7439e72731b9e07d7386e49f6"
 
-lolex@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/lolex/-/lolex-2.1.2.tgz#2694b953c9ea4d013e5b8bfba891c991025b2629"
+lolex@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/lolex/-/lolex-2.1.3.tgz#53f893bbe88c80378156240e127126b905c83087"
 
 longest@^1.0.0, longest@^1.0.1:
   version "1.0.1"
@@ -5495,15 +5506,15 @@ material-ui-codemod@^1.0.0-beta.11:
   version "1.0.0-beta.11"
   resolved "https://registry.yarnpkg.com/material-ui-codemod/-/material-ui-codemod-1.0.0-beta.11.tgz#287e110268c67270e97662f1cce47ec3ddc9379c"
 
-material-ui-icons@^1.0.0-beta.14:
-  version "1.0.0-beta.14"
-  resolved "https://registry.yarnpkg.com/material-ui-icons/-/material-ui-icons-1.0.0-beta.14.tgz#72b91af379bcddb6c830003ac922443b53d57e5f"
+material-ui-icons@^1.0.0-beta.15:
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/material-ui-icons/-/material-ui-icons-1.0.0-beta.15.tgz#fa6c2481517d380a0c2d0daebb7aacf39c2c68a0"
   dependencies:
     recompose "^0.25.1"
 
-material-ui@^1.0.0-beta.13:
-  version "1.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.13.tgz#e85fdbfa8fad5c8be7b7c14f6915528b677faefd"
+material-ui@^1.0.0-beta.16:
+  version "1.0.0-beta.16"
+  resolved "https://registry.yarnpkg.com/material-ui/-/material-ui-1.0.0-beta.16.tgz#e131c1f71707a676087f062e34ac94afb85d82bf"
   dependencies:
     babel-runtime "^6.26.0"
     brcast "^3.0.1"
@@ -5513,16 +5524,18 @@ material-ui@^1.0.0-beta.13:
     hoist-non-react-statics "^1.2.0"
     jss "^8.1.0"
     jss-preset-default "^3.0.0"
+    jss-rtl "^0.2.0"
     keycode "^2.1.9"
     lodash "^4.17.4"
+    normalize-scroll-left "^0.1.0"
     prop-types "^15.6.0"
-    react-event-listener "^0.5.0"
+    react-event-listener "^0.5.1"
     react-flow-types "^0.2.0-beta.2"
     react-jss "^7.2.0"
     react-popper "^0.7.3"
-    react-scrollbar-size "^2.0.1"
+    react-scrollbar-size "^2.0.2"
     react-transition-group "^2.2.1"
-    recompose "^0.25.1"
+    recompose "^0.26.0"
     scroll "^2.0.1"
     warning "^3.0.0"
 
@@ -5739,9 +5752,9 @@ ngrok@^2.2.22:
     request "^2.55.0"
     uuid "^3.0.0"
 
-nise@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/nise/-/nise-1.1.0.tgz#37e41b9bf0041ccb83d1bf03e79440bbc0db10ad"
+nise@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/nise/-/nise-1.1.1.tgz#1faa07147f3bf2465d4dbedc0e4a84048f081041"
   dependencies:
     formatio "^1.2.0"
     just-extend "^1.1.22"
@@ -5904,6 +5917,10 @@ normalize-path@^2.0.0, normalize-path@^2.0.1:
 normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
+
+normalize-scroll-left@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/normalize-scroll-left/-/normalize-scroll-left-0.1.1.tgz#a31d3eb670eea165b171cabc9d9ca6ae645a64c0"
 
 normalize-url@^1.4.0:
   version "1.9.1"
@@ -6718,12 +6735,6 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.5.8:
-  version "15.5.8"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
-  dependencies:
-    fbjs "^0.8.9"
-
 prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
@@ -6799,9 +6810,9 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-radium@^0.19.4:
-  version "0.19.4"
-  resolved "https://registry.yarnpkg.com/radium/-/radium-0.19.4.tgz#56aa49fde6181d2f5e1fa57b4710ffd0c23de820"
+radium@^0.19.5:
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/radium/-/radium-0.19.5.tgz#2352ffa9c2265ea7c76e07540d9841727f85dbe8"
   dependencies:
     array-find "^1.0.0"
     exenv "^1.2.1"
@@ -6886,6 +6897,15 @@ react-event-listener@^0.5.0:
     prop-types "^15.5.10"
     warning "^3.0.0"
 
+react-event-listener@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-event-listener/-/react-event-listener-0.5.1.tgz#ba36076e47bc37c5a67ff5ccd4a9ff0f15621040"
+  dependencies:
+    babel-runtime "^6.26.0"
+    fbjs "^0.8.16"
+    prop-types "^15.6.0"
+    warning "^3.0.0"
+
 react-flow-types@^0.2.0-beta.2:
   version "0.2.0-beta.2"
   resolved "https://registry.yarnpkg.com/react-flow-types/-/react-flow-types-0.2.0-beta.2.tgz#4f9e07fa60230708d067612750f60c7a9ea42d81"
@@ -6910,17 +6930,15 @@ react-hot-loader@next:
     redbox-react "^1.3.6"
     source-map "^0.4.4"
 
-react-icon-base@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/react-icon-base/-/react-icon-base-2.0.7.tgz#0bd18736bd6ce79ca6d69ce8387a07fb8d4ceffe"
-  dependencies:
-    prop-types "15.5.8"
+react-icon-base@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-icon-base/-/react-icon-base-2.1.0.tgz#a196e33fdf1e7aaa1fda3aefbb68bdad9e82a79d"
 
-react-icons@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-2.2.5.tgz#f942501c21a4cc0456ce2bbee5032c93f6051dcf"
+react-icons@^2.2.7:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-2.2.7.tgz#d7860826b258557510dac10680abea5ca23cf650"
   dependencies:
-    react-icon-base "2.0.7"
+    react-icon-base "2.1.0"
 
 react-jss@^7.2.0:
   version "7.2.0"
@@ -6938,9 +6956,9 @@ react-lazyload@^2.2.7:
   dependencies:
     prop-types "^15.5.6"
 
-react-loadable@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.0.0.tgz#b99df8afd646069022fb3f5fc22402c0f47c317f"
+react-loadable@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.1.0.tgz#91c5f8015982bca42bf79b8e61c7b78014792324"
 
 react-placeholder@^1.0.6:
   version "1.0.6"
@@ -7018,9 +7036,9 @@ react-router@^4.1.1, react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scrollbar-size@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.0.1.tgz#fc13631d27efc93d7a1f40383b375dc449ebfac4"
+react-scrollbar-size@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.0.2.tgz#237dd091fa39dec8e3a6f720807787703c5ebf9e"
   dependencies:
     babel-runtime "^6.23.0"
     prop-types "^15.5.10"
@@ -7179,6 +7197,15 @@ rechoir@^0.6.2:
 recompose@^0.25.1:
   version "0.25.1"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.25.1.tgz#5eb9d6cf6e25a9ffad73cbbae5658b5b55d6e728"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^2.3.1"
+    symbol-observable "^1.0.4"
+
+recompose@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.26.0.tgz#9babff039cb72ba5bd17366d55d7232fbdfb2d30"
   dependencies:
     change-emitter "^0.1.2"
     fbjs "^0.8.1"
@@ -7438,6 +7465,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
+rtl-css-js@^1.6.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/rtl-css-js/-/rtl-css-js-1.7.0.tgz#0a9b0a5ddcc7181b0b41977264f39647ba705770"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -7617,15 +7648,15 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
 sinon@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.0.0.tgz#a54a5f0237aa1dd2215e5e81c89b42b50c4fdb6b"
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.0.1.tgz#e46146a8a8420f837bdba32e2965bd1fe43d5b05"
   dependencies:
     diff "^3.1.0"
     formatio "1.2.0"
     lodash.get "^4.4.2"
-    lolex "^2.1.2"
+    lolex "^2.1.3"
     native-promise-only "^0.8.1"
-    nise "^1.1.0"
+    nise "^1.1.1"
     path-to-regexp "^1.7.0"
     samsam "^1.1.3"
     text-encoding "0.6.4"
