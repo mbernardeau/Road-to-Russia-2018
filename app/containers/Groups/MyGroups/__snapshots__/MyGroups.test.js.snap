@@ -27,14 +27,14 @@ exports[`Groups/MyGroups renders correctly with different groups 1`] = `
         className="MuiTableRow-root-54"
       >
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <b>
             my-test-group
           </b>
         </td>
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <div
             className="MuiChip-root-66"
@@ -55,14 +55,14 @@ exports[`Groups/MyGroups renders correctly with different groups 1`] = `
         className="MuiTableRow-root-54"
       >
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <b>
             my-test-group-2
           </b>
         </td>
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <div
             className="MuiChip-root-66"
@@ -83,14 +83,14 @@ exports[`Groups/MyGroups renders correctly with different groups 1`] = `
         className="MuiTableRow-root-54"
       >
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <b>
             my-test-group-3
           </b>
         </td>
         <td
-          className="MuiTableCell-root-59 MuiTableCell-padding-62"
+          className="MuiTableCell-root-59 MuiTableCell-paddingDefault-62"
         >
           <div
             className="MuiChip-root-66"

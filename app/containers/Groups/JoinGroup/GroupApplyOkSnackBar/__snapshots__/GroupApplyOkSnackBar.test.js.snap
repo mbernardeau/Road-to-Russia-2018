@@ -47,7 +47,7 @@ exports[`containers/JoinGroup/GroupApplyOkSnackbar renders correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-73"
+            className="MuiSvgIcon-root-73 MuiIconButton-icon-69"
             focusable="false"
             viewBox="0 0 24 24"
           >

@@ -63,7 +63,7 @@ exports[`containers/ConnectionWidget/User renders correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        className="MuiSvgIcon-root-15"
+        className="MuiSvgIcon-root-15 MuiIconButton-icon-11"
         color="white"
         focusable="false"
         viewBox="0 0 24 24"
