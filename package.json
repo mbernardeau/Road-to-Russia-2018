@@ -279,7 +279,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cheerio": "^0.22",
     "circular-dependency-plugin": "^4.2.0",
-    "codecov": "^2.3.0",
+    "codecov": "^3.0.0",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
