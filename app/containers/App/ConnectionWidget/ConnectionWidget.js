@@ -41,7 +41,6 @@ class ConnectionWidget extends Component {
       <div style={styles.container}>
         <Dialog
           title="Connexion"
-          modal={false}
           onRequestClose={this.handleClose}
           open={this.state.modalOpened}
         >

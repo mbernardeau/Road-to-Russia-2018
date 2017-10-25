@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 import FaGoogle from 'react-icons/lib/fa/google';
 import FaFacebook from 'react-icons/lib/fa/facebook';
+import {
+  DialogContent,
+  DialogTitle,
+} from 'material-ui/Dialog';
 
 class ConnectionModal extends Component {
   static propTypes = {
@@ -35,11 +39,12 @@ class ConnectionModal extends Component {
   }
 
   render() {
-    return (
-      <div style={styles.container}>
+    return [
+      <DialogTitle key="title">Connexion</DialogTitle>,
+      <DialogContent key="content" style={styles.container}>
         <Button
           style={styles.button}
-          primary
+          color="primary"
           onClick={this.authenticateWithGoogle}
           raised
         >
@@ -49,15 +54,15 @@ class ConnectionModal extends Component {
 
         <Button
           style={styles.button}
-          secondary
+          color="accent"
           onClick={this.authenticateWithFacebook}
           raised
         >
           <FaFacebook />&nbsp;
           Connexion avec Facebook
         </Button>
-      </div>
-    );
+      </DialogContent>,
+    ];
   }
 }
 
@@ -66,6 +71,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: 15,
   },
 
   button: {

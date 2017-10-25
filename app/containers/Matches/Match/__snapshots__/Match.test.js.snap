@@ -76,7 +76,7 @@ exports[`Containers/Match renders correctly 1`] = `
           }
         >
           <div
-            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-42"
+            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-43"
             onBlur={[Function]}
             onFocus={[Function]}
           >
@@ -87,7 +87,7 @@ exports[`Containers/Match renders correctly 1`] = `
                 aria-haspopup="true"
                 aria-owns={null}
                 aria-pressed="false"
-                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-45"
+                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-46"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={undefined}
@@ -112,7 +112,7 @@ exports[`Containers/Match renders correctly 1`] = `
               />
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-49 MuiSelect-icon-33"
+                className="MuiSvgIcon-root-50 MuiSelect-icon-33"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -172,7 +172,7 @@ exports[`Containers/Match renders correctly 1`] = `
           }
         >
           <div
-            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-42"
+            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-43"
             onBlur={[Function]}
             onFocus={[Function]}
           >
@@ -183,7 +183,7 @@ exports[`Containers/Match renders correctly 1`] = `
                 aria-haspopup="true"
                 aria-owns={null}
                 aria-pressed="false"
-                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-45"
+                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-46"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={undefined}
@@ -208,7 +208,7 @@ exports[`Containers/Match renders correctly 1`] = `
               />
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-49 MuiSelect-icon-33"
+                className="MuiSvgIcon-root-50 MuiSelect-icon-33"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -222,7 +222,7 @@ exports[`Containers/Match renders correctly 1`] = `
       </div>
     </div>
     <hr
-      className="MuiDivider-root-54 MuiDivider-default-55"
+      className="MuiDivider-root-55 MuiDivider-default-56"
     />
     <div
       style={
@@ -237,7 +237,7 @@ exports[`Containers/Match renders correctly 1`] = `
       }
     >
       <div
-        className="MuiTooltip-root-59"
+        className="MuiTooltip-root-60"
       >
         <div
           aria-describedby={undefined}
@@ -249,7 +249,7 @@ exports[`Containers/Match renders correctly 1`] = `
           dans 2 ans
         </div>
         <div
-          className="MuiTooltip-popper-60 MuiTooltip-popperClose-61"
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
           data-placement={undefined}
           data-x-out-of-boundaries={undefined}
           style={
@@ -262,7 +262,7 @@ exports[`Containers/Match renders correctly 1`] = `
         >
           <div
             aria-hidden={true}
-            className="MuiTooltip-tooltip-62 MuiTooltip-tooltipBottom-66"
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipBottom-67"
             id={undefined}
             role="tooltip"
           >
@@ -274,7 +274,7 @@ exports[`Containers/Match renders correctly 1`] = `
         •
       </div>
       <div
-        className="MuiTooltip-root-59"
+        className="MuiTooltip-root-60"
       >
         <div
           aria-describedby={undefined}
@@ -286,7 +286,7 @@ exports[`Containers/Match renders correctly 1`] = `
           Stade de Kaliningrad
         </div>
         <div
-          className="MuiTooltip-popper-60 MuiTooltip-popperClose-61"
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
           data-placement={undefined}
           data-x-out-of-boundaries={undefined}
           style={
@@ -299,7 +299,7 @@ exports[`Containers/Match renders correctly 1`] = `
         >
           <div
             aria-hidden={true}
-            className="MuiTooltip-tooltip-62 MuiTooltip-tooltipBottom-66"
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipBottom-67"
             id={undefined}
             role="tooltip"
           >
@@ -383,7 +383,7 @@ exports[`Containers/Match renders correctly 1`] = `
         •
       </div>
       <div
-        className="MuiTooltip-root-59"
+        className="MuiTooltip-root-60"
       >
         <div
           aria-describedby={undefined}
@@ -395,7 +395,7 @@ exports[`Containers/Match renders correctly 1`] = `
           Kaliningrad
         </div>
         <div
-          className="MuiTooltip-popper-60 MuiTooltip-popperClose-61"
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
           data-placement={undefined}
           data-x-out-of-boundaries={undefined}
           style={
@@ -408,7 +408,7 @@ exports[`Containers/Match renders correctly 1`] = `
         >
           <div
             aria-hidden={true}
-            className="MuiTooltip-tooltip-62 MuiTooltip-tooltipLeft-63"
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipLeft-64"
             id={undefined}
             role="tooltip"
           >
@@ -490,12 +490,12 @@ exports[`Containers/Match renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="MuiTooltip-root-59"
+      className="MuiTooltip-root-60"
     >
       <svg
         aria-describedby={undefined}
         aria-hidden="true"
-        className="MuiSvgIcon-root-49"
+        className="MuiSvgIcon-root-50"
         color="red"
         focusable="false"
         onBlur={[Function]}
@@ -519,7 +519,7 @@ exports[`Containers/Match renders correctly 1`] = `
         />
       </svg>
       <div
-        className="MuiTooltip-popper-60 MuiTooltip-popperClose-61"
+        className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
         data-placement={undefined}
         data-x-out-of-boundaries={undefined}
         style={
@@ -532,7 +532,7 @@ exports[`Containers/Match renders correctly 1`] = `
       >
         <div
           aria-hidden={true}
-          className="MuiTooltip-tooltip-62 MuiTooltip-tooltipRight-64"
+          className="MuiTooltip-tooltip-63 MuiTooltip-tooltipRight-65"
           id={undefined}
           role="tooltip"
         >

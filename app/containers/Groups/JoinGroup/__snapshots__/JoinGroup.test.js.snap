@@ -40,7 +40,7 @@ exports[`containers/JoinGroup renders correctly 1`] = `
       required={false}
     >
       <div
-        className="MuiInput-root-62 MuiInput-fullWidth-76 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-70"
+        className="MuiInput-root-62 MuiInput-fullWidth-77 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-71"
         onBlur={[Function]}
         onFocus={[Function]}
       >
@@ -51,7 +51,7 @@ exports[`containers/JoinGroup renders correctly 1`] = `
             aria-haspopup="true"
             aria-owns={null}
             aria-pressed="false"
-            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiInput-input-66 MuiInput-inputSingleline-73"
+            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiInput-input-66 MuiInput-inputSingleline-74"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={undefined}
@@ -76,7 +76,7 @@ exports[`containers/JoinGroup renders correctly 1`] = `
           />
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-77 MuiSelect-icon-61"
+            className="MuiSvgIcon-root-78 MuiSelect-icon-61"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -88,16 +88,16 @@ exports[`containers/JoinGroup renders correctly 1`] = `
       </div>
     </div>
     <p
-      className="MuiFormHelperText-root-82"
+      className="MuiFormHelperText-root-83"
     >
       Rechercher un groupe
     </p>
   </div>
   <div
-    className="MuiCardActions-root-86"
+    className="MuiCardActions-root-87"
   >
     <button
-      className="MuiButtonBase-root-102 MuiButtonBase-disabled-103 MuiButton-root-88 MuiButton-raised-95 MuiButton-raisedPrimary-97 MuiButton-disabled-100 MuiCardActions-actionSpacing-87"
+      className="MuiButtonBase-root-103 MuiButtonBase-disabled-104 MuiButton-root-89 MuiButton-raised-96 MuiButton-raisedPrimary-98 MuiButton-disabled-101 MuiCardActions-actionSpacing-88"
       disabled={true}
       onBlur={[Function]}
       onClick={[Function]}
@@ -116,7 +116,7 @@ exports[`containers/JoinGroup renders correctly 1`] = `
       type="button"
     >
       <span
-        className="MuiButton-label-90"
+        className="MuiButton-label-91"
       >
         Envoyer la demande
       </span>
@@ -165,7 +165,7 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
       required={false}
     >
       <div
-        className="MuiInput-root-62 MuiInput-disabled-68 MuiInput-fullWidth-76 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-70"
+        className="MuiInput-root-62 MuiInput-disabled-69 MuiInput-fullWidth-77 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-71"
         onBlur={[Function]}
         onFocus={[Function]}
       >
@@ -176,7 +176,7 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
             aria-haspopup="true"
             aria-owns={null}
             aria-pressed="false"
-            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiSelect-disabled-60 MuiInput-input-66 MuiInput-inputDisabled-72 MuiInput-inputSingleline-73"
+            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiSelect-disabled-60 MuiInput-input-66 MuiInput-inputDisabled-73 MuiInput-inputSingleline-74"
             onBlur={[Function]}
             onClick={null}
             onFocus={undefined}
@@ -201,7 +201,7 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
           />
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-77 MuiSelect-icon-61"
+            className="MuiSvgIcon-root-78 MuiSelect-icon-61"
             focusable="false"
             viewBox="0 0 24 24"
           >
@@ -213,16 +213,16 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
       </div>
     </div>
     <p
-      className="MuiFormHelperText-root-82"
+      className="MuiFormHelperText-root-83"
     >
       Aucun groupe à rejoindre
     </p>
   </div>
   <div
-    className="MuiCardActions-root-86"
+    className="MuiCardActions-root-87"
   >
     <button
-      className="MuiButtonBase-root-102 MuiButtonBase-disabled-103 MuiButton-root-88 MuiButton-raised-95 MuiButton-raisedPrimary-97 MuiButton-disabled-100 MuiCardActions-actionSpacing-87"
+      className="MuiButtonBase-root-103 MuiButtonBase-disabled-104 MuiButton-root-89 MuiButton-raised-96 MuiButton-raisedPrimary-98 MuiButton-disabled-101 MuiCardActions-actionSpacing-88"
       disabled={true}
       onBlur={[Function]}
       onClick={[Function]}
@@ -241,7 +241,7 @@ exports[`containers/JoinGroup renders correctly when disabled 1`] = `
       type="button"
     >
       <span
-        className="MuiButton-label-90"
+        className="MuiButton-label-91"
       >
         Envoyer la demande
       </span>

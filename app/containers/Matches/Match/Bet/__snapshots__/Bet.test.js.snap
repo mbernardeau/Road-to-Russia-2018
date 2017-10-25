@@ -49,7 +49,7 @@ exports[`Containers/Match/Bet renders correctly 1`] = `
     }
   >
     <div
-      className="MuiInput-root-6 MuiInput-inkbar-8 MuiInput-underline-14"
+      className="MuiInput-root-6 MuiInput-inkbar-8 MuiInput-underline-15"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -60,7 +60,7 @@ exports[`Containers/Match/Bet renders correctly 1`] = `
           aria-haspopup="true"
           aria-owns={null}
           aria-pressed="false"
-          className="MuiSelect-select-2 MuiSelect-selectMenu-3 MuiInput-input-10 MuiInput-inputSingleline-17"
+          className="MuiSelect-select-2 MuiSelect-selectMenu-3 MuiInput-input-10 MuiInput-inputSingleline-18"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={undefined}
@@ -96,7 +96,7 @@ exports[`Containers/Match/Bet renders correctly 1`] = `
         />
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-21 MuiSelect-icon-5"
+          className="MuiSvgIcon-root-22 MuiSelect-icon-5"
           focusable="false"
           viewBox="0 0 24 24"
         >
