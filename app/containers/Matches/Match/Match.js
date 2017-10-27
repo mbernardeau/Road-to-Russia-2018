@@ -3,7 +3,11 @@ import React, {
 } from 'react';
 
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+
+import {
+  conformsTo,
+  isNumber,
+} from 'lodash';
 
 import Card, {
   CardContent,
@@ -39,9 +43,9 @@ class Match extends Component {
   }
 
   isBetValid = () => {
-    const scoreValidator = (score) => _.isNumber(score) && score >= 0;
+    const scoreValidator = (score) => isNumber(score) && score >= 0;
 
-    return _.conformsTo(this.state.bet, {
+    return conformsTo(this.state.bet, {
       teamA: scoreValidator,
       teamB: scoreValidator,
     });
