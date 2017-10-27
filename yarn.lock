@@ -6959,9 +6959,9 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
-react-redux-firebase@^2.0.0-beta.12:
-  version "2.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.0.0-beta.12.tgz#f86e92f05e664e7f6c5b9a10572329a9e5054c4e"
+react-redux-firebase@^2.0.0-beta.13:
+  version "2.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.0.0-beta.13.tgz#0e1ffb754836c33a170b3233372ec2ead5dffd7c"
   dependencies:
     hoist-non-react-statics "^2.3.1"
     lodash "^4.17.4"
