@@ -7209,9 +7209,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-firestore@^0.1.0-alpha.2:
-  version "0.1.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/redux-firestore/-/redux-firestore-0.1.0-alpha.2.tgz#c08e0313245fbe37982800a5e853d53f52bd6217"
+redux-firestore@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/redux-firestore/-/redux-firestore-0.2.0.tgz#3ac6d910970f2117c90ea3344b7efabf5324b16f"
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.6.0"
