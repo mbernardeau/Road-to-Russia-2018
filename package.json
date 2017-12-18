@@ -299,7 +299,7 @@
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "imports-loader": "^0.7.1",
-    "jest-cli": "^21.2.0",
+    "jest-cli": "^22.0.0",
     "lint-staged": "^4.2.3",
     "material-ui-codemod": "^1.0.0-beta.11",
     "ngrok": "^2.2.22",
