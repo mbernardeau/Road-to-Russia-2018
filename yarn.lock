@@ -6933,11 +6933,11 @@ react-loadable@^5.1.0:
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-5.2.4.tgz#e2ed2228ea5d3ad3bad51c1e1632a2f0864cdcae"
 
-react-placeholder@^1.0.6:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/react-placeholder/-/react-placeholder-1.0.7.tgz#cee63d7309a1427e97db562c166d51d79b4c277a"
+react-placeholder@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-placeholder/-/react-placeholder-2.0.0.tgz#5117b4758927dc5ae5fcbf62552ab98209f6666c"
   dependencies:
-    prop-types "^15.5.8"
+    prop-types "^15.6.0"
 
 react-popper@^0.7.4:
   version "0.7.4"
