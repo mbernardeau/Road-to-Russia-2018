@@ -4079,9 +4079,11 @@ imagemin@^5.2.2:
     pify "^2.3.0"
     replace-ext "^1.0.0"
 
-immutadot@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/immutadot/-/immutadot-0.3.2.tgz#cb4dd2a2f3b8a00db95713a35739002e25830bfe"
+immutadot@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/immutadot/-/immutadot-1.0.0.tgz#9d99bffde37666755aff0b6f9cb7df8e5a4b4231"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 imports-loader@^0.7.1:
   version "0.7.1"
