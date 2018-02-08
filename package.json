@@ -231,7 +231,7 @@
     "express": "^4.16.2",
     "firebase": "^4.6.0",
     "fontfaceobserver": "^2.0.13",
-    "immutadot": "^0.3.2",
+    "immutadot": "^1.0.0",
     "invariant": "2.2.2",
     "ip": "^1.1.5",
     "lodash": "^4.17.4",
