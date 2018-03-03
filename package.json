@@ -302,7 +302,7 @@
     "jest-cli": "^21.2.0",
     "lint-staged": "^4.2.3",
     "material-ui-codemod": "^1.0.0-beta.11",
-    "ngrok": "^2.2.22",
+    "ngrok": "^3.0.0",
     "node-plop": "^0.9.0",
     "null-loader": "0.1.1",
     "offline-plugin": "^4.8.4",
