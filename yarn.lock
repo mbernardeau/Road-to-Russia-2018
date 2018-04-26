@@ -6020,9 +6020,9 @@ object.pick@^1.2.0:
   dependencies:
     isobject "^3.0.1"
 
-offline-plugin@^4.8.4:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-4.8.4.tgz#1084c59f6606bded5ee5a6bf6208e2b9f5bdd339"
+offline-plugin@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-5.0.0.tgz#a2ebe1cd4c5c900bd151f7603bd364ec6a3f76b5"
   dependencies:
     deep-extend "^0.4.0"
     ejs "^2.3.4"
