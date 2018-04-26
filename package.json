@@ -305,7 +305,7 @@
     "ngrok": "^2.2.22",
     "node-plop": "^0.9.0",
     "null-loader": "0.1.1",
-    "offline-plugin": "^4.8.4",
+    "offline-plugin": "^5.0.0",
     "plop": "^1.8.1",
     "pre-commit": "^1.2.2",
     "react-addons-perf": "^15.4.2",
