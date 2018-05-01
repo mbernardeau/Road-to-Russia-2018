@@ -54,29 +54,32 @@
   "babel": {
     "presets": [
       [
-        "latest",
+        "env",
         {
-          "es2015": {
-            "modules": false
-          }
+          "modules": false
         }
       ],
       "react",
       "stage-0"
     ],
-    "plugins": [
-      "react-hot-loader/babel",
-      "transform-react-jsx-source"
-    ],
     "env": {
+      "development": {
+        "only": [
+          "app",
+          "internals/scripts"
+        ],
+        "plugins": [
+          "transform-react-jsx-source"
+        ]
+      },
       "production": {
         "only": [
           "app"
         ],
         "plugins": [
           "transform-react-remove-prop-types",
-          "transform-react-constant-elements",
-          "transform-react-inline-elements"
+          "transform-react-inline-elements",
+          "transform-react-constant-elements"
         ]
       },
       "test": {
@@ -232,6 +235,10 @@
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/internals/testing/test-bundler.js",
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/internals/testing/enzyme-setup.js"
+    ],
     "testRegex": ".*\\.test\\.js$"
   },
   "dependencies": {
@@ -287,6 +294,7 @@
     "babel-plugin-transform-react-jsx-source": "6.22.0",
     "babel-plugin-transform-react-remove-prop-types": "0.4.13",
     "babel-preset-latest": "6.24.1",
+    "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-0": "6.24.1",
@@ -295,6 +303,8 @@
     "codecov": "3.0.1",
     "coveralls": "3.0.0",
     "css-loader": "0.28.11",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-airbnb-base": "12.1.0",
