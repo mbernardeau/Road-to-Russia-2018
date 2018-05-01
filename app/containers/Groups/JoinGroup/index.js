@@ -1,3 +1,3 @@
-import JoinGroup from './JoinGroupContainer';
+import JoinGroup from './JoinGroupContainer'
 
-export default JoinGroup;
+export default JoinGroup

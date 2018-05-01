@@ -1,1 +1,1 @@
-export * from './stadiums.selectors';
+export * from './stadiums.selectors'

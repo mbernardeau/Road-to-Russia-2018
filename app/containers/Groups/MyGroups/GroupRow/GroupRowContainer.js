@@ -1,13 +1,9 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import {
-  getUserId,
-} from 'redux/user';
+import { getUserId } from 'redux/user'
 
-import GroupRow from './GroupRow';
+import GroupRow from './GroupRow'
 
-export default connect(
-  (state) => ({
-    uid: getUserId(state),
-  }),
-)(GroupRow);
+export default connect(state => ({
+  uid: getUserId(state),
+}))(GroupRow)

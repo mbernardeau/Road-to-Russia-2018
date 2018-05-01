@@ -1,12 +1,5 @@
-import {
-  createSelector,
-} from 'reselect';
+import { createSelector } from 'reselect'
 
-import {
-  getData,
-} from '../firebase';
+import { getData } from '../firebase'
 
-export const getStadiums = createSelector(
-  getData,
-  ({ stadiums }) => stadiums,
-);
+export const getStadiums = createSelector(getData, ({ stadiums }) => stadiums)

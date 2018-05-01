@@ -44,7 +44,8 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage && codecov",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "prettify": "prettier app/**/*.{js,jsx,scss} --write"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
@@ -88,7 +89,11 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": [
+      "airbnb",
+      "prettier",
+      "prettier/react"
+    ],
     "env": {
       "browser": true,
       "node": true,
@@ -110,7 +115,7 @@
     "rules": {
       "arrow-parens": [
         "error",
-        "always"
+        "as-needed"
       ],
       "arrow-body-style": [
         2,
@@ -185,6 +190,12 @@
         }
       }
     }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "dllPlugin": {
     "path": "node_modules/react-boilerplate-dlls",
@@ -286,6 +297,7 @@
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -308,6 +320,7 @@
     "offline-plugin": "^4.8.4",
     "plop": "^1.8.1",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.12.1",
     "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.0.0",

@@ -1,3 +1,3 @@
-import ValidIcon from './ValidIcon';
+import ValidIcon from './ValidIcon'
 
-export default ValidIcon;
+export default ValidIcon

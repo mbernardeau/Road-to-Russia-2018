@@ -1,16 +1,15 @@
-import React, {
-  PureComponent,
-} from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
-import Radium from 'radium';
+import Radium from 'radium'
 
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import Menu, { MenuItem } from 'material-ui/Menu';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
+import Avatar from 'material-ui/Avatar'
+import IconButton from 'material-ui/IconButton'
+import Menu, { MenuItem } from 'material-ui/Menu'
+import MoreVertIcon from 'material-ui-icons/MoreVert'
 
-class User extends PureComponent { // eslint-disable-line react/prefer-stateless-function
+class User extends PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
   static propTypes = {
     user: PropTypes.shape({
       avatarUrl: PropTypes.string.isRequired,
@@ -19,25 +18,24 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
     firebase: PropTypes.shape({
       logout: PropTypes.func.isRequired,
     }).isRequired,
-  };
+  }
 
   state = {
     anchorEl: null,
     open: false,
-  };
+  }
 
-  handleClick = (event) => {
-    this.setState({ open: true, anchorEl: event.currentTarget });
-  };
+  handleClick = event => {
+    this.setState({ open: true, anchorEl: event.currentTarget })
+  }
 
   handleRequestClose = () => {
-    this.setState({ open: false });
-  };
-
+    this.setState({ open: false })
+  }
 
   render() {
-    const { user, firebase } = this.props;
-    const { logout } = firebase;
+    const { user, firebase } = this.props
+    const { logout } = firebase
 
     return (
       <div style={styles.user}>
@@ -64,7 +62,7 @@ class User extends PureComponent { // eslint-disable-line react/prefer-stateless
           <MenuItem onClick={logout}>Se déconnecter</MenuItem>
         </Menu>
       </div>
-    );
+    )
   }
 }
 
@@ -86,6 +84,6 @@ const styles = {
   avatar: {
     marginRight: 10,
   },
-};
+}
 
-export default Radium(User);
+export default Radium(User)

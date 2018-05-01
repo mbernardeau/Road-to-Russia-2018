@@ -1,3 +1,3 @@
-import NavigationMenu from './NavigationMenuContainer';
+import NavigationMenu from './NavigationMenuContainer'
 
-export default NavigationMenu;
+export default NavigationMenu

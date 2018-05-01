@@ -1,1 +1,1 @@
-export { default } from './GroupStatus';
+export { default } from './GroupStatus'

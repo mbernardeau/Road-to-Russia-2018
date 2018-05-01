@@ -1,21 +1,19 @@
-import React, {
-  Component,
-} from 'react';
+import React, { Component } from 'react'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import Drawer from 'material-ui/Drawer';
-import Divider from 'material-ui/Divider';
-import List, { ListItem, ListItemText } from 'material-ui/List';
+import Drawer from 'material-ui/Drawer'
+import Divider from 'material-ui/Divider'
+import List, { ListItem, ListItemText } from 'material-ui/List'
 
-import WorldCupImg from 'assets/2018_FIFA_WC.svg';
+import WorldCupImg from 'assets/2018_FIFA_WC.svg'
 
 const styles = {
   image: {
     width: '100%',
     marginBottom: 3,
   },
-};
+}
 
 export default class NavigationMenu extends Component {
   static propTypes = {
@@ -27,13 +25,13 @@ export default class NavigationMenu extends Component {
       }).isRequired,
       push: PropTypes.func.isRequired,
     }).isRequired,
-  };
+  }
 
-  goTo = (to) => () => {
+  goTo = to => () => {
     if (this.props.history.location.pathname !== to) {
-      this.props.history.push(to);
+      this.props.history.push(to)
     }
-    this.props.closeMenu();
+    this.props.closeMenu()
   }
 
   render() {
@@ -55,6 +53,6 @@ export default class NavigationMenu extends Component {
           </ListItem>
         </List>
       </Drawer>
-    );
+    )
   }
 }

@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const StadiumTooltip = ({ stadium }) => (
   <div style={styles.container}>
     <div style={styles.textContainer}>
-      <div style={styles.stadiumText}>
-        { stadium.name }
-      </div>
+      <div style={styles.stadiumText}>{stadium.name}</div>
       <div style={styles.stadiumText}>•</div>
-      <div style={styles.stadiumText}>
-        { stadium.city }
-      </div>
+      <div style={styles.stadiumText}>{stadium.city}</div>
     </div>
     {stadium.photo && <img style={styles.img} src={stadium.photo.url} alt={stadium.name} />}
     <div style={styles.textContainer}>
@@ -19,7 +15,7 @@ const StadiumTooltip = ({ stadium }) => (
       <div>{stadium.capacity.toLocaleString('fr')} places</div>
     </div>
   </div>
-);
+)
 
 const styles = {
   container: {
@@ -40,7 +36,7 @@ const styles = {
   img: {
     width: '100%',
   },
-};
+}
 
 StadiumTooltip.propTypes = {
   stadium: PropTypes.shape({
@@ -52,7 +48,6 @@ StadiumTooltip.propTypes = {
     }),
     capacity: PropTypes.number.isRequired,
   }).isRequired,
-};
+}
 
-
-export default StadiumTooltip;
+export default StadiumTooltip

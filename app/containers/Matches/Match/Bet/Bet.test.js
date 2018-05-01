@@ -1,7 +1,7 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import Bet from './Bet';
+import Bet from './Bet'
 
 describe('Containers/Match/Bet', () => {
   const props = {
@@ -10,12 +10,10 @@ describe('Containers/Match/Bet', () => {
       name: 'Russie',
     },
     betValue: 1,
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <Bet {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<Bet {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

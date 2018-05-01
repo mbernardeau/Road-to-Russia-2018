@@ -1,3 +1,3 @@
-import Stadium from './Stadium';
+import Stadium from './Stadium'
 
-export default Stadium;
+export default Stadium

@@ -1,3 +1,3 @@
-import StadiumTooltip from './StadiumTooltip';
+import StadiumTooltip from './StadiumTooltip'
 
-export default StadiumTooltip;
+export default StadiumTooltip

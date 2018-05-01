@@ -1,16 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import Flag from 'components/Flag';
+import Flag from 'components/Flag'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import {
-  map,
-  range,
-} from 'lodash';
+import { map, range } from 'lodash'
 
-import Select from 'material-ui/Select';
-import { MenuItem } from 'material-ui/Menu';
+import Select from 'material-ui/Select'
+import { MenuItem } from 'material-ui/Menu'
 
 const Bet = ({ team, betValue, onBetValueUpdated }) => (
   <div style={styles.bet}>
@@ -29,7 +26,7 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
       </Select>
     </div>
   </div>
-);
+)
 
 const styles = {
   bet: {
@@ -62,12 +59,16 @@ const styles = {
   flag: {
     height: '1.3em',
   },
-};
+}
 
 /**
  * Render menu items once (from 0 to 10 goals)
  */
-const menuItems = map(range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuItem>);
+const menuItems = map(range(11), n => (
+  <MenuItem value={n} key={n}>
+    {n}
+  </MenuItem>
+))
 
 /**
  * Pure mini-component to render inner value of the select field choices
@@ -75,7 +76,7 @@ const menuItems = map(range(11), (n) => <MenuItem value={n} key={n}>{n}</MenuIte
  *
  * @return {React.ReactElement}
  */
-const renderValue = (value) => (<div style={styles.selectValueStyle}>{ value }</div>);
+const renderValue = value => <div style={styles.selectValueStyle}>{value}</div>
 
 Bet.propTypes = {
   team: PropTypes.shape({
@@ -84,6 +85,6 @@ Bet.propTypes = {
   }),
   onBetValueUpdated: PropTypes.func,
   betValue: PropTypes.number,
-};
+}
 
-export default Bet;
+export default Bet

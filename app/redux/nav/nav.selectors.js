@@ -1,10 +1,5 @@
-import {
-  createSelector,
-} from 'reselect';
+import { createSelector } from 'reselect'
 
-const getNav = ({ nav }) => nav;
+const getNav = ({ nav }) => nav
 
-export const getMenuOpen = createSelector(
-  getNav,
-  ({ open }) => open,
-);
+export const getMenuOpen = createSelector(getNav, ({ open }) => open)

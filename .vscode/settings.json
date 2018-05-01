@@ -8,5 +8,6 @@
         "**/.DS_Store": true,
         "**/node_modules": true,
         "**/.chrome": true
-    }
-}
+    },
+    "editor.formatOnSave": true
+  }
