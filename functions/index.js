@@ -11,10 +11,9 @@ admin.initializeApp(functions.config().firebase)
  */
 
 const onBetUpdated = event =>
-  event.data.ref.child('lastModified').once(
+  event.after.ref.child('lastModified').once(
     'value',
-    snap =>
-      !snap.exists() && event.data.ref.child('lastModified').set(event.timestamp), // Only perform update if lastModified node does not exist
+    snap => !snap.exists() && event.after.ref.child('lastModified').set(event.timestamp) // Only perform update if lastModified node does not exist
   )
 
 exports.bets = {
