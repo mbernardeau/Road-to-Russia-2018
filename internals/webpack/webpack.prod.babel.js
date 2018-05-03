@@ -77,14 +77,17 @@ module.exports = require('./webpack.base.babel')({
     }),
 
     new WebpackPwaManifest({
-      name: 'React Boilerplate',
-      short_name: 'React BP',
-      description: 'My React Boilerplate-based project!',
-      background_color: '#fafafa',
-      theme_color: '#b1624d',
+      name: 'Road to Russia 2018',
+      short_name: 'Russia 2018',
+      theme_color: '#d32f2f',
+      background_color: '#f9f6ed',
+      display: 'standalone',
+      orientation: 'portrait',
+      Scope: '/',
+      start_url: '/',
       icons: [
         {
-          src: path.resolve('app/images/icon-512x512.png'),
+          src: path.resolve('app/assets/icons/icon-512x512.png'),
           sizes: [72, 96, 120, 128, 144, 152, 167, 180, 192, 384, 512],
         },
       ],
