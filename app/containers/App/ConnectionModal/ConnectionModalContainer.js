@@ -1,5 +1,5 @@
-import { firebaseConnect } from 'react-redux-firebase';
+import { firebaseConnect } from 'react-redux-firebase'
 
-import ConnectionModal from './ConnectionModal';
+import ConnectionModal from './ConnectionModal'
 
-export default firebaseConnect([])(ConnectionModal);
+export default firebaseConnect([])(ConnectionModal)

@@ -1,3 +1,3 @@
-import GroupApplyOkSnackBar from './GroupApplyOkSnackBar';
+import GroupApplyOkSnackBar from './GroupApplyOkSnackBar'
 
-export default GroupApplyOkSnackBar;
+export default GroupApplyOkSnackBar

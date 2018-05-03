@@ -1,1 +1,1 @@
-export * from './matches.selectors';
+export * from './matches.selectors'

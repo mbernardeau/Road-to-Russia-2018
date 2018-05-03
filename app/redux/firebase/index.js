@@ -1,1 +1,1 @@
-export * from './firebase.selectors';
+export * from './firebase.selectors'

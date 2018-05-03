@@ -1,18 +1,20 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import moment from 'moment';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import moment from 'moment'
 
-import Match from './Match';
+import Match from './Match'
 
 describe('Containers/Match', () => {
   // Mock date to ensure consistancy between tests
-  Date.now = jest.fn(() => 1482363367071);
+  Date.now = jest.fn(() => 1482363367071)
 
-  moment.locale('fr');
+  moment.locale('fr')
 
   // Mock toLocaleString because of inconsistant behaviour in node (it works correctly in browsers)
   // eslint-disable-next-line
-  Number.prototype.toLocaleString = function(){ return `${this}` };
+  Number.prototype.toLocaleString = function() {
+    return `${this}`
+  }
 
   const props = {
     match: {
@@ -31,8 +33,10 @@ describe('Containers/Match', () => {
         city: 'Kaliningrad',
         name: 'Stade de Kaliningrad',
         photo: {
-          credit: 'By A.Savin (Wikimedia Commons · WikiPhotoSpace) (Own work) [FAL], via Wikimedia Commons',
-          url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg',
+          credit:
+            'By A.Savin (Wikimedia Commons · WikiPhotoSpace) (Own work) [FAL], via Wikimedia Commons',
+          url:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg',
         },
       },
       dateTime: 1530205200,
@@ -81,13 +85,10 @@ describe('Containers/Match', () => {
       teamB: 1,
     },
     saveBet: () => {},
-  };
-
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <Match {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<Match {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

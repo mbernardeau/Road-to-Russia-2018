@@ -11,42 +11,43 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React, { Fragment } from 'react'
 
-import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-import Radium from 'radium';
+import PropTypes from 'prop-types'
+import AppBar from 'material-ui/AppBar'
+import Toolbar from 'material-ui/Toolbar'
+import Typography from 'material-ui/Typography'
+import IconButton from 'material-ui/IconButton'
+import MenuIcon from 'material-ui-icons/Menu'
+import Radium from 'radium'
 
-import HomePage from 'containers/HomePage/Loadable';
-import StadiumsPage from 'containers/Stadiums/Loadable';
-import GroupsPage from 'containers/Groups/Loadable';
-import MatchesPage from 'containers/Matches/Loadable';
-import NotFoundPage from 'containers/NotFoundPage';
+import HomePage from 'containers/HomePage/Loadable'
+import StadiumsPage from 'containers/Stadiums/Loadable'
+import GroupsPage from 'containers/Groups/Loadable'
+import MatchesPage from 'containers/Matches/Loadable'
+import NotFoundPage from 'containers/NotFoundPage'
 
-import { isEmpty } from 'react-redux-firebase';
+import { isEmpty } from 'react-redux-firebase'
 
-import { Switch, Route } from 'react-router-dom';
-import NavigationMenu from './NavigationMenu';
-import ConnectionWidget from './ConnectionWidget';
+import { Switch, Route } from 'react-router-dom'
+import NavigationMenu from './NavigationMenu'
+import ConnectionWidget from './ConnectionWidget'
 
-class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+// eslint-disable-next-line react/prefer-stateless-function
+class App extends React.Component {
   static propTypes = {
     user: PropTypes.object,
     toggleMenu: PropTypes.func.isRequired,
-  };
+  }
 
   render() {
-    const { user, toggleMenu } = this.props;
+    const { user, toggleMenu } = this.props
 
     return (
-      <div>
+      <Fragment>
         <AppBar>
           <Toolbar style={styles.toolbar}>
-            <IconButton color="contrast" aria-label="Menu" onClick={toggleMenu}>
+            <IconButton color="white" aria-label="Menu" onClick={toggleMenu}>
               <MenuIcon />
             </IconButton>
             <div style={styles.appbarTitle}>
@@ -61,7 +62,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
         <NavigationMenu />
 
         <div style={styles.content}>
-          {!isEmpty(user) &&
+          {!isEmpty(user) && (
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route path="/stadiums" component={StadiumsPage} />
@@ -69,10 +70,10 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
               <Route path="/groups" component={GroupsPage} />
               <Route component={NotFoundPage} />
             </Switch>
-          }
+          )}
         </div>
-      </div>
-    );
+      </Fragment>
+    )
   }
 }
 
@@ -90,6 +91,6 @@ const styles = {
       display: 'none',
     },
   },
-};
+}
 
-export default Radium(App);
+export default Radium(App)

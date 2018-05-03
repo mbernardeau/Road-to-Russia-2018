@@ -6,6 +6,6 @@
     "dbaeumer.vscode-eslint",
     "EQuimper.react-native-react-redux",
     "jvitor83.typings-autoinstaller",
-    "msjsdiag.debugger-for-chrome"
+    "esbenp.prettier-vscode"
   ]
 }

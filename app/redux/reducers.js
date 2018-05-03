@@ -3,12 +3,11 @@
  * If we were to do this in store.js, reducers wouldn't be hot reloadable.
  */
 
-import { combineReducers } from 'redux';
-import { LOCATION_CHANGE } from 'react-router-redux';
-import { firebaseStateReducer } from 'react-redux-firebase';
+import { combineReducers } from 'redux'
+import { LOCATION_CHANGE } from 'react-router-redux'
+import { firebaseStateReducer } from 'react-redux-firebase'
 
-import nav from './nav';
-
+import nav from './nav'
 
 /*
  * routeReducer
@@ -21,7 +20,7 @@ import nav from './nav';
 // Initial routing state
 const routeInitialState = {
   location: null,
-};
+}
 
 /**
  * Merge route into the global application state
@@ -33,9 +32,9 @@ function routeReducer(state = routeInitialState, action) {
       return {
         ...state,
         location: action.payload,
-      };
+      }
     default:
-      return state;
+      return state
   }
 }
 
@@ -48,5 +47,5 @@ export default function createReducer(injectedReducers) {
     firebase: firebaseStateReducer,
     nav,
     ...injectedReducers,
-  });
+  })
 }

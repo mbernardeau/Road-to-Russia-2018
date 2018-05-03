@@ -1,7 +1,7 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import JoinGroup from './JoinGroup';
+import JoinGroup from './JoinGroup'
 
 describe('containers/JoinGroup', () => {
   const props = {
@@ -18,19 +18,15 @@ describe('containers/JoinGroup', () => {
     },
     applyInGroup: () => {},
     uid: 'userId',
-  };
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <JoinGroup {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+    const tree = renderer.create(<JoinGroup {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 
   it('renders correctly when disabled', () => {
-    const tree = renderer.create(
-      <JoinGroup {...props} disabled />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<JoinGroup {...props} disabled />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

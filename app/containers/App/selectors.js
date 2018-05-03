@@ -1,12 +1,7 @@
-import { createSelector } from 'reselect';
+import { createSelector } from 'reselect'
 
-const selectRoute = (state) => state.route;
+const selectRoute = state => state.route
 
-const makeSelectLocation = () => createSelector(
-  selectRoute,
-  (routeState) => routeState.location,
-);
+const makeSelectLocation = () => createSelector(selectRoute, routeState => routeState.location)
 
-export {
-  makeSelectLocation,
-};
+export { makeSelectLocation }

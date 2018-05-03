@@ -1,23 +1,14 @@
-import {
-  firebaseConnect,
-} from 'react-redux-firebase';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+import { firebaseConnect } from 'react-redux-firebase'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
 
-import {
-  matchQuery,
-  getMatches,
-} from 'redux/matches';
+import { matchQuery, getMatches } from 'redux/matches'
 
-import Matches from './Matches';
+import Matches from './Matches'
 
 export default compose(
-  firebaseConnect([
-    matchQuery,
-  ]),
-  connect(
-    (state) => ({
-      matches: getMatches(state),
-    })
-  ),
-)(Matches);
+  firebaseConnect([matchQuery]),
+  connect(state => ({
+    matches: getMatches(state),
+  })),
+)(Matches)

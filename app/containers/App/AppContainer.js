@@ -1,15 +1,14 @@
-import { connect } from 'react-redux';
-import { toggleMenu } from 'redux/nav';
+import { connect } from 'react-redux'
+import { toggleMenu } from 'redux/nav'
 
-import App from './App';
+import App from './App'
 
 export default connect(
   ({ firebase: { profile }, route: { location } }) => ({
     user: profile,
     location,
   }),
-  (dispatch) => ({
+  dispatch => ({
     toggleMenu: () => dispatch(toggleMenu()),
-  })
-)(App);
-
+  }),
+)(App)

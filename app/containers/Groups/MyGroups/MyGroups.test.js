@@ -1,10 +1,10 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import renderer from 'react-test-renderer'
 
-import { Provider } from 'react-redux';
-import configureMockStore from 'redux-mock-store';
+import { Provider } from 'react-redux'
+import configureMockStore from 'redux-mock-store'
 
-import MyGroups from './MyGroups';
+import MyGroups from './MyGroups'
 
 describe('Groups/MyGroups', () => {
   const state = {
@@ -13,22 +13,24 @@ describe('Groups/MyGroups', () => {
         uid: 'iduser',
       },
     },
-  };
+  }
 
-  const store = configureMockStore()(state);
+  const store = configureMockStore()(state)
 
   it('renders correctly when no group joined', () => {
     const props = {
       groups: {},
-    };
+    }
 
-    const tree = renderer.create(
-      <Provider store={store}>
-        <MyGroups {...props} />
-      </Provider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <MyGroups {...props} />
+        </Provider>,
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 
   it('renders correctly with different groups', () => {
     const props = {
@@ -52,13 +54,15 @@ describe('Groups/MyGroups', () => {
           },
         },
       },
-    };
+    }
 
-    const tree = renderer.create(
-      <Provider store={store}>
-        <MyGroups {...props} />
-      </Provider>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <MyGroups {...props} />
+        </Provider>,
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

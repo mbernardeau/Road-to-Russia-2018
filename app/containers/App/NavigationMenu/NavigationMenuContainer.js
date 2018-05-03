@@ -1,23 +1,20 @@
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+import { connect } from 'react-redux'
+import { compose } from 'redux'
 
-import {
-  closeMenu,
-  getMenuOpen,
-} from 'redux/nav';
+import { closeMenu, getMenuOpen } from 'redux/nav'
 
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router'
 
-import NavigationMenu from './NavigationMenu';
+import NavigationMenu from './NavigationMenu'
 
 export default compose(
   connect(
-    (state) => ({
+    state => ({
       open: getMenuOpen(state),
     }),
-    (dispatch) => ({
+    dispatch => ({
       closeMenu: () => dispatch(closeMenu()),
-    })
+    }),
   ),
-  withRouter
-)(NavigationMenu);
+  withRouter,
+)(NavigationMenu)

@@ -1,18 +1,20 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import moment from 'moment';
+import React from 'react'
+import renderer from 'react-test-renderer'
+import moment from 'moment'
 
-import MatchInfos from './MatchInfos';
+import MatchInfos from './MatchInfos'
 
 describe('Containers/Match/StadiumTooltip', () => {
   // Mock date to ensure consistancy between tests
-  Date.now = jest.fn(() => 1482363367071);
+  Date.now = jest.fn(() => 1482363367071)
 
-  moment.locale('fr');
+  moment.locale('fr')
 
   // Mock toLocaleString because of inconsistant behaviour in node (it works correctly in browsers)
   // eslint-disable-next-line
-  Number.prototype.toLocaleString = function(){ return `${this}` };
+  Number.prototype.toLocaleString = function() {
+    return `${this}`
+  }
 
   const props = {
     match: {
@@ -24,13 +26,10 @@ describe('Containers/Match/StadiumTooltip', () => {
       },
     },
     matchId: 'matchid1',
-  };
-
+  }
 
   it('renders correctly', () => {
-    const tree = renderer.create(
-      <MatchInfos {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+    const tree = renderer.create(<MatchInfos {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

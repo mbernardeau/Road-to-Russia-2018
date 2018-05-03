@@ -1,16 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { map } from 'lodash';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { map } from 'lodash'
 
-import Match from './Match';
+import Match from './Match'
 
 const Matches = ({ matches }) => (
   <div style={styles.container}>
-    {
-      map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)
-    }
+    {map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)}
   </div>
-);
+)
 
 const styles = {
   container: {
@@ -21,10 +19,10 @@ const styles = {
     margin: '0 15px',
     alignItems: 'center',
   },
-};
+}
 
 Matches.propTypes = {
   matches: PropTypes.object,
-};
+}
 
-export default Matches;
+export default Matches
