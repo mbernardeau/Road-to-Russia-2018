@@ -1,0 +1,48 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import moment from 'moment'
+import Tooltip from 'material-ui/Tooltip'
+
+import StadiumTooltip from './StadiumTooltip'
+
+import './matchInfos.scss'
+
+const MatchInfos = ({ match, stadium }) => {
+  const dateTime = moment(match.dateTime)
+
+  return (
+    <div className="match-infos-container">
+      <Tooltip title={dateTime.format('LLL')} disableTriggerTouch>
+        <div>{dateTime.fromNow()}</div>
+      </Tooltip>
+      <div>•</div>
+      <Tooltip title={<StadiumTooltip {...stadium} />} disableTriggerTouch>
+        <div>{stadium.name}</div>
+      </Tooltip>
+      <div>•</div>
+      <Tooltip title={<StadiumTooltip {...stadium} />} placement="left" disableTriggerTouch>
+        <div>{stadium.city}</div>
+      </Tooltip>
+    </div>
+  )
+}
+
+MatchInfos.defaultProps = {
+  match: {
+    dateTime: 0,
+  },
+  stadium: {},
+}
+
+MatchInfos.propTypes = {
+  match: PropTypes.shape({
+    dateTime: PropTypes.instanceOf(Date).isRequired,
+  }),
+  stadium: PropTypes.shape({
+    name: PropTypes.string,
+    city: PropTypes.string,
+  }),
+}
+
+export default MatchInfos

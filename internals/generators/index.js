@@ -18,8 +18,8 @@ module.exports = plop => {
   plop.setGenerator('language', languageGenerator)
   plop.addHelper('directory', comp => {
     try {
-      fs.accessSync(path.join(__dirname, `../../app/containers/${comp}`), fs.F_OK)
-      return `containers/${comp}`
+      fs.accessSync(path.join(__dirname, `../../app/screens/${comp}`), fs.F_OK)
+      return `screens/${comp}`
     } catch (e) {
       return `components/${comp}`
     }

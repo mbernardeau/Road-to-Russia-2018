@@ -7,6 +7,10 @@ import { combineReducers } from 'redux'
 import { LOCATION_CHANGE } from 'react-router-redux'
 import { firebaseStateReducer } from 'react-redux-firebase'
 
+import matches from './matches'
+import bets from './bets'
+import teams from './teams'
+import stadiums from './stadiums'
 import nav from './nav'
 
 /*
@@ -46,6 +50,10 @@ export default function createReducer(injectedReducers) {
     route: routeReducer,
     firebase: firebaseStateReducer,
     nav,
+    matches,
+    bets,
+    teams,
+    stadiums,
     ...injectedReducers,
   })
 }

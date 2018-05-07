@@ -23,7 +23,7 @@ import 'sanitize.css/sanitize.css'
 // import 'expose-loader?Perf!react-addons-perf';
 
 // Import root app
-import App from 'containers/App'
+import App from 'screens/App'
 
 // Load the favicon, the manifest.json file and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */

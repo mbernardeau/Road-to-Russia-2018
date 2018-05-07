@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/ConnectionWidget/User renders correctly 1`] = `
+<div
+  data-radium={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+    }
+  }
+>
+  <Avatar
+    data-radium={true}
+    src="http://avatar.url"
+    style={
+      Object {
+        "marginRight": 10,
+      }
+    }
+  />
+  <span
+    className="rmq-4ea42308"
+    data-radium={true}
+    style={
+      Object {
+        "color": "white",
+        "fontSize": "18px",
+      }
+    }
+  >
+    Georges Lucas
+  </span>
+  <IconButton
+    aria-haspopup="true"
+    aria-label="Plus"
+    aria-owns={null}
+    onClick={[Function]}
+  >
+    <MoreVert
+      color="inherit"
+    />
+  </IconButton>
+  <Menu
+    anchorEl={null}
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "bottom",
+      }
+    }
+    onRequestClose={[Function]}
+    open={false}
+    targetOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
+  >
+    <MenuItem
+      onClick={[Function]}
+    >
+      Se déconnecter
+    </MenuItem>
+  </Menu>
+</div>
+`;

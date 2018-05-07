@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/Match/Bet renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <img
+      alt="ru"
+      className={undefined}
+      src="IMAGE_MOCK"
+      style={
+        Object {
+          "height": "1.3em",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontSize": "1.3em",
+          "paddingLeft": "10px",
+          "textAlign": "center",
+        }
+      }
+    >
+      Russie
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+      }
+    }
+  >
+    <Select
+      onChange={[MockFunction]}
+      renderValue={[Function]}
+      type="number"
+      value={1}
+    >
+      <MenuItem
+        value={0}
+      >
+        0
+      </MenuItem>
+      <MenuItem
+        value={1}
+      >
+        1
+      </MenuItem>
+      <MenuItem
+        value={2}
+      >
+        2
+      </MenuItem>
+      <MenuItem
+        value={3}
+      >
+        3
+      </MenuItem>
+      <MenuItem
+        value={4}
+      >
+        4
+      </MenuItem>
+      <MenuItem
+        value={5}
+      >
+        5
+      </MenuItem>
+      <MenuItem
+        value={6}
+      >
+        6
+      </MenuItem>
+      <MenuItem
+        value={7}
+      >
+        7
+      </MenuItem>
+      <MenuItem
+        value={8}
+      >
+        8
+      </MenuItem>
+      <MenuItem
+        value={9}
+      >
+        9
+      </MenuItem>
+      <MenuItem
+        value={10}
+      >
+        10
+      </MenuItem>
+    </Select>
+  </div>
+</div>
+`;
