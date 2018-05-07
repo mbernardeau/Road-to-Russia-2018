@@ -58,7 +58,7 @@ containerGen.runActions({
   wantMessages: true
 })
   .then(checkForErrors)
-  .then(removeTestsDirFrom('containers/RbGeneratedContainerPureComponent'))
+  .then(removeTestsDirFrom('screens/RbGeneratedContainerPureComponent'))
   .catch(reportErrorsFor('container/PureComponent'));
 
 const ContainerComponent = containerGen.runActions({
@@ -70,7 +70,7 @@ const ContainerComponent = containerGen.runActions({
   wantMessages: true
 })
   .then(checkForErrors)
-  .then(removeTestsDirFrom('containers/RbGeneratedContainerComponent'))
+  .then(removeTestsDirFrom('screens/RbGeneratedContainerComponent'))
   .catch(reportErrorsFor('container/Component'));
 
 const routeGen = plop.getGenerator('route');

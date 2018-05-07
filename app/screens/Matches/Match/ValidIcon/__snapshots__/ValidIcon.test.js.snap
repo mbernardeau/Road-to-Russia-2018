@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/Match/ValidIcon renders correctly when invalid 1`] = `
+<Tooltip
+  placement="right"
+  title="Paris invalide"
+>
+  <Clear
+    color="error"
+    style={
+      Object {
+        "left": 5,
+        "opacity": 0.8,
+        "position": "absolute",
+        "top": 5,
+      }
+    }
+  />
+</Tooltip>
+`;
+
+exports[`screens/Match/ValidIcon renders correctly when valid 1`] = `
+<Tooltip
+  placement="right"
+  title="Paris enregistré"
+>
+  <Check
+    color="action"
+    style={
+      Object {
+        "left": 5,
+        "opacity": 0.8,
+        "position": "absolute",
+        "top": 5,
+      }
+    }
+  />
+</Tooltip>
+`;

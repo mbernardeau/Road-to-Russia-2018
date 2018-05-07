@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/App/ConnectionModal renders correctly 1`] = `
+Array [
+  <DialogTitle>
+    Connexion
+  </DialogTitle>,
+  <DialogContent
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "padding": 15,
+      }
+    }
+  >
+    <Button
+      color="primary"
+      onClick={[Function]}
+      raised={true}
+      style={
+        Object {
+          "marginBottom": 10,
+        }
+      }
+    >
+      <FaGoogle />
+        Connexion avec Google
+    </Button>
+    <Button
+      color="accent"
+      onClick={[Function]}
+      raised={true}
+      style={
+        Object {
+          "marginBottom": 10,
+        }
+      }
+    >
+      <FaFacebook />
+        Connexion avec Facebook
+    </Button>
+  </DialogContent>,
+]
+`;

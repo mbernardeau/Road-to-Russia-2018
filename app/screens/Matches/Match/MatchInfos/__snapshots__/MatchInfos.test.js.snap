@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
+<div
+  className="match-infos-container"
+>
+  <Tooltip
+    disableTriggerTouch={true}
+    title="14 juin 2018 21:00"
+  >
+    <div>
+      dans un an
+    </div>
+  </Tooltip>
+  <div>
+    •
+  </div>
+  <Tooltip
+    disableTriggerTouch={true}
+    title={
+      <StadiumTooltip
+        capacity={69500}
+        city="Saint-Pétersbourg"
+        name="Stade Krestovski"
+      />
+    }
+  >
+    <div>
+      Stade Krestovski
+    </div>
+  </Tooltip>
+  <div>
+    •
+  </div>
+  <Tooltip
+    disableTriggerTouch={true}
+    placement="left"
+    title={
+      <StadiumTooltip
+        capacity={69500}
+        city="Saint-Pétersbourg"
+        name="Stade Krestovski"
+      />
+    }
+  >
+    <div>
+      Saint-Pétersbourg
+    </div>
+  </Tooltip>
+</div>
+`;
