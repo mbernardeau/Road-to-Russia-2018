@@ -36,7 +36,7 @@ export default class NavigationMenu extends Component {
 
   render() {
     return (
-      <Drawer open={this.props.open} onRequestClose={() => this.props.closeMenu()}>
+      <Drawer open={this.props.open} onClose={() => this.props.closeMenu()}>
         <List>
           <ListItem button onClick={this.goTo('/')}>
             <img src={WorldCupImg} style={styles.image} alt="Accueil" />

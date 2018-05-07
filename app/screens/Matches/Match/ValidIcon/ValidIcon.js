@@ -18,9 +18,9 @@ const getTooltipText = valid => (valid ? 'Paris enregistré' : 'Paris invalide')
 const ValidIcon = ({ valid }) => (
   <Tooltip title={getTooltipText(valid)} placement="right">
     {valid ? (
-      <CheckIcon style={iconStyles} color="green" />
+      <CheckIcon style={iconStyles} color="action" />
     ) : (
-      <ClearIcon style={iconStyles} color="red" />
+      <ClearIcon style={iconStyles} color="error" />
     )}
   </Tooltip>
 )

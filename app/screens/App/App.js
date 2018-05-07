@@ -47,7 +47,7 @@ class App extends React.Component {
       <Fragment>
         <AppBar>
           <Toolbar style={styles.toolbar}>
-            <IconButton color="white" aria-label="Menu" onClick={toggleMenu}>
+            <IconButton color="inherit" aria-label="Menu" onClick={toggleMenu}>
               <MenuIcon />
             </IconButton>
             <div style={styles.appbarTitle}>
