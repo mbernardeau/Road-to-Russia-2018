@@ -29,11 +29,11 @@ const mapDispatch = (dispatch, { matchId, match: { teamA, teamB, stadium } }) =>
 })
 
 export default compose(
+  connect(mapState, mapDispatch),
+  loader({ print: ['bet', 'teamA', 'teamB', 'stadium'] }),
   lazyload({
     height: 135,
     once: true,
     offset: 300,
   }),
-  connect(mapState, mapDispatch),
-  loader({ print: ['bet', 'teamA', 'teamB', 'stadium'] }),
 )(Match)
