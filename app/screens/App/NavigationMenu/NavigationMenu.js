@@ -61,7 +61,7 @@ export default class NavigationMenu extends Component {
             <ListItemText primary="Créer une tribu" />
           </ListItem>
           <ListItem button onClick={this.goTo('/creategroup')}>
-            <ListItemText primary="Creation groupe" />
+            <ListItemText primary="Créer une tribu" />
           </ListItem>
         </List>
       </Drawer>
