@@ -7,6 +7,8 @@ import { routerMiddleware } from 'react-router-redux'
 import { reactReduxFirebase } from 'react-redux-firebase'
 import * as firebase from 'firebase'
 import thunk from 'redux-thunk'
+import 'firebase/firestore'
+
 import createReducer from './reducers'
 
 export default function configureStore(initialState = {}, history) {

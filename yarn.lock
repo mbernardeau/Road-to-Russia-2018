@@ -4934,6 +4934,10 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoc-react-loader@6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/hoc-react-loader/-/hoc-react-loader-6.3.0.tgz#2f5e8ae373a12dfe78fc175ff42b444ca38ef226"
+
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
@@ -6421,6 +6425,10 @@ jsx-ast-utils@^2.0.0, jsx-ast-utils@^2.0.1:
 just-extend@^1.1.27:
   version "1.1.27"
   resolved "https://registry.yarnpkg.com/just-extend/-/just-extend-1.1.27.tgz#ec6e79410ff914e472652abfa0e603c03d60e905"
+
+k-redux-factory@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/k-redux-factory/-/k-redux-factory-5.0.2.tgz#79647d5fc40503d952370d8d35e64aaba7e62e5c"
 
 keycode@^2.1.9:
   version "2.2.0"
@@ -10469,7 +10477,7 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tinycolor2@^1.1.2:
+tinycolor2@1.4.1, tinycolor2@^1.1.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
 

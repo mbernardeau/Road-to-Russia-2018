@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/JoinGroup renders correctly 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-shadow2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "marginBottom": 15,
+      "padding": 15,
+      "width": "90%",
+    }
+  }
+>
+  <h1
+    className="MuiTypography-root-28 MuiTypography-headline-33 MuiTypography-gutterBottom-45"
+  >
+    Rejoindre un groupe
+  </h1>
+  <br />
+  <h3
+    className="MuiTypography-root-28 MuiTypography-subheading-35 MuiTypography-gutterBottom-45"
+  >
+    Rejoignez un groupe pour vous confrontez à vos amis, collègues, familles...
+  </h3>
+  <div
+    className="MuiCardContent-root-52"
+    style={
+      Object {
+        "width": "90%",
+      }
+    }
+  >
+    <div
+      className="MuiFormControl-root-53 MuiFormControl-fullWidth-56"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      required={false}
+    >
+      <div
+        className="MuiInput-root-62 MuiInput-fullWidth-77 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-71"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="MuiSelect-root-57"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiInput-input-66 MuiInput-inputSingleline-74"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id={undefined}
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={undefined}
+            rows={undefined}
+            type="hidden"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-78 MuiSelect-icon-61"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p
+      className="MuiFormHelperText-root-83"
+    >
+      Rechercher un groupe
+    </p>
+  </div>
+  <div
+    className="MuiCardActions-root-87"
+  >
+    <button
+      className="MuiButtonBase-root-103 MuiButtonBase-disabled-104 MuiButton-root-89 MuiButton-raised-96 MuiButton-raisedPrimary-98 MuiButton-disabled-101 MuiCardActions-actionSpacing-88"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={undefined}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-91"
+      >
+        Envoyer la demande
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`screens/JoinGroup renders correctly when disabled 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-shadow2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "marginBottom": 15,
+      "padding": 15,
+      "width": "90%",
+    }
+  }
+>
+  <h1
+    className="MuiTypography-root-28 MuiTypography-headline-33 MuiTypography-gutterBottom-45"
+  >
+    Rejoindre un groupe
+  </h1>
+  <br />
+  <h3
+    className="MuiTypography-root-28 MuiTypography-subheading-35 MuiTypography-gutterBottom-45"
+  >
+    Rejoignez un groupe pour vous confrontez à vos amis, collègues, familles...
+  </h3>
+  <div
+    className="MuiCardContent-root-52"
+    style={
+      Object {
+        "width": "90%",
+      }
+    }
+  >
+    <div
+      className="MuiFormControl-root-53 MuiFormControl-fullWidth-56"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      required={false}
+    >
+      <div
+        className="MuiInput-root-62 MuiInput-disabled-69 MuiInput-fullWidth-77 MuiInput-formControl-63 MuiInput-inkbar-64 MuiInput-underline-71"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="MuiSelect-root-57"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-58 MuiSelect-selectMenu-59 MuiSelect-disabled-60 MuiInput-input-66 MuiInput-inputDisabled-73 MuiInput-inputSingleline-74"
+            onBlur={[Function]}
+            onClick={null}
+            onFocus={undefined}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={null}
+          />
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id={undefined}
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={undefined}
+            rows={undefined}
+            type="hidden"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-78 MuiSelect-icon-61"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p
+      className="MuiFormHelperText-root-83"
+    >
+      Aucun groupe à rejoindre
+    </p>
+  </div>
+  <div
+    className="MuiCardActions-root-87"
+  >
+    <button
+      className="MuiButtonBase-root-103 MuiButtonBase-disabled-104 MuiButton-root-89 MuiButton-raised-96 MuiButton-raisedPrimary-98 MuiButton-disabled-101 MuiCardActions-actionSpacing-88"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={undefined}
+      tabIndex={-1}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-91"
+      >
+        Envoyer la demande
+      </span>
+    </button>
+  </div>
+</div>
+`;

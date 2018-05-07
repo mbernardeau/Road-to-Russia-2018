@@ -1,0 +1,545 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/Match renders correctly 1`] = `
+<div
+  className="MuiPaper-root-1 MuiPaper-shadow2-5 MuiPaper-rounded-2"
+  style={
+    Object {
+      "marginBottom": 7,
+      "marginTop": 7,
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="MuiCardContent-root-28"
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "grid",
+          "gridTemplateColumns": "50% 50%",
+          "marginBottom": 10,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <img
+            alt="cl"
+            className={undefined}
+            src="IMAGE_MOCK"
+            style={
+              Object {
+                "height": "1.3em",
+              }
+            }
+          />
+          <div
+            style={
+              Object {
+                "fontSize": "1.3em",
+                "paddingLeft": "10px",
+                "textAlign": "center",
+              }
+            }
+          >
+            Chili
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+            }
+          }
+        >
+          <div
+            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-43"
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            <div
+              className="MuiSelect-root-29"
+            >
+              <div
+                aria-haspopup="true"
+                aria-owns={null}
+                aria-pressed="false"
+                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-46"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={undefined}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              />
+              <input
+                autoComplete={undefined}
+                autoFocus={undefined}
+                defaultValue={undefined}
+                id={undefined}
+                name={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
+                placeholder={undefined}
+                readOnly={undefined}
+                required={undefined}
+                rows={undefined}
+                type="hidden"
+                value=""
+              />
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-50 MuiSelect-icon-33"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
+        >
+          <img
+            alt="br"
+            className={undefined}
+            src="IMAGE_MOCK"
+            style={
+              Object {
+                "height": "1.3em",
+              }
+            }
+          />
+          <div
+            style={
+              Object {
+                "fontSize": "1.3em",
+                "paddingLeft": "10px",
+                "textAlign": "center",
+              }
+            }
+          >
+            Brésil
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+            }
+          }
+        >
+          <div
+            className="MuiInput-root-34 MuiInput-inkbar-36 MuiInput-underline-43"
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            <div
+              className="MuiSelect-root-29"
+            >
+              <div
+                aria-haspopup="true"
+                aria-owns={null}
+                aria-pressed="false"
+                className="MuiSelect-select-30 MuiSelect-selectMenu-31 MuiInput-input-38 MuiInput-inputSingleline-46"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={undefined}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+              />
+              <input
+                autoComplete={undefined}
+                autoFocus={undefined}
+                defaultValue={undefined}
+                id={undefined}
+                name={undefined}
+                onKeyDown={undefined}
+                onKeyUp={undefined}
+                placeholder={undefined}
+                readOnly={undefined}
+                required={undefined}
+                rows={undefined}
+                type="hidden"
+                value=""
+              />
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-50 MuiSelect-icon-33"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-55 MuiDivider-default-56"
+    />
+    <div
+      style={
+        Object {
+          "color": "darkgray",
+          "display": "flex",
+          "fontSize": "0.9em",
+          "justifyContent": "space-around",
+          "marginTop": "10px",
+          "textShadow": "0 1px 0 rgba(0,0,0,.1)",
+        }
+      }
+    >
+      <div
+        className="MuiTooltip-root-60"
+      >
+        <div
+          aria-describedby={undefined}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          dans 2 ans
+        </div>
+        <div
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
+          data-placement={undefined}
+          data-x-out-of-boundaries={undefined}
+          style={
+            Object {
+              "opacity": 0,
+              "pointerEvents": "none",
+              "position": "absolute",
+            }
+          }
+        >
+          <div
+            aria-hidden={true}
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipBottom-67"
+            id={undefined}
+            role="tooltip"
+          >
+            28 juin 2018 19:00
+          </div>
+        </div>
+      </div>
+      <div>
+        •
+      </div>
+      <div
+        className="MuiTooltip-root-60"
+      >
+        <div
+          aria-describedby={undefined}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          Stade de Kaliningrad
+        </div>
+        <div
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
+          data-placement={undefined}
+          data-x-out-of-boundaries={undefined}
+          style={
+            Object {
+              "opacity": 0,
+              "pointerEvents": "none",
+              "position": "absolute",
+            }
+          }
+        >
+          <div
+            aria-hidden={true}
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipBottom-67"
+            id={undefined}
+            role="tooltip"
+          >
+            <div
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "flex",
+                    "justifyContent": "space-around",
+                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Stade de Kaliningrad
+                </div>
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  •
+                </div>
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Kaliningrad
+                </div>
+              </div>
+              <img
+                alt="Stade de Kaliningrad"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "flex",
+                    "justifyContent": "space-around",
+                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+                  }
+                }
+              >
+                <div>
+                  Capacité
+                </div>
+                <div>
+                  35000
+                   places
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        •
+      </div>
+      <div
+        className="MuiTooltip-root-60"
+      >
+        <div
+          aria-describedby={undefined}
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          Kaliningrad
+        </div>
+        <div
+          className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
+          data-placement={undefined}
+          data-x-out-of-boundaries={undefined}
+          style={
+            Object {
+              "opacity": 0,
+              "pointerEvents": "none",
+              "position": "absolute",
+            }
+          }
+        >
+          <div
+            aria-hidden={true}
+            className="MuiTooltip-tooltip-63 MuiTooltip-tooltipLeft-64"
+            id={undefined}
+            role="tooltip"
+          >
+            <div
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "flex",
+                    "justifyContent": "space-around",
+                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Stade de Kaliningrad
+                </div>
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  •
+                </div>
+                <div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Kaliningrad
+                </div>
+              </div>
+              <img
+                alt="Stade de Kaliningrad"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg"
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "color": "white",
+                    "display": "flex",
+                    "justifyContent": "space-around",
+                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
+                  }
+                }
+              >
+                <div>
+                  Capacité
+                </div>
+                <div>
+                  35000
+                   places
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiTooltip-root-60"
+    >
+      <svg
+        aria-describedby={undefined}
+        aria-hidden="true"
+        className="MuiSvgIcon-root-50"
+        color="red"
+        focusable="false"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "left": 5,
+            "opacity": 0.8,
+            "position": "absolute",
+            "top": 5,
+          }
+        }
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+      <div
+        className="MuiTooltip-popper-61 MuiTooltip-popperClose-62"
+        data-placement={undefined}
+        data-x-out-of-boundaries={undefined}
+        style={
+          Object {
+            "opacity": 0,
+            "pointerEvents": "none",
+            "position": "absolute",
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          className="MuiTooltip-tooltip-63 MuiTooltip-tooltipRight-65"
+          id={undefined}
+          role="tooltip"
+        >
+          Paris invalide
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
