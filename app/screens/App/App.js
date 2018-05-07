@@ -25,6 +25,7 @@ import HomePage from 'screens/HomePage/Loadable'
 import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
+import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
@@ -72,6 +73,7 @@ class App extends React.Component {
               <Route path="/matchesvalidation" component={MatchesValidationPage} />
               <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
+              <Route path="/creategroup" component={CreateGroupPage} />
               <Route component={NotFoundPage} />
             </Switch>
           )}
