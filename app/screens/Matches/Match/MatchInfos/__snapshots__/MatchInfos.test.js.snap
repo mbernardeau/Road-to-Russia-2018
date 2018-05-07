@@ -23,7 +23,7 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
     >
-      dans un jour
+      dans un an
     </div>
     <div
       className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
@@ -43,7 +43,7 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
         id={undefined}
         role="tooltip"
       >
-        23 décembre 2016 04:22
+        14 juin 2018 21:00
       </div>
     </div>
   </div>

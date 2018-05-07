@@ -18,12 +18,12 @@ describe('screens/Match/StadiumTooltip', () => {
 
   const props = {
     match: {
-      dateTime: 1482463367,
-      stadium: {
-        capacity: 69500,
-        city: 'Saint-Pétersbourg',
-        name: 'Stade Krestovski',
-      },
+      dateTime: 1529002800000,
+    },
+    stadium: {
+      capacity: 69500,
+      city: 'Saint-Pétersbourg',
+      name: 'Stade Krestovski',
     },
     matchId: 'matchid1',
   }

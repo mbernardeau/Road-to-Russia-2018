@@ -18,27 +18,6 @@ describe('screens/Match', () => {
 
   const props = {
     match: {
-      teamB: {
-        code: 'br',
-        group: 'G',
-        name: 'Brésil',
-      },
-      teamA: {
-        code: 'cl',
-        group: 'G',
-        name: 'Chili',
-      },
-      stadium: {
-        capacity: 35000,
-        city: 'Kaliningrad',
-        name: 'Stade de Kaliningrad',
-        photo: {
-          credit:
-            'By A.Savin (Wikimedia Commons · WikiPhotoSpace) (Own work) [FAL], via Wikimedia Commons',
-          url:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg',
-        },
-      },
       dateTime: 1530205200,
       odds: {
         1: 1.7,
@@ -48,6 +27,27 @@ describe('screens/Match', () => {
         N: 3.2,
       },
       phase: '0',
+    },
+    teamB: {
+      code: 'br',
+      group: 'G',
+      name: 'Brésil',
+    },
+    teamA: {
+      code: 'cl',
+      group: 'G',
+      name: 'Chili',
+    },
+    stadium: {
+      capacity: 35000,
+      city: 'Kaliningrad',
+      name: 'Stade de Kaliningrad',
+      photo: {
+        credit:
+          'By A.Savin (Wikimedia Commons · WikiPhotoSpace) (Own work) [FAL], via Wikimedia Commons',
+        url:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg',
+      },
     },
     matchId: '-Kj2zgKPFE3FgypNGQ-1',
     userId: 'yWobdSGHFqTYO5yU0s46QYeplen2',
@@ -84,7 +84,7 @@ describe('screens/Match', () => {
       teamA: 3,
       teamB: 1,
     },
-    saveBet: () => {},
+    saveBet: jest.fn(),
   }
 
   it('renders correctly', () => {

@@ -26,12 +26,12 @@ describe('screens/Match/StadiumTooltip', () => {
   }
 
   it('renders correctly', () => {
-    const tree = renderer.create(<StadiumTooltip stadium={stadiumWithPhoto} />).toJSON()
+    const tree = renderer.create(<StadiumTooltip {...stadiumWithPhoto} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('render with no image if not provided', () => {
-    const tree = renderer.create(<StadiumTooltip stadium={stadium} />).toJSON()
+    const tree = renderer.create(<StadiumTooltip {...stadium} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

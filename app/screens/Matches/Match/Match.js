@@ -111,10 +111,7 @@ Match.defaultProps = {
 }
 
 Match.propTypes = {
-  match: PropTypes.shape({
-    teamA: PropTypes.string.isRequired,
-    teamB: PropTypes.string.isRequired,
-  }),
+  match: PropTypes.object,
   teamA: PropTypes.shape({
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
