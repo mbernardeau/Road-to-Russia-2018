@@ -5,23 +5,20 @@ import loader from 'hoc-react-loader'
 
 import betReducer, { fetchBet, saveBet } from 'redux/bets'
 import teamsReducer, { fetchTeam } from 'redux/teams'
-import stadiumsReducer, { fetchStadium } from 'redux/stadiums'
 
 import Match from './Match'
 
-const mapState = (state, { matchId, match: { teamA, teamB, stadium } }) => ({
+const mapState = (state, { matchId, match: { teamA, teamB } }) => ({
   bet: betReducer.get(matchId)(state),
   teamA: teamsReducer.get(teamA)(state),
   teamB: teamsReducer.get(teamB)(state),
-  stadium: stadiumsReducer.get(stadium)(state),
 })
 
-const mapDispatch = (dispatch, { matchId, match: { teamA, teamB, stadium } }) => ({
+const mapDispatch = (dispatch, { matchId, match: { teamA, teamB } }) => ({
   load: () => {
     dispatch(fetchBet(matchId))
     dispatch(fetchTeam(teamA))
     dispatch(fetchTeam(teamB))
-    dispatch(fetchStadium(stadium))
   },
   saveBet: bet => {
     dispatch(saveBet(matchId, bet))
@@ -30,7 +27,7 @@ const mapDispatch = (dispatch, { matchId, match: { teamA, teamB, stadium } }) =>
 
 export default compose(
   connect(mapState, mapDispatch),
-  loader({ print: ['bet', 'teamA', 'teamB', 'stadium'] }),
+  loader({ print: ['bet', 'teamA', 'teamB'] }),
   lazyload({
     height: 135,
     once: true,

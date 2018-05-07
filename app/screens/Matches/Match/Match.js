@@ -67,7 +67,7 @@ class Match extends Component {
   handleTeamBChange = this.handleChange('B')
 
   render() {
-    const { match, teamA, teamB, stadium, matchId } = this.props
+    const { match, teamA, teamB } = this.props
     const { bet } = this.state
 
     return (
@@ -78,7 +78,7 @@ class Match extends Component {
             <Bet team={teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
           <Divider />
-          <MatchInfos match={match} stadium={stadium} matchId={matchId} />
+          <MatchInfos match={match} />
           <ValidIcon valid={this.betSaved()} />
         </CardContent>
       </Card>
@@ -124,12 +124,7 @@ Match.propTypes = {
     teamA: PropTypes.number,
     teamB: PropTypes.number,
   }),
-  stadium: PropTypes.shape({
-    name: PropTypes.string,
-    city: PropTypes.string,
-  }),
   saveBet: PropTypes.func.isRequired,
-  matchId: PropTypes.string,
 }
 
 Match.defaultProps = {

@@ -1,3 +1,3 @@
-import MatchInfos from './MatchInfos'
+import MatchInfos from './MatchInfosContainer'
 
 export default MatchInfos
