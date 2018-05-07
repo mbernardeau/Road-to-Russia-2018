@@ -10,11 +10,13 @@ export const fetchBet = matchId => (dispatch, getState) => {
     .where('match', '==', matchId)
     .where('user', '==', uid)
     .get()
-    .then(doc => {
-      if (!doc.exists) {
+    .then(querySnapshot => {
+      if (querySnapshot.empty) {
         dispatch(betReducer.addOrUpdate({ id: matchId }))
       } else {
-        dispatch(betReducer.addOrUpdate({ id: matchId, ...doc.data() }))
+        querySnapshot.forEach(doc =>
+          dispatch(betReducer.addOrUpdate({ id: matchId, ...doc.data() })),
+        )
       }
     })
 }
