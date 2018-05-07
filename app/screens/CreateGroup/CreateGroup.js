@@ -1,10 +1,10 @@
 import React from 'react'
 
-import JoinGroup from './JoinGroup'
+import CreateGroupComp from './CreateGroupComp'
 
 const CreateGroup = () => (
   <div style={styles.container}>
-    <JoinGroup />
+    <CreateGroupComp />
   </div>
 )
 
