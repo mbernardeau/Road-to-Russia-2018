@@ -10,22 +10,15 @@ exports[`screens/ConnectionWidget/User renders correctly 1`] = `
     }
   }
 >
-  <div
-    className="MuiAvatar-root-1"
+  <Avatar
+    data-radium={true}
+    src="http://avatar.url"
     style={
       Object {
         "marginRight": 10,
       }
     }
-  >
-    <img
-      alt={undefined}
-      className="MuiAvatar-img-3"
-      sizes={undefined}
-      src="http://avatar.url"
-      srcSet={undefined}
-    />
-  </div>
+  />
   <span
     className="rmq-4ea42308"
     data-radium={true}
@@ -38,45 +31,38 @@ exports[`screens/ConnectionWidget/User renders correctly 1`] = `
   >
     Georges Lucas
   </span>
-  <button
+  <IconButton
     aria-haspopup="true"
     aria-label="Plus"
     aria-owns={null}
-    className="MuiButtonBase-root-13 MuiIconButton-root-4"
-    disabled={false}
-    onBlur={[Function]}
     onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    role="button"
-    tabIndex={0}
-    type="button"
   >
-    <span
-      className="MuiIconButton-label-10"
-    >
-      <svg
-        aria-hidden="true"
-        className="MuiSvgIcon-root-15 MuiIconButton-icon-11"
-        color="white"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-        />
-      </svg>
-    </span>
-    <span
-      className="MuiTouchRipple-root-16"
+    <MoreVert
+      color="inherit"
     />
-  </button>
+  </IconButton>
+  <Menu
+    anchorEl={null}
+    anchorOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "bottom",
+      }
+    }
+    onRequestClose={[Function]}
+    open={false}
+    targetOrigin={
+      Object {
+        "horizontal": "right",
+        "vertical": "top",
+      }
+    }
+  >
+    <MenuItem
+      onClick={[Function]}
+    >
+      Se déconnecter
+    </MenuItem>
+  </Menu>
 </div>
 `;

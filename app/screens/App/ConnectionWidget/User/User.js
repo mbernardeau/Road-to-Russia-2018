@@ -5,7 +5,8 @@ import Radium from 'radium'
 
 import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
-import Menu, { MenuItem } from 'material-ui/Menu'
+import Menu from 'material-ui/Menu'
+import MenuItem from 'material-ui/Menu/MenuItem'
 import MoreVertIcon from 'material-ui-icons/MoreVert'
 
 class User extends PureComponent {
@@ -49,7 +50,7 @@ class User extends PureComponent {
           aria-haspopup="true"
           onClick={this.handleClick}
         >
-          <MoreVertIcon color="white" />
+          <MoreVertIcon color="inherit" />
         </IconButton>
 
         <Menu

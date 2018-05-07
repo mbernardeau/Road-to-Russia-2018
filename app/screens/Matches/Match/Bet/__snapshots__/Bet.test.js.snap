@@ -48,64 +48,68 @@ exports[`screens/Match/Bet renders correctly 1`] = `
       }
     }
   >
-    <div
-      className="MuiInput-root-6 MuiInput-inkbar-8 MuiInput-underline-15"
-      onBlur={[Function]}
-      onFocus={[Function]}
+    <Select
+      onChange={[MockFunction]}
+      renderValue={[Function]}
+      type="number"
+      value={1}
     >
-      <div
-        className="MuiSelect-root-1"
+      <MenuItem
+        value={0}
       >
-        <div
-          aria-haspopup="true"
-          aria-owns={null}
-          aria-pressed="false"
-          className="MuiSelect-select-2 MuiSelect-selectMenu-3 MuiInput-input-10 MuiInput-inputSingleline-18"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={undefined}
-          onKeyDown={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          <div
-            style={
-              Object {
-                "textAlign": "center",
-                "width": "100%",
-              }
-            }
-          >
-            1
-          </div>
-        </div>
-        <input
-          autoComplete={undefined}
-          autoFocus={undefined}
-          defaultValue={undefined}
-          id={undefined}
-          name={undefined}
-          onKeyDown={undefined}
-          onKeyUp={undefined}
-          placeholder={undefined}
-          readOnly={undefined}
-          required={undefined}
-          rows={undefined}
-          type="hidden"
-          value={1}
-        />
-        <svg
-          aria-hidden="true"
-          className="MuiSvgIcon-root-22 MuiSelect-icon-5"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-      </div>
-    </div>
+        0
+      </MenuItem>
+      <MenuItem
+        value={1}
+      >
+        1
+      </MenuItem>
+      <MenuItem
+        value={2}
+      >
+        2
+      </MenuItem>
+      <MenuItem
+        value={3}
+      >
+        3
+      </MenuItem>
+      <MenuItem
+        value={4}
+      >
+        4
+      </MenuItem>
+      <MenuItem
+        value={5}
+      >
+        5
+      </MenuItem>
+      <MenuItem
+        value={6}
+      >
+        6
+      </MenuItem>
+      <MenuItem
+        value={7}
+      >
+        7
+      </MenuItem>
+      <MenuItem
+        value={8}
+      >
+        8
+      </MenuItem>
+      <MenuItem
+        value={9}
+      >
+        9
+      </MenuItem>
+      <MenuItem
+        value={10}
+      >
+        10
+      </MenuItem>
+    </Select>
   </div>
 </div>
 `;

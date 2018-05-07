@@ -4,167 +4,48 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
 <div
   className="match-infos-container"
 >
-  <div
-    className="MuiTooltip-root-1"
+  <Tooltip
+    disableTriggerTouch={true}
+    title="14 juin 2018 21:00"
   >
-    <div
-      aria-describedby={undefined}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-    >
+    <div>
       dans un an
     </div>
-    <div
-      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-      data-placement={undefined}
-      data-x-out-of-boundaries={undefined}
-      style={
-        Object {
-          "opacity": 0,
-          "pointerEvents": "none",
-          "position": "absolute",
-        }
-      }
-    >
-      <div
-        aria-hidden={true}
-        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
-        id={undefined}
-        role="tooltip"
-      >
-        14 juin 2018 21:00
-      </div>
-    </div>
-  </div>
+  </Tooltip>
   <div>
     •
   </div>
-  <div
-    className="MuiTooltip-root-1"
+  <Tooltip
+    disableTriggerTouch={true}
+    title={
+      <StadiumTooltip
+        capacity={69500}
+        city="Saint-Pétersbourg"
+        name="Stade Krestovski"
+      />
+    }
   >
-    <div
-      aria-describedby={undefined}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-    >
+    <div>
       Stade Krestovski
     </div>
-    <div
-      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-      data-placement={undefined}
-      data-x-out-of-boundaries={undefined}
-      style={
-        Object {
-          "opacity": 0,
-          "pointerEvents": "none",
-          "position": "absolute",
-        }
-      }
-    >
-      <div
-        aria-hidden={true}
-        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipBottom-8"
-        id={undefined}
-        role="tooltip"
-      >
-        <div
-          className="stadium-tooltip"
-        >
-          <div
-            className="stadium-tooltip-title"
-          >
-            <div>
-              Stade Krestovski
-            </div>
-            <div>
-              •
-            </div>
-            <div>
-              Saint-Pétersbourg
-            </div>
-          </div>
-          <div
-            className="stadium-tooltip-title"
-          >
-            <div>
-              Capacité
-            </div>
-            <div>
-              69500
-               places
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </Tooltip>
   <div>
     •
   </div>
-  <div
-    className="MuiTooltip-root-1"
+  <Tooltip
+    disableTriggerTouch={true}
+    placement="left"
+    title={
+      <StadiumTooltip
+        capacity={69500}
+        city="Saint-Pétersbourg"
+        name="Stade Krestovski"
+      />
+    }
   >
-    <div
-      aria-describedby={undefined}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-    >
+    <div>
       Saint-Pétersbourg
     </div>
-    <div
-      className="MuiTooltip-popper-2 MuiTooltip-popperClose-3"
-      data-placement={undefined}
-      data-x-out-of-boundaries={undefined}
-      style={
-        Object {
-          "opacity": 0,
-          "pointerEvents": "none",
-          "position": "absolute",
-        }
-      }
-    >
-      <div
-        aria-hidden={true}
-        className="MuiTooltip-tooltip-4 MuiTooltip-tooltipLeft-5"
-        id={undefined}
-        role="tooltip"
-      >
-        <div
-          className="stadium-tooltip"
-        >
-          <div
-            className="stadium-tooltip-title"
-          >
-            <div>
-              Stade Krestovski
-            </div>
-            <div>
-              •
-            </div>
-            <div>
-              Saint-Pétersbourg
-            </div>
-          </div>
-          <div
-            className="stadium-tooltip-title"
-          >
-            <div>
-              Capacité
-            </div>
-            <div>
-              69500
-               places
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </Tooltip>
 </div>
 `;

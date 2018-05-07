@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import { map, isEmpty } from 'lodash'
 
 import Card from 'material-ui/Card'
-import Table, { TableBody } from 'material-ui/Table'
+import Table from 'material-ui/Table'
+import TableBody from 'material-ui/Table/TableBody'
 import Typography from 'material-ui/Typography'
 
 import GroupRow from './GroupRow'

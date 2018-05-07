@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 import { conformsTo, isNumber } from 'lodash'
 
-import Card, { CardContent } from 'material-ui/Card'
-
+import Card from 'material-ui/Card'
+import CardContent from 'material-ui/Card/CardContent'
 import Divider from 'material-ui/Divider'
 
 import Bet from './Bet'

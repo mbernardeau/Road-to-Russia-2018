@@ -6,6 +6,12 @@ import configureMockStore from 'redux-mock-store'
 
 import MyGroups from './MyGroups'
 
+jest.mock('material-ui/Card', () => 'Card')
+jest.mock('material-ui/Table', () => 'Table')
+jest.mock('material-ui/Table/TableBody', () => 'TableBody')
+jest.mock('material-ui/Typography', () => 'Typography')
+jest.mock('./GroupRow', () => 'GroupRow')
+
 describe('Groups/MyGroups', () => {
   const state = {
     firebase: {

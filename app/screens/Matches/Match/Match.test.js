@@ -4,6 +4,15 @@ import moment from 'moment'
 
 import Match from './Match'
 
+jest.mock('material-ui/Card', () => 'Card')
+jest.mock('material-ui/Card/CardContent', () => 'CardContent')
+
+jest.mock('material-ui/Divider', () => 'Divider')
+
+jest.mock('./Bet', () => 'Bet')
+jest.mock('./ValidIcon', () => 'Bet')
+jest.mock('./MatchInfos', () => 'Bet')
+
 describe('screens/Match', () => {
   // Mock date to ensure consistancy between tests
   Date.now = jest.fn(() => 1482363367071)

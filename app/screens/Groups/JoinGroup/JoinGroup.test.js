@@ -3,6 +3,18 @@ import renderer from 'react-test-renderer'
 
 import JoinGroup from './JoinGroup'
 
+jest.mock('material-ui/Button', () => 'Button')
+jest.mock('material-ui/Card', () => 'Card')
+jest.mock('material-ui/Card/CardActions', () => 'CardActions')
+jest.mock('material-ui/Card/CardContent', () => 'CardContent')
+jest.mock('material-ui/Menu/MenuItem', () => 'MenuItem')
+jest.mock('material-ui/Select', () => 'Select')
+jest.mock('material-ui/Form', () => ({
+  FormControl: 'FormControl',
+  FormHelperText: 'FormHelperText',
+}))
+jest.mock('material-ui/Typography', () => 'Typography')
+
 describe('screens/JoinGroup', () => {
   const props = {
     groups: {

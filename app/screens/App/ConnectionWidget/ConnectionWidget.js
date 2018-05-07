@@ -39,7 +39,7 @@ class ConnectionWidget extends Component {
 
     return (
       <div style={styles.container}>
-        <Dialog title="Connexion" onRequestClose={this.handleClose} open={this.state.modalOpened}>
+        <Dialog title="Connexion" onClose={this.handleClose} open={this.state.modalOpened}>
           <ConnectionModal />
         </Dialog>
 

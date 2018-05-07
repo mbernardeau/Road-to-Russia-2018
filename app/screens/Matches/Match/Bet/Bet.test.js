@@ -3,6 +3,9 @@ import renderer from 'react-test-renderer'
 
 import Bet from './Bet'
 
+jest.mock('material-ui/Select', () => 'Select')
+jest.mock('material-ui/Menu', () => ({ MenuItem: 'MenuItem' }))
+
 describe('screens/Match/Bet', () => {
   const props = {
     team: {
@@ -10,6 +13,7 @@ describe('screens/Match/Bet', () => {
       name: 'Russie',
     },
     betValue: 1,
+    onBetValueUpdated: jest.fn(),
   }
 
   it('renders correctly', () => {
