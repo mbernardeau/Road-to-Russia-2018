@@ -18,7 +18,7 @@ describe('screens/Match/StadiumTooltip', () => {
 
   const props = {
     match: {
-      dateTime: 1529002800000,
+      dateTime: new Date(1529002800000),
     },
     stadium: {
       capacity: 69500,

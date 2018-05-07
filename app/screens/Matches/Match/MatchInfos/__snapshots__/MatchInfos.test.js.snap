@@ -2,16 +2,7 @@
 
 exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
 <div
-  style={
-    Object {
-      "color": "darkgray",
-      "display": "flex",
-      "fontSize": "0.9em",
-      "justifyContent": "space-around",
-      "marginTop": "10px",
-      "textShadow": "0 1px 0 rgba(0,0,0,.1)",
-    }
-  }
+  className="match-infos-container"
 >
   <div
     className="MuiTooltip-root-1"
@@ -81,59 +72,23 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
         role="tooltip"
       >
         <div
-          style={
-            Object {
-              "width": 200,
-            }
-          }
+          className="stadium-tooltip"
         >
           <div
-            style={
-              Object {
-                "color": "white",
-                "display": "flex",
-                "justifyContent": "space-around",
-                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-              }
-            }
+            className="stadium-tooltip-title"
           >
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               Stade Krestovski
             </div>
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               •
             </div>
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               Saint-Pétersbourg
             </div>
           </div>
           <div
-            style={
-              Object {
-                "color": "white",
-                "display": "flex",
-                "justifyContent": "space-around",
-                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-              }
-            }
+            className="stadium-tooltip-title"
           >
             <div>
               Capacité
@@ -181,59 +136,23 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
         role="tooltip"
       >
         <div
-          style={
-            Object {
-              "width": 200,
-            }
-          }
+          className="stadium-tooltip"
         >
           <div
-            style={
-              Object {
-                "color": "white",
-                "display": "flex",
-                "justifyContent": "space-around",
-                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-              }
-            }
+            className="stadium-tooltip-title"
           >
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               Stade Krestovski
             </div>
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               •
             </div>
-            <div
-              style={
-                Object {
-                  "textAlign": "center",
-                }
-              }
-            >
+            <div>
               Saint-Pétersbourg
             </div>
           </div>
           <div
-            style={
-              Object {
-                "color": "white",
-                "display": "flex",
-                "justifyContent": "space-around",
-                "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-              }
-            }
+            className="stadium-tooltip-title"
           >
             <div>
               Capacité

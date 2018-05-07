@@ -2,59 +2,23 @@
 
 exports[`screens/Match/StadiumTooltip render with no image if not provided 1`] = `
 <div
-  style={
-    Object {
-      "width": 200,
-    }
-  }
+  className="stadium-tooltip"
 >
   <div
-    style={
-      Object {
-        "color": "white",
-        "display": "flex",
-        "justifyContent": "space-around",
-        "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-      }
-    }
+    className="stadium-tooltip-title"
   >
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       Stade Krestovski
     </div>
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       •
     </div>
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       Saint-Pétersbourg
     </div>
   </div>
   <div
-    style={
-      Object {
-        "color": "white",
-        "display": "flex",
-        "justifyContent": "space-around",
-        "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-      }
-    }
+    className="stadium-tooltip-title"
   >
     <div>
       Capacité
@@ -69,68 +33,28 @@ exports[`screens/Match/StadiumTooltip render with no image if not provided 1`] =
 
 exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
 <div
-  style={
-    Object {
-      "width": 200,
-    }
-  }
+  className="stadium-tooltip"
 >
   <div
-    style={
-      Object {
-        "color": "white",
-        "display": "flex",
-        "justifyContent": "space-around",
-        "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-      }
-    }
+    className="stadium-tooltip-title"
   >
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       Stade Krestovski
     </div>
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       •
     </div>
-    <div
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
-    >
+    <div>
       Saint-Pétersbourg
     </div>
   </div>
   <img
     alt="Stade Krestovski"
+    className="stadium-tooltip-photo"
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/RUS-2016-Aerial-SPB-Krestovsky_Stadium_02.jpg/512px-RUS-2016-Aerial-SPB-Krestovsky_Stadium_02.jpg"
-    style={
-      Object {
-        "width": "100%",
-      }
-    }
   />
   <div
-    style={
-      Object {
-        "color": "white",
-        "display": "flex",
-        "justifyContent": "space-around",
-        "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-      }
-    }
+    className="stadium-tooltip-title"
   >
     <div>
       Capacité

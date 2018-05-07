@@ -6,20 +6,13 @@ import Tooltip from 'material-ui/Tooltip'
 
 import StadiumTooltip from './StadiumTooltip'
 
-const containerStyles = {
-  marginTop: '10px',
-  color: 'darkgray',
-  display: 'flex',
-  justifyContent: 'space-around',
-  fontSize: '0.9em',
-  textShadow: '0 1px 0 rgba(0,0,0,.1)',
-}
+import './matchInfos.scss'
 
 const MatchInfos = ({ match, stadium }) => {
   const dateTime = moment(match.dateTime)
 
   return (
-    <div style={containerStyles}>
+    <div className="match-infos-container">
       <Tooltip title={dateTime.format('LLL')} disableTriggerTouch>
         <div>{dateTime.fromNow()}</div>
       </Tooltip>
@@ -44,7 +37,7 @@ MatchInfos.defaultProps = {
 
 MatchInfos.propTypes = {
   match: PropTypes.shape({
-    dateTime: PropTypes.number.isRequired,
+    dateTime: PropTypes.instanceOf(Date).isRequired,
   }),
   stadium: PropTypes.shape({
     name: PropTypes.string,

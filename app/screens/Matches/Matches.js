@@ -4,22 +4,13 @@ import { map } from 'lodash'
 
 import Match from './Match'
 
+import './matches.scss'
+
 const Matches = ({ matches }) => (
-  <div style={styles.container}>
+  <div className="matches-container">
     {map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)}
   </div>
 )
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    margin: '0 15px',
-    alignItems: 'center',
-  },
-}
 
 Matches.propTypes = {
   matches: PropTypes.object,

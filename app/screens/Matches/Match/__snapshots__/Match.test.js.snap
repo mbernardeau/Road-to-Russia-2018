@@ -225,16 +225,7 @@ exports[`screens/Match renders correctly 1`] = `
       className="MuiDivider-root-55 MuiDivider-default-56"
     />
     <div
-      style={
-        Object {
-          "color": "darkgray",
-          "display": "flex",
-          "fontSize": "0.9em",
-          "justifyContent": "space-around",
-          "marginTop": "10px",
-          "textShadow": "0 1px 0 rgba(0,0,0,.1)",
-        }
-      }
+      className="match-infos-container"
     >
       <div
         className="MuiTooltip-root-60"
@@ -304,68 +295,28 @@ exports[`screens/Match renders correctly 1`] = `
             role="tooltip"
           >
             <div
-              style={
-                Object {
-                  "width": 200,
-                }
-              }
+              className="stadium-tooltip"
             >
               <div
-                style={
-                  Object {
-                    "color": "white",
-                    "display": "flex",
-                    "justifyContent": "space-around",
-                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-                  }
-                }
+                className="stadium-tooltip-title"
               >
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   Stade de Kaliningrad
                 </div>
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   •
                 </div>
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   Kaliningrad
                 </div>
               </div>
               <img
                 alt="Stade de Kaliningrad"
+                className="stadium-tooltip-photo"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg"
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
               />
               <div
-                style={
-                  Object {
-                    "color": "white",
-                    "display": "flex",
-                    "justifyContent": "space-around",
-                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-                  }
-                }
+                className="stadium-tooltip-title"
               >
                 <div>
                   Capacité
@@ -413,68 +364,28 @@ exports[`screens/Match renders correctly 1`] = `
             role="tooltip"
           >
             <div
-              style={
-                Object {
-                  "width": 200,
-                }
-              }
+              className="stadium-tooltip"
             >
               <div
-                style={
-                  Object {
-                    "color": "white",
-                    "display": "flex",
-                    "justifyContent": "space-around",
-                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-                  }
-                }
+                className="stadium-tooltip-title"
               >
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   Stade de Kaliningrad
                 </div>
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   •
                 </div>
-                <div
-                  style={
-                    Object {
-                      "textAlign": "center",
-                    }
-                  }
-                >
+                <div>
                   Kaliningrad
                 </div>
               </div>
               <img
                 alt="Stade de Kaliningrad"
+                className="stadium-tooltip-photo"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Kaliningrad_05-2017_img72_new_stadium.jpg/512px-Kaliningrad_05-2017_img72_new_stadium.jpg"
-                style={
-                  Object {
-                    "width": "100%",
-                  }
-                }
               />
               <div
-                style={
-                  Object {
-                    "color": "white",
-                    "display": "flex",
-                    "justifyContent": "space-around",
-                    "textShadow": "0 1px 0 rgba(0,0,0,.2)",
-                  }
-                }
+                className="stadium-tooltip-title"
               >
                 <div>
                   Capacité
