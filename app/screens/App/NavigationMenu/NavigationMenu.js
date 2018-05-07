@@ -51,6 +51,9 @@ export default class NavigationMenu extends Component {
           <ListItem button onClick={this.goTo('/groups')}>
             <ListItemText primary="Groupes" />
           </ListItem>
+          <ListItem button onClick={this.goTo('/creategroup')}>
+            <ListItemText primary="Creation groupe" />
+          </ListItem>
         </List>
       </Drawer>
     )

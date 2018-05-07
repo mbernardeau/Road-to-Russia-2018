@@ -24,6 +24,7 @@ import Radium from 'radium'
 import HomePage from 'screens/HomePage/Loadable'
 import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
+import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -68,6 +69,7 @@ class App extends React.Component {
               <Route path="/stadiums" component={StadiumsPage} />
               <Route path="/matches" component={MatchesPage} />
               <Route path="/groups" component={GroupsPage} />
+              <Route path="/creategroup" component={CreateGroupPage} />
               <Route component={NotFoundPage} />
             </Switch>
           )}
