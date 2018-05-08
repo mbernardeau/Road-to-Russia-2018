@@ -28,6 +28,7 @@ import RankingPage from 'screens/Ranking/Loadable'
 import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
+import AdminGroupsPage from 'screens/AdminGroups/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
 import { isEmpty } from 'react-redux-firebase'
@@ -74,6 +75,7 @@ class App extends React.Component {
               <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
               <Route path="/creategroup" component={CreateGroupPage} />
+              <Route path="/admingroups" component={AdminGroupsPage} />
               <Route component={NotFoundPage} />
             </Switch>
           )}
