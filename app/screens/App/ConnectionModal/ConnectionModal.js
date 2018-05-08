@@ -37,11 +37,11 @@ class ConnectionModal extends Component {
     return [
       <DialogTitle key="title">Connexion</DialogTitle>,
       <DialogContent key="content" style={styles.container}>
-        <Button style={styles.button} color="primary" onClick={this.authenticateWithGoogle} raised>
+        <Button style={styles.button} color="primary" onClick={this.authenticateWithGoogle} variant="raised" >
           <FaGoogle />&nbsp; Connexion avec Google
         </Button>
 
-        <Button style={styles.button} color="accent" onClick={this.authenticateWithFacebook} raised>
+        <Button style={styles.button} color="accent" onClick={this.authenticateWithFacebook} variant="raised" >
           <FaFacebook />&nbsp; Connexion avec Facebook
         </Button>
       </DialogContent>,

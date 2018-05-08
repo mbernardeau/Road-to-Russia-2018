@@ -3,20 +3,13 @@ import React from 'react'
 import JoinGroup from './JoinGroup'
 import MyGroups from './MyGroups'
 
+import './groups.scss'
+
 const Groups = () => (
-  <div style={styles.container}>
+  <div className="groups-container">
     <JoinGroup />
     <MyGroups />
   </div>
 )
-
-const styles = {
-  container: {
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-}
 
 export default Groups

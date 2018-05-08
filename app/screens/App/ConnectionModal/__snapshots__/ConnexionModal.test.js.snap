@@ -18,12 +18,12 @@ Array [
     <Button
       color="primary"
       onClick={[Function]}
-      raised={true}
       style={
         Object {
           "marginBottom": 10,
         }
       }
+      variant="raised"
     >
       <FaGoogle />
         Connexion avec Google
@@ -31,12 +31,12 @@ Array [
     <Button
       color="accent"
       onClick={[Function]}
-      raised={true}
       style={
         Object {
           "marginBottom": 10,
         }
       }
+      variant="raised"
     >
       <FaFacebook />
         Connexion avec Facebook
