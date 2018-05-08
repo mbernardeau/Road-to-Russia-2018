@@ -68,8 +68,8 @@ class CreateGroup extends Component {
     const { price, name, errorPrice, errorName } = this.state
 
     return (
-      <div style={styles.container}>
-        <Card>
+      <div className="create-group-container">
+        <Card className="create-group-card">
           <Typography gutterBottom variant="title">
             Créez un groupe
           </Typography>
@@ -89,12 +89,8 @@ class CreateGroup extends Component {
               {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
-            <FormControl
-              className="create-group-field"
-              error={!!errorPrice}
-            >
+            <FormControl className="create-group-field" error={!!errorPrice}>
               <TextField
-                className="create-group-field"
                 label="Prix à payer par personne"
                 value={price}
                 onChange={this.handlePriceChange}
@@ -106,12 +102,12 @@ class CreateGroup extends Component {
             </FormControl>
           </CardContent>
 
-          <CardActions>
+          <CardActions className="create-group-card-action">
             <Button
               disabled={!this.isFormValid()}
               onClick={this.createGroup}
               color="primary"
-              variant="raised" 
+              variant="raised"
             >
               Envoyer la demande
             </Button>
@@ -129,15 +125,6 @@ class CreateGroup extends Component {
 
 CreateGroup.propTypes = {
   createGroup: PropTypes.func.isRequired,
-}
-
-const styles = {
-  container: {
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
 }
 
 export default CreateGroup
