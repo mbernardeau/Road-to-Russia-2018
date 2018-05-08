@@ -31,6 +31,7 @@ export default function configureStore(initialState = {}, history) {
   const reduxFirebaseConfig = {
     userProfile: 'users', // firebase root where user profiles are stored
     enableLogging: false, // enable/disable Firebase's database logging
+    useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
   }
 
   if (!firebase.apps.length) {
