@@ -2,16 +2,16 @@
   text-align: center;
   margin: auto;
   width: 75%;
+
+  img {
+    margin-top: 32px;
+    width: 80%;
+    box-shadow: 8px 8px 12px #aaa;
+  }
 }
 
 .home-speech {
   text-align: center;
-}
-
-.home-page-div img {
-  margin-top: 32px;
-  width: 80%;
-  box-shadow: 8px 8px 12px #aaa;
 }
 
 .home-buttons-div {
@@ -21,14 +21,18 @@
   display: flex;
   justify-content: center;
   padding: 8px;
-}
 
-.home-buttons-div p {
-  flex: 1;
-}
+  p {
+    flex: 1;
+  }
 
-.home-buttons-div .home-button {
-  flex: 1;
+  .home-button {
+    flex: 1;
+  }
+
+  .icon-left {
+    margin-right: 16px;
+  }
 }
 
 .home-button-panel {
@@ -36,8 +40,4 @@
   margin: 24px;
   padding: 8px;
   box-shadow: 8px 8px 12px #aaa;
-}
-
-.home-buttons-div .icon-left {
-  margin-right: 16px;
 }
