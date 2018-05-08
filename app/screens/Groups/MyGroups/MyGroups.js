@@ -14,7 +14,7 @@ const MyGroups = ({ groups }) =>
   isEmpty(groups) ? null : (
     <Card style={styles.container}>
       <Typography gutterBottom type="headline">
-        Mes groupes
+        Mes tribus
       </Typography>
 
       <Table>
