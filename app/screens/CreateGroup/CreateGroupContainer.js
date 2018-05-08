@@ -1,23 +1,10 @@
-import { firebaseConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
-import { compose } from 'redux'
-
-import { getUserId } from 'redux/user'
-
-import { getGroupsNotAlreadyJoined, getUserHasNoGroupsToJoin } from 'redux/groups'
+import { createGroup } from 'redux/groups'
 
 import CreateGroup from './CreateGroup'
 
-export default compose(
-  firebaseConnect([{ path: 'groups' }]),
-  connect(
-    state => ({
-      groups: getGroupsNotAlreadyJoined(state),
-      uid: getUserId(state),
-      disabled: getUserHasNoGroupsToJoin(state),
-    }),
-    (dispatch, { firebase }) => ({
-      applyInGroup: (uid, groupId) => firebase.set(`groups/${groupId}/members/${uid}`, 'awaiting'),
-    }),
-  ),
-)(CreateGroup)
+const mapDispatch = dispatch => ({
+  createGroup: group => dispatch(createGroup(group)),
+})
+
+export default connect(undefined, mapDispatch)(CreateGroup)

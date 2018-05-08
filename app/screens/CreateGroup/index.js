@@ -1,3 +1,1 @@
-import CreateGroup from './CreateGroup'
-
-export default CreateGroup
+export { default } from './CreateGroupContainer'
