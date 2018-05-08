@@ -1,7 +1,10 @@
 import firebase from 'firebase'
 import stadiumsReducer from './stadiums.reducer'
 
-export const fetchStadium = stadiumId => dispatch => {
+export const fetchStadium = stadiumId => (dispatch, getState) => {
+  if (stadiumsReducer.hasKey(stadiumId)(getState())) {
+    return
+  }
   firebase
     .firestore()
     .collection('stadiums')

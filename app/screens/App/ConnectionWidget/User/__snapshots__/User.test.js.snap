@@ -2,13 +2,8 @@
 
 exports[`screens/ConnectionWidget/User renders correctly 1`] = `
 <div
+  className="user-widget"
   data-radium={true}
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-    }
-  }
 >
   <Avatar
     data-radium={true}
@@ -20,14 +15,7 @@ exports[`screens/ConnectionWidget/User renders correctly 1`] = `
     }
   />
   <span
-    className="rmq-4ea42308"
-    data-radium={true}
-    style={
-      Object {
-        "color": "white",
-        "fontSize": "18px",
-      }
-    }
+    className="username"
   >
     Georges Lucas
   </span>

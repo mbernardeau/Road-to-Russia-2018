@@ -9,18 +9,9 @@ import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
 import MoreVertIcon from 'material-ui-icons/MoreVert'
 
-class User extends PureComponent {
-  // eslint-disable-line react/prefer-stateless-function
-  static propTypes = {
-    user: PropTypes.shape({
-      avatarUrl: PropTypes.string.isRequired,
-      displayName: PropTypes.string.isRequired,
-    }).isRequired,
-    firebase: PropTypes.shape({
-      logout: PropTypes.func.isRequired,
-    }).isRequired,
-  }
+import './user.scss'
 
+class User extends PureComponent {
   state = {
     anchorEl: null,
     open: false,
@@ -39,10 +30,10 @@ class User extends PureComponent {
     const { logout } = firebase
 
     return (
-      <div style={styles.user}>
+      <div className="user-widget">
         <Avatar src={user.avatarUrl} style={styles.avatar} />
 
-        <span style={styles.username}>{user.displayName}</span>
+        <span className="username">{user.displayName}</span>
 
         <IconButton
           aria-label="Plus"
@@ -67,21 +58,17 @@ class User extends PureComponent {
   }
 }
 
+User.propTypes = {
+  user: PropTypes.shape({
+    avatarUrl: PropTypes.string.isRequired,
+    displayName: PropTypes.string.isRequired,
+  }).isRequired,
+  firebase: PropTypes.shape({
+    logout: PropTypes.func.isRequired,
+  }).isRequired,
+}
+
 const styles = {
-  username: {
-    color: 'white',
-    fontSize: '18px',
-
-    '@media screen and (max-width: 640px)': {
-      display: 'none',
-    },
-  },
-
-  user: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-
   avatar: {
     marginRight: 10,
   },
