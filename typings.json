@@ -13,6 +13,7 @@
     "redux": "registry:dt/redux#3.5.2+20160703092728",
     "redux-thunk": "registry:dt/redux-thunk#2.1.0+20160703120921",
     "reselect": "registry:dt/reselect#2.0.2+20160510002910",
+    "tinycolor2": "registry:dt/tinycolor2#1.1.1+20161117213728",
     "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750"
   },
   "globalDevDependencies": {

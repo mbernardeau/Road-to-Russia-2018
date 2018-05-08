@@ -16,8 +16,8 @@ jobs:
             name: Check path
             command: echo $PATH
         - run:
-            name: Check Yarn version
-            command: yarn --version
+            name: Check npm version
+            command: npm --version
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run:
@@ -30,11 +30,11 @@ jobs:
             name: Check firebase-tools version
             command: firebase --version
         - run:
-            name: Yarn install
-            command: yarn
+            name: npm install
+            command: npm ci
         - run:
-            name: Yarn install for firebase functions
-            command: cd functions && yarn --frozen-lockfile
+            name: npm install for firebase functions
+            command: cd functions && npm ci
         - run:
             name: Update lockfile for Greenkeeper branches
             command: greenkeeper-lockfile-update
@@ -44,10 +44,10 @@ jobs:
               - ./node_modules
         - run:
             name: Tests
-            command: yarn run test:coverage
+            command: npm run test:coverage
         - run:
             name: Build
-            command: yarn run build:ci
+            command: npm run build:ci
         - run:
             name: Upload lockfile modification
             command: greenkeeper-lockfile-upload
