@@ -9,24 +9,41 @@
  * the linting exception.
  */
 
-import React from 'react';
+import React from 'react'
+import Button from 'material-ui/Button'
 
-import {
-  Link,
-} from 'react-router-dom';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
+import PollIcon from '@material-ui/icons/Poll'
+import ListIcon from '@material-ui/icons/List'
 
-export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+import myImage from '../../assets/visuels/bandeauEvenement2.jpg'
+
+import './HomePage.scss'
+
+export default class HomePage extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
-        <p>Ceci sera la page d&lsquo;accueil.</p>
-        <div>Disponibles:
-          <ul>
-            <li><Link to="/stadiums">Stades</Link></li>
-            <li><Link to="/matches">Matches</Link></li>
-          </ul>
+      <div className="home-page-div">
+        <p>Bienvenue</p>
+        <div className="home-buttons-div">
+          <Button href="/rules" color="primary">
+            <ListIcon className="icon-left" />
+            Règles
+          </Button>
+          <Button href="/matches" color="primary">
+            <AccessAlarmIcon className="icon-left" />
+            Parier
+          </Button>
+
+          <Button href="/ranking" color="primary">
+            <PollIcon className="icon-left" />
+            Classement
+          </Button>
         </div>
+
+        <img alt="Home image" src={myImage} />
       </div>
-    );
+    )
   }
 }

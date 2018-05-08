@@ -242,6 +242,7 @@
     "testRegex": ".*\\.test\\.js$"
   },
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.43",
     "babel-polyfill": "6.26.0",
     "chalk": "2.4.1",
     "compression": "1.7.2",
@@ -330,7 +331,7 @@
     "material-ui-codemod": "1.0.0-beta.35",
     "ngrok": "3.0.1",
     "node-plop": "0.13.0",
-    "node-sass": "4.9.0",
+    "node-sass": "^4.9.0",
     "null-loader": "0.1.1",
     "offline-plugin": "5.0.3",
     "plop": "2.0.0",

@@ -1,0 +1,28 @@
+.home-page-div {
+  text-align: center;
+  margin: auto;
+  width: 75%;
+}
+
+.home-page-div img {
+  margin-top: 64px;
+  width: 70%;
+  box-shadow: 8px 8px 12px #aaa;
+}
+
+.home-buttons-div {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.home-buttons-div .icon-left {
+  margin-right: 16px;
+}
+
+.home-button {
+  flex: 3;
+}
