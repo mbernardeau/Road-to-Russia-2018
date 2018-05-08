@@ -35,8 +35,8 @@ class Match extends Component {
     const scoreValidator = score => isNumber(score) && score >= 0
 
     return conformsTo(this.state.bet, {
-      teamA: scoreValidator,
-      teamB: scoreValidator,
+      betTeamA: scoreValidator,
+      betTeamB: scoreValidator,
     })
   }
 
@@ -45,7 +45,7 @@ class Match extends Component {
       {
         bet: {
           ...this.state.bet,
-          [`team${team}`]: value,
+          [`betTeam${team}`]: value,
         },
       },
       this.saveBetIfValid,
@@ -60,8 +60,8 @@ class Match extends Component {
 
   betSaved = () =>
     this.isBetValid() &&
-    this.state.bet.teamA === this.props.bet.teamA &&
-    this.state.bet.teamB === this.props.bet.teamB
+    this.state.bet.betTeamA === this.props.bet.betTeamA &&
+    this.state.bet.betTeamB === this.props.bet.betTeamB
 
   handleTeamAChange = this.handleChange('A')
   handleTeamBChange = this.handleChange('B')
@@ -74,8 +74,8 @@ class Match extends Component {
       <Card style={styles.card}>
         <CardContent style={styles.cardContainer}>
           <div style={styles.match}>
-            <Bet team={teamA} betValue={bet.teamA} onBetValueUpdated={this.handleTeamAChange} />
-            <Bet team={teamB} betValue={bet.teamB} onBetValueUpdated={this.handleTeamBChange} />
+            <Bet team={teamA} betValue={bet.betTeamA} onBetValueUpdated={this.handleTeamAChange} />
+            <Bet team={teamB} betValue={bet.betTeamB} onBetValueUpdated={this.handleTeamBChange} />
           </div>
           <Divider />
           <MatchInfos match={match} />
@@ -121,8 +121,8 @@ Match.propTypes = {
     name: PropTypes.string.isRequired,
   }),
   bet: PropTypes.shape({
-    teamA: PropTypes.number,
-    teamB: PropTypes.number,
+    betTeamA: PropTypes.number,
+    betTeamB: PropTypes.number,
   }),
   saveBet: PropTypes.func.isRequired,
 }
