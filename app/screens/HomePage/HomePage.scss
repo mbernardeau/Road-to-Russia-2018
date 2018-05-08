@@ -4,6 +4,10 @@
   width: 75%;
 }
 
+.home-speech {
+  text-align: justify;
+}
+
 .home-page-div img {
   margin-top: 64px;
   width: 70%;
@@ -17,12 +21,16 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  padding: 8px;
+}
+
+.home-button-panel {
+  flex: 1;
+  margin: 24px;
+  padding: 24px;
+  box-shadow: 8px 8px 12px #aaa;
 }
 
 .home-buttons-div .icon-left {
   margin-right: 16px;
-}
-
-.home-button {
-  flex: 3;
 }
