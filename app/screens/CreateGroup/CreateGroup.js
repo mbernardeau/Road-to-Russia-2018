@@ -16,19 +16,26 @@ import GroupApplyOkSnackBar from './CreateGroupApplyOkSnackBar'
 import './CreateGroup.scss'
 
 class CreateGroup extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      selected: '',
-      errorPrice: false,
-      numberformat: '',
+  state = {}
+
+  getNameErrorMessage = name => {
+    if (!name || name.length < 5) {
+      return 'Obligatoire'
     }
+    return undefined
   }
 
-  handleSelection = event => {
-    this.setState({
-      selected: event.target.value,
-    })
+  getPriceErrorMessage = price => {
+    if (price && price < 5) {
+      return '5€ minimum'
+    }
+    return undefined
+  }
+
+  createGroup = () => {
+    const { name, price } = this.state
+    this.props.createGroup({ name, price: Number(price) })
+    this.setState({ sent: true })
   }
 
   handleRequestClose = () => {
@@ -37,25 +44,25 @@ class CreateGroup extends Component {
     })
   }
 
-  applyInGroup = () => {
-    if (this.state.selected) {
-      this.props.applyInGroup(this.props.uid, this.state.selected)
-      this.setState({ selected: '', sent: true })
-    }
+  isFormValid = () =>
+    !this.getPriceErrorMessage(this.state.price) && !this.getNameErrorMessage(this.state.name)
+
+  handleNameChange = e => {
+    this.setState({
+      name: e.target.value,
+      errorName: this.getNameErrorMessage(e.target.value),
+    })
   }
 
-  handleChange = name => event => {
+  handlePriceChange = e => {
     this.setState({
-      [name]: event.target.value,
-      errorPrice: true,
+      price: e.target.value,
+      errorPrice: this.getPriceErrorMessage(e.target.value),
     })
-
-    if (event.target.value < 5) this.setState({ errorPrice: true })
-    else this.setState({ errorPrice: false })
   }
 
   render() {
-    const { numberformat } = this.state
+    const { price, name, errorPrice, errorName } = this.state
 
     return (
       <div style={styles.container}>
@@ -69,32 +76,32 @@ class CreateGroup extends Component {
           </Typography>
 
           <CardContent className="create-group-content">
-            <FormControl className="create-group-field" error>
-              <TextField label="Nom de la tribu" />
-              <FormHelperText>Tribu déjà choisie</FormHelperText>
+            <FormControl className="create-group-field" error={errorName}>
+              <TextField label="Nom de la tribu" value={name} onChange={this.handleNameChange} />
+              {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
             <FormControl
               className="create-group-field"
-              error={this.state.errorPrice}
+              error={errorPrice}
               aria-describedby="price-error-text"
             >
               <TextField
                 label="Prix à payer par personne"
-                value={numberformat}
-                onChange={this.handleChange('numberformat')}
+                value={price}
+                onChange={this.handlePriceChange}
                 InputProps={{
                   inputComponent: NumberFormatCustom,
                 }}
               />
-              <FormHelperText id="price-error-text" >5€ minimum</FormHelperText>
+              {errorPrice && <FormHelperText id="price-error-text">{errorPrice}</FormHelperText>}
             </FormControl>
           </CardContent>
 
           <CardActions>
             <Button
-              disabled={!this.state.selected}
-              onClick={this.applyInGroup}
+              disabled={!this.isFormValid()}
+              onClick={this.createGroup}
               color="primary"
               raised
             >
@@ -113,8 +120,7 @@ class CreateGroup extends Component {
 }
 
 CreateGroup.propTypes = {
-  applyInGroup: PropTypes.func.isRequired,
-  uid: PropTypes.string.isRequired,
+  createGroup: PropTypes.func.isRequired,
 }
 
 const styles = {

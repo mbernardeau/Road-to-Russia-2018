@@ -11,6 +11,7 @@ import matches from './matches'
 import bets from './bets'
 import teams from './teams'
 import stadiums from './stadiums'
+import groups from './groups'
 import nav from './nav'
 
 /*
@@ -54,6 +55,7 @@ export default function createReducer(injectedReducers) {
     bets,
     teams,
     stadiums,
+    groups,
     ...injectedReducers,
   })
 }
