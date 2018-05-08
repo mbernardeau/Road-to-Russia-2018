@@ -16,6 +16,9 @@ jobs:
             name: Check path
             command: echo $PATH
         - run:
+            name: upgrade npm
+            command: npm i npm@6 -g
+        - run:
             name: Check npm version
             command: npm --version
         - restore_cache:
