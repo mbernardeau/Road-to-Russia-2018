@@ -12,6 +12,8 @@ import Typography from 'material-ui/Typography'
 
 import GroupApplyOkSnackBar from './CreateGroupApplyOkSnackBar'
 
+import './CreateGroupComp.scss'
+
 function NumberFormatCustom(props) {
   const { inputRef, onChange, ...other } = props
 
@@ -78,12 +80,11 @@ class CreateGroupComp extends Component {
   }
 
   render() {
-    const { tribu, price, groups, disabled } = this.props
     const { numberformat } = this.state
 
     return (
-      <Card style={styles.fields}>
-        <Typography gutterBottom type="headline">
+      <Card>
+        <Typography gutterBottom variant="title">
           Créez un groupe
         </Typography>
         <br />
@@ -91,20 +92,19 @@ class CreateGroupComp extends Component {
           Créez un groupe pour vous confrontez à vos amis, collègues, familles...
         </Typography>
 
-        <CardContent style={styles.content}>
-          <FormControl className={this.formControl} error>
+        <CardContent className="create-group-content">
+          <FormControl className="create-group-field" error>
             <TextField label="Nom de la tribu" />
             <FormHelperText>Tribu déjà choisie</FormHelperText>
           </FormControl>
 
           <FormControl
-            className={this.formControl}
+            className="create-group-field"
             error={this.state.error}
             onChange={this.testPriceError}
             aria-describedby="price-error-text"
           >
             <TextField
-              className={this.formControl}
               label="Prix à payer par personne"
               value={numberformat}
               onChange={this.handleChange('numberformat')}
@@ -115,7 +115,7 @@ class CreateGroupComp extends Component {
             <FormHelperText id="price-error-text">5€ minimum</FormHelperText>
           </FormControl>
 
-          <FormControl className={this.formControl} error aria-describedby="mdp-error-text">
+          <FormControl className="create-group-field" error aria-describedby="mdp-error-text">
             <TextField label="Mot de passe" />
             <FormHelperText id="mdp-error-text">Mot de passe trop court</FormHelperText>
           </FormControl>
@@ -123,7 +123,6 @@ class CreateGroupComp extends Component {
 
         <CardActions>
           <Button
-            style={styles.button}
             disabled={!this.state.selected}
             onClick={this.applyInGroup}
             color="primary"
@@ -139,30 +138,7 @@ class CreateGroupComp extends Component {
   }
 }
 
-const styles = {
-  fields: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '90%',
-    marginBottom: 15,
-    padding: 15,
-  },
-
-  content: {
-    width: '90%',
-  },
-}
-
 CreateGroupComp.propTypes = {
-  tribu: PropTypes.string,
-  price: PropTypes.string,
-  groups: PropTypes.objectOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }),
-  ),
-  disabled: PropTypes.bool,
   applyInGroup: PropTypes.func.isRequired,
   uid: PropTypes.string.isRequired,
 }
