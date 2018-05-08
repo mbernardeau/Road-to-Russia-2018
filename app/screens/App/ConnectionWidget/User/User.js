@@ -21,7 +21,7 @@ class User extends PureComponent {
     this.setState({ open: true, anchorEl: event.currentTarget })
   }
 
-  handleRequestClose = () => {
+  handleClose = () => {
     this.setState({ open: false })
   }
 
@@ -40,17 +40,12 @@ class User extends PureComponent {
           aria-owns={this.state.open ? 'long-menu' : null}
           aria-haspopup="true"
           onClick={this.handleClick}
+          color="inherit"
         >
-          <MoreVertIcon color="inherit" />
+          <MoreVertIcon />
         </IconButton>
 
-        <Menu
-          open={this.state.open}
-          anchorEl={this.state.anchorEl}
-          onRequestClose={this.handleRequestClose}
-          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-        >
+        <Menu open={this.state.open} anchorEl={this.state.anchorEl} onClose={this.handleClose}>
           <MenuItem onClick={logout}>Se déconnecter</MenuItem>
         </Menu>
       </div>
