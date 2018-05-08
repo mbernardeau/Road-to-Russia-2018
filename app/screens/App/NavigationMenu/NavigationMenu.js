@@ -42,14 +42,20 @@ export default class NavigationMenu extends Component {
             <img src={WorldCupImg} style={styles.image} alt="Accueil" />
           </ListItem>
           <Divider />
-          <ListItem button onClick={this.goTo('/stadiums')}>
-            <ListItemText primary="Stades" />
-          </ListItem>
           <ListItem button onClick={this.goTo('/matches')}>
-            <ListItemText primary="Matches" />
+            <ListItemText primary="Paris" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/ranking')}>
+            <ListItemText primary="Classement" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/matchesvalidation')}>
+            <ListItemText primary="Validation des matchs" />
           </ListItem>
           <ListItem button onClick={this.goTo('/groups')}>
             <ListItemText primary="Groupes" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/stadiums')}>
+            <ListItemText primary="Stades" />
           </ListItem>
         </List>
       </Drawer>

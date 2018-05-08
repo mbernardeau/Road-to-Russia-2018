@@ -24,7 +24,9 @@ import Radium from 'radium'
 import HomePage from 'screens/HomePage/Loadable'
 import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
+import RankingPage from 'screens/Ranking/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
+import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
 import { isEmpty } from 'react-redux-firebase'
@@ -67,6 +69,8 @@ class App extends React.Component {
               <Route exact path="/" component={HomePage} />
               <Route path="/stadiums" component={StadiumsPage} />
               <Route path="/matches" component={MatchesPage} />
+              <Route path="/matchesvalidation" component={MatchesValidationPage} />
+              <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
               <Route component={NotFoundPage} />
             </Switch>
