@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 
@@ -53,14 +54,14 @@ const updateUserScore = (odds, winner, userId, points) => {
   const odd = findCote(odds, winner)
   return db
     .collection('users')
-    .doc(`${userId}`)
+    .doc(userId)
     .get()
     .then(snapshot => {
       const oldScore = snapshot.data().score || 0
       const newScore = oldScore + points * odd
       return db
         .collection('users')
-        .doc(`${userId}`)
+        .doc(userId)
         .update({ score: newScore })
     })
 }
