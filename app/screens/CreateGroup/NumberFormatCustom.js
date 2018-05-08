@@ -13,11 +13,10 @@ function NumberFormatCustom(props) {
         onChange({
           target: {
             value: values.value,
-            errorPrice: true,
           },
         })
       }}
-      prefix="€"
+      suffix="€"
     />
   )
 }

@@ -16,10 +16,13 @@ import GroupApplyOkSnackBar from './CreateGroupApplyOkSnackBar'
 import './CreateGroup.scss'
 
 class CreateGroup extends Component {
-  state = {}
+  state = {
+    price: '',
+    name: '',
+  }
 
   getNameErrorMessage = name => {
-    if (!name || name.length < 5) {
+    if (name.length > 0 && name.length < 5) {
       return 'Obligatoire'
     }
     return undefined
@@ -74,19 +77,24 @@ class CreateGroup extends Component {
           <Typography gutterBottom type="subheading">
             Créez un groupe pour vous confrontez à vos amis, collègues, familles...
           </Typography>
+          <br />
+          <Typography gutterBottom type="body1">
+            Il est possible de créer des groupes gratuits. Pour les groupes payants, le prix minimum
+            est 5&euro;
+          </Typography>
 
           <CardContent className="create-group-content">
-            <FormControl className="create-group-field" error={errorName}>
+            <FormControl className="create-group-field" error={!!errorName}>
               <TextField label="Nom de la tribu" value={name} onChange={this.handleNameChange} />
               {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
             <FormControl
               className="create-group-field"
-              error={errorPrice}
-              aria-describedby="price-error-text"
+              error={!!errorPrice}
             >
               <TextField
+                className="create-group-field"
                 label="Prix à payer par personne"
                 value={price}
                 onChange={this.handlePriceChange}
@@ -94,7 +102,7 @@ class CreateGroup extends Component {
                   inputComponent: NumberFormatCustom,
                 }}
               />
-              {errorPrice && <FormHelperText id="price-error-text">{errorPrice}</FormHelperText>}
+              {errorPrice && <FormHelperText>{errorPrice}</FormHelperText>}
             </FormControl>
           </CardContent>
 
@@ -103,7 +111,7 @@ class CreateGroup extends Component {
               disabled={!this.isFormValid()}
               onClick={this.createGroup}
               color="primary"
-              raised
+              variant="raised" 
             >
               Envoyer la demande
             </Button>

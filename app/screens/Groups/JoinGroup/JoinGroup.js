@@ -74,7 +74,7 @@ class JoinGroup extends Component {
             disabled={!this.state.selected}
             onClick={this.applyInGroup}
             color="primary"
-            raised
+            variant="raised" 
           >
             Envoyer la demande
           </Button>
