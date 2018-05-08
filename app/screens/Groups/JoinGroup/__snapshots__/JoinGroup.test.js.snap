@@ -68,8 +68,8 @@ exports[`screens/JoinGroup renders correctly 1`] = `
       color="primary"
       disabled={true}
       onClick={[Function]}
-      raised={true}
       style={undefined}
+      variant="raised"
     >
       Envoyer la demande
     </Button>
@@ -145,8 +145,8 @@ exports[`screens/JoinGroup renders correctly when disabled 1`] = `
       color="primary"
       disabled={true}
       onClick={[Function]}
-      raised={true}
       style={undefined}
+      variant="raised"
     >
       Envoyer la demande
     </Button>
