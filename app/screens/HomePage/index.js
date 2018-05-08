@@ -20,8 +20,8 @@ import myImage from '../../assets/visuels/bandeauEvenement2.jpg'
 
 import './HomePage.scss'
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class HomePage extends React.PureComponent {
-  // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div className="home-page-div">
@@ -34,6 +34,7 @@ export default class HomePage extends React.PureComponent {
           nisl commodo. Proin vitae rhoncus orci. Duis id risus pretium, gravida tortor in, maximus
           arcu. Etiam ac finibus tellus.
         </p>
+
         <div className="home-buttons-div">
           <div className="home-button-panel">
             <p>Lisez les règles du jeu :</p>
@@ -58,6 +59,8 @@ export default class HomePage extends React.PureComponent {
           </div>
         </div>
         <img alt="Home image" src={myImage} />
+
+        <p>Créé par la team du mardi 8</p>
       </div>
     )
   }
