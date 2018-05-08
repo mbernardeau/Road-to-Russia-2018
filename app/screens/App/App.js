@@ -51,7 +51,7 @@ class App extends React.Component {
               <MenuIcon />
             </IconButton>
             <div style={styles.appbarTitle}>
-              <Typography type="title" color="inherit">
+              <Typography variant="title" color="inherit">
                 Road to Russia 2018
               </Typography>
             </div>
