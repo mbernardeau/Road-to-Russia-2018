@@ -23,28 +23,15 @@ exports[`screens/ConnectionWidget/User renders correctly 1`] = `
     aria-haspopup="true"
     aria-label="Plus"
     aria-owns={null}
+    color="inherit"
     onClick={[Function]}
   >
-    <MoreVert
-      color="inherit"
-    />
+    <MoreVert />
   </IconButton>
   <Menu
     anchorEl={null}
-    anchorOrigin={
-      Object {
-        "horizontal": "right",
-        "vertical": "bottom",
-      }
-    }
-    onRequestClose={[Function]}
+    onClose={[Function]}
     open={false}
-    targetOrigin={
-      Object {
-        "horizontal": "right",
-        "vertical": "top",
-      }
-    }
   >
     <MenuItem
       onClick={[Function]}

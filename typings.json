@@ -7,6 +7,7 @@
     "material-ui": "registry:dt/material-ui#0.16.0+20170323194905",
     "moment": "registry:dt/moment#2.11.1+20161010105546",
     "node": "registry:dt/node#7.0.0+20170322231424",
+    "randomstring": "registry:dt/randomstring#1.1.4+20161005184000",
     "react-icons": "registry:dt/react-icons#2.2.0+20170202224413",
     "react-router": "registry:dt/react-router#4.0.0+20170323201651",
     "react-router-dom": "registry:dt/react-router-dom#4.0.0+20170323201651",
