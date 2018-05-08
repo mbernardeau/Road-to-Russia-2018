@@ -6,7 +6,7 @@ import { getUserId } from 'redux/user'
 
 import { getGroupsNotAlreadyJoined, getUserHasNoGroupsToJoin } from 'redux/groups'
 
-import CreateGroupComp from './CreateGroupComp'
+import CreateGroup from './CreateGroup'
 
 export default compose(
   firebaseConnect([{ path: 'groups' }]),
@@ -20,4 +20,4 @@ export default compose(
       applyInGroup: (uid, groupId) => firebase.set(`groups/${groupId}/members/${uid}`, 'awaiting'),
     }),
   ),
-)(CreateGroupComp)
+)(CreateGroup)
