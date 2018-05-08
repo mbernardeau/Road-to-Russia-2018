@@ -26,6 +26,7 @@ import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
+import RulesPage from 'screens/Rules/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -53,7 +54,7 @@ class App extends React.Component {
               <MenuIcon />
             </IconButton>
             <div style={styles.appbarTitle}>
-              <Typography variant="title" color="inherit">
+              <Typography variant="headline" color="inherit">
                 Road to Russia 2018
               </Typography>
             </div>
@@ -72,6 +73,7 @@ class App extends React.Component {
               <Route path="/matchesvalidation" component={MatchesValidationPage} />
               <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
+              <Route path="/rules" component={RulesPage} />
               <Route component={NotFoundPage} />
             </Switch>
           )}
