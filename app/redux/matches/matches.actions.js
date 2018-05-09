@@ -10,7 +10,7 @@ export const fetchMatchList = () => dispatch => {
       querySnapshot.forEach(doc => {
         const match = doc.data()
         const { id } = doc
-        dispatch(matchReducer.addOrUpdate({ ...match, id }))
+        dispatch(matchReducer.addOrUpdate({ ...match, dateTime: match.dateTime.toDate(), id }))
       })
     })
 }

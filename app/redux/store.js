@@ -38,6 +38,11 @@ export default function configureStore(initialState = {}, history) {
     firebase.initializeApp(firebaseConfig)
   }
 
+  const firestore = firebase.firestore()
+  firestore.settings({
+    timestampsInSnapshots: true,
+  })
+
   const createStoreWithFirebase = compose(reactReduxFirebase(firebase, reduxFirebaseConfig))(
     createStore,
   )
