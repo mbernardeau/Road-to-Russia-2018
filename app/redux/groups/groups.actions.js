@@ -26,6 +26,11 @@ export const createGroup = group => (dispatch, getState) => {
     })
 }
 
+export const fetchGroupsForUser = () => dispatch => {
+  dispatch(fetchGroupsForUserMember())
+  dispatch(fetchGroupsForUserAwaitingMember())
+}
+
 export const fetchGroupsForUserMember = () => (dispatch, getState) => {
   const userId = getUserId(getState())
 
@@ -33,6 +38,21 @@ export const fetchGroupsForUserMember = () => (dispatch, getState) => {
     .firestore()
     .collection('groups')
     .where(`members.${userId}`, '==', true)
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc =>
+        dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() })),
+      )
+    })
+}
+
+export const fetchGroupsForUserAwaitingMember = () => (dispatch, getState) => {
+  const userId = getUserId(getState())
+
+  firebase
+    .firestore()
+    .collection('groups')
+    .where(`awaitingMembers.${userId}`, '==', true)
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach(doc =>
