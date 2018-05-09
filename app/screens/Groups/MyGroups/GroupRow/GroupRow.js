@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Avatar from 'components/Avatar'
 import { TableCell, TableRow } from 'material-ui/Table'
 
 import GroupStatus from './GroupStatus'
@@ -9,6 +10,9 @@ const GroupRow = ({ name, members, awaitingMembers, createdBy, userId }) => (
   <TableRow>
     <TableCell>
       <b>{name}</b>
+    </TableCell>
+    <TableCell>
+      <Avatar userId={createdBy} />
     </TableCell>
     <TableCell>
       <GroupStatus

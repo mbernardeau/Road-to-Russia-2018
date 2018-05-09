@@ -21,6 +21,7 @@ const MyGroups = ({ groups }) =>
         <TableHead>
           <TableRow>
             <TableCell>Nom de la tribu</TableCell>
+            <TableCell>Créateur</TableCell>
             <TableCell>Statut</TableCell>
           </TableRow>
         </TableHead>
