@@ -66,7 +66,19 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly when success 1`
     <span
       id="message-id"
     >
-      Demande envoyée pour la tribu undefined
+      <UNDEFINED>
+        Tribu 
+         créée avec la clé 
+        <b />
+          
+        <Link
+          className="group-create-link"
+          replace={false}
+          to="/admingroups"
+        >
+          En voir plus
+        </Link>
+      </UNDEFINED>
     </span>
   }
   onClose={[MockFunction]}
@@ -103,7 +115,19 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly without props 1
     <span
       id="message-id"
     >
-      Demande envoyée pour la tribu undefined
+      <UNDEFINED>
+        Tribu 
+         créée avec la clé 
+        <b />
+          
+        <Link
+          className="group-create-link"
+          replace={false}
+          to="/admingroups"
+        >
+          En voir plus
+        </Link>
+      </UNDEFINED>
     </span>
   }
   onClose={[MockFunction]}
