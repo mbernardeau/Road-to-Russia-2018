@@ -2,154 +2,53 @@
 
 exports[`screens/JoinGroup renders correctly 1`] = `
 <Card
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "marginBottom": 15,
-      "padding": 15,
-      "width": "90%",
-    }
-  }
+  className="join-group-card"
 >
   <Typography
     gutterBottom={true}
-    type="headline"
+    variant="headline"
   >
-    Rejoindre un groupe
+    Rejoindre une tribu
   </Typography>
   <br />
   <Typography
     gutterBottom={true}
-    type="subheading"
+    variant="subheading"
   >
-    Rejoignez un groupe pour vous confrontez à vos amis, collègues, familles...
+    Rejoignez une tribu pour vous confrontez à vos amis, collègues, familles...
   </Typography>
-  <CardContent
-    style={
-      Object {
-        "width": "90%",
-      }
-    }
-  >
-    <FormControl
-      disabled={undefined}
-      fullWidth={true}
+  <CardContent>
+    <Typography
+      gutterBottom={true}
+      variant="caption"
     >
-      <Select
-        fullWidth={true}
+      Entrez le code qui vous a été fourni par l'administrateur de la tribu
+    </Typography>
+    <div
+      className="MuiFormControl-root-1"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <TextField
+        id="join-group-code"
+        label="Code"
+        margin="normal"
         onChange={[Function]}
+        required={true}
         value=""
-      >
-        <MenuItem
-          value="AA"
-        >
-          group 1
-        </MenuItem>
-        <MenuItem
-          value="BB"
-        >
-          group 2
-        </MenuItem>
-        <MenuItem
-          value="CC"
-        >
-          group 3
-        </MenuItem>
-      </Select>
-    </FormControl>
-    <FormHelperText>
-      Rechercher un groupe
-    </FormHelperText>
+      />
+    </div>
   </CardContent>
   <CardActions>
     <Button
       color="primary"
       disabled={true}
       onClick={[Function]}
-      style={undefined}
       variant="raised"
     >
       Envoyer la demande
     </Button>
   </CardActions>
-</Card>
-`;
-
-exports[`screens/JoinGroup renders correctly when disabled 1`] = `
-<Card
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "marginBottom": 15,
-      "padding": 15,
-      "width": "90%",
-    }
-  }
->
-  <Typography
-    gutterBottom={true}
-    type="headline"
-  >
-    Rejoindre un groupe
-  </Typography>
-  <br />
-  <Typography
-    gutterBottom={true}
-    type="subheading"
-  >
-    Rejoignez un groupe pour vous confrontez à vos amis, collègues, familles...
-  </Typography>
-  <CardContent
-    style={
-      Object {
-        "width": "90%",
-      }
-    }
-  >
-    <FormControl
-      disabled={true}
-      fullWidth={true}
-    >
-      <Select
-        fullWidth={true}
-        onChange={[Function]}
-        value=""
-      >
-        <MenuItem
-          value="AA"
-        >
-          group 1
-        </MenuItem>
-        <MenuItem
-          value="BB"
-        >
-          group 2
-        </MenuItem>
-        <MenuItem
-          value="CC"
-        >
-          group 3
-        </MenuItem>
-      </Select>
-    </FormControl>
-    <FormHelperText>
-      Aucun groupe à rejoindre
-    </FormHelperText>
-  </CardContent>
-  <CardActions>
-    <Button
-      color="primary"
-      disabled={true}
-      onClick={[Function]}
-      style={undefined}
-      variant="raised"
-    >
-      Envoyer la demande
-    </Button>
-  </CardActions>
+  <GroupApplyStatus />
 </Card>
 `;

@@ -8,37 +8,21 @@ jest.mock('material-ui/Card', () => 'Card')
 jest.mock('material-ui/Card/CardActions', () => 'CardActions')
 jest.mock('material-ui/Card/CardContent', () => 'CardContent')
 jest.mock('material-ui/Menu/MenuItem', () => 'MenuItem')
-jest.mock('material-ui/Select', () => 'Select')
+jest.mock('material-ui/TextField', () => 'TextField')
 jest.mock('material-ui/Form', () => ({
   FormControl: 'FormControl',
   FormHelperText: 'FormHelperText',
 }))
 jest.mock('material-ui/Typography', () => 'Typography')
+jest.mock('./GroupApplyStatus', () => 'GroupApplyStatus')
 
 describe('screens/JoinGroup', () => {
   const props = {
-    groups: {
-      AA: {
-        name: 'group 1',
-      },
-      BB: {
-        name: 'group 2',
-      },
-      CC: {
-        name: 'group 3',
-      },
-    },
-    applyInGroup: () => {},
-    uid: 'userId',
+    applyInGroup: jest.fn(),
   }
 
   it('renders correctly', () => {
     const tree = renderer.create(<JoinGroup {...props} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-
-  it('renders correctly when disabled', () => {
-    const tree = renderer.create(<JoinGroup {...props} disabled />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

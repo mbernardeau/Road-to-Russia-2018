@@ -32,12 +32,23 @@ export const fetchGroupsForUserMember = () => (dispatch, getState) => {
   firebase
     .firestore()
     .collection('groups')
-    .where(`member.${userId}`, '==', true)
+    .where(`members.${userId}`, '==', true)
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach(doc =>
         dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() })),
       )
+    })
+}
+
+export const fetchGroupById = id => dispatch => {
+  firebase
+    .firestore()
+    .collection('groups')
+    .doc(id)
+    .get()
+    .then(doc => {
+      dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() }))
     })
 }
 
@@ -47,7 +58,7 @@ export const fetchGroupsForUserAdmin = () => (dispatch, getState) => {
   firebase
     .firestore()
     .collection('groups')
-    .where(`createdBy`, '==', userId)
+    .where('createdBy', '==', userId)
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach(doc =>
@@ -55,3 +66,57 @@ export const fetchGroupsForUserAdmin = () => (dispatch, getState) => {
       )
     })
 }
+
+export const applyInGroup = code => (dispatch, getState) => {
+  const userId = getUserId(getState())
+  const db = firebase.firestore()
+
+  db
+    .collection('groups')
+    .where('joinKey', '==', code)
+    .get()
+    .then(querySnapshot => {
+      if (querySnapshot.empty) {
+        dispatch(applyGroupFailed(`Aucune tribu avec le code ${code} n'existe`))
+      }
+      querySnapshot.forEach(doc => {
+        const group = doc.data()
+        const { id } = doc
+
+        if (group.members && group.members[userId]) {
+          dispatch(applyGroupFailed(`Vous appartenez déjà à la tribu ${group.name}`))
+        } else if (group.awaitingMembers && group.awaitingMembers[userId]) {
+          dispatch(
+            applyGroupFailed(
+              `Vous avez déjà fait une demande pour rejoindre la tribu ${group.name}`,
+            ),
+          )
+        } else {
+          db
+            .collection('groups')
+            .doc(id)
+            .update({
+              [`awaitingMembers.${userId}`]: true,
+            })
+            .then(() => {
+              dispatch(applyGroupSuccess(group.name))
+              dispatch(fetchGroupById(id))
+            })
+        }
+      })
+    })
+}
+
+export const APPLY_GROUP_FAILED = 'APPLY_GROUP_FAILED'
+
+export const applyGroupFailed = reason => ({
+  type: APPLY_GROUP_FAILED,
+  reason,
+})
+
+export const APPLY_GROUP_SUCCESS = 'APPLY_GROUP_SUCCESS'
+
+export const applyGroupSuccess = name => ({
+  type: APPLY_GROUP_SUCCESS,
+  name,
+})
