@@ -13,7 +13,7 @@ const GroupApplyOkSnackbar = ({ open, handleRequestClose }) => (
     }}
     open={open}
     autoHideDuration={6000}
-    onRequestClose={handleRequestClose}
+    onClose={handleRequestClose}
     SnackbarContentProps={{
       'aria-describedby': 'message-id',
     }}

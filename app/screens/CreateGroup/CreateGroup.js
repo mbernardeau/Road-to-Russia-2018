@@ -85,7 +85,12 @@ class CreateGroup extends Component {
 
           <CardContent className="create-group-content">
             <FormControl className="create-group-field" error={!!errorName}>
-              <TextField label="Nom de la tribu" value={name} onChange={this.handleNameChange} />
+              <TextField
+                required
+                label="Nom de la tribu"
+                value={name}
+                onChange={this.handleNameChange}
+              />
               {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
