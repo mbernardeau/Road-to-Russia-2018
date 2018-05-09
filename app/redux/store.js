@@ -5,9 +5,11 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { reactReduxFirebase } from 'react-redux-firebase'
-import * as firebase from 'firebase'
-import thunk from 'redux-thunk'
+import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
+import 'firebase/database'
+import thunk from 'redux-thunk'
 
 import createReducer from './reducers'
 

@@ -7,7 +7,7 @@ import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
-import MoreVertIcon from 'material-ui-icons/MoreVert'
+import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 import './user.scss'
 

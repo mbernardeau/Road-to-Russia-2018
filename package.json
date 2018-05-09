@@ -242,13 +242,13 @@
     "testRegex": ".*\\.test\\.js$"
   },
   "dependencies": {
-    "@material-ui/icons": "^1.0.0-beta.43",
+    "@material-ui/icons": "1.0.0-beta.43",
     "babel-polyfill": "6.26.0",
     "chalk": "2.4.1",
     "compression": "1.7.2",
     "cross-env": "5.1.4",
     "express": "4.16.3",
-    "firebase": "^4.13.1",
+    "firebase": "5.0.1",
     "fontfaceobserver": "2.0.13",
     "hoc-react-loader": "6.3.0",
     "immutadot": "1.0.0",
@@ -257,7 +257,6 @@
     "k-redux-factory": "5.0.2",
     "lodash": "4.17.10",
     "material-ui": "1.0.0-beta.45",
-    "material-ui-icons": "1.0.0-beta.36",
     "minimist": "1.2.0",
     "moment": "2.22.1",
     "prop-types": "15.6.1",

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import Tooltip from 'material-ui/Tooltip'
 
-import CheckIcon from 'material-ui-icons/Check'
-import ClearIcon from 'material-ui-icons/Clear'
+import CheckIcon from '@material-ui/icons/Check'
+import ClearIcon from '@material-ui/icons/Clear'
 
 const iconStyles = {
   position: 'absolute',

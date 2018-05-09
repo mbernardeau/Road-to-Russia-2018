@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer'
 import ValidIcon from './ValidIcon'
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip')
-jest.mock('material-ui-icons/Check', () => 'Check')
-jest.mock('material-ui-icons/Clear', () => 'Clear')
+jest.mock('@material-ui/icons/Check', () => 'Check')
+jest.mock('@material-ui/icons/Clear', () => 'Clear')
 
 describe('screens/Match/ValidIcon', () => {
   it('renders correctly when valid', () => {
