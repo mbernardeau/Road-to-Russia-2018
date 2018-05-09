@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/CreateGroup/GroupCreateStatus renders correctly when failed props 1`] = `
+<Snackbar
+  SnackbarContentProps={
+    Object {
+      "aria-describedby": "message-id",
+    }
+  }
+  action={
+    Array [
+      <IconButton
+        aria-label="Close"
+        color="inherit"
+        onClick={[MockFunction]}
+      >
+        <CloseIcon />
+      </IconButton>,
+    ]
+  }
+  anchorOrigin={
+    Object {
+      "horizontal": "left",
+      "vertical": "bottom",
+    }
+  }
+  autoHideDuration={6000}
+  message={
+    <span
+      id="message-id"
+    >
+      Nosé
+    </span>
+  }
+  onClose={[MockFunction]}
+  open={true}
+/>
+`;
+
+exports[`screens/CreateGroup/GroupCreateStatus renders correctly when success 1`] = `
+<Snackbar
+  SnackbarContentProps={
+    Object {
+      "aria-describedby": "message-id",
+    }
+  }
+  action={
+    Array [
+      <IconButton
+        aria-label="Close"
+        color="inherit"
+        onClick={[MockFunction]}
+      >
+        <CloseIcon />
+      </IconButton>,
+    ]
+  }
+  anchorOrigin={
+    Object {
+      "horizontal": "left",
+      "vertical": "bottom",
+    }
+  }
+  autoHideDuration={6000}
+  message={
+    <span
+      id="message-id"
+    >
+      <UNDEFINED>
+        Tribu 
+         créée avec la clé 
+        <b />
+          
+        <Link
+          className="group-create-link"
+          replace={false}
+          to="/admingroups"
+        >
+          En voir plus
+        </Link>
+      </UNDEFINED>
+    </span>
+  }
+  onClose={[MockFunction]}
+  open={true}
+/>
+`;
+
+exports[`screens/CreateGroup/GroupCreateStatus renders correctly without props 1`] = `
+<Snackbar
+  SnackbarContentProps={
+    Object {
+      "aria-describedby": "message-id",
+    }
+  }
+  action={
+    Array [
+      <IconButton
+        aria-label="Close"
+        color="inherit"
+        onClick={[MockFunction]}
+      >
+        <CloseIcon />
+      </IconButton>,
+    ]
+  }
+  anchorOrigin={
+    Object {
+      "horizontal": "left",
+      "vertical": "bottom",
+    }
+  }
+  autoHideDuration={6000}
+  message={
+    <span
+      id="message-id"
+    >
+      <UNDEFINED>
+        Tribu 
+         créée avec la clé 
+        <b />
+          
+        <Link
+          className="group-create-link"
+          replace={false}
+          to="/admingroups"
+        >
+          En voir plus
+        </Link>
+      </UNDEFINED>
+    </span>
+  }
+  onClose={[MockFunction]}
+  open={false}
+/>
+`;

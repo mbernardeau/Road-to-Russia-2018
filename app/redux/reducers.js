@@ -13,6 +13,8 @@ import teams from './teams'
 import stadiums from './stadiums'
 import groups from './groups'
 import nav from './nav'
+import ui from './ui'
+import users from './users'
 
 /*
  * routeReducer
@@ -56,6 +58,8 @@ export default function createReducer(injectedReducers) {
     teams,
     stadiums,
     groups,
+    ui,
+    users,
     ...injectedReducers,
   })
 }

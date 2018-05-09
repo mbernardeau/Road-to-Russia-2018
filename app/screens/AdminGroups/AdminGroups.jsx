@@ -21,6 +21,8 @@ const AdminGroups = ({ groups }) => (
           <TableRow>
             <TableCell />
             <TableCell />
+            <TableCell />
+            <TableCell numeric>Droit d&apos;entrée</TableCell>
             <TableCell>Code</TableCell>
           </TableRow>
         </TableHead>

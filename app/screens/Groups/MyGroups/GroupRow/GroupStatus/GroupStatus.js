@@ -1,20 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { keys } from 'lodash'
-
 import Chip from 'material-ui/Chip'
 
-const labels = {
-  member: 'Membre',
-  awaiting: 'En attente',
-  admin: 'Admin',
+const getLabel = ({ admin, member, awaiting }) => {
+  if (admin) return 'Admin'
+  if (member) return 'Membre'
+  if (awaiting) return 'En attente'
+  return undefined
 }
 
-const GroupStatus = ({ status }) => <Chip label={labels[status]} />
+const GroupStatus = ({ ...props }) => <Chip label={getLabel(props)} />
 
 GroupStatus.propTypes = {
-  status: PropTypes.oneOf(keys(labels)),
+  member: PropTypes.bool,
+  admin: PropTypes.bool,
+  awaiting: PropTypes.bool,
 }
 
 export default GroupStatus

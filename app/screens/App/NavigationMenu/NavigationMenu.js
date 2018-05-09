@@ -52,7 +52,13 @@ export default class NavigationMenu extends Component {
             <ListItemText primary="Validation des matchs" />
           </ListItem>
           <ListItem button onClick={this.goTo('/groups')}>
-            <ListItemText primary="Groupes" />
+            <ListItemText primary="Tribus" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/creategroup')}>
+            <ListItemText primary="Créer une tribu" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/admingroups')}>
+            <ListItemText primary="Administrer mes tribus" />
           </ListItem>
           <ListItem button onClick={this.goTo('/creategroup')}>
             <ListItemText primary="Créer une tribu" />

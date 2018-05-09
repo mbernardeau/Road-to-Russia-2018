@@ -18,7 +18,7 @@ import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
+import MenuIcon from '@material-ui/icons/Menu'
 import Radium from 'radium'
 
 import HomePage from 'screens/HomePage/Loadable'
@@ -27,6 +27,7 @@ import GroupsPage from 'screens/Groups/Loadable'
 import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
+import RulesPage from 'screens/Rules/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import AdminGroupsPage from 'screens/AdminGroups/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
@@ -55,7 +56,7 @@ class App extends React.Component {
               <MenuIcon />
             </IconButton>
             <div style={styles.appbarTitle}>
-              <Typography variant="title" color="inherit">
+              <Typography variant="headline" color="inherit">
                 Road to Russia 2018
               </Typography>
             </div>
@@ -74,6 +75,7 @@ class App extends React.Component {
               <Route path="/matchesvalidation" component={MatchesValidationPage} />
               <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
+              <Route path="/rules" component={RulesPage} />
               <Route path="/creategroup" component={CreateGroupPage} />
               <Route path="/admingroups" component={AdminGroupsPage} />
               <Route component={NotFoundPage} />

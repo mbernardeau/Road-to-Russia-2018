@@ -5,9 +5,11 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { reactReduxFirebase } from 'react-redux-firebase'
-import * as firebase from 'firebase'
-import thunk from 'redux-thunk'
+import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
+import 'firebase/database'
+import thunk from 'redux-thunk'
 
 import createReducer from './reducers'
 
@@ -37,6 +39,11 @@ export default function configureStore(initialState = {}, history) {
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
   }
+
+  const firestore = firebase.firestore()
+  firestore.settings({
+    timestampsInSnapshots: true,
+  })
 
   const createStoreWithFirebase = compose(reactReduxFirebase(firebase, reduxFirebaseConfig))(
     createStore,

@@ -90,8 +90,8 @@ describe('screens/Match', () => {
     },
     bet: {
       lastModified: '2017-09-12T18:58:56.825Z',
-      teamA: 3,
-      teamB: 1,
+      betTeamA: 3,
+      betTeamB: 1,
     },
     saveBet: jest.fn(),
   }
