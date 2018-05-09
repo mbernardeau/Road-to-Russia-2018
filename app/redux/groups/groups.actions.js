@@ -23,7 +23,9 @@ export const createGroup = group => (dispatch, getState) => {
       const newGroup = doc.data()
       const { id } = doc
       dispatch(groupsReducer.add({ ...newGroup, id }))
+      dispatch(createGroupSuccess(newGroup))
     })
+    .catch(e => console.log(e))
 }
 
 export const fetchGroupsForUser = () => dispatch => {
@@ -139,4 +141,18 @@ export const APPLY_GROUP_SUCCESS = 'APPLY_GROUP_SUCCESS'
 export const applyGroupSuccess = name => ({
   type: APPLY_GROUP_SUCCESS,
   name,
+})
+
+export const CREATE_GROUP_FAILED = 'CREATE_GROUP_FAILED'
+
+export const createGroupFailed = reason => ({
+  type: CREATE_GROUP_FAILED,
+  reason,
+})
+
+export const CREATE_GROUP_SUCCESS = 'CREATE_GROUP_SUCCESS'
+
+export const createGroupSuccess = group => ({
+  type: CREATE_GROUP_SUCCESS,
+  group,
 })

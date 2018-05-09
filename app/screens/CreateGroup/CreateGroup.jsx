@@ -9,9 +9,9 @@ import { FormControl, FormHelperText } from 'material-ui/Form'
 import TextField from 'material-ui/TextField'
 import Typography from 'material-ui/Typography'
 
-import NumberFormatCustom from './NumberFormatCustom'
+import CurrencyFormat from './CurrencyFormat'
 
-import GroupApplyOkSnackBar from './CreateGroupApplyOkSnackBar'
+import GroupCreateStatus from './GroupCreateStatus'
 
 import './CreateGroup.scss'
 
@@ -22,7 +22,7 @@ class CreateGroup extends Component {
   }
 
   getNameErrorMessage = name => {
-    if (name.length > 0 && name.length < 5) {
+    if (name.length < 5) {
       return 'Obligatoire'
     }
     return undefined
@@ -38,13 +38,7 @@ class CreateGroup extends Component {
   createGroup = () => {
     const { name, price } = this.state
     this.props.createGroup({ name, price: Number(price) })
-    this.setState({ sent: true })
-  }
-
-  handleRequestClose = () => {
-    this.setState({
-      sent: false,
-    })
+    this.setState({ name: '', price: '' })
   }
 
   isFormValid = () =>
@@ -71,16 +65,16 @@ class CreateGroup extends Component {
       <div className="create-group-container">
         <Card className="create-group-card">
           <Typography gutterBottom variant="title">
-            Créez un groupe
+            Créez une tribu
           </Typography>
           <br />
           <Typography gutterBottom type="subheading">
-            Créez un groupe pour vous confrontez à vos amis, collègues, familles...
+            Créez une tribu pour vous confrontez à vos amis, collègues, familles...
           </Typography>
           <br />
           <Typography gutterBottom type="body1">
-            Il est possible de créer des groupes gratuits. Pour les groupes payants, le prix minimum
-            est 5&euro;
+            Il est possible de créer des tribus gratuites. Pour les tributs payantes, le prix
+            minimum est 5&euro;
           </Typography>
 
           <CardContent className="create-group-content">
@@ -100,7 +94,7 @@ class CreateGroup extends Component {
                 value={price}
                 onChange={this.handlePriceChange}
                 InputProps={{
-                  inputComponent: NumberFormatCustom,
+                  inputComponent: CurrencyFormat,
                 }}
               />
               {errorPrice && <FormHelperText>{errorPrice}</FormHelperText>}
@@ -118,10 +112,7 @@ class CreateGroup extends Component {
             </Button>
           </CardActions>
 
-          <GroupApplyOkSnackBar
-            open={this.state.sent}
-            handleRequestClose={this.handleRequestClose}
-          />
+          <GroupCreateStatus />
         </Card>
       </div>
     )
