@@ -1,29 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Avatar from 'components/Avatar'
 import { TableCell, TableRow } from 'material-ui/Table'
 
 import GroupStatus from './GroupStatus'
 
-const empty = {}
-
-const GroupRow = ({ group, uid }) => (
+const GroupRow = ({ name, members, awaitingMembers, createdBy, userId }) => (
   <TableRow>
     <TableCell>
-      <b>{group.name}</b>
+      <b>{name}</b>
     </TableCell>
     <TableCell>
-      <GroupStatus status={(group.members || empty)[uid]} />
+      <Avatar userId={createdBy} />
+    </TableCell>
+    <TableCell>
+      <GroupStatus
+        member={members[userId]}
+        awaiting={awaitingMembers[userId]}
+        admin={createdBy === userId}
+      />
     </TableCell>
   </TableRow>
 )
 
+GroupRow.defaultProps = {
+  members: {},
+  awaitingMembers: {},
+}
+
 GroupRow.propTypes = {
-  group: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    members: PropTypes.objectOf(PropTypes.string),
-  }).isRequired,
-  uid: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  members: PropTypes.objectOf(PropTypes.bool),
+  awaitingMembers: PropTypes.objectOf(PropTypes.bool),
+  userId: PropTypes.string.isRequired,
+  createdBy: PropTypes.string.isRequired,
 }
 
 export default GroupRow

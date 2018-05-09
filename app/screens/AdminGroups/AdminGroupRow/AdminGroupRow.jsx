@@ -1,27 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TableCell, TableRow } from 'material-ui/Table'
+import Typography from 'material-ui/Typography'
+import size from 'lodash/size'
 
-const AdminGroupRow = ({ name, joinKey, members }) => (
+const AdminGroupRow = ({ name, joinKey, price, members, awaitingMembers }) => (
   <TableRow>
     <TableCell>
       <b>{name}</b>
     </TableCell>
     <TableCell>
-      {members.length} membre{members.length > 1 ? 's' : ''}
+      {size(members)} membre{size(members) > 1 ? 's' : ''}
+    </TableCell>
+    <TableCell>{size(awaitingMembers) > 0 && `${size(members)} en attente`}</TableCell>
+    <TableCell numeric>
+      {price ? (
+        price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })
+      ) : (
+        <Typography variant="caption">gratuit</Typography>
+      )}
     </TableCell>
     <TableCell>{joinKey}</TableCell>
   </TableRow>
 )
 
 AdminGroupRow.defaultProps = {
-  members: [],
+  members: {},
 }
 
 AdminGroupRow.propTypes = {
   name: PropTypes.string.isRequired,
   joinKey: PropTypes.string.isRequired,
-  members: PropTypes.array,
+  members: PropTypes.objectOf(PropTypes.bool),
+  awaitingMembers: PropTypes.objectOf(PropTypes.bool),
+  price: PropTypes.number,
 }
 
 export default AdminGroupRow

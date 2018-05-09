@@ -1,7 +1,4 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
   "hosting": {
     "public": "build",
     "rewrites": [
@@ -10,13 +7,21 @@
         "destination": "/index.html"
       }
     ],
-    "headers": [{
-      "source": "/sw.js",
-      "headers": [{
-        "key": "Cache-Control",
-        "value": "no-cache"
-      }]
-    }],
+    "headers": [
+      {
+        "source": "/sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
     "cleanUrls": true
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }

@@ -1,14 +1,16 @@
-import { firebaseConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
+import loader from 'hoc-react-loader'
 import { compose } from 'redux'
-
-import { getUserGroups } from 'redux/groups'
+import { getGroupsForUser, fetchGroupsForUser } from 'redux/groups'
 
 import MyGroups from './MyGroups'
 
-export default compose(
-  firebaseConnect([{ path: 'groups' }]),
-  connect(state => ({
-    groups: getUserGroups(state),
-  })),
-)(MyGroups)
+const mapState = state => ({
+  groups: getGroupsForUser(state),
+})
+
+const mapDispatch = dispatch => ({
+  load: () => dispatch(fetchGroupsForUser()),
+})
+
+export default compose(connect(mapState, mapDispatch), loader({ print: ['groups'] }))(MyGroups)

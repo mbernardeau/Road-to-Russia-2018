@@ -4,6 +4,8 @@ import { getUserId } from 'redux/user'
 
 import GroupRow from './GroupRow'
 
-export default connect(state => ({
-  uid: getUserId(state),
-}))(GroupRow)
+const mapState = state => ({
+  userId: getUserId(state),
+})
+
+export default connect(mapState)(GroupRow)
