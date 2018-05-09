@@ -23,7 +23,7 @@ class CreateGroup extends Component {
 
   getNameErrorMessage = name => {
     if (name.length > 0 && name.length < 5) {
-      return 'Obligatoire'
+      return '5 caractères minimum'
     }
     return undefined
   }
@@ -85,13 +85,13 @@ class CreateGroup extends Component {
 
           <CardContent className="create-group-content">
             <FormControl className="create-group-field" error={!!errorName}>
-              <TextField label="Nom de la tribu" value={name} onChange={this.handleNameChange} />
+              <TextField label="Nom de la tribu (*)" value={name} onChange={this.handleNameChange} />
               {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
             <FormControl className="create-group-field" error={!!errorPrice}>
               <TextField
-                label="Prix à payer par personne"
+                label="Montant par personne"
                 value={price}
                 onChange={this.handlePriceChange}
                 InputProps={{
