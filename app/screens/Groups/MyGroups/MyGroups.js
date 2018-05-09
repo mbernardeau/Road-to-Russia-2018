@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 import { map, isEmpty } from 'lodash'
 
 import Card from 'material-ui/Card'
-import Table, { TableHead, TableRow, TableCell } from 'material-ui/Table'
+import Table from 'material-ui/Table'
+import TableHead from 'material-ui/Table/TableHead'
+import TableRow from 'material-ui/Table/TableRow'
+import TableCell from 'material-ui/Table/TableCell'
 import TableBody from 'material-ui/Table/TableBody'
 import Typography from 'material-ui/Typography'
 
