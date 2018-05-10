@@ -2,51 +2,25 @@
 
 exports[`screens/Match/Bet renders correctly 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "justifyContent": "flex-start",
-    }
-  }
+  className="bet"
 >
   <div
-    style={
-      Object {
-        "display": "flex",
-      }
-    }
+    className="bet-title"
   >
     <img
       alt="ru"
-      className={undefined}
+      className="bet-flag"
       src="IMAGE_MOCK"
-      style={
-        Object {
-          "height": "1.3em",
-        }
-      }
+      style={undefined}
     />
     <div
-      style={
-        Object {
-          "fontSize": "1.3em",
-          "paddingLeft": "10px",
-          "textAlign": "center",
-        }
-      }
+      className="team-name"
     >
       Russie
     </div>
   </div>
   <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-      }
-    }
+    className="bet-select-container"
   >
     <Select
       onChange={[MockFunction]}
