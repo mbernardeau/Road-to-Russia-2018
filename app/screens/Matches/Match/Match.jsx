@@ -7,10 +7,14 @@ import { conformsTo, isNumber } from 'lodash'
 import Card from 'material-ui/Card'
 import CardContent from 'material-ui/Card/CardContent'
 import Divider from 'material-ui/Divider'
+import moment from 'moment'
 
+import Odds from './Odds'
 import Bet from './Bet'
 import ValidIcon from './ValidIcon'
 import MatchInfos from './MatchInfos'
+
+import './Match.scss'
 
 const empty = {}
 
@@ -69,14 +73,26 @@ class Match extends Component {
   render() {
     const { match, teamA, teamB } = this.props
     const { bet } = this.state
+    const past = moment(match.dateTime).isBefore(new Date())
 
     return (
-      <Card style={styles.card}>
-        <CardContent style={styles.cardContainer}>
-          <div style={styles.match}>
-            <Bet team={teamA} betValue={bet.betTeamA} onBetValueUpdated={this.handleTeamAChange} />
-            <Bet team={teamB} betValue={bet.betTeamB} onBetValueUpdated={this.handleTeamBChange} />
+      <Card className="match-card">
+        <CardContent className="match-content">
+          <div className="match-teams">
+            <Bet
+              team={teamA}
+              betValue={bet.betTeamA}
+              onBetValueUpdated={this.handleTeamAChange}
+              past={past}
+            />
+            <Bet
+              team={teamB}
+              betValue={bet.betTeamB}
+              onBetValueUpdated={this.handleTeamBChange}
+              past={past}
+            />
           </div>
+          {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
           <Divider />
           <MatchInfos match={match} />
           <ValidIcon valid={this.betSaved()} />
@@ -86,24 +102,6 @@ class Match extends Component {
   }
 }
 
-const styles = {
-  match: {
-    display: 'grid',
-    gridTemplateColumns: '50% 50%',
-    marginBottom: 10,
-  },
-
-  card: {
-    marginTop: 7,
-    marginBottom: 7,
-    width: '100%',
-  },
-
-  cardContainer: {
-    position: 'relative',
-  },
-}
-
 Match.defaultProps = {
   match: {},
   teamA: {},
@@ -111,7 +109,9 @@ Match.defaultProps = {
 }
 
 Match.propTypes = {
-  match: PropTypes.object,
+  match: PropTypes.shape({
+    dateTime: PropTypes.instanceOf(Date).isRequired,
+  }),
   teamA: PropTypes.shape({
     code: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

@@ -23,6 +23,7 @@ exports[`screens/Match/Bet renders correctly 1`] = `
     className="bet-select-container"
   >
     <Select
+      disabled={undefined}
       onChange={[MockFunction]}
       renderValue={[Function]}
       type="number"

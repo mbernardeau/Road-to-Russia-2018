@@ -2,33 +2,18 @@
 
 exports[`screens/Match renders correctly 1`] = `
 <Card
-  style={
-    Object {
-      "marginBottom": 7,
-      "marginTop": 7,
-      "width": "100%",
-    }
-  }
+  className="match-card"
 >
   <CardContent
-    style={
-      Object {
-        "position": "relative",
-      }
-    }
+    className="match-content"
   >
     <div
-      style={
-        Object {
-          "display": "grid",
-          "gridTemplateColumns": "50% 50%",
-          "marginBottom": 10,
-        }
-      }
+      className="match-teams"
     >
       <Bet
         betValue={undefined}
         onBetValueUpdated={[Function]}
+        past={true}
         team={
           Object {
             "code": "cl",
@@ -40,6 +25,7 @@ exports[`screens/Match renders correctly 1`] = `
       <Bet
         betValue={undefined}
         onBetValueUpdated={[Function]}
+        past={true}
         team={
           Object {
             "code": "br",
@@ -53,7 +39,7 @@ exports[`screens/Match renders correctly 1`] = `
     <Bet
       match={
         Object {
-          "dateTime": 1530205200,
+          "dateTime": 1970-01-18T17:03:25.200Z,
           "odds": Object {
             "1": 1.7,
             "2": 4.3,

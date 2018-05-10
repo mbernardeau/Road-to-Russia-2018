@@ -8,7 +8,7 @@ import { MenuItem } from 'material-ui/Menu'
 
 import './Bet.scss'
 
-const Bet = ({ team, betValue, onBetValueUpdated }) => (
+const Bet = ({ team, betValue, onBetValueUpdated, past }) => (
   <div className="bet">
     <div className="bet-title">
       <Flag country={team.code} className="bet-flag" />
@@ -20,6 +20,7 @@ const Bet = ({ team, betValue, onBetValueUpdated }) => (
         value={betValue >= 0 ? betValue : ''}
         renderValue={renderValue}
         onChange={onBetValueUpdated}
+        disabled={past}
       >
         {menuItems}
       </Select>
@@ -55,6 +56,7 @@ Bet.propTypes = {
   }),
   onBetValueUpdated: PropTypes.func.isRequired,
   betValue: PropTypes.number,
+  past: PropTypes.bool,
 }
 
 export default Bet
