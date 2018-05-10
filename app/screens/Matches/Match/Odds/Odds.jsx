@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Tooltip from 'material-ui/Tooltip'
+import padStart from 'lodash/padStart'
 
 import './Odds.scss'
 
-const toHex = number => Math.min(Math.round(Math.abs(number)), 255).toString(16)
+const toHex = number => padStart(Math.min(Math.round(Math.abs(number)), 255).toString(16), 2, '0')
 
 const getColor = value => {
-  const r = 255 / 13 * (value + 1)
-  const g = -255 / 11 * (value - 12)
+  const r = 128 / 13 * (value + 1)
+  const g = -128 / 11 * (value - 12)
   return `#${toHex(r)}${toHex(g)}00`
 }
 
