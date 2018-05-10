@@ -21,6 +21,7 @@ describe('screens/Match/StadiumTooltip', () => {
   const props = {
     match: {
       dateTime: new Date(1529002800000),
+      streaming: 'TF1',
     },
     stadium: {
       capacity: 69500,

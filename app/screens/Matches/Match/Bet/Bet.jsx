@@ -1,65 +1,32 @@
 import React from 'react'
-
-import Flag from 'components/Flag'
-
 import PropTypes from 'prop-types'
-
 import { map, range } from 'lodash'
 
+import Flag from 'components/Flag'
 import Select from 'material-ui/Select'
 import { MenuItem } from 'material-ui/Menu'
 
-const Bet = ({ team, betValue, onBetValueUpdated }) => (
-  <div style={styles.bet}>
-    <div style={styles.betTitle}>
-      <Flag country={team.code} style={styles.flag} />
-      <div style={styles.teamName}>{team.name}</div>
+import './Bet.scss'
+
+const Bet = ({ team, betValue, onBetValueUpdated, past }) => (
+  <div className="bet">
+    <div className="bet-title">
+      <Flag country={team.code} className="bet-flag" />
+      <div className="team-name">{team.name}</div>
     </div>
-    <div style={styles.selectContainer}>
+    <div className="bet-select-container">
       <Select
         type="number"
-        value={betValue || ''}
+        value={betValue >= 0 ? betValue : ''}
         renderValue={renderValue}
         onChange={onBetValueUpdated}
+        disabled={past}
       >
         {menuItems}
       </Select>
     </div>
   </div>
 )
-
-const styles = {
-  bet: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
-
-  betTitle: {
-    display: 'flex',
-  },
-
-  teamName: {
-    textAlign: 'center',
-    fontSize: '1.3em',
-    paddingLeft: '10px',
-  },
-
-  selectContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-
-  selectValueStyle: {
-    textAlign: 'center',
-    width: '100%',
-  },
-
-  flag: {
-    height: '1.3em',
-  },
-}
 
 /**
  * Render menu items once (from 0 to 10 goals)
@@ -76,7 +43,7 @@ const menuItems = map(range(11), n => (
  *
  * @return {React.ReactElement}
  */
-const renderValue = value => <div style={styles.selectValueStyle}>{value}</div>
+const renderValue = value => <div className="bet-select-value">{value}</div>
 
 Bet.defaultProps = {
   team: {},
@@ -89,6 +56,7 @@ Bet.propTypes = {
   }),
   onBetValueUpdated: PropTypes.func.isRequired,
   betValue: PropTypes.number,
+  past: PropTypes.bool,
 }
 
 export default Bet

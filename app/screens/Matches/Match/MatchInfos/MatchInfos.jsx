@@ -18,12 +18,10 @@ const MatchInfos = ({ match, stadium }) => {
       </Tooltip>
       <div>•</div>
       <Tooltip title={<StadiumTooltip {...stadium} />} disableTriggerTouch>
-        <div>{stadium.name}</div>
-      </Tooltip>
-      <div>•</div>
-      <Tooltip title={<StadiumTooltip {...stadium} />} placement="left" disableTriggerTouch>
         <div>{stadium.city}</div>
       </Tooltip>
+      <div>•</div>
+      <div>{match.streaming}</div>
     </div>
   )
 }
