@@ -31,20 +31,26 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
       datas.forEach(doc => {
         // Get a bet
         const { betTeamA, betTeamB, userId } = doc.data()
+        const betId = doc.id
         // Did the user win the bet ?
         const realScoreTeamA = scores.A
         const realScoreTeamB = scores.B
-        const betWinner = findWinner(scores.A, scores.B)
+        const betWinner = findWinner(betTeamA, betTeamB)
+        console.log(betWinner)
         if (betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
           // perfect match ! Four times team's odd
-          updateUserScore(odds, winner, userId, 4)
           console.log('HOLY SH*T YOU WIN, you guess perfectly the score !')
+          updateUserScore(odds, betWinner, userId, 4)
+          updatePointsWon(odds, betWinner, betId, 4)
         } else if (winner === betWinner) {
           // good result ! Two times team's odd
-          updateUserScore(odds, winner, userId, 2)
           console.log('You only guess the issue of the match (sucker)')
+          updateUserScore(odds, betWinner, userId, 2)
+          updatePointsWon(odds, betWinner, betId, 2)
         } else {
           console.log("YOU LOSE SON, you didn't find the score neither the match issue")
+          updateUserScore(odds, betWinner, userId, 0)
+          updatePointsWon(odds, betWinner, betId, 0)
         }
       })
     })
@@ -52,24 +58,47 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
 
 const updateUserScore = (odds, winner, userId, points) => {
   const odd = findCote(odds, winner)
-  return db
+  const users = db
     .collection('users')
     .doc(userId)
-    .get()
-    .then(snapshot => {
-      const oldScore = snapshot.data().score || 0
-      const newScore = oldScore + points * odd
-      return db
-        .collection('users')
-        .doc(userId)
-        .update({ score: newScore })
-    })
+  return db.runTransaction( t => {
+    return t
+      .get(users)
+      .then(snapshot => {
+        const oldScore = snapshot.data().score || 0
+        const newScore = oldScore + points * odd
+        t.update(users, { score: newScore })
+      })
+    
+  }).then(
+    console.log('Transaction success!')
+  ).catch(err => {
+    console.log('Transaction failure:', err);
+  })
+}
+
+const updatePointsWon = (odds, winner, id, points) => {
+  const odd = findCote(odds, winner)
+  const bets = db
+    .collection('bets')
+    .doc(id)
+  return db.runTransaction( t => {
+    return t
+      .get(bets)
+      .then(
+        t.update(bets, { pointsWon: points * odd })
+      )
+  }).then(
+    console.log('Transaction success!')
+  ).catch(err => {
+    console.log('Transaction failure:', err);
+  })
 }
 
 const findWinner = (score1, score2) => {
-  if (score1 > score2) return '1'
+  if (score1 > score2) return 'A'
   else if (score1 === score2) return 'N'
-  return '2'
+  return 'B'
 }
 
 const findCote = (odds, winner) =>
