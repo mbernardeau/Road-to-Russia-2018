@@ -9047,9 +9047,9 @@ react-reconciler@^0.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-redux-firebase@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.1.0.tgz#ec7da1fc1a56a13a1db77fdaf1471bf74c4ef02a"
+react-redux-firebase@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.1.1.tgz#bbbb2d3b69707d6ba3dbb6c89df1ff87af8545dc"
   dependencies:
     hoist-non-react-statics "^2.3.1"
     lodash "^4.17.4"
