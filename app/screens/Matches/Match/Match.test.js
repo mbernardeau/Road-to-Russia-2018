@@ -13,6 +13,7 @@ jest.mock('./Bet', () => 'Bet')
 jest.mock('./ValidIcon', () => 'Bet')
 jest.mock('./MatchInfos', () => 'Bet')
 jest.mock('./Odds', () => 'Odds')
+jest.mock('./Scores', () => 'Scores')
 
 describe('screens/Match', () => {
   // Mock date to ensure consistancy between tests

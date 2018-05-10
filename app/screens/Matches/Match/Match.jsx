@@ -13,6 +13,7 @@ import Odds from './Odds'
 import Bet from './Bet'
 import ValidIcon from './ValidIcon'
 import MatchInfos from './MatchInfos'
+import Scores from './Scores'
 
 import './Match.scss'
 
@@ -93,9 +94,10 @@ class Match extends Component {
             />
           </div>
           {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
+          <Scores {...match} />
           <Divider />
           <MatchInfos match={match} />
-          <ValidIcon valid={this.betSaved()} />
+          {!past && <ValidIcon valid={this.betSaved()} />}
         </CardContent>
       </Card>
     )
@@ -111,6 +113,7 @@ Match.defaultProps = {
 Match.propTypes = {
   match: PropTypes.shape({
     dateTime: PropTypes.instanceOf(Date).isRequired,
+    scores: PropTypes.shape({}),
   }),
   teamA: PropTypes.shape({
     code: PropTypes.string.isRequired,
