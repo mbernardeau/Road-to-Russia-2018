@@ -23,7 +23,7 @@ class CreateGroup extends Component {
 
   getNameErrorMessage = name => {
     if (name.length < 5) {
-      return 'Obligatoire'
+      return '5 caractères minimum'
     }
     return undefined
   }
