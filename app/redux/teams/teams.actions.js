@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import teamsReducer from './teams.reducer'
 
 export const fetchTeam = teamId => (dispatch, getState) => {

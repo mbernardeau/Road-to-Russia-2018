@@ -6,18 +6,11 @@ import Dialog from 'material-ui/Dialog'
 import ConnectionModal from '../ConnectionModal'
 import User from './User'
 
+import './ConnectionWidget.scss'
+
 class ConnectionWidget extends Component {
-  static propTypes = {
-    user: PropTypes.object,
-  }
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      modalOpened: false,
-    }
-
-    this.openConnectionModal = this.openConnectionModal.bind(this)
+  state = {
+    modalOpened: false,
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,9 +21,15 @@ class ConnectionWidget extends Component {
     }
   }
 
-  openConnectionModal() {
+  openConnectionModal = () => {
     this.setState({
       modalOpened: true,
+    })
+  }
+
+  closeConnectionModal = () => {
+    this.setState({
+      modalOpened: false,
     })
   }
 
@@ -38,15 +37,15 @@ class ConnectionWidget extends Component {
     const { user } = this.props
 
     return (
-      <div style={styles.container}>
-        <Dialog title="Connexion" onClose={this.handleClose} open={this.state.modalOpened}>
+      <div className="connection-widget-container">
+        <Dialog title="Connexion" onClose={this.closeConnectionModal} open={this.state.modalOpened}>
           <ConnectionModal />
         </Dialog>
 
         {!isEmpty(user) && <User />}
 
         {isEmpty(user) && (
-          <Button style={styles.connectionLabel} onClick={this.openConnectionModal}>
+          <Button className="connection-label" onClick={this.openConnectionModal}>
             Se connecter
           </Button>
         )}
@@ -55,17 +54,8 @@ class ConnectionWidget extends Component {
   }
 }
 
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '85%',
-  },
-
-  connectionLabel: {
-    color: 'white',
-    fontSize: 16,
-  },
+ConnectionWidget.propTypes = {
+  user: PropTypes.object,
 }
 
 export default ConnectionWidget
