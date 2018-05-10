@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 import filter from 'lodash/filter'
+import keyBy from 'lodash/keyBy'
 import groupsReducer from './groups'
 import { getUserId } from '../user'
 
@@ -21,5 +22,8 @@ export const getGroupsForUserAwaitingMember = createSelector(
 export const getGroupsForUser = createSelector(
   getGroupsForUserMember,
   getGroupsForUserAwaitingMember,
-  (groupsMember, groupsAwaiting) => ({ ...groupsMember, ...groupsAwaiting }),
+  (groupsMember, groupsAwaiting) => ({
+    ...keyBy(groupsMember, 'id'),
+    ...keyBy(groupsAwaiting, 'id'),
+  }),
 )
