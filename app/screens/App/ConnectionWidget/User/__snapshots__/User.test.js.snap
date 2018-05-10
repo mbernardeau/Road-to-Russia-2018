@@ -3,16 +3,10 @@
 exports[`screens/ConnectionWidget/User renders correctly 1`] = `
 <div
   className="user-widget"
-  data-radium={true}
 >
   <Avatar
-    data-radium={true}
+    className="user-avatar"
     src="http://avatar.url"
-    style={
-      Object {
-        "marginRight": 10,
-      }
-    }
   />
   <span
     className="username"

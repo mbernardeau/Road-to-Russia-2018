@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Radium from 'radium'
-
 import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
 import Menu from 'material-ui/Menu'
@@ -31,7 +29,7 @@ class User extends PureComponent {
 
     return (
       <div className="user-widget">
-        <Avatar src={user.avatarUrl} style={styles.avatar} />
+        <Avatar src={user.avatarUrl} className="user-avatar" />
 
         <span className="username">{user.displayName}</span>
 
@@ -63,10 +61,4 @@ User.propTypes = {
   }).isRequired,
 }
 
-const styles = {
-  avatar: {
-    marginRight: 10,
-  },
-}
-
-export default Radium(User)
+export default User

@@ -256,11 +256,10 @@
     "ip": "1.1.5",
     "k-redux-factory": "5.0.2",
     "lodash": "4.17.10",
-    "material-ui": "1.0.0-beta.46",
+    "material-ui": "1.0.0-beta.47",
     "minimist": "1.2.0",
     "moment": "2.22.1",
     "prop-types": "15.6.1",
-    "radium": "0.24.0",
     "randomstring": "1.1.5",
     "react": "16.3.2",
     "react-dom": "16.3.2",
@@ -286,7 +285,6 @@
     "whatwg-fetch": "2.0.4"
   },
   "devDependencies": {
-    "@babel/runtime": "7.0.0-beta.46",
     "@material-ui/codemod": "1.0.0-beta.45",
     "add-asset-html-webpack-plugin": "2.1.3",
     "babel-cli": "6.26.0",

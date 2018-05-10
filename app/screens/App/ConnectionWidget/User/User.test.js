@@ -1,6 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Radium from 'radium'
 import User from './User'
 
 jest.mock('material-ui/Avatar', () => 'Avatar')
@@ -10,8 +9,6 @@ jest.mock('material-ui/Menu/MenuItem', () => 'MenuItem')
 jest.mock('@material-ui/icons/MoreVert', () => 'MoreVert')
 
 describe('screens/ConnectionWidget/User', () => {
-  Radium.TestMode.enable()
-
   it('renders correctly', () => {
     const tree = renderer
       .create(

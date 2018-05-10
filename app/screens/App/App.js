@@ -19,7 +19,6 @@ import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import Radium from 'radium'
 
 import HomePage from 'screens/HomePage/Loadable'
 import StadiumsPage from 'screens/Stadiums/Loadable'
@@ -39,6 +38,8 @@ import { Switch, Route } from 'react-router-dom'
 import NavigationMenu from './NavigationMenu'
 import ConnectionWidget from './ConnectionWidget'
 
+import './App.scss'
+
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends React.Component {
   static propTypes = {
@@ -52,11 +53,11 @@ class App extends React.Component {
     return (
       <Fragment>
         <AppBar>
-          <Toolbar style={styles.toolbar}>
+          <Toolbar className="app-toolbar">
             <IconButton color="inherit" aria-label="Menu" onClick={toggleMenu}>
               <MenuIcon />
             </IconButton>
-            <div style={styles.appbarTitle}>
+            <div className="app-toolbar-title">
               <Typography variant="headline" color="inherit">
                 Road to Russia 2018
               </Typography>
@@ -67,7 +68,7 @@ class App extends React.Component {
 
         <NavigationMenu />
 
-        <div style={styles.content}>
+        <div className="app-content">
           {!isEmpty(user) && (
             <Switch>
               <Route exact path="/" component={HomePage} />
@@ -89,20 +90,4 @@ class App extends React.Component {
   }
 }
 
-const styles = {
-  toolbar: {
-    justifyContent: 'space-between',
-  },
-
-  content: {
-    paddingTop: 70,
-  },
-
-  appbarTitle: {
-    '@media screen and (max-width: 390px)': {
-      display: 'none',
-    },
-  },
-}
-
-export default Radium(App)
+export default App
