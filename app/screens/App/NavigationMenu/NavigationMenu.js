@@ -43,7 +43,7 @@ export default class NavigationMenu extends Component {
           </ListItem>
           <Divider />
           <ListItem button onClick={this.goTo('/matches')}>
-            <ListItemText primary="Paris" />
+            <ListItemText primary="Pariez" />
           </ListItem>
           <ListItem button onClick={this.goTo('/ranking')}>
             <ListItemText primary="Classement" />
@@ -52,13 +52,19 @@ export default class NavigationMenu extends Component {
             <ListItemText primary="Validation des matchs" />
           </ListItem>
           <ListItem button onClick={this.goTo('/groups')}>
-            <ListItemText primary="Tribus" />
+            <ListItemText primary="Rejoindre une tribu" />
           </ListItem>
           <ListItem button onClick={this.goTo('/creategroup')}>
             <ListItemText primary="Créer une tribu" />
           </ListItem>
           <ListItem button onClick={this.goTo('/admingroups')}>
             <ListItemText primary="Administrer mes tribus" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/validinscription')}>
+            <ListItemText primary="Valider l'inscription d'un membre" />
+          </ListItem>
+          <ListItem button onClick={this.goTo('/rules')}>
+            <ListItemText primary="Réglement" />
           </ListItem>
           <ListItem button onClick={this.goTo('/stadiums')}>
             <ListItemText primary="Stades" />
