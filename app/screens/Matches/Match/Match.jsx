@@ -14,6 +14,7 @@ import Bet from './Bet'
 import ValidIcon from './ValidIcon'
 import MatchInfos from './MatchInfos'
 import Scores from './Scores'
+import PointsWon from './PointsWon'
 
 import './Match.scss'
 
@@ -95,6 +96,7 @@ class Match extends Component {
           </div>
           {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
           <Scores {...match} />
+          <PointsWon {...match} {...bet} />
           <Divider />
           <MatchInfos match={match} />
           {!past && <ValidIcon valid={this.betSaved()} />}
