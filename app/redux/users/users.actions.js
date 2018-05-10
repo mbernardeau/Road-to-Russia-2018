@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import keys from 'lodash/keys'
 import usersReducer from './users'
 
 export const fetchUser = userId => (dispatch, getState) => {
@@ -13,4 +14,10 @@ export const fetchUser = userId => (dispatch, getState) => {
     .then(doc => {
       dispatch(usersReducer.addOrUpdate({ id: userId, ...doc.data() }))
     })
+}
+
+export const fetchUsers = userIds => dispatch => {
+  keys(userIds).forEach(userId => {
+    dispatch(fetchUser(userId))
+  })
 }
