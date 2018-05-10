@@ -69,6 +69,9 @@ export default class NavigationMenu extends Component {
           <ListItem button onClick={this.goTo('/faq')}>
             <ListItemText primary="FAQ" />
           </ListItem>
+          <ListItem button onClick={this.goTo('/stadiums')}>
+            <ListItemText primary="Stades" />
+          </ListItem>
         </List>
       </Drawer>
     )
