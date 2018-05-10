@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import usersReducer from './users'
 
 export const fetchUser = userId => (dispatch, getState) => {

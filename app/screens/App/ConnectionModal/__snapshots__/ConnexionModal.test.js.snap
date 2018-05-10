@@ -6,36 +6,19 @@ Array [
     Connexion
   </DialogTitle>,
   <DialogContent
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "flexDirection": "column",
-        "padding": 15,
-      }
-    }
+    className="auth-btns-container"
   >
     <Button
       color="primary"
       onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 10,
-        }
-      }
       variant="raised"
     >
       <FaGoogle />
         Connexion avec Google
     </Button>
     <Button
-      color="accent"
+      color="secondary"
       onClick={[Function]}
-      style={
-        Object {
-          "marginBottom": 10,
-        }
-      }
       variant="raised"
     >
       <FaFacebook />

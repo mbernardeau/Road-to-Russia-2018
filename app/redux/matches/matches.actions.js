@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import matchReducer from './matches.reducer'
 
 export const fetchMatchList = () => dispatch => {

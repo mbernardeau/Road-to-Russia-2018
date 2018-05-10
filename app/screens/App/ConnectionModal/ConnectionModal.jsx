@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import Button from 'material-ui/Button'
 import FaGoogle from 'react-icons/lib/fa/google'
 import FaFacebook from 'react-icons/lib/fa/facebook'
 import { DialogContent, DialogTitle } from 'material-ui/Dialog'
+
+import './ConnectionModal.scss'
 
 class ConnectionModal extends Component {
   static propTypes = {
@@ -34,32 +36,21 @@ class ConnectionModal extends Component {
   }
 
   render() {
-    return [
-      <DialogTitle key="title">Connexion</DialogTitle>,
-      <DialogContent key="content" style={styles.container}>
-        <Button style={styles.button} color="primary" onClick={this.authenticateWithGoogle} variant="raised" >
-          <FaGoogle />&nbsp; Connexion avec Google
-        </Button>
+    return (
+      <Fragment>
+        <DialogTitle>Connexion</DialogTitle>
+        <DialogContent className="auth-btns-container">
+          <Button color="primary" onClick={this.authenticateWithGoogle} variant="raised">
+            <FaGoogle />&nbsp; Connexion avec Google
+          </Button>
 
-        <Button style={styles.button} color="accent" onClick={this.authenticateWithFacebook} variant="raised" >
-          <FaFacebook />&nbsp; Connexion avec Facebook
-        </Button>
-      </DialogContent>,
-    ]
+          <Button color="secondary" onClick={this.authenticateWithFacebook} variant="raised">
+            <FaFacebook />&nbsp; Connexion avec Facebook
+          </Button>
+        </DialogContent>
+      </Fragment>
+    )
   }
-}
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: 15,
-  },
-
-  button: {
-    marginBottom: 10,
-  },
 }
 
 export default ConnectionModal

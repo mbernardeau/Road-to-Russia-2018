@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import randomstring from 'randomstring'
 import { getUserId } from '../user'
 import groupsReducer from './groups'
