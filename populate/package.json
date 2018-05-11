@@ -13,8 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fast-csv": "^2.4.0",
-    "firebase-admin": "^4.2.1",
-    "moment": "^2.18.1"
+    "firebase-admin": "5.12.0",
+    "node-firestore-import-export": "0.8.1"
   }
 }
