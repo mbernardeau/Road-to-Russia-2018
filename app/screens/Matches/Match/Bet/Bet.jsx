@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { map, range } from 'lodash'
-
+import { onlyUpdateForPropTypes } from 'recompose'
 import Flag from 'components/Flag'
 import Select from 'material-ui/Select'
 import { MenuItem } from 'material-ui/Menu'
@@ -59,4 +59,4 @@ Bet.propTypes = {
   past: PropTypes.bool,
 }
 
-export default Bet
+export default onlyUpdateForPropTypes(Bet)

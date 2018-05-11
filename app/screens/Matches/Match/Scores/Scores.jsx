@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { onlyUpdateForPropTypes } from 'recompose'
+
 import Typography from 'material-ui/Typography'
 
 import './Scores.scss'
@@ -25,4 +27,4 @@ Scores.propTypes = {
   }),
 }
 
-export default Scores
+export default onlyUpdateForPropTypes(Scores)
