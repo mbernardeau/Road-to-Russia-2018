@@ -28,7 +28,7 @@ exports[`screens/ConnectionWidget/User renders correctly 1`] = `
     open={false}
   >
     <MenuItem
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       Se déconnecter
     </MenuItem>

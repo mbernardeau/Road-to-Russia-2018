@@ -14,7 +14,7 @@ describe('screens/ConnectionWidget/User', () => {
       .create(
         <User
           user={{ avatarUrl: 'http://avatar.url', displayName: 'Georges Lucas' }}
-          firebase={{ logout: () => {} }}
+          logout={jest.fn()}
         />,
       )
       .toJSON()
