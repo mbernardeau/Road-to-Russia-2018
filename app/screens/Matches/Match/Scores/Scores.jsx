@@ -21,7 +21,7 @@ Scores.propTypes = {
   scores: PropTypes.shape({
     A: PropTypes.number.isRequired,
     B: PropTypes.number.isRequired,
-    winner: PropTypes.oneOf(['A', 'B']),
+    winner: PropTypes.oneOf(['A', 'B', 'N']),
   }),
 }
 
