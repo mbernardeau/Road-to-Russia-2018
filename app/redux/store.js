@@ -10,6 +10,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 import 'firebase/database'
 import thunk from 'redux-thunk'
+import firebaseConfig from './firebaseConfig'
 
 import createReducer from './reducers'
 
@@ -20,15 +21,6 @@ export default function configureStore(initialState = {}, history) {
   const middlewares = [thunk, routerMiddleware(history)]
 
   const enhancers = [applyMiddleware(...middlewares)]
-
-  const firebaseConfig = {
-    apiKey: 'AIzaSyBqwxcPPEW5SQRYX039izgmJMWiktauCkg',
-    authDomain: 'pronostics-47048.firebaseapp.com',
-    databaseURL: 'https://pronostics-47048.firebaseio.com',
-    projectId: 'pronostics-47048',
-    storageBucket: 'pronostics-47048.appspot.com',
-    messagingSenderId: '1000074404628',
-  }
 
   const reduxFirebaseConfig = {
     userProfile: 'users', // firebase root where user profiles are stored
