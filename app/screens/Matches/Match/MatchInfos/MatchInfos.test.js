@@ -5,6 +5,7 @@ import moment from 'moment'
 import MatchInfos from './MatchInfos'
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip')
+jest.mock('./StadiumTooltip', () => 'StadiumTooltip')
 
 describe('screens/Match/StadiumTooltip', () => {
   // Mock date to ensure consistancy between tests
