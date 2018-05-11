@@ -42,7 +42,7 @@
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:coverage": "cross-env NODE_ENV=test jest --coverage && codecov",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier app/**/*.{js,jsx,scss} --write"
@@ -305,7 +305,6 @@
     "babel-preset-stage-0": "6.24.1",
     "cheerio": "1.0.0-rc.2",
     "circular-dependency-plugin": "5.0.2",
-    "codecov": "3.0.1",
     "coveralls": "3.0.1",
     "css-loader": "0.28.11",
     "enzyme": "3.3.0",
