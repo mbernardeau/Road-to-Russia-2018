@@ -14,7 +14,8 @@ const findWinner = (scoreA, scoreB) => {
   return 'B'
 }
 
-const getMessage = (goodScore, goodWinner) => {
+const getMessage = (goodScore, goodWinner, hasBet) => {
+  if (!hasBet) return "Vous n'avez pas pronostiqué"
   if (goodScore) return 'Vous avez pronostiqué le score parfait!'
   else if (goodWinner) return 'Vous avez le bon résultat'
   return 'Dommage, vous ferez mieux la prochaine fois'
@@ -35,16 +36,17 @@ const getCalculus = (odds, winner, goodScore, goodWinner) => {
 }
 
 const PointsWon = ({ pointsWon, scores, betTeamA, betTeamB, odds }) => {
-  if (!isNumber(pointsWon)) return null
+  if (!scores) return null
 
   const { A, B } = scores
   const matchWinner = findWinner(A, B)
   const goodScore = A === betTeamA && B === betTeamB
-  const goodWinner = !goodScore && matchWinner === findWinner(betTeamA, betTeamB)
+  const hasBet = isNumber(pointsWon)
+  const goodWinner = !goodScore && hasBet && matchWinner === findWinner(betTeamA, betTeamB)
 
   return (
     <div className="points-won-container">
-      <Typography variant="subheading">{getMessage(goodScore, goodWinner)}</Typography>
+      <Typography variant="subheading">{getMessage(goodScore, goodWinner, hasBet)}</Typography>
       <div className="points-won-container">
         <Typography
           variant="display1"
@@ -52,7 +54,7 @@ const PointsWon = ({ pointsWon, scores, betTeamA, betTeamB, odds }) => {
             goodWinner ? 'good-winner' : ''
           }`}
         >
-          {pointsWon > 0 ? '+' : ''} {pointsWon} point{pointsWon > 1 ? 's' : ''}
+          {pointsWon > 0 ? '+' : ''} {pointsWon || 0} point{pointsWon > 1 ? 's' : ''}
         </Typography>
         <Tooltip title={getCalculus(odds, matchWinner, goodScore, goodWinner)} placement="right">
           <InfoIcon className="points-won-info-icon" />
