@@ -52,8 +52,25 @@ jobs:
             name: Upload lockfile modification
             command: greenkeeper-lockfile-upload
         - deploy:
-            name: Deploy to Firebase
+            name: Deploy to Firebase (Staging)
             command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                firebase use default
                 firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+              fi
+        - run:
+            name: Clean build folder
+            command: yarn run build:clean
+        - run:
+            name: Build for production
+            command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                yarn run build:ci:prod
+              fi
+        - deploy:
+            name: Deploy to Firebase (Production)
+            command: |
+              if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                firebase use production
+                firebase deploy --token=$FIREBASE_PRODUCTION_TOKEN --non-interactive
               fi
