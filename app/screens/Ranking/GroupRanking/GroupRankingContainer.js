@@ -13,7 +13,7 @@ import GroupRanking from './GroupRanking'
 const mapState = (state, { members }) => ({
   users: orderBy(
     compact(usersFactory.get(keys(members))(state)),
-    ({ points }) => points || 0,
+    ({ score }) => score || 0,
     'desc',
   ),
   userId: getUserId(state),
