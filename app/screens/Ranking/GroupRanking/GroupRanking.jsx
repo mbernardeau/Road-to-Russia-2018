@@ -27,7 +27,9 @@ const GroupRanking = ({ name, users, userId, ...other }) => (
               <TableCell>
                 <InlineAvatar {...user} />
               </TableCell>
-              <TableCell>{(user.points || 0).toLocaleString()} points</TableCell>
+              <TableCell>
+                {(user.score || 0).toLocaleString()} point{user.score > 1 && 's'}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -45,7 +47,7 @@ GroupRanking.propTypes = {
   users: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      points: PropTypes.number,
+      score: PropTypes.number,
     }),
   ),
   userId: PropTypes.string.isRequired,

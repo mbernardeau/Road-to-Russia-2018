@@ -99,81 +99,83 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@firebase/app-types@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.3.0.tgz#88f837426219ce48710369be4626e14d98215284"
-
-"@firebase/app@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@firebase/app/-/app-0.3.0.tgz#cdf66795bd22b6e0dd8ede8690077ea7c827fb1f"
-  dependencies:
-    "@firebase/app-types" "0.3.0"
-    "@firebase/util" "0.2.0"
-    tslib "1.9.0"
-
-"@firebase/auth-types@0.3.1":
+"@firebase/app-types@0.3.1":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@firebase/auth-types/-/auth-types-0.3.1.tgz#732e79110c75000250af4c7a976d0083250dd5b7"
+  resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.3.1.tgz#df4e79c38f759e606a421e866cecb7da4577b606"
 
-"@firebase/auth@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@firebase/auth/-/auth-0.5.1.tgz#77a71717ad80778063da1761499cb736b23819e3"
+"@firebase/app@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@firebase/app/-/app-0.3.1.tgz#282a217bc904fd5168e43c3e2d30e6658ceca278"
   dependencies:
-    "@firebase/auth-types" "0.3.1"
+    "@firebase/app-types" "0.3.1"
+    "@firebase/util" "0.2.0"
+    dom-storage "2.1.0"
+    tslib "1.9.0"
+    xmlhttprequest "1.8.0"
 
-"@firebase/database-types@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.3.0.tgz#88e18a305eef9db1ef437502052e3a12b13eacd1"
+"@firebase/auth-types@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@firebase/auth-types/-/auth-types-0.3.2.tgz#fc636084eb82cb098e4e76efc5fffd315e22abdd"
 
-"@firebase/database@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.3.0.tgz#e514f1de8c534a0dfea11990bb2bac75f6424a59"
+"@firebase/auth@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@firebase/auth/-/auth-0.5.2.tgz#f4d7b699e21523b412f5af21a5507f44625d056c"
   dependencies:
-    "@firebase/database-types" "0.3.0"
+    "@firebase/auth-types" "0.3.2"
+
+"@firebase/database-types@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.3.1.tgz#4a15423f3b2cb3bed111f5a353c5c1bb2e2787ba"
+
+"@firebase/database@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.3.1.tgz#1ca0797b8e9a243d383d31b1873373b84a2048b9"
+  dependencies:
+    "@firebase/database-types" "0.3.1"
     "@firebase/logger" "0.1.1"
     "@firebase/util" "0.2.0"
     faye-websocket "0.11.1"
     tslib "1.9.0"
 
-"@firebase/firestore-types@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.4.0.tgz#9aa0990dc1be5b2ad4b1f9f9568a3fc656b31bcd"
+"@firebase/firestore-types@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.4.1.tgz#9a96dff26f0537b13ff119b5e7ab4bddad2068d1"
 
-"@firebase/firestore@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.5.1.tgz#ab82734571ebae49dc7611b0f84bb249ba63591d"
+"@firebase/firestore@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.5.2.tgz#92dcbc604e41d97d371e115280f917dbdeaab21a"
   dependencies:
-    "@firebase/firestore-types" "0.4.0"
+    "@firebase/firestore-types" "0.4.1"
     "@firebase/logger" "0.1.1"
     "@firebase/webchannel-wrapper" "0.2.8"
     grpc "1.10.1"
     tslib "1.9.0"
 
-"@firebase/functions-types@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@firebase/functions-types/-/functions-types-0.1.1.tgz#3b2176bdb30a4682321eb2ff79e796f6d9c010e0"
+"@firebase/functions-types@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@firebase/functions-types/-/functions-types-0.1.2.tgz#f291b2945218a97d9ab0e20f2fdec2cef6f90f94"
 
-"@firebase/functions@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@firebase/functions/-/functions-0.2.1.tgz#14b091e25fe1b516dbaf17a62a9d797320bfc1fa"
+"@firebase/functions@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@firebase/functions/-/functions-0.2.2.tgz#fd919deede5ec48870ecf751e4300066fc9424dc"
   dependencies:
-    "@firebase/functions-types" "0.1.1"
-    "@firebase/messaging-types" "0.2.1"
+    "@firebase/functions-types" "0.1.2"
+    "@firebase/messaging-types" "0.2.2"
     isomorphic-fetch "2.2.1"
 
 "@firebase/logger@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@firebase/logger/-/logger-0.1.1.tgz#af5df54253286993f4b367c3dabe569c848860d3"
 
-"@firebase/messaging-types@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@firebase/messaging-types/-/messaging-types-0.2.1.tgz#82ee944db4241078cd480f4fcc409cc3fb6f35e3"
+"@firebase/messaging-types@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@firebase/messaging-types/-/messaging-types-0.2.2.tgz#7d97abb87b599445f09df0085cbd89e9405984c6"
 
-"@firebase/messaging@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@firebase/messaging/-/messaging-0.3.1.tgz#a31543d7bb21c8844457befca304cee66536564b"
+"@firebase/messaging@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@firebase/messaging/-/messaging-0.3.2.tgz#4851b41773deb890f6919a67270d3fd34863756b"
   dependencies:
-    "@firebase/messaging-types" "0.2.1"
+    "@firebase/messaging-types" "0.2.2"
     "@firebase/util" "0.2.0"
     tslib "1.9.0"
 
@@ -185,15 +187,15 @@
     promise-polyfill "7.1.2"
     whatwg-fetch "2.0.4"
 
-"@firebase/storage-types@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@firebase/storage-types/-/storage-types-0.2.1.tgz#86da47ac311ee6ba3ae13efd665463abe4a95709"
+"@firebase/storage-types@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@firebase/storage-types/-/storage-types-0.2.2.tgz#14b56a3b61005e72dfd9ac3ec6bcb160bc3736d3"
 
-"@firebase/storage@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@firebase/storage/-/storage-0.2.1.tgz#7fffe00ec6d5c615c2c4a33a2e4f0efd32a75ff5"
+"@firebase/storage@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@firebase/storage/-/storage-0.2.2.tgz#97a90e41b008f6c3b6193e7fed1f4afd3cfda8b4"
   dependencies:
-    "@firebase/storage-types" "0.2.1"
+    "@firebase/storage-types" "0.2.2"
     tslib "1.9.0"
 
 "@firebase/util@0.2.0":
@@ -260,115 +262,116 @@
   dependencies:
     csstype "^2.2.0"
 
-"@webassemblyjs/ast@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.3.1.tgz#3081b4b3ff0af733aa5ba573af998f33711293f8"
+"@webassemblyjs/ast@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.4.2.tgz#ab715aa1fec9dd23c025204dba39690c119418ea"
   dependencies:
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
-    webassemblyjs "1.3.1"
+    "@webassemblyjs/helper-wasm-bytecode" "1.4.2"
+    "@webassemblyjs/wast-parser" "1.4.2"
+    debug "^3.1.0"
+    webassemblyjs "1.4.2"
 
-"@webassemblyjs/floating-point-hex-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.3.1.tgz#82646903ba25c3e5d88dec41ecb4e4d770615bfc"
+"@webassemblyjs/floating-point-hex-parser@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.4.2.tgz#9296fb64caa37bf98c8064aa329680e3e2bfacc7"
 
-"@webassemblyjs/helper-buffer@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-buffer/-/helper-buffer-1.3.1.tgz#aa66bb6c274a7e5610d7468f94a2702186713bc6"
+"@webassemblyjs/helper-buffer@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-buffer/-/helper-buffer-1.4.2.tgz#3cacecd5a6bfcb67932ed8219f81f92d8b2dafbb"
 
-"@webassemblyjs/helper-code-frame@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.1.tgz#b5eba87cf37992e8a62c402545aed87dfd02be83"
+"@webassemblyjs/helper-code-frame@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.4.2.tgz#20526637c3849f12b08f8661248477eef9642329"
   dependencies:
-    "@webassemblyjs/wast-printer" "1.3.1"
+    "@webassemblyjs/wast-printer" "1.4.2"
 
-"@webassemblyjs/helper-fsm@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-fsm/-/helper-fsm-1.3.1.tgz#297113d09a9541613eaeb265d7f948c5e03eb0a2"
+"@webassemblyjs/helper-fsm@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-fsm/-/helper-fsm-1.4.2.tgz#e41050282994b5be077b95b65b66ecd5a92c5e88"
 
-"@webassemblyjs/helper-wasm-bytecode@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.3.1.tgz#53b0308988e3a0cad836c83fc0801255906608f8"
+"@webassemblyjs/helper-wasm-bytecode@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.4.2.tgz#b48c289c7921056aa12d71e78a17070ffe90c49c"
 
-"@webassemblyjs/helper-wasm-section@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.3.1.tgz#3df13898e89a376ffb89439d216d9f0001bf9632"
+"@webassemblyjs/helper-wasm-section@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.4.2.tgz#520e02c0cc3e5e9b5f44f58abc04ba5eda6e5476"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/helper-buffer" "1.4.2"
+    "@webassemblyjs/helper-wasm-bytecode" "1.4.2"
+    "@webassemblyjs/wasm-gen" "1.4.2"
 
-"@webassemblyjs/leb128@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/leb128/-/leb128-1.3.1.tgz#e0cf1c585c72955637eeeabab1e2ab37c12c2338"
+"@webassemblyjs/leb128@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/leb128/-/leb128-1.4.2.tgz#d13f368abdcefc54428f55a265a993de610f8893"
   dependencies:
     leb "^0.3.0"
 
-"@webassemblyjs/validation@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/validation/-/validation-1.3.1.tgz#ed0129d7ccca7858a3f46e7e47a6889008547a39"
+"@webassemblyjs/validation@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/validation/-/validation-1.4.2.tgz#55cf5b219e25900c85773fc35beb9d12ae0ede53"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
 
-"@webassemblyjs/wasm-edit@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-edit/-/wasm-edit-1.3.1.tgz#a16ca4d9a12144b1b28d4e66ad1ad66ec65e479e"
+"@webassemblyjs/wasm-edit@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-edit/-/wasm-edit-1.4.2.tgz#bde9a581065f63f257ed511d7d9cf04f8cd04524"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/helper-wasm-section" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
-    "@webassemblyjs/wasm-opt" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    "@webassemblyjs/wast-printer" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/helper-buffer" "1.4.2"
+    "@webassemblyjs/helper-wasm-bytecode" "1.4.2"
+    "@webassemblyjs/helper-wasm-section" "1.4.2"
+    "@webassemblyjs/wasm-gen" "1.4.2"
+    "@webassemblyjs/wasm-opt" "1.4.2"
+    "@webassemblyjs/wasm-parser" "1.4.2"
+    "@webassemblyjs/wast-printer" "1.4.2"
     debug "^3.1.0"
 
-"@webassemblyjs/wasm-gen@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-gen/-/wasm-gen-1.3.1.tgz#43263fc56a0570e0564e407bbcd4c02e85167398"
+"@webassemblyjs/wasm-gen@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-gen/-/wasm-gen-1.4.2.tgz#0899297f9426073736df799287845a73c597cf90"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/leb128" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/helper-wasm-bytecode" "1.4.2"
+    "@webassemblyjs/leb128" "1.4.2"
 
-"@webassemblyjs/wasm-opt@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-opt/-/wasm-opt-1.3.1.tgz#172601dcdaaacd6b0b002df1252033198c65eceb"
+"@webassemblyjs/wasm-opt@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-opt/-/wasm-opt-1.4.2.tgz#c44ad48e109aec197e3bf69875c54537d76ba2e9"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/helper-buffer" "1.4.2"
+    "@webassemblyjs/wasm-gen" "1.4.2"
+    "@webassemblyjs/wasm-parser" "1.4.2"
 
-"@webassemblyjs/wasm-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-parser/-/wasm-parser-1.3.1.tgz#76727be6c313a9b775170ed38a126558eed7e8ef"
+"@webassemblyjs/wasm-parser@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wasm-parser/-/wasm-parser-1.4.2.tgz#3bf7e10cfe336db0ecdea0a5d7ed8a63b7a7754a"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/leb128" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    webassemblyjs "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/helper-wasm-bytecode" "1.4.2"
+    "@webassemblyjs/leb128" "1.4.2"
+    "@webassemblyjs/wasm-parser" "1.4.2"
+    webassemblyjs "1.4.2"
 
-"@webassemblyjs/wast-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-parser/-/wast-parser-1.3.1.tgz#62b6eba09580477868dd394cee3e3f5c64e1f3f8"
+"@webassemblyjs/wast-parser@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-parser/-/wast-parser-1.4.2.tgz#6499c38cf8895a81394f7e40d4681a85aaa84498"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/floating-point-hex-parser" "1.3.1"
-    "@webassemblyjs/helper-code-frame" "1.3.1"
-    "@webassemblyjs/helper-fsm" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/floating-point-hex-parser" "1.4.2"
+    "@webassemblyjs/helper-code-frame" "1.4.2"
+    "@webassemblyjs/helper-fsm" "1.4.2"
     long "^3.2.0"
-    webassemblyjs "1.3.1"
+    webassemblyjs "1.4.2"
 
-"@webassemblyjs/wast-printer@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-printer/-/wast-printer-1.3.1.tgz#3e75b889e6f1ba2dfa854e4436b4287e7687e82c"
+"@webassemblyjs/wast-printer@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@webassemblyjs/wast-printer/-/wast-printer-1.4.2.tgz#ee70a828f0d9730b55b9a5c3ed694094ba68ba57"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/wast-parser" "1.4.2"
     long "^3.2.0"
 
 abab@^1.0.4:
@@ -556,10 +559,6 @@ argparse@^1.0.7:
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
   dependencies:
     sprintf-js "~1.0.2"
-
-argv@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/argv/-/argv-0.0.2.tgz#ecbd16f8949b157183711b1bda334f37840185ab"
 
 aria-query@^0.7.0:
   version "0.7.1"
@@ -2415,14 +2414,6 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codecov@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/codecov/-/codecov-3.0.1.tgz#cc4c5cd1955c6be47f6dda2f8c55bcc43c732dca"
-  dependencies:
-    argv "0.0.2"
-    request "^2.81.0"
-    urlgrey "0.4.4"
-
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -2689,9 +2680,9 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@5.1.4:
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.4.tgz#f61c14291f7cc653bb86457002ea80a04699d022"
+cross-env@5.1.5:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.5.tgz#31daf7f3a52ef337c8ddda585f08175cce5d1fa5"
   dependencies:
     cross-spawn "^5.1.0"
     is-windows "^1.0.0"
@@ -4327,20 +4318,18 @@ fined@^1.0.1:
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
 
-firebase@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-5.0.1.tgz#ecb24ecafc155dbd8fd9794b6d2d1b39e868efe9"
+firebase@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-5.0.2.tgz#5c0d647acc10552d15169e5f8482413aff1264cb"
   dependencies:
-    "@firebase/app" "0.3.0"
-    "@firebase/auth" "0.5.1"
-    "@firebase/database" "0.3.0"
-    "@firebase/firestore" "0.5.1"
-    "@firebase/functions" "0.2.1"
-    "@firebase/messaging" "0.3.1"
+    "@firebase/app" "0.3.1"
+    "@firebase/auth" "0.5.2"
+    "@firebase/database" "0.3.1"
+    "@firebase/firestore" "0.5.2"
+    "@firebase/functions" "0.2.2"
+    "@firebase/messaging" "0.3.2"
     "@firebase/polyfill" "0.3.1"
-    "@firebase/storage" "0.2.1"
-    dom-storage "2.1.0"
-    xmlhttprequest "1.8.0"
+    "@firebase/storage" "0.2.2"
 
 first-chunk-stream@^1.0.0:
   version "1.0.0"
@@ -9021,9 +9010,9 @@ react-reconciler@^0.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-redux-firebase@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.1.0.tgz#ec7da1fc1a56a13a1db77fdaf1471bf74c4ef02a"
+react-redux-firebase@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.1.1.tgz#bbbb2d3b69707d6ba3dbb6c89df1ff87af8545dc"
   dependencies:
     hoist-non-react-statics "^2.3.1"
     lodash "^4.17.4"
@@ -9275,7 +9264,7 @@ recompose@^0.26.0:
     hoist-non-react-statics "^2.3.1"
     symbol-observable "^1.0.4"
 
-"recompose@^0.26.0 || ^0.27.0":
+"recompose@^0.26.0 || ^0.27.0", recompose@^0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.27.0.tgz#8230ebd651bf1159097006f79083fe224b1501cf"
   dependencies:
@@ -9457,7 +9446,7 @@ request-promise-native@^1.0.5:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
-request@2, request@^2.65.0, request@^2.79.0, request@^2.81.0, request@^2.83.0:
+request@2, request@^2.65.0, request@^2.79.0, request@^2.83.0:
   version "2.85.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.85.0.tgz#5a03615a47c61420b3eb99b7dba204f83603e1fa"
   dependencies:
@@ -11000,10 +10989,6 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-urlgrey@0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/urlgrey/-/urlgrey-0.4.4.tgz#892fe95960805e85519f1cd4389f2cb4cbb7652f"
-
 use@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.0.tgz#14716bf03fdfefd03040aef58d8b4b85f3a7c544"
@@ -11211,14 +11196,14 @@ watchpack@^1.5.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webassemblyjs@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/webassemblyjs/-/webassemblyjs-1.3.1.tgz#2bb8ebc724d0fe09b9562ab20e32ce3f5bac5c74"
+webassemblyjs@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/webassemblyjs/-/webassemblyjs-1.4.2.tgz#3b07b506917c97153d83441d8a88ffa2d25cc07d"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/validation" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/validation" "1.4.2"
+    "@webassemblyjs/wasm-parser" "1.4.2"
+    "@webassemblyjs/wast-parser" "1.4.2"
     long "^3.2.0"
 
 webidl-conversions@^4.0.2:
@@ -11307,13 +11292,13 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.8.1:
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.8.1.tgz#59e38f99f2751c931dd09a035aba7bec4b5f916e"
+webpack@4.8.2:
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.8.2.tgz#41aa00fd32a8f253a2f12a2da11c8ad4d52fde1c"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/wasm-edit" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.4.2"
+    "@webassemblyjs/wasm-edit" "1.4.2"
+    "@webassemblyjs/wasm-parser" "1.4.2"
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
     ajv "^6.1.0"

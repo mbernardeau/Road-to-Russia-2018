@@ -1,0 +1,914 @@
+{
+  "-Kj2zgJGrbesJWV8zQFP": {
+    "odds": {
+      "1": 1.25,
+      "2": 9,
+      "A": 4.5,
+      "N": 4.8,
+      "B": 1.3
+    },
+    "phase": "0",
+    "teamA": "-Kj2zfp9V5wdpN59exkD",
+    "teamB": "-Kj2zfpEdmB6SgyPd85W",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-05-10T16:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD1",
+    "__collections__": {}
+  },
+  "-Kj2zgJN_QhVeEpyAeh5": {
+    "teamB": "-Kj2zfpO3MwCoLIdNuNg",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-15T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDC",
+    "phase": "0",
+    "odds": {
+      "1": 2,
+      "2": 3.5,
+      "B": 0,
+      "A": 0,
+      "N": 3
+    },
+    "teamA": "-Kj2zfpFzqykBwiz5dcL",
+    "__collections__": {}
+  },
+  "-Kj2zgJOa5shOQaGqFH5": {
+    "teamB": "-Kj2zfpN8l22eNCLSzLj",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-15T15:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD0",
+    "phase": "0",
+    "odds": {
+      "1": 1.85,
+      "2": 3.9,
+      "A": 0,
+      "N": 3.1,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpFzqykBwiz5dcN",
+    "__collections__": {}
+  },
+  "-Kj2zgJQPZRVObVjNxZU": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-15T18:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD8",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpPgzwXCT7Bnm1y",
+    "teamB": "-Kj2zfpKYdjdHhPukkXu",
+    "__collections__": {}
+  },
+  "-Kj2zgJRjiBeMLOSOa4I": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-16T10:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDB",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpHPqNpMy7ZgxmM",
+    "teamB": "-Kj2zfpO3MwCoLIdNuNf",
+    "__collections__": {}
+  },
+  "-Kj2zgJSdV3hZMuU4j1w": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD6",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJD",
+    "teamB": "-Kj2zfpRCBdqgDxcBLBQ",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-16T13:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgJT_IOBQrEjRANR": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-16T16:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD2",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpLjC03AaK-W8Lo",
+    "teamB": "-Kj2zfpT4N-Ti7bAyicd",
+    "__collections__": {}
+  },
+  "-Kj2zgJV6HuPAhuoX1JL": {
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD5",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpT4N-Ti7bAyice",
+    "teamB": "-Kj2zfpM7z9dtuBQZC4c",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-16T19:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgJWZB6iEKe2C3S-": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJH",
+    "teamB": "-Kj2zfpKYdjdHhPukkXr",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-17T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD7",
+    "__collections__": {}
+  },
+  "-Kj2zgJXT8q12LIs6rP5": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpIxWevwDITiL0V",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJE",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-17T15:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDA",
+    "__collections__": {}
+  },
+  "-Kj2zgJ_Va7Kl-e-t87b": {
+    "teamB": "-Kj2zfpFzqykBwiz5dcM",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-17T18:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD1",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpRCBdqgDxcBLBR",
+    "__collections__": {}
+  },
+  "-Kj2zgJfurtr7oRcLW4h": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-18T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD3",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpKYdjdHhPukkXs",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJG",
+    "__collections__": {}
+  },
+  "-Kj2zgJo-v-r6DFBut7y": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-18T15:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD8",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLk",
+    "teamB": "-Kj2zfpGJmSTghyT06un",
+    "__collections__": {}
+  },
+  "-Kj2zgJo-v-r6DFBut7z": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpJov1GY9sA2IgE",
+    "teamB": "-Kj2zfpGJmSTghyT06uo",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-18T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD9",
+    "__collections__": {}
+  },
+  "-Kj2zgJpGG5jHcYK06-X": {
+    "teamB": "-Kj2zfpN8l22eNCLSzLl",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-19T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD2",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJF",
+    "__collections__": {}
+  },
+  "-Kj2zgJsLJ5umqZ2iiAN": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-19T15:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD6",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpJov1GY9sA2IgF",
+    "teamB": "-Kj2zfpKYdjdHhPukkXt",
+    "__collections__": {}
+  },
+  "-Kj2zgJuTNBgf-js0QLA": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-19T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD0",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfp9V5wdpN59exkD",
+    "teamB": "-Kj2zfpFzqykBwiz5dcL",
+    "__collections__": {}
+  },
+  "-Kj2zgJuTNBgf-js0QLB": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpPgzwXCT7Bnm1y",
+    "teamB": "-Kj2zfpFzqykBwiz5dcN",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-20T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD7",
+    "__collections__": {}
+  },
+  "-Kj2zgJvZ03_Dv2tQ1jc": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpO3MwCoLIdNuNg",
+    "teamB": "-Kj2zfpEdmB6SgyPd85W",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-20T15:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD1",
+    "__collections__": {}
+  },
+  "-Kj2zgJxrQJp6fmWssim": {
+    "teamB": "-Kj2zfpKYdjdHhPukkXu",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-20T18:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDB",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLj",
+    "__collections__": {}
+  },
+  "-Kj2zgJzfhGd6M-zLxTD": {
+    "teamB": "-Kj2zfpO3MwCoLIdNuNf",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-21T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDC",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpT4N-Ti7bAyicd",
+    "__collections__": {}
+  },
+  "-Kj2zgJzfhGd6M-zLxTE": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDA",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpHPqNpMy7ZgxmM",
+    "teamB": "-Kj2zfpLjC03AaK-W8Lo",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-21T15:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgK1OovywdrYBAVm": {
+    "teamB": "-Kj2zfpT4N-Ti7bAyice",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-21T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD3",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJD",
+    "__collections__": {}
+  },
+  "-Kj2zgK1OovywdrYBAVn": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpRCBdqgDxcBLBR",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJH",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-22T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD9",
+    "__collections__": {}
+  },
+  "-Kj2zgK2l0NwznS00Qql": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpM7z9dtuBQZC4c",
+    "teamB": "-Kj2zfpRCBdqgDxcBLBQ",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-22T15:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD0",
+    "__collections__": {}
+  },
+  "-Kj2zgK2l0NwznS00Qqm": {
+    "teamB": "-Kj2zfpFzqykBwiz5dcM",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-22T18:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD5",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpKYdjdHhPukkXr",
+    "__collections__": {}
+  },
+  "-Kj2zgK3E-HGFIZCGvJy": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-23T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD8",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLk",
+    "teamB": "-Kj2zfpJov1GY9sA2IgE",
+    "__collections__": {}
+  },
+  "-Kj2zgK5ve6ldyni9JDb": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD7",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJG",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJE",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-23T15:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgK5ve6ldyni9JDc": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpIxWevwDITiL0V",
+    "teamB": "-Kj2zfpKYdjdHhPukkXs",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-23T18:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD2",
+    "__collections__": {}
+  },
+  "-Kj2zgK6wnowR9Es8SiO": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-24T12:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD3",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 0,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpGJmSTghyT06uo",
+    "teamB": "-Kj2zfpGJmSTghyT06un",
+    "__collections__": {}
+  },
+  "-Kj2zgK7SCe-AuK4Bgf4": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-24T15:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDB",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLl",
+    "teamB": "-Kj2zfpKYdjdHhPukkXt",
+    "__collections__": {}
+  },
+  "-Kj2zgK9XWKcMp4R8tN6": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpJov1GY9sA2IgF",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJF",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-24T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDC",
+    "__collections__": {}
+  },
+  "-Kj2zgKB5oa_3m7pXtg7": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDA",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpO3MwCoLIdNuNg",
+    "teamB": "-Kj2zfp9V5wdpN59exkD",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-25T14:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgKCVghYIVJ6J2V2": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-25T14:00:00.000Z"
+    },
+    "streaming": "TF1",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD9",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpEdmB6SgyPd85W",
+    "teamB": "-Kj2zfpFzqykBwiz5dcL",
+    "__collections__": {}
+  },
+  "-Kj2zgKFmqNSgABIZ0wv": {
+    "teamB": "-Kj2zfpPgzwXCT7Bnm1y",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-25T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD6",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLj",
+    "__collections__": {}
+  },
+  "-Kj2zgKGyT9xK_oM7Eby": {
+    "teamB": "-Kj2zfpFzqykBwiz5dcN",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-25T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD5",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 0,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpKYdjdHhPukkXu",
+    "__collections__": {}
+  },
+  "-Kj2zgKHfJeVs6mBV5E3": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-26T14:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD1",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpT4N-Ti7bAyicd",
+    "teamB": "-Kj2zfpHPqNpMy7ZgxmM",
+    "__collections__": {}
+  },
+  "-Kj2zgKHfJeVs6mBV5E4": {
+    "teamB": "-Kj2zfpLjC03AaK-W8Lo",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-26T14:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD8",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpO3MwCoLIdNuNf",
+    "__collections__": {}
+  },
+  "-Kj2zgKIWNQnDfpog-at": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD0",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpRCBdqgDxcBLBQ",
+    "teamB": "-Kj2zfpT4N-Ti7bAyice",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-26T18:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgKJ2wzt1CxDqVYy": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-26T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD7",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 3.2,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpM7z9dtuBQZC4c",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJD",
+    "__collections__": {}
+  },
+  "-Kj2zgKJ2wzt1CxDqVYz": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-27T14:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD2",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "B": 0,
+      "A": 3.2,
+      "N": 3.2
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJG",
+    "teamB": "-Kj2zfpIxWevwDITiL0V",
+    "__collections__": {}
+  },
+  "-Kj2zgKK_FjuLE5qkbk-": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD3",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpSUE3rJOjKDuJE",
+    "teamB": "-Kj2zfpKYdjdHhPukkXs",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-27T14:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgKK_FjuLE5qkbk0": {
+    "teamB": "-Kj2zfpRCBdqgDxcBLBR",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-27T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDB",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpKYdjdHhPukkXr",
+    "__collections__": {}
+  },
+  "-Kj2zgKLiV6gztv_zoCg": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpFzqykBwiz5dcM",
+    "teamB": "-Kj2zfpSUE3rJOjKDuJH",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-27T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDC",
+    "__collections__": {}
+  },
+  "-Kj2zgKPFE3FgypNGQ-1": {
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD5",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpN8l22eNCLSzLl",
+    "teamB": "-Kj2zfpJov1GY9sA2IgF",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-28T14:00:00.000Z"
+    },
+    "__collections__": {}
+  },
+  "-Kj2zgKQu1S6GvJrwX7C": {
+    "teamB": "-Kj2zfpSUE3rJOjKDuJF",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-28T14:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD6",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpKYdjdHhPukkXt",
+    "__collections__": {}
+  },
+  "-Kj2zgKRUwOUaYO9TiKz": {
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpGJmSTghyT06un",
+    "teamB": "-Kj2zfpJov1GY9sA2IgE",
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-28T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oD9",
+    "__collections__": {}
+  },
+  "-Kj2zgKRUwOUaYO9TiL-": {
+    "dateTime": {
+      "__datatype__": "timestamp",
+      "value": "2018-06-28T18:00:00.000Z"
+    },
+    "streaming": "BeIN",
+    "stadium": "-Kioc-ZW9T-10wOZ3oDA",
+    "phase": "0",
+    "odds": {
+      "1": 1.7,
+      "2": 4.3,
+      "A": 3.2,
+      "N": 3.2,
+      "B": 0
+    },
+    "teamA": "-Kj2zfpGJmSTghyT06uo",
+    "teamB": "-Kj2zfpN8l22eNCLSzLk",
+    "__collections__": {}
+  }
+}
