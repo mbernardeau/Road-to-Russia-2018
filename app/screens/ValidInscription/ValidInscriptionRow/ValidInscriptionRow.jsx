@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TableCell, TableRow } from 'material-ui/Table'
-import Typography from 'material-ui/Typography'
+import Button from 'material-ui/Button'
 import size from 'lodash/size'
 
-const ValidInscriptionRow = ({ name, joinKey, price, members, awaitingMembers }) => (
+const ValidInscriptionRow = ({ name, price, members }) => (
   <TableRow>
     <TableCell>
       <b>{name}</b>
@@ -12,11 +12,14 @@ const ValidInscriptionRow = ({ name, joinKey, price, members, awaitingMembers })
     <TableCell>
       {size(members)} membre{size(members) > 1 ? 's' : ''}
     </TableCell>
-    <TableCell>{size(awaitingMembers) > 0 && `${size(members)} en attente`}</TableCell>
     <TableCell numeric>
       {price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
     </TableCell>
-    <TableCell>{joinKey}</TableCell>
+    <TableCell>
+      <Button variant="raised" color="primary">
+        Valider
+      </Button>
+    </TableCell>
   </TableRow>
 )
 
@@ -26,9 +29,7 @@ ValidInscriptionRow.defaultProps = {
 
 ValidInscriptionRow.propTypes = {
   name: PropTypes.string.isRequired,
-  joinKey: PropTypes.string.isRequired,
   members: PropTypes.objectOf(PropTypes.bool),
-  awaitingMembers: PropTypes.objectOf(PropTypes.bool),
   price: PropTypes.number,
 }
 
