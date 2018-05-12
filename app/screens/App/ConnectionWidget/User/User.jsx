@@ -24,8 +24,7 @@ class User extends PureComponent {
   }
 
   render() {
-    const { user, firebase } = this.props
-    const { logout } = firebase
+    const { user, logout } = this.props
 
     return (
       <div className="user-widget">
@@ -56,9 +55,7 @@ User.propTypes = {
     avatarUrl: PropTypes.string.isRequired,
     displayName: PropTypes.string.isRequired,
   }).isRequired,
-  firebase: PropTypes.shape({
-    logout: PropTypes.func.isRequired,
-  }).isRequired,
+  logout: PropTypes.func.isRequired,
 }
 
 export default User

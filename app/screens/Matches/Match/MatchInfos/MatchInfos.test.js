@@ -5,6 +5,7 @@ import moment from 'moment'
 import MatchInfos from './MatchInfos'
 
 jest.mock('material-ui/Tooltip', () => 'Tooltip')
+jest.mock('./StadiumTooltip', () => 'StadiumTooltip')
 
 describe('screens/Match/StadiumTooltip', () => {
   // Mock date to ensure consistancy between tests
@@ -21,6 +22,7 @@ describe('screens/Match/StadiumTooltip', () => {
   const props = {
     match: {
       dateTime: new Date(1529002800000),
+      streaming: 'TF1',
     },
     stadium: {
       capacity: 69500,

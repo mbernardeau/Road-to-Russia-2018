@@ -9,26 +9,14 @@ import { DialogContent, DialogTitle } from 'material-ui/Dialog'
 import './ConnectionModal.scss'
 
 class ConnectionModal extends Component {
-  static propTypes = {
-    firebase: PropTypes.shape({
-      login: PropTypes.func.isRequired,
-    }).isRequired,
-  }
-
-  constructor(props) {
-    super(props)
-    this.authenticateWithGoogle = this.authenticateWithGoogle.bind(this)
-    this.authenticateWithFacebook = this.authenticateWithFacebook.bind(this)
-  }
-
-  authenticateWithGoogle() {
+  authenticateWithGoogle = () => {
     this.props.firebase.login({
       provider: 'google',
       type: 'popup',
     })
   }
 
-  authenticateWithFacebook() {
+  authenticateWithFacebook = () => {
     this.props.firebase.login({
       provider: 'facebook',
       type: 'popup',
@@ -51,6 +39,12 @@ class ConnectionModal extends Component {
       </Fragment>
     )
   }
+}
+
+ConnectionModal.propTypes = {
+  firebase: PropTypes.shape({
+    login: PropTypes.func.isRequired,
+  }).isRequired,
 }
 
 export default ConnectionModal

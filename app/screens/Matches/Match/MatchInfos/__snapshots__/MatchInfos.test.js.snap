@@ -26,26 +26,14 @@ exports[`screens/Match/StadiumTooltip renders correctly 1`] = `
     }
   >
     <div>
-      Stade Krestovski
+      Saint-Pétersbourg
     </div>
   </Tooltip>
   <div>
     •
   </div>
-  <Tooltip
-    disableTriggerTouch={true}
-    placement="left"
-    title={
-      <StadiumTooltip
-        capacity={69500}
-        city="Saint-Pétersbourg"
-        name="Stade Krestovski"
-      />
-    }
-  >
-    <div>
-      Saint-Pétersbourg
-    </div>
-  </Tooltip>
+  <div>
+    TF1
+  </div>
 </div>
 `;

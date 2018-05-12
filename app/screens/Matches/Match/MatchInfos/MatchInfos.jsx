@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { onlyUpdateForPropTypes } from 'recompose'
 import moment from 'moment'
 import Tooltip from 'material-ui/Tooltip'
 
@@ -18,12 +18,10 @@ const MatchInfos = ({ match, stadium }) => {
       </Tooltip>
       <div>•</div>
       <Tooltip title={<StadiumTooltip {...stadium} />} disableTriggerTouch>
-        <div>{stadium.name}</div>
-      </Tooltip>
-      <div>•</div>
-      <Tooltip title={<StadiumTooltip {...stadium} />} placement="left" disableTriggerTouch>
         <div>{stadium.city}</div>
       </Tooltip>
+      <div>•</div>
+      <div>{match.streaming}</div>
     </div>
   )
 }
@@ -45,4 +43,4 @@ MatchInfos.propTypes = {
   }),
 }
 
-export default MatchInfos
+export default onlyUpdateForPropTypes(MatchInfos)

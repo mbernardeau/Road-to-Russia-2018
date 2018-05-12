@@ -25,7 +25,6 @@ export const createGroup = group => (dispatch, getState) => {
       dispatch(groupsReducer.add({ ...newGroup, id }))
       dispatch(createGroupSuccess(newGroup))
     })
-    .catch(e => console.log(e))
 }
 
 export const fetchGroupsForUser = () => dispatch => {
@@ -113,12 +112,23 @@ export const applyInGroup = code => (dispatch, getState) => {
               `Vous avez déjà fait une demande pour rejoindre la tribu ${group.name}`,
             ),
           )
-        } else {
+        } else if (group.price > 0) {
           db
             .collection('groups')
             .doc(id)
             .update({
               [`awaitingMembers.${userId}`]: true,
+            })
+            .then(() => {
+              dispatch(applyGroupSuccess(group.name))
+              dispatch(fetchGroupById(id))
+            })
+        } else {
+          db
+            .collection('groups')
+            .doc(id)
+            .update({
+              [`members.${userId}`]: true,
             })
             .then(() => {
               dispatch(applyGroupSuccess(group.name))

@@ -1,16 +1,20 @@
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import loader from 'hoc-react-loader'
-import matchesFactory, { fetchMatchList } from 'redux/matches'
+import { fetchMatchList, getFinishedMatches, getFutureMatches } from 'redux/matches'
 
 import Matches from './Matches'
 
 const mapState = state => ({
-  matches: matchesFactory.get()(state),
+  futureMatches: getFutureMatches(state),
+  finishedMatches: getFinishedMatches(state),
 })
 
 const mapDispatch = dispatch => ({
   load: () => dispatch(fetchMatchList()),
 })
 
-export default compose(connect(mapState, mapDispatch), loader({ print: ['matches'] }))(Matches)
+export default compose(
+  connect(mapState, mapDispatch),
+  loader({ print: ['futureMatches', 'finishedMatches'] }),
+)(Matches)

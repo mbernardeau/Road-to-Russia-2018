@@ -1,0 +1,194 @@
+{
+  "-Kj2zfp9V5wdpN59exkD": {
+    "name": "Russie",
+    "code": "ru",
+    "group": "A",
+    "__collections__": {}
+  },
+  "-Kj2zfpEdmB6SgyPd85W": {
+    "name": "Arabie Saoudite",
+    "code": "sa",
+    "group": "A",
+    "__collections__": {}
+  },
+  "-Kj2zfpFzqykBwiz5dcL": {
+    "name": "Égypte",
+    "code": "eg",
+    "group": "A",
+    "__collections__": {}
+  },
+  "-Kj2zfpFzqykBwiz5dcM": {
+    "name": "Suisse",
+    "code": "ch",
+    "group": "E",
+    "__collections__": {}
+  },
+  "-Kj2zfpFzqykBwiz5dcN": {
+    "name": "Maroc",
+    "code": "ma",
+    "group": "B",
+    "__collections__": {}
+  },
+  "-Kj2zfpGJmSTghyT06un": {
+    "name": "Panama",
+    "code": "pa",
+    "group": "G",
+    "__collections__": {}
+  },
+  "-Kj2zfpGJmSTghyT06uo": {
+    "name": "Angleterre",
+    "code": "gb-eng",
+    "group": "G",
+    "__collections__": {}
+  },
+  "-Kj2zfpHPqNpMy7ZgxmM": {
+    "code": "fr",
+    "group": "C",
+    "name": "France",
+    "__collections__": {}
+  },
+  "-Kj2zfpIxWevwDITiL0V": {
+    "name": "Allemagne",
+    "code": "de",
+    "group": "F",
+    "__collections__": {}
+  },
+  "-Kj2zfpJov1GY9sA2IgE": {
+    "code": "tn",
+    "group": "G",
+    "name": "Tunisie",
+    "__collections__": {}
+  },
+  "-Kj2zfpJov1GY9sA2IgF": {
+    "name": "Pologne",
+    "code": "pl",
+    "group": "H",
+    "__collections__": {}
+  },
+  "-Kj2zfpKYdjdHhPukkXr": {
+    "name": "Serbie",
+    "code": "rs",
+    "group": "E",
+    "__collections__": {}
+  },
+  "-Kj2zfpKYdjdHhPukkXs": {
+    "name": "Suède",
+    "code": "se",
+    "group": "F",
+    "__collections__": {}
+  },
+  "-Kj2zfpKYdjdHhPukkXt": {
+    "code": "sn",
+    "group": "H",
+    "name": "Sénégal",
+    "__collections__": {}
+  },
+  "-Kj2zfpKYdjdHhPukkXu": {
+    "code": "es",
+    "group": "B",
+    "name": "Espagne",
+    "__collections__": {}
+  },
+  "-Kj2zfpLjC03AaK-W8Lo": {
+    "code": "pe",
+    "group": "C",
+    "name": "Pérou",
+    "__collections__": {}
+  },
+  "-Kj2zfpM7z9dtuBQZC4c": {
+    "group": "D",
+    "name": "Nigeria",
+    "code": "ng",
+    "__collections__": {}
+  },
+  "-Kj2zfpN8l22eNCLSzLj": {
+    "name": "Iran",
+    "code": "ir",
+    "group": "B",
+    "__collections__": {}
+  },
+  "-Kj2zfpN8l22eNCLSzLk": {
+    "group": "G",
+    "name": "Belgique",
+    "code": "be",
+    "__collections__": {}
+  },
+  "-Kj2zfpN8l22eNCLSzLl": {
+    "name": "Japon",
+    "code": "jp",
+    "group": "H",
+    "__collections__": {}
+  },
+  "-Kj2zfpO3MwCoLIdNuNf": {
+    "name": "Australie",
+    "code": "au",
+    "group": "C",
+    "__collections__": {}
+  },
+  "-Kj2zfpO3MwCoLIdNuNg": {
+    "group": "A",
+    "name": "Uruguay",
+    "code": "uy",
+    "__collections__": {}
+  },
+  "-Kj2zfpPgzwXCT7Bnm1y": {
+    "name": "Portugal",
+    "code": "pt",
+    "group": "B",
+    "__collections__": {}
+  },
+  "-Kj2zfpRCBdqgDxcBLBQ": {
+    "name": "Islande",
+    "code": "is",
+    "group": "D",
+    "__collections__": {}
+  },
+  "-Kj2zfpRCBdqgDxcBLBR": {
+    "name": "Brésil",
+    "code": "br",
+    "group": "E",
+    "__collections__": {}
+  },
+  "-Kj2zfpSUE3rJOjKDuJD": {
+    "name": "Argentine",
+    "code": "ar",
+    "group": "D",
+    "__collections__": {}
+  },
+  "-Kj2zfpSUE3rJOjKDuJE": {
+    "code": "mx",
+    "group": "F",
+    "name": "Mexique",
+    "__collections__": {}
+  },
+  "-Kj2zfpSUE3rJOjKDuJF": {
+    "code": "co",
+    "group": "H",
+    "name": "Colombie",
+    "__collections__": {}
+  },
+  "-Kj2zfpSUE3rJOjKDuJG": {
+    "name": "Corée du Sud",
+    "code": "kr",
+    "group": "F",
+    "__collections__": {}
+  },
+  "-Kj2zfpSUE3rJOjKDuJH": {
+    "name": "Costa Rica",
+    "code": "cr",
+    "group": "E",
+    "__collections__": {}
+  },
+  "-Kj2zfpT4N-Ti7bAyicd": {
+    "name": "Danemark",
+    "code": "dk",
+    "group": "C",
+    "__collections__": {}
+  },
+  "-Kj2zfpT4N-Ti7bAyice": {
+    "name": "Croatie",
+    "code": "hr",
+    "group": "D",
+    "__collections__": {}
+  }
+}

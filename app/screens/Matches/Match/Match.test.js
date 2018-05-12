@@ -12,6 +12,9 @@ jest.mock('material-ui/Divider', () => 'Divider')
 jest.mock('./Bet', () => 'Bet')
 jest.mock('./ValidIcon', () => 'Bet')
 jest.mock('./MatchInfos', () => 'Bet')
+jest.mock('./Odds', () => 'Odds')
+jest.mock('./Scores', () => 'Scores')
+jest.mock('./PointsWon', () => 'PointsWon')
 
 describe('screens/Match', () => {
   // Mock date to ensure consistancy between tests
@@ -27,7 +30,7 @@ describe('screens/Match', () => {
 
   const props = {
     match: {
-      dateTime: 1530205200,
+      dateTime: new Date(1530205200),
       odds: {
         1: 1.7,
         2: 4.3,
