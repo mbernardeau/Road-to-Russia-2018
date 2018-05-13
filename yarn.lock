@@ -208,9 +208,9 @@
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.8.tgz#38a936b60b898a1ad0f3719543ff1a1031f60f8b"
 
-"@material-ui/codemod@1.0.0-beta.45":
-  version "1.0.0-beta.45"
-  resolved "https://registry.yarnpkg.com/@material-ui/codemod/-/codemod-1.0.0-beta.45.tgz#c91c68cec53e473cb804f8b90837d00e4024dcbe"
+"@material-ui/codemod@1.0.0-rc.0":
+  version "1.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/codemod/-/codemod-1.0.0-rc.0.tgz#d3d96b90d1f960f41e99688e6fbf92e74d8084bb"
 
 "@material-ui/icons@1.0.0-beta.43":
   version "1.0.0-beta.43"
