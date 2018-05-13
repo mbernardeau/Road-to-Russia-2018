@@ -49,6 +49,12 @@ class NavigationMenu extends Component {
 
           {/* Route accessibles avec presence dans une tribu */}
           {isConnected(user) && (
+            <ListItem button onClick={this.goTo('/winner')}>
+              <ListItemText primary="Choix du vainqueur final" />
+            </ListItem>
+          )}
+
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/matches')}>
               <ListItemText primary="Pariez" />
             </ListItem>
