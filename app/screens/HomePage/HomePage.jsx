@@ -28,25 +28,29 @@ export default class HomePage extends React.PureComponent {
     return (
       <div className="home-page-div">
         <p className="home-speech">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas porttitor
-          sagittis. Cras quis nisl sit amet lorem volutpat condimentum. Nam ut augue vel nisi
-          pharetra sagittis vel sed erat. Nunc id quam at justo vulputate ultricies. Ut a augue
-          ante. Praesent sem libero, tincidunt sit amet sapien id, fermentum bibendum dolor.
-          Curabitur varius elementum ultricies. Nunc ultrices eros sit amet nunc mattis, in cursus
-          nisl commodo. Proin vitae rhoncus orci. Duis id risus pretium, gravida tortor in, maximus
-          arcu. Etiam ac finibus tellus.
+          Bienvenue sur Road to russia 2018, le site de pronostics de la coupe du monde. Jouez en
+          famille ou entre amis sur les scores du mondial et affrontez d&apos;autres tributs ! Le
+          but ? Pariez au plus proche de la réalité les résultats des équipes, marquez des points,
+          et tentez de gagner la première place.
+          <br />
+          <br />
+          Fans de foot aux grands coeurs, le site s&apos;engage à reverser 50% des gains à
+          l&apos;association humanitaire{' '}
+          <a title="Site PAM" href="https://pourunailleursmeilleur.wordpress.com/">
+            PAM - Pour un Ailleurs Meilleur
+          </a>.
         </p>
 
         <div className="home-buttons-div">
           <div className="home-button-panel">
-            <p>Lisez les règles du jeu :</p>
+            <p>Les règles du jeu :</p>
             <Button className="home-button" onClick={() => history.push('/rules')} color="primary">
               <ListIcon className="icon-left" />
               Règles
             </Button>
           </div>
           <div className="home-button-panel">
-            <p>Placez tous vos paris : </p>
+            <p>Tous vos paris : </p>
             <Button
               className="home-button"
               onClick={() => history.push('/matches')}
@@ -57,7 +61,7 @@ export default class HomePage extends React.PureComponent {
             </Button>
           </div>
           <div className="home-button-panel">
-            <p>Découvrez votre classement et celui de vos potos : </p>
+            <p>Votre classement : </p>
             <Button
               className="home-button"
               onClick={() => history.push('/ranking')}
@@ -69,8 +73,6 @@ export default class HomePage extends React.PureComponent {
           </div>
         </div>
         <img alt="Home" src={myImage} />
-
-        <p>Créé par la team du mardi 8</p>
       </div>
     )
   }
