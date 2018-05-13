@@ -44,6 +44,9 @@ export default class NavigationMenu extends Component {
             <img src={WorldCupImg} style={styles.image} alt="Accueil" />
           </ListItem>
           <Divider />
+          <ListItem button onClick={this.goTo('/winner')}>
+            <ListItemText primary="Choix du vainqueur final" />
+          </ListItem>
           <ListItem button onClick={this.goTo('/matches')}>
             <ListItemText primary="Pariez" />
           </ListItem>

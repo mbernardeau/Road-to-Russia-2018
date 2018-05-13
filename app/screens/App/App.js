@@ -30,6 +30,7 @@ import RulesPage from 'screens/Rules/Loadable'
 import FAQPage from 'screens/FAQ/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import AdminGroupsPage from 'screens/AdminGroups/Loadable'
+import WinnerPage from 'screens/Winner/Loadable'
 import ValidInscriptionPage from 'screens/ValidInscription/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -83,6 +84,7 @@ class App extends React.Component {
               <Route path="/creategroup" component={CreateGroupPage} />
               <Route path="/admingroups" component={AdminGroupsPage} />
               <Route path="/validinscription" component={ValidInscriptionPage} />
+              <Route path="/winner" component={WinnerPage} />
               <Route component={NotFoundPage} />
             </Switch>
           )}
