@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-
+import isEmpty from 'lodash/isEmpty'
 import Tabs, { Tab } from 'material-ui/Tabs'
 import AppBar from 'material-ui/AppBar'
 
@@ -27,7 +27,7 @@ class Ranking extends Component {
           </Tabs>
         </AppBar>
         <div className="ranking-container">
-          {groups.map(group => <GroupRanking key={group.id} {...group} />)}
+          {!isEmpty(groups) && <GroupRanking {...groups[selectedTab]} />}
         </div>
       </Fragment>
     )
