@@ -1,5 +1,4 @@
 import firebase from 'firebase/app'
-import keys from 'lodash/keys'
 import teamsReducer from './teams.reducer'
 
 export const fetchTeam = teamId => (dispatch, getState) => {
@@ -16,8 +15,16 @@ export const fetchTeam = teamId => (dispatch, getState) => {
     })
 }
 
-export const fetchTeams = teamIds => dispatch => {
-  keys(teamIds).forEach(teamId => {
-    dispatch(fetchTeam(teamId))
-  })
+export const fetchTeams = () => dispatch => {
+  firebase
+    .firestore()
+    .collection('teams')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        const team = doc.data()
+        const { id } = doc
+        dispatch(teamsReducer.addOrUpdate({ ...team, id }))
+      })
+    })
 }

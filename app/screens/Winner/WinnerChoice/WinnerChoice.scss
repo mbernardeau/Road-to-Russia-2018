@@ -1,0 +1,30 @@
+.winner-choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .winner-choice-title {
+    display: flex;
+  }
+
+  .team-name {
+    text-align: center;
+    font-size: 1.3em;
+    padding-left: 10px;
+  }
+
+  .winner-choice-select-container {
+    display: flex;
+    align-items: center;
+
+    .winner-choice-select-value {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .winner-choice-flag {
+    height: 1.3em;
+  }
+}
