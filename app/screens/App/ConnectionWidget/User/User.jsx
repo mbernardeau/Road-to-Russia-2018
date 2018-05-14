@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Avatar from 'material-ui/Avatar'
-import IconButton from 'material-ui/IconButton'
-import Menu from 'material-ui/Menu'
-import MenuItem from 'material-ui/Menu/MenuItem'
+import Avatar from '@material-ui/core/Avatar'
+import IconButton from '@material-ui/core/IconButton'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 import './user.scss'

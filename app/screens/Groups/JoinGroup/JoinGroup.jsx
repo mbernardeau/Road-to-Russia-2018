@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from 'material-ui/Button'
-import Card from 'material-ui/Card'
-import CardActions from 'material-ui/Card/CardActions'
-import CardContent from 'material-ui/Card/CardContent'
-import TextField from 'material-ui/TextField'
-import FormControl from 'material-ui/Form/FormControl'
-import Typography from 'material-ui/Typography'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import TextField from '@material-ui/core/TextField'
+import FormControl from '@material-ui/core/FormControl'
+import Typography from '@material-ui/core/Typography'
 
 import GroupApplyStatus from './GroupApplyStatus'
 

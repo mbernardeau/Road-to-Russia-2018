@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { onlyUpdateForPropTypes } from 'recompose'
 
-import Tooltip from 'material-ui/Tooltip'
+import Tooltip from '@material-ui/core/Tooltip'
 
 import CheckIcon from '@material-ui/icons/Check'
 import ClearIcon from '@material-ui/icons/Clear'

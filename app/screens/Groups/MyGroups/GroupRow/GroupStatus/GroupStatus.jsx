@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Chip from 'material-ui/Chip'
+import Chip from '@material-ui/core/Chip'
 
 const getLabel = ({ admin, member, awaiting }) => {
   if (admin) return 'Admin'

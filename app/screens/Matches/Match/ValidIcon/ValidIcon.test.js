@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 
 import ValidIcon from './ValidIcon'
 
-jest.mock('material-ui/Tooltip', () => 'Tooltip')
+jest.mock('@material-ui/core/Tooltip', () => 'Tooltip')
 jest.mock('@material-ui/icons/Check', () => 'Check')
 jest.mock('@material-ui/icons/Clear', () => 'Clear')
 

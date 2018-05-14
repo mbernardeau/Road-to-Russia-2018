@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer'
 
 import GroupCreateStatus from './GroupCreateStatus'
 
-jest.mock('material-ui/Snackbar', () => 'Snackbar')
-jest.mock('material-ui/IconButton', () => 'IconButton')
+jest.mock('@material-ui/core/Snackbar', () => 'Snackbar')
+jest.mock('@material-ui/core/IconButton', () => 'IconButton')
 jest.mock('@material-ui/icons/Close', () => 'CloseIcon')
 
 describe('screens/CreateGroup/GroupCreateStatus', () => {

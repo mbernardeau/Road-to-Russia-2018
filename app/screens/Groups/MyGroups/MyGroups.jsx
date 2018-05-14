@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 import { map, isEmpty } from 'lodash'
 
-import Card from 'material-ui/Card'
-import Table from 'material-ui/Table'
-import TableHead from 'material-ui/Table/TableHead'
-import TableRow from 'material-ui/Table/TableRow'
-import TableCell from 'material-ui/Table/TableCell'
-import TableBody from 'material-ui/Table/TableBody'
-import Typography from 'material-ui/Typography'
+import Card from '@material-ui/core/Card'
+import Table from '@material-ui/core/Table'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import TableCell from '@material-ui/core/TableCell'
+import TableBody from '@material-ui/core/TableBody'
+import Typography from '@material-ui/core/Typography'
 
 import GroupRow from './GroupRow'
 
