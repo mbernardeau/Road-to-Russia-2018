@@ -1,3 +1,1 @@
-import WinnerChoice from './WinnerChoiceContainer'
-
-export default WinnerChoice
+export { default } from './WinnerChoiceContainer'

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import Card, { CardContent } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
 
@@ -11,10 +13,24 @@ class Winner extends Component {
     super(props)
 
     this.state = {
+      Team: '',
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      Team: nextProps.Team,
+    })
+  }
+
+  handleChange = ({ target: { value } }) => {
+    this.setState({
+      Team: value,
+    })
+  }
+
   render() {
+    const { Team } = this.state
 
     return (
       <Card className="winner-card">
@@ -23,11 +39,19 @@ class Winner extends Component {
         </Typography>
         <Typography color="textSecondary">Quel pays gagnera la coupe du monde ?</Typography>
         <CardContent>
-          <WinnerChoice />
+          <WinnerChoice userTeam={Team} onValueChange={this.handleChange} />
         </CardContent>
       </Card>
     )
   }
+}
+
+Winner.propTypes = {
+  Team: PropTypes.string,
+}
+
+Winner.defaultProps = {
+  Team: '',
 }
 
 export default Winner
