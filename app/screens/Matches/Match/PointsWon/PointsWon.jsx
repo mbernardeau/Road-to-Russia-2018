@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { onlyUpdateForPropTypes } from 'recompose'
 import InfoIcon from '@material-ui/icons/Info'
 import Typography from 'material-ui/Typography'
 import Tooltip from 'material-ui/Tooltip'
@@ -76,4 +75,4 @@ PointsWon.propTypes = {
   odds: PropTypes.objectOf(PropTypes.number),
 }
 
-export default onlyUpdateForPropTypes(PointsWon)
+export default PointsWon

@@ -1,5 +1,4 @@
 import React from 'react'
-import { onlyUpdateForPropTypes } from 'recompose'
 import PropTypes from 'prop-types'
 
 import './stadiumTooltip.scss'
@@ -35,4 +34,4 @@ StadiumTooltip.propTypes = {
   capacity: PropTypes.number,
 }
 
-export default onlyUpdateForPropTypes(StadiumTooltip)
+export default StadiumTooltip
