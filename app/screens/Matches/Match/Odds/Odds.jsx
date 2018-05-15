@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Tooltip from '@material-ui/core/Tooltip'
 import padStart from 'lodash/padStart'
-import { onlyUpdateForPropTypes } from 'recompose'
 
 import './Odds.scss'
 
@@ -46,4 +45,4 @@ Odds.propTypes = {
   }),
 }
 
-export default onlyUpdateForPropTypes(Odds)
+export default Odds

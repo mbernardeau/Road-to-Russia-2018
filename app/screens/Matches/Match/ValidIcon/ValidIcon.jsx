@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
 
 import Tooltip from '@material-ui/core/Tooltip'
 
@@ -21,4 +20,4 @@ ValidIcon.propTypes = {
   valid: PropTypes.bool.isRequired,
 }
 
-export default onlyUpdateForPropTypes(ValidIcon)
+export default ValidIcon

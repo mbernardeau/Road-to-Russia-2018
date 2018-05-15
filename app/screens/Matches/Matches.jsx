@@ -4,7 +4,6 @@ import { map } from 'lodash'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import AppBar from '@material-ui/core/AppBar'
-import { onlyUpdateForPropTypes } from 'recompose'
 
 import Match from './Match'
 
@@ -43,4 +42,4 @@ Matches.propTypes = {
   futureMatches: PropTypes.objectOf(PropTypes.object),
 }
 
-export default onlyUpdateForPropTypes(Matches)
+export default Matches

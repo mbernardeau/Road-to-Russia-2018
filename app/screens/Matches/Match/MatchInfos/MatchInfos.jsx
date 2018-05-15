@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
 import moment from 'moment'
 import Tooltip from '@material-ui/core/Tooltip'
 
@@ -43,4 +42,4 @@ MatchInfos.propTypes = {
   }),
 }
 
-export default onlyUpdateForPropTypes(MatchInfos)
+export default MatchInfos
