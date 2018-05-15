@@ -6,34 +6,26 @@ import { MenuItem } from 'material-ui/Menu'
 
 import './WinnerChoice.scss'
 
-class WinnerChoice extends React.Component {
-  state = {
-    teamUser: 'hai',
-  }
-
-  handleChange = event => {
-    this.setState({ [event.target.teamUser]: event.target.value })
-  }
-
-  render() {
-    const { teams } = this.props
-
-    return (
-      <div className="winner-choice">
-        <div className="winner-choice-title" />
-        <div className="winner-choice-select-container">
-          <Select value={this.state.teamUser} onChange={this.handleChange}>
-            {teams.map(team => (
-              <MenuItem key={team.id} value={team.id}>
-                {team.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </div>
-      </div>
-    )
-  }
-}
+const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
+  <div className="winner-choice">
+    <div className="winner-choice-title" />
+    <div className="winner-choice-select-container">
+      <Select
+        value={userTeam}
+        onChange={onValueChange}
+        inputProps={{
+          name: 'userTeam',
+        }}
+      >
+        {teams.map(team => (
+          <MenuItem key={team.id} value={team.id}>
+            {team.name}
+          </MenuItem>
+        ))}
+      </Select>
+    </div>
+  </div>
+)
 
 WinnerChoice.defaultProps = {
   teams: [],
@@ -45,6 +37,8 @@ WinnerChoice.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   ),
+  userTeam: PropTypes.string.isRequired,
+  onValueChange: PropTypes.func.isRequired,
 }
 
 export default onlyUpdateForPropTypes(WinnerChoice)
