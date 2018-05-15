@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import Tabs, { Tab } from 'material-ui/Tabs'
 import AppBar from 'material-ui/AppBar'
-import { onlyUpdateForPropTypes } from 'recompose'
 
 import Match from './Match'
 
@@ -42,4 +41,4 @@ Matches.propTypes = {
   futureMatches: PropTypes.objectOf(PropTypes.object),
 }
 
-export default onlyUpdateForPropTypes(Matches)
+export default Matches
