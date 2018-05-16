@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { onlyUpdateForPropTypes } from 'recompose'
-import Select from 'material-ui/Select'
-import { MenuItem } from 'material-ui/Menu'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
 
 import './WinnerChoice.scss'
 
@@ -41,4 +40,4 @@ WinnerChoice.propTypes = {
   onValueChange: PropTypes.func.isRequired,
 }
 
-export default onlyUpdateForPropTypes(WinnerChoice)
+export default WinnerChoice
