@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer'
 
 import GroupApplyStatus from './GroupApplyStatus'
 
-jest.mock('material-ui/Snackbar', () => 'Snackbar')
-jest.mock('material-ui/IconButton', () => 'IconButton')
+jest.mock('@material-ui/core/Snackbar', () => 'Snackbar')
+jest.mock('@material-ui/core/IconButton', () => 'IconButton')
 jest.mock('@material-ui/icons/Close', () => 'CloseIcon')
 
 describe('screens/JoinGroup/GroupApplyOkSnackbar', () => {

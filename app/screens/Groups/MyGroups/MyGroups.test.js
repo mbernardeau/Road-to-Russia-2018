@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer'
 
 import MyGroups from './MyGroups'
 
-jest.mock('material-ui/Card', () => 'Card')
-jest.mock('material-ui/Table', () => 'Table')
-jest.mock('material-ui/Table/TableBody', () => 'TableBody')
-jest.mock('material-ui/Table/TableCell', () => 'TableCell')
-jest.mock('material-ui/Table/TableRow', () => 'TableRow')
-jest.mock('material-ui/Table/TableHead', () => 'TableHead')
-jest.mock('material-ui/Typography', () => 'Typography')
+jest.mock('@material-ui/core/Card', () => 'Card')
+jest.mock('@material-ui/core/Table', () => 'Table')
+jest.mock('@material-ui/core/TableBody', () => 'TableBody')
+jest.mock('@material-ui/core/TableCell', () => 'TableCell')
+jest.mock('@material-ui/core/TableRow', () => 'TableRow')
+jest.mock('@material-ui/core/TableHead', () => 'TableHead')
+jest.mock('@material-ui/core/Typography', () => 'Typography')
 
 jest.mock('./GroupRow', () => 'GroupRow')
 

@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import isEmpty from 'lodash/isEmpty'
-import Tabs, { Tab } from 'material-ui/Tabs'
-import AppBar from 'material-ui/AppBar'
+import AppBar from '@material-ui/core/AppBar'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
 import GroupRanking from './GroupRanking'
 

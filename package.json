@@ -243,7 +243,8 @@
     "testRegex": ".*\\.test\\.js$"
   },
   "dependencies": {
-    "@material-ui/icons": "1.0.0-beta.43",
+    "@material-ui/core": "1.0.0-rc.0",
+    "@material-ui/icons": "1.0.0-rc.0",
     "babel-polyfill": "6.26.0",
     "chalk": "2.4.1",
     "compression": "1.7.2",
@@ -257,7 +258,6 @@
     "ip": "1.1.5",
     "k-redux-factory": "5.0.2",
     "lodash": "4.17.10",
-    "material-ui": "1.0.0-beta.47",
     "minimist": "1.2.0",
     "moment": "2.22.1",
     "prop-types": "15.6.1",

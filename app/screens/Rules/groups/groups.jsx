@@ -1,5 +1,5 @@
 import React from 'react'
-import Typography from 'material-ui/Typography'
+import Typography from '@material-ui/core/Typography'
 
 import data from './data.json'
 import List from '../component/list'
