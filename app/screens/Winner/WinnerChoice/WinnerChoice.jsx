@@ -5,6 +5,7 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 
 import find from 'lodash/find'
+import { map } from 'lodash'
 
 import './WinnerChoice.scss'
 
@@ -20,11 +21,11 @@ const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
           name: 'userTeam',
         }}
       >
-        {teams.map(team => (
-          <MenuItem key={team.id} value={team.id}>
-            {team.name}
+        {map(teams, ({ name }, teamId) => 
+          <MenuItem key={teamId} value={teamId}>
+            {name}
           </MenuItem>
-        ))}
+        )}
       </Select>
     </div>
   </div>
@@ -37,7 +38,8 @@ const FlagTest = (teams, userTeam) => {
 
   // J'ai rajouté if (test) car il semble que la fonction soit appelée 32 fois et les premières fois, test vaut undefined
   // Regarder la console pour voir le problème
-  if (test) return <Flag country={test.code} className="winner-choice-flag" />
+  if (test) 
+    return <Flag country={test.code} className="winner-choice-flag" />
 }
 
 WinnerChoice.defaultProps = {
@@ -45,12 +47,7 @@ WinnerChoice.defaultProps = {
 }
 
 WinnerChoice.propTypes = {
-  teams: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      code: PropTypes.string.isRequired,
-    }),
-  ),
+  teams: PropTypes.objectOf(PropTypes.shape({})),
   userTeam: PropTypes.string.isRequired,
   onValueChange: PropTypes.func.isRequired,
 }
