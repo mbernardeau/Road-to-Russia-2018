@@ -23,15 +23,8 @@ class CreateGroup extends Component {
   }
 
   getNameErrorMessage = name => {
-    if (name.length < 5) {
+    if ((name.length > 0) && (name.length < 5)) {
       return '5 caractères minimum'
-    }
-    return undefined
-  }
-
-  getPriceErrorMessage = price => {
-    if (price && price < 5) {
-      return '5€ minimum'
     }
     return undefined
   }
@@ -43,7 +36,7 @@ class CreateGroup extends Component {
   }
 
   isFormValid = () =>
-    !this.getPriceErrorMessage(this.state.price) && !this.getNameErrorMessage(this.state.name)
+    this.state.name && !this.getNameErrorMessage(this.state.name)
 
   handleNameChange = e => {
     this.setState({
@@ -55,12 +48,11 @@ class CreateGroup extends Component {
   handlePriceChange = e => {
     this.setState({
       price: e.target.value,
-      errorPrice: this.getPriceErrorMessage(e.target.value),
     })
   }
 
   render() {
-    const { price, name, errorPrice, errorName } = this.state
+    const { price, name, errorName } = this.state
 
     return (
       <div className="create-group-container">
@@ -75,7 +67,7 @@ class CreateGroup extends Component {
           <br />
           <Typography gutterBottom type="body1">
             Il est possible de créer des tribus gratuites. Pour les tributs payantes, le prix
-            minimum est 5&euro;
+            est libre.
           </Typography>
 
           <CardContent className="create-group-content">
@@ -89,7 +81,7 @@ class CreateGroup extends Component {
               {errorName && <FormHelperText>{errorName}</FormHelperText>}
             </FormControl>
 
-            <FormControl className="create-group-field" error={!!errorPrice}>
+            <FormControl className="create-group-field">
               <TextField
                 label="Prix à payer par personne"
                 value={price}
@@ -98,7 +90,6 @@ class CreateGroup extends Component {
                   inputComponent: CurrencyFormat,
                 }}
               />
-              {errorPrice && <FormHelperText>{errorPrice}</FormHelperText>}
             </FormControl>
           </CardContent>
 
