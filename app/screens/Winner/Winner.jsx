@@ -14,7 +14,7 @@ class Winner extends Component {
     super(props)
 
     this.state = {
-      Team: '-Kj2zfp9V5wdpN59exkD',
+      Team: '',
     }
   }
 
@@ -52,7 +52,7 @@ Winner.propTypes = {
 }
 
 Winner.defaultProps = {
-  Team: '-Kj2zfpFzqykBwiz5dcM',
+  Team: '',
 }
 
 export default Winner

@@ -2,12 +2,11 @@ import { compose } from 'redux'
 import loader from 'hoc-react-loader'
 import { connect } from 'react-redux'
 import teamsReducer, { fetchTeams } from 'redux/teams'
-import toArray from 'lodash/toArray'
 
 import Winner from './Winner'
 
 const mapState = state => ({
-  teams: toArray(teamsReducer.get()(state)),
+  teams: teamsReducer.get()(state),
 })
 
 const mapDispatch = dispatch => ({
