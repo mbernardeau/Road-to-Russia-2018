@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 
-import Drawer from 'material-ui/Drawer'
-import Divider from 'material-ui/Divider'
-import List, { ListItem, ListItemText } from 'material-ui/List'
+import Drawer from '@material-ui/core/Drawer'
+import Divider from '@material-ui/core/Divider'
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import WorldCupImg from 'assets/2018_FIFA_WC.svg'
 
