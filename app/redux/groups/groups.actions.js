@@ -14,14 +14,39 @@ export const createGroup = group => (dispatch, getState) => {
       createdBy: userId,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       joinKey: randomstring.generate(10),
-      members: {
-        [userId]: true,
-      },
     })
     .then(docRef => docRef.get())
     .then(doc => {
+      const { id } = doc
+
+      if (group.price > 0) {
+        firebase
+          .firestore()
+          .collection('groups')
+          .doc(id)
+          .update({
+            [`awaitingMembers.${userId}`]: true,
+          })
+          .then(() => {
+            dispatch(fetchGroupById(id))
+          })
+      } else {
+        firebase
+          .firestore()
+          .collection('groups')
+          .doc(id)
+          .update({
+            [`members.${userId}`]: true,
+          })
+          .then(() => {
+            dispatch(fetchGroupById(id))
+          })
+      }
+    })
+    .then(doc => {
       const newGroup = doc.data()
       const { id } = doc
+
       dispatch(groupsReducer.add({ ...newGroup, id }))
       dispatch(createGroupSuccess(newGroup))
     })
