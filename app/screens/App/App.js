@@ -21,7 +21,6 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import HomePage from 'screens/HomePage/Loadable'
-import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
 import CreateGroupPage from 'screens/CreateGroup/Loadable'
@@ -67,23 +66,36 @@ class App extends React.Component {
           </Toolbar>
         </AppBar>
 
-        <NavigationMenu />
+        <NavigationMenu user={user} />
 
         <div className="app-content">
+          {/* Routes accessibles sans connexion */}
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/rules" component={RulesPage} />
+            <Route path="/faq" component={FAQPage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+
+          {/* Routes accessibles avec connexion */}
           {!isEmpty(user) && (
             <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/stadiums" component={StadiumsPage} />
               <Route path="/matches" component={MatchesPage} />
-              <Route path="/matchesvalidation" component={MatchesValidationPage} />
               <Route path="/ranking" component={RankingPage} />
               <Route path="/groups" component={GroupsPage} />
-              <Route path="/rules" component={RulesPage} />
-              <Route path="/faq" component={FAQPage} />
               <Route path="/creategroup" component={CreateGroupPage} />
               <Route path="/admingroups" component={AdminGroupsPage} />
+            </Switch>
+          )}
+
+          {/* Route accessible avec presence dans une tribu */}
+
+          {/* Route accessible pour admin */}
+          {!isEmpty(user) &&
+            user.admin && (
+            <Switch>
+              <Route path="/matchesvalidation" component={MatchesValidationPage} />
               <Route path="/validinscription" component={ValidInscriptionPage} />
-              <Route component={NotFoundPage} />
             </Switch>
           )}
         </div>
