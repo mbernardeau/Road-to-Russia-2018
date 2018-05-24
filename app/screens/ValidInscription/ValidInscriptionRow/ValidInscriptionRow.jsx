@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TableCell, TableRow } from 'material-ui/Table'
-import Button from 'material-ui/Button'
+import TableCell from '@material-ui/core/TableCell'
+import TableRow from '@material-ui/core/TableRow'
+import Button from '@material-ui/core/Button'
 import size from 'lodash/size'
 
 const ValidInscriptionRow = ({ name, price, members }) => (
