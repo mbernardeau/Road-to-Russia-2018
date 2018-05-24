@@ -26,6 +26,7 @@ const ValidInscription = ({ groups }) => (
       <Table>
         <TableHead>
           <TableRow>
+            <TableCell>Nom Tribu</TableCell>
             <TableCell>Nom d&apos;utilisateur</TableCell>
             <TableCell>Adresse e-mail</TableCell>
             <TableCell numeric>Droit d&apos;entrée</TableCell>

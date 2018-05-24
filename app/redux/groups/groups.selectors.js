@@ -27,3 +27,8 @@ export const getGroupsForUser = createSelector(
     ...keyBy(groupsAwaiting, 'id'),
   }),
 )
+
+export const getGroupsContainingAwaitingMembers = createSelector(
+  groupsReducer.get(),
+  groups => filter(groups, g => Object.keys(g.awaitingMembers).length),
+)

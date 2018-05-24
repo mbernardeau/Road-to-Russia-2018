@@ -11,6 +11,9 @@ const ValidInscriptionRow = ({ name, price, members }) => (
       <b>{name}</b>
     </TableCell>
     <TableCell>
+      <b>{name}</b>
+    </TableCell>
+    <TableCell>
       {size(members)} membre{size(members) > 1 ? 's' : ''}
     </TableCell>
     <TableCell numeric>

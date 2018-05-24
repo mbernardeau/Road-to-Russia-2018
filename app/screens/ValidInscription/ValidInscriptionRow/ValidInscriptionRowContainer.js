@@ -3,7 +3,7 @@ import loader from 'hoc-react-loader'
 import { connect } from 'react-redux'
 import { getGroupsContainingAwaitingMembers, fetchGroupsContainingAwaitingMember } from 'redux/groups'
 
-import ValidInscription from './ValidInscription'
+import ValidInscriptionRow from './ValidInscriptionRow'
 
 const mapState = state => ({
   groups: getGroupsContainingAwaitingMembers(state),
@@ -13,4 +13,4 @@ const mapDispatch = dispatch => ({
   load: () => dispatch(fetchGroupsContainingAwaitingMember()),
 })
 
-export default compose(connect(mapState, mapDispatch), loader({ print: ['groups'] }))(ValidInscription)
+export default compose(connect(mapState, mapDispatch), loader({ print: ['groups'] }))(ValidInscriptionRow)

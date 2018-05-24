@@ -27,6 +27,36 @@ export const createGroup = group => (dispatch, getState) => {
     })
 }
 
+export const fetchGroups = () => dispatch => {
+  firebase
+    .firestore()
+    .collection('groups')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc =>
+        dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() })),
+      )
+    })
+}
+
+export const fetchGroupsContainingAwaitingMember = () => dispatch => {
+  firebase
+    .firestore()
+    .collection('groups')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        const group = doc.data()
+
+        // On integre seulement ceux qui contiennent des membres en attente
+        if (Object.keys(group.awaitingMembers).length > 0){
+          dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() }))
+        }
+      }
+      )
+    })
+}
+
 export const fetchGroupsForUser = () => dispatch => {
   dispatch(fetchGroupsForUserMember())
   dispatch(fetchGroupsForUserAwaitingMember())
