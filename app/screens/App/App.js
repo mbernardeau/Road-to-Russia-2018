@@ -74,30 +74,25 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route path="/rules" component={RulesPage} />
             <Route path="/faq" component={FAQPage} />
+
+            {/* Routes accessibles avec connexion */}
+            {!isEmpty(user) && <Route path="/matches" component={MatchesPage} />}
+            {!isEmpty(user) && <Route path="/ranking" component={RankingPage} />}
+            {!isEmpty(user) && <Route path="/groups" component={GroupsPage} />}
+            {!isEmpty(user) && <Route path="/creategroup" component={CreateGroupPage} />}
+            {!isEmpty(user) && <Route path="/admingroups" component={AdminGroupsPage} />}
+
+            {/* Route accessible avec presence dans une tribu */}
+
+            {/* Route accessible pour admin */}
+            {!isEmpty(user) &&
+              user.admin && <Route path="/matchesvalidation" component={MatchesValidationPage} />}
+            {!isEmpty(user) &&
+              user.admin && <Route path="/validinscription" component={ValidInscriptionPage} />}
+
+            {/* NotFoundPage en dernier choix sinon il est active */}
             <Route component={NotFoundPage} />
           </Switch>
-
-          {/* Routes accessibles avec connexion */}
-          {!isEmpty(user) && (
-            <Switch>
-              <Route path="/matches" component={MatchesPage} />
-              <Route path="/ranking" component={RankingPage} />
-              <Route path="/groups" component={GroupsPage} />
-              <Route path="/creategroup" component={CreateGroupPage} />
-              <Route path="/admingroups" component={AdminGroupsPage} />
-            </Switch>
-          )}
-
-          {/* Route accessible avec presence dans une tribu */}
-
-          {/* Route accessible pour admin */}
-          {!isEmpty(user) &&
-            user.admin && (
-            <Switch>
-              <Route path="/matchesvalidation" component={MatchesValidationPage} />
-              <Route path="/validinscription" component={ValidInscriptionPage} />
-            </Switch>
-          )}
         </div>
       </Fragment>
     )

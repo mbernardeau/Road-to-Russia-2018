@@ -29,7 +29,9 @@ export default class NavigationMenu extends Component {
       }).isRequired,
       push: PropTypes.func.isRequired,
     }).isRequired,
-    user: PropTypes.shape({}),
+    user: PropTypes.shape({
+      admin: PropTypes.bool,
+    }),
   }
 
   goTo = to => () => {
@@ -64,7 +66,7 @@ export default class NavigationMenu extends Component {
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) && (
+          {!isEmpty(this.props.user) && this.props.user.admin && (
             <ListItem button onClick={this.goTo('/matchesvalidation')}>
               <ListItemText primary="Validation des matchs" />
             </ListItem>
@@ -92,7 +94,7 @@ export default class NavigationMenu extends Component {
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) && (
+          {!isEmpty(this.props.user) && this.props.user.admin && (
             <ListItem button onClick={this.goTo('/validinscription')}>
               <ListItemText primary="Valider l'inscription d'un membre" />
             </ListItem>
