@@ -12,8 +12,11 @@ import TableBody from '@material-ui/core/TableBody'
 import Typography from '@material-ui/core/Typography'
 
 import GroupRow from './GroupRow'
+import DisplayPrice from './DisplayPrice'
 
 import './MyGroups.scss'
+
+
 
 const MyGroups = ({ groups, userId }) =>
   isEmpty(groups) ? null : (
@@ -22,18 +25,8 @@ const MyGroups = ({ groups, userId }) =>
         Mes tribus
       </Typography>
 
-      {/* Le console.log s'affiche bien mais pas le composant */}
-      {map(groups, group => {
-        map(group.awaitingMembers, (test, index) => 
-          index !== userId ? null : (
-            console.log(2),
-
-            <Typography gutterBottom variant="subheading">
-              Vous devez 5€ sur la cagnotte !
-            </Typography>
-          )
-        )
-      })}
+      {/* Composant qui s'affiche si membre en attente dans au moins un groupe */}
+      <DisplayPrice groups={groups} userId={userId} />
 
       <Table>
         <TableHead>
