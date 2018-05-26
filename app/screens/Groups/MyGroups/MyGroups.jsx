@@ -15,10 +15,25 @@ import GroupRow from './GroupRow'
 
 import './MyGroups.scss'
 
-const MyGroups = ({ groups }) =>
+const MyGroups = ({ groups, userId }) =>
   isEmpty(groups) ? null : (
     <Card className="my-groups-card">
-      <Typography variant="headline">Mes tribus</Typography>
+      <Typography gutterBottom variant="headline">
+        Mes tribus
+      </Typography>
+
+      {/* Le console.log s'affiche bien mais pas le composant */}
+      {map(groups, group => {
+        map(group.awaitingMembers, (test, index) => 
+          index !== userId ? null : (
+            console.log(2),
+
+            <Typography gutterBottom variant="subheading">
+              Vous devez 5€ sur la cagnotte !
+            </Typography>
+          )
+        )
+      })}
 
       <Table>
         <TableHead>
@@ -35,6 +50,7 @@ const MyGroups = ({ groups }) =>
 
 MyGroups.propTypes = {
   groups: PropTypes.objectOf(PropTypes.shape({})),
+  userId: PropTypes.string.isRequired,
 }
 
 export default MyGroups
