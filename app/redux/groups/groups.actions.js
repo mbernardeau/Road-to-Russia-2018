@@ -29,6 +29,7 @@ export const createGroup = group => (dispatch, getState) => {
           })
           .then(() => {
             dispatch(fetchGroupById(id))
+            dispatch(createGroupSuccess(group))
           })
       } else {
         firebase
@@ -40,15 +41,9 @@ export const createGroup = group => (dispatch, getState) => {
           })
           .then(() => {
             dispatch(fetchGroupById(id))
+            dispatch(createGroupSuccess(group))
           })
       }
-    })
-    .then(doc => {
-      const newGroup = doc.data()
-      const { id } = doc
-
-      dispatch(groupsReducer.add({ ...newGroup, id }))
-      dispatch(createGroupSuccess(newGroup))
     })
 }
 
