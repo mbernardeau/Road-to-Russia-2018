@@ -62,7 +62,7 @@ class CreateGroup extends Component {
           </Typography>
           <br />
           <Typography gutterBottom type="subheading">
-            Créez une tribu pour vous confrontez à vos amis, collègues, familles...
+            Créez une tribu pour vous confrontez à vos amis, collègues, famille...
           </Typography>
           <br />
           <Typography gutterBottom type="body1">
