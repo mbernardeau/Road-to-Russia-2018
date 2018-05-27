@@ -1,40 +1,47 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import Button from '@material-ui/core/Button'
-import size from 'lodash/size'
 
-const ValidInscriptionRow = ({ name, price, members }) => (
-  <TableRow>
-    <TableCell>
-      <b>{name}</b>
-    </TableCell>
-    <TableCell>
-      <b>{name}</b>
-    </TableCell>
-    <TableCell>
-      {size(members)} membre{size(members) > 1 ? 's' : ''}
-    </TableCell>
-    <TableCell numeric>
-      {price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
-    </TableCell>
-    <TableCell>
-      <Button variant="raised" color="primary">
-        Valider
-      </Button>
-    </TableCell>
-  </TableRow>
-)
+class ValidInscriptionRow extends Component {
+  render() {
+    const {
+      user: { displayName, email },
+      name,
+      price,
+      id,
+    } = this.props
 
-ValidInscriptionRow.defaultProps = {
-  members: {},
+    return (
+      <TableRow>
+        <TableCell>
+          <b>{name}</b>
+        </TableCell>
+        <TableCell>{displayName}</TableCell>
+        <TableCell>{email}</TableCell>
+        <TableCell numeric>
+          {price.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}
+        </TableCell>
+        <TableCell>
+          <Button variant="raised" color="primary" onClick={this.props.validApply}>
+            Valider
+          </Button>
+        </TableCell>
+      </TableRow>
+    )
+  }
 }
 
 ValidInscriptionRow.propTypes = {
+  user: PropTypes.shape({
+    displayName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+  }),
   name: PropTypes.string.isRequired,
-  members: PropTypes.objectOf(PropTypes.bool),
-  price: PropTypes.number,
+  price: PropTypes.number.isRequired,
+  validApply: PropTypes.func.isRequired,
 }
 
 export default ValidInscriptionRow

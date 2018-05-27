@@ -27,18 +27,6 @@ export const createGroup = group => (dispatch, getState) => {
     })
 }
 
-export const fetchGroups = () => dispatch => {
-  firebase
-    .firestore()
-    .collection('groups')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach(doc =>
-        dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() })),
-      )
-    })
-}
-
 export const fetchGroupsContainingAwaitingMember = () => dispatch => {
   firebase
     .firestore()
@@ -49,11 +37,10 @@ export const fetchGroupsContainingAwaitingMember = () => dispatch => {
         const group = doc.data()
 
         // On integre seulement ceux qui contiennent des membres en attente
-        if (Object.keys(group.awaitingMembers).length > 0){
+        if (group.awaitingMembers && Object.keys(group.awaitingMembers).length > 0) {
           dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() }))
         }
-      }
-      )
+      })
     })
 }
 
@@ -196,3 +183,7 @@ export const createGroupSuccess = group => ({
   type: CREATE_GROUP_SUCCESS,
   group,
 })
+
+export const validApply = () => {
+  console.log(2)
+}
