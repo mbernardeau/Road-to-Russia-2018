@@ -10,10 +10,10 @@ const mapState = (state, { userId }) => ({
   user: usersFactory.get(userId)(state),
 })
 
-const mapDispatch = (dispatch, { userId }) => ({
+const mapDispatch = (dispatch, { userId, id }) => ({
   load: () => dispatch(fetchUser(userId)),
   validApply: () => {
-    console.log(2)
+    dispatch(validApply(id, userId))
   },
 })
 

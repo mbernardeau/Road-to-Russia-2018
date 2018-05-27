@@ -11,7 +11,6 @@ class ValidInscriptionRow extends Component {
       user: { displayName, email },
       name,
       price,
-      id,
     } = this.props
 
     return (

@@ -184,6 +184,15 @@ export const createGroupSuccess = group => ({
   group,
 })
 
-export const validApply = () => {
-  console.log(2)
+export const validApply = (groupId, userId) => dispatch => {
+  const db = firebase.firestore()
+
+  db
+    .collection('groups')
+    .doc(groupId)
+    .update({
+      [`awaitingMembers.${userId}`]: firebase.firestore.FieldValue.delete(),
+      [`members.${userId}`]: true,
+    })
+    .then(() => dispatch(fetchGroupById(groupId)))
 }
