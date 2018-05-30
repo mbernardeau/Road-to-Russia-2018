@@ -14,7 +14,7 @@ class Winner extends Component {
     super(props)
 
     this.state = {
-      Team: '',
+      Team: this.props.Team,
     }
   }
 
@@ -25,9 +25,16 @@ class Winner extends Component {
   }
 
   handleChange = ({ target: { value } }) => {
-    this.setState({
-      Team: value,
-    })
+    this.setState(
+      {
+        Team: value,
+      },
+      this.callbackSave,
+    )
+  }
+
+  callbackSave = () => {
+    this.props.saveWinner(this.state.Team)
   }
 
   render() {
@@ -49,6 +56,7 @@ class Winner extends Component {
 
 Winner.propTypes = {
   Team: PropTypes.string,
+  saveWinner: PropTypes.func.isRequired,
 }
 
 Winner.defaultProps = {
