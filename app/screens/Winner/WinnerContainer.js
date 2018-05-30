@@ -1,16 +1,19 @@
 import { compose } from 'redux'
-import loader from 'hoc-react-loader'
 import { connect } from 'react-redux'
-import teamsReducer, { fetchTeams } from 'redux/teams'
+
+import { saveWinner } from 'redux/users'
+import { getProfile } from 'redux/user'
 
 import Winner from './Winner'
 
 const mapState = state => ({
-  teams: teamsReducer.get()(state),
+  Team: getProfile(state).winnerTeam,
 })
 
 const mapDispatch = dispatch => ({
-  load: () => dispatch(fetchTeams()),
+  saveWinner: Team => {
+    dispatch(saveWinner(Team))
+  },
 })
 
-export default compose(connect(mapState, mapDispatch), loader({ print: ['teams'] }))(Winner)
+export default compose(connect(mapState, mapDispatch))(Winner)
