@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import Snackbar from '@material-ui/core/Snackbar'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 
-const GroupApplyStatus = ({ status, name, reason, handleClose }) => (
+import './GroupApplyStatus.scss'
+
+const GroupApplyStatus = ({ status,  group: { name, price }, reason, handleClose }) => (
   <Snackbar
     anchorOrigin={{
       vertical: 'bottom',
@@ -19,7 +21,27 @@ const GroupApplyStatus = ({ status, name, reason, handleClose }) => (
     }}
     message={
       <span id="message-id">
-        {status === 'failed' ? reason : `Demande envoyée pour la tribu ${name}`}
+        {status === 'failed' ? (
+          reason
+        ) : (
+          <Fragment>
+            Demande envoyée pour la tribu <b>{name}</b> !{' '}
+            {price !== 0 && (
+              <Fragment>
+                Payer {price}€ sur la{' '}
+                <a
+                  title="Site cagnotte"
+                  className="group-join-link"
+                  href="https://www.paypal.com/pools/c/84gsKV8QG8"
+                  target="_blank"
+                >
+                  cagnotte
+                </a>{' '}
+                pour valider votre inscription !{' '}
+              </Fragment>
+            )}
+          </Fragment>
+        )}
       </span>
     }
     action={[
@@ -30,9 +52,16 @@ const GroupApplyStatus = ({ status, name, reason, handleClose }) => (
   />
 )
 
+GroupApplyStatus.defaultProps = {
+  group: {},
+}
+
 GroupApplyStatus.propTypes = {
   status: PropTypes.string,
-  name: PropTypes.string,
+  group: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.number,
+  }),
   reason: PropTypes.string,
   handleClose: PropTypes.func.isRequired,
 }

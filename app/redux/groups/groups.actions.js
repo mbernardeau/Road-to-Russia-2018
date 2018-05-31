@@ -140,7 +140,7 @@ export const applyInGroup = code => (dispatch, getState) => {
               [`awaitingMembers.${userId}`]: true,
             })
             .then(() => {
-              dispatch(applyGroupSuccess(group.name))
+              dispatch(applyGroupSuccess(group))
               dispatch(fetchGroupById(id))
             })
         } else {
@@ -151,7 +151,7 @@ export const applyInGroup = code => (dispatch, getState) => {
               [`members.${userId}`]: true,
             })
             .then(() => {
-              dispatch(applyGroupSuccess(group.name))
+              dispatch(applyGroupSuccess(group))
               dispatch(fetchGroupById(id))
             })
         }
@@ -168,9 +168,9 @@ export const applyGroupFailed = reason => ({
 
 export const APPLY_GROUP_SUCCESS = 'APPLY_GROUP_SUCCESS'
 
-export const applyGroupSuccess = name => ({
+export const applyGroupSuccess = group => ({
   type: APPLY_GROUP_SUCCESS,
-  name,
+  group,
 })
 
 export const CREATE_GROUP_FAILED = 'CREATE_GROUP_FAILED'
