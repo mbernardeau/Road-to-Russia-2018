@@ -4,6 +4,7 @@ import Flag from 'components/Flag'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import Typography from '@material-ui/core/Typography'
+import Tooltip from '@material-ui/core/Tooltip'
 
 import find from 'lodash/find'
 import { map } from 'lodash'
@@ -21,8 +22,8 @@ const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
           name: 'userTeam',
         }}
       >
-        {map(teams, ({ name }, teamId) => (
-          <MenuItem key={teamId} value={teamId}>
+        {map(teams, ({ name, id }) => (
+          <MenuItem key={id} value={id}>
             {name}
           </MenuItem>
         ))}
@@ -49,9 +50,11 @@ const OddTest = (teams, userTeam) => {
   if (!test) return null
 
   return (
-    <Typography variant="display2" className="winner-choice-odd">
-      {test.winOdd}
-    </Typography>
+    <Tooltip title="Cote pour la victoire finale" placement="right">
+      <Typography variant="display1" className="winner-choice-odd">
+        {test.winOdd}
+      </Typography>
+    </Tooltip>
   )
 }
 
@@ -60,7 +63,7 @@ WinnerChoice.defaultProps = {
 }
 
 WinnerChoice.propTypes = {
-  teams: PropTypes.objectOf(PropTypes.shape({})),
+  teams: PropTypes.arrayOf(PropTypes.shape({})),
   userTeam: PropTypes.string.isRequired,
   onValueChange: PropTypes.func.isRequired,
 }
