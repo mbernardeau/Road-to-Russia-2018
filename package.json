@@ -259,7 +259,7 @@
     "k-redux-factory": "5.0.2",
     "lodash": "4.17.10",
     "minimist": "1.2.0",
-    "moment": "2.22.1",
+    "moment": "2.22.2",
     "prop-types": "15.6.1",
     "randomstring": "1.1.5",
     "react": "16.3.2",
