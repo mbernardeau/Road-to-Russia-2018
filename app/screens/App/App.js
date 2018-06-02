@@ -24,12 +24,10 @@ import HomePage from 'screens/HomePage/Loadable'
 import StadiumsPage from 'screens/Stadiums/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
-import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
 import RulesPage from 'screens/Rules/Loadable'
 import FAQPage from 'screens/FAQ/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
-import AdminGroupsPage from 'screens/AdminGroups/Loadable'
 import ValidInscriptionPage from 'screens/ValidInscription/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -80,8 +78,6 @@ class App extends React.Component {
               <Route path="/groups" component={GroupsPage} />
               <Route path="/rules" component={RulesPage} />
               <Route path="/faq" component={FAQPage} />
-              <Route path="/creategroup" component={CreateGroupPage} />
-              <Route path="/admingroups" component={AdminGroupsPage} />
               <Route path="/validinscription" component={ValidInscriptionPage} />
               <Route component={NotFoundPage} />
             </Switch>

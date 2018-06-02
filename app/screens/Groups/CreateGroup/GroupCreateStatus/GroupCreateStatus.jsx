@@ -14,7 +14,7 @@ const GroupCreateStatus = ({ status, group: { name, joinKey, price }, reason, ha
       horizontal: 'left',
     }}
     open={!!status}
-    autoHideDuration={6000}
+    autoHideDuration={60000}
     onClose={handleClose}
     SnackbarContentProps={{
       'aria-describedby': 'message-id',

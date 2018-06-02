@@ -14,10 +14,11 @@ const GroupApplyStatus = ({ status,  group: { name, price }, reason, handleClose
       horizontal: 'left',
     }}
     open={!!status}
-    autoHideDuration={6000}
+    autoHideDuration={60000}
     onClose={handleClose}
     SnackbarContentProps={{
       'aria-describedby': 'message-id',
+      'className': 'group-apply-snackbar',
     }}
     message={
       <span id="message-id">
