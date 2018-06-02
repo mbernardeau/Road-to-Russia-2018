@@ -42,8 +42,8 @@ export default class NavigationMenu extends Component {
   }
 
   openPAMTab = () => {
-    const win = window.open('https://pourunailleursmeilleur.wordpress.com/', '_blank');
-    win.focus();
+    const win = window.open('https://pourunailleursmeilleur.wordpress.com/', '_blank')
+    win.focus()
   }
 
   render() {
@@ -55,6 +55,11 @@ export default class NavigationMenu extends Component {
             <img src={WorldCupImg} style={styles.image} alt="Accueil" />
           </ListItem>
           <Divider />
+
+          {/* Route accessibles sans connexion (Doublon page d'acceuil) */}
+          <ListItem button onClick={this.goTo('/')}>
+            <ListItemText primary="Acceuil" />
+          </ListItem>
 
           {/* Route accessibles avec presence dans une tribu */}
           {!isEmpty(this.props.user) && (
@@ -71,11 +76,12 @@ export default class NavigationMenu extends Component {
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) && this.props.user.admin && (
+          {!isEmpty(this.props.user) &&
+            this.props.user.admin && (
             <ListItem button onClick={this.goTo('/matchesvalidation')}>
               <ListItemText primary="Validation des matchs" />
             </ListItem>
-          )}
+          )} 
 
           {/* Route accessibles avec connexion */}
           {!isEmpty(this.props.user) && (
@@ -99,7 +105,8 @@ export default class NavigationMenu extends Component {
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) && this.props.user.admin && (
+          {!isEmpty(this.props.user) &&
+            this.props.user.admin && (
             <ListItem button onClick={this.goTo('/validinscription')}>
               <ListItemText primary="Valider l'inscription d'un membre" />
             </ListItem>
