@@ -19,7 +19,7 @@ const DisplayPrice = ({ groups, userId }) => {
       //<br />
       
       <Typography gutterBottom variant="subheading">
-        Vous encore devez <b>{somme}€ </b> sur le site de la{' '}
+        Vous devez encore <b>{somme}€ </b> sur le site de la{' '}
         <a title="Site cagnotte" href="https://www.paypal.com/pools/c/84gsKV8QG8" target="_blank">
           cagnotte
         </a>{' '}
