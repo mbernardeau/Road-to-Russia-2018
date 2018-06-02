@@ -41,6 +41,11 @@ export default class NavigationMenu extends Component {
     this.props.closeMenu()
   }
 
+  openPAMTab = () => {
+    const win = window.open('https://pourunailleursmeilleur.wordpress.com/', '_blank');
+    win.focus();
+  }
+
   render() {
     return (
       <Drawer open={this.props.open} onClose={() => this.props.closeMenu()}>
@@ -108,6 +113,11 @@ export default class NavigationMenu extends Component {
           {/* Routes accessibles sans connexion */}
           <ListItem button onClick={this.goTo('/faq')}>
             <ListItemText primary="FAQ" />
+          </ListItem>
+
+          {/* Routes accessibles sans connexion */}
+          <ListItem button onClick={this.openPAMTab}>
+            <ListItemText primary="L'association PAM" />
           </ListItem>
         </List>
       </Drawer>
