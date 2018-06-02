@@ -25,7 +25,7 @@ class Match extends Component {
     super(props)
 
     this.state = {
-      bet: empty,
+      bet: this.props.bet,
     }
   }
 
