@@ -33,26 +33,21 @@ const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
   </div>
 )
 
+// Affichage du drapeau du pays choisi
 const FlagTest = (teams, userTeam) => {
-  const test = find(teams, team => team.id === userTeam)
+  const teamDisplayed = find(teams, team => team.id === userTeam)
 
-  // J'ai rajouté if (test) car il semble que la fonction soit appelée 32 fois et les premières fois, test vaut undefined
-  // Regarder la console pour voir le problème
-  if (!test) return null
-
-  return <Flag country={test.code} className="winner-choice-flag" />
+  return teamDisplayed && <Flag country={teamDisplayed.code} className="winner-choice-flag" />
 }
 
+// Affichage de la cote du pays choisi
 const OddTest = (teams, userTeam) => {
-  const test = find(teams, team => team.id === userTeam)
+  const teamDisplayed = find(teams, team => team.id === userTeam)
 
-  // Si la variable test est valable (probleme du au chargement asynchrone)
-  if (!test) return null
-
-  return (
+  return teamDisplayed && (
     <Tooltip title="Cote pour la victoire finale" placement="right">
       <Typography variant="display1" className="winner-choice-odd">
-        {test.winOdd}
+        {teamDisplayed.winOdd}
       </Typography>
     </Tooltip>
   )
