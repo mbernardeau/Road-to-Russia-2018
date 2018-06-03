@@ -10,7 +10,7 @@ jest.mock('@material-ui/core/TableCell', () => 'TableCell')
 jest.mock('@material-ui/core/TableRow', () => 'TableRow')
 jest.mock('@material-ui/core/TableHead', () => 'TableHead')
 jest.mock('@material-ui/core/Typography', () => 'Typography')
-
+jest.mock('./DisplayPrice', () => 'DisplayPrice')
 jest.mock('./GroupRow', () => 'GroupRow')
 
 describe('Groups/MyGroups', () => {

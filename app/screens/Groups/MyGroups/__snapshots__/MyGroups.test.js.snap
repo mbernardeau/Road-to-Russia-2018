@@ -5,10 +5,20 @@ exports[`Groups/MyGroups renders correctly when a group is joined 1`] = `
   className="my-groups-card"
 >
   <Typography
+    gutterBottom={true}
     variant="headline"
   >
     Mes tribus
   </Typography>
+  <DisplayPrice
+    groups={
+      Object {
+        "idGroup1": Object {
+          "name": "supergroupe",
+        },
+      }
+    }
+  />
   <Table>
     <TableHead>
       <TableRow>

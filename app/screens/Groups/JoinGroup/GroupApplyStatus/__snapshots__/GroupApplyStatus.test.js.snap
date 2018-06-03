@@ -5,6 +5,7 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly when failed pr
   SnackbarContentProps={
     Object {
       "aria-describedby": "message-id",
+      "className": "group-apply-snackbar",
     }
   }
   action={
@@ -24,7 +25,7 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly when failed pr
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
@@ -42,6 +43,7 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly when success 1
   SnackbarContentProps={
     Object {
       "aria-describedby": "message-id",
+      "className": "group-apply-snackbar",
     }
   }
   action={
@@ -61,12 +63,33 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly when success 1
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
     >
-      Demande envoyée pour la tribu ma super tribu
+      <React.Fragment>
+        Demande envoyée pour la tribu 
+        <b />
+         !
+         
+        <React.Fragment>
+          Payer 
+          € sur la
+           
+          <a
+            className="group-join-link"
+            href="https://www.paypal.com/pools/c/84gsKV8QG8"
+            target="_blank"
+            title="Site cagnotte"
+          >
+            cagnotte
+          </a>
+           
+          pour valider votre inscription !
+           
+        </React.Fragment>
+      </React.Fragment>
     </span>
   }
   onClose={[MockFunction]}
@@ -79,6 +102,7 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly without props 
   SnackbarContentProps={
     Object {
       "aria-describedby": "message-id",
+      "className": "group-apply-snackbar",
     }
   }
   action={
@@ -98,12 +122,33 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly without props 
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
     >
-      Demande envoyée pour la tribu undefined
+      <React.Fragment>
+        Demande envoyée pour la tribu 
+        <b />
+         !
+         
+        <React.Fragment>
+          Payer 
+          € sur la
+           
+          <a
+            className="group-join-link"
+            href="https://www.paypal.com/pools/c/84gsKV8QG8"
+            target="_blank"
+            title="Site cagnotte"
+          >
+            cagnotte
+          </a>
+           
+          pour valider votre inscription !
+           
+        </React.Fragment>
+      </React.Fragment>
     </span>
   }
   onClose={[MockFunction]}
