@@ -9,13 +9,15 @@
  * the linting exception.
  */
 
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import Button from '@material-ui/core/Button'
 import EventAvailableIcon from '@material-ui/icons/EventAvailable'
 import PollIcon from '@material-ui/icons/Poll'
 import ListIcon from '@material-ui/icons/List'
+
+import { isEmpty } from 'react-redux-firebase'
 
 import Winner from './Winner'
 
@@ -26,7 +28,8 @@ import './HomePage.scss'
 // eslint-disable-next-line react/prefer-stateless-function
 export default class HomePage extends React.PureComponent {
   render() {
-    const { history } = this.props
+    const { history, user } = this.props
+
     return (
       <div className="home-page-div">
         <p className="home-speech">
@@ -51,30 +54,35 @@ export default class HomePage extends React.PureComponent {
               Règles
             </Button>
           </div>
-          <div className="home-button-panel">
-            <p>Tous vos paris : </p>
-            <Button
-              className="home-button"
-              onClick={() => history.push('/matches')}
-              color="primary"
-            >
-              <EventAvailableIcon className="icon-left" />
-              Parier
-            </Button>
-          </div>
-          <div className="home-button-panel">
-            <p>Votre classement : </p>
-            <Button
-              className="home-button"
-              onClick={() => history.push('/ranking')}
-              color="primary"
-            >
-              <PollIcon className="icon-left" />
-              Classement
-            </Button>
-          </div>
+          {!isEmpty(user) && (
+            <Fragment>
+              {' '}
+              <div className="home-button-panel">
+                <p>Tous vos paris : </p>
+                <Button
+                  className="home-button"
+                  onClick={() => history.push('/matches')}
+                  color="primary"
+                >
+                  <EventAvailableIcon className="icon-left" />
+                  Parier
+                </Button>
+              </div>
+              <div className="home-button-panel">
+                <p>Votre classement : </p>
+                <Button
+                  className="home-button"
+                  onClick={() => history.push('/ranking')}
+                  color="primary"
+                >
+                  <PollIcon className="icon-left" />
+                  Classement
+                </Button>
+              </div>
+            </Fragment>
+          )}
         </div>
-        <Winner />
+        {!isEmpty(user) && <Winner />}
         <img alt="Home" className="home-logo" src={myImage} />
       </div>
     )
@@ -85,4 +93,5 @@ HomePage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  user: PropTypes.object,
 }
