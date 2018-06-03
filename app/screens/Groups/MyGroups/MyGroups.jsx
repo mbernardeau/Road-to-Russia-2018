@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { map, isEmpty } from 'lodash'
 
 import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 import Table from '@material-ui/core/Table'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
@@ -28,16 +29,18 @@ const MyGroups = ({ groups, userId }) =>
       {/* Composant qui s'affiche si membre en attente dans au moins un groupe */}
       <DisplayPrice groups={groups} userId={userId} />
 
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Nom de la tribu</TableCell>
-            <TableCell>Créateur</TableCell>
-            <TableCell>Statut</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>{map(groups, (group, key) => <GroupRow {...group} key={key} />)}</TableBody>
-      </Table>
+      <CardContent className="my-groups-card-content">
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Nom de la tribu</TableCell>
+              <TableCell>Créateur</TableCell>
+              <TableCell>Statut</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{map(groups, (group, key) => <GroupRow {...group} key={key} />)}</TableBody>
+        </Table>
+      </CardContent>
     </Card>
   )
 

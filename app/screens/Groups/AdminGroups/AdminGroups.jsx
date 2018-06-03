@@ -24,7 +24,7 @@ const AdminGroups = ({ groups }) =>
       <Typography gutterBottom variant="subheading">
         Retrouvez ici les tribus que vous avez créé.
       </Typography>
-      <CardContent>
+      <CardContent className="admin-groups-card-content">
         <Table>
           <TableHead>
             <TableRow>
