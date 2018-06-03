@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect'
+import { isEmpty } from 'lodash'
 import filter from 'lodash/filter'
 import keyBy from 'lodash/keyBy'
 import groupsReducer from './groups'
@@ -16,7 +17,7 @@ export const getGroupsForUserMember = createSelector(
 export const getGroupsForUserAwaitingMember = createSelector(
   getUserId,
   groupsReducer.get(),
-  (userId, groups) => filter(groups, g => g.awaitingMembers && g.awaitingMembers[userId]),
+  (userId, groups) => filter(groups, g => !isEmpty(g.awaitingMembers)),
 )
 
 export const getGroupsForUser = createSelector(
@@ -26,4 +27,9 @@ export const getGroupsForUser = createSelector(
     ...keyBy(groupsMember, 'id'),
     ...keyBy(groupsAwaiting, 'id'),
   }),
+)
+
+export const getGroupsContainingAwaitingMembers = createSelector(
+  groupsReducer.get(),
+  groups => filter(groups, g => g.awaitingMembers && Object.keys(g.awaitingMembers).length),
 )

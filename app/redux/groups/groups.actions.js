@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import randomstring from 'randomstring'
+import { isEmpty } from 'lodash'
 import { getUserId } from '../user'
 import groupsReducer from './groups'
 
@@ -44,6 +45,23 @@ export const createGroup = group => (dispatch, getState) => {
             dispatch(createGroupSuccess(group))
           })
       }
+    })
+}
+
+export const fetchGroupsContainingAwaitingMember = () => dispatch => {
+  firebase
+    .firestore()
+    .collection('groups')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        const group = doc.data()
+
+        // On integre seulement ceux qui contiennent des membres en attente
+        if (!isEmpty(group.awaitingMembers)) {
+          dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() }))
+        }
+      })
     })
 }
 
@@ -186,3 +204,16 @@ export const createGroupSuccess = group => ({
   type: CREATE_GROUP_SUCCESS,
   group,
 })
+
+export const validApply = (groupId, userId) => dispatch => {
+  const db = firebase.firestore()
+
+  db
+    .collection('groups')
+    .doc(groupId)
+    .update({
+      [`awaitingMembers.${userId}`]: firebase.firestore.FieldValue.delete(),
+      [`members.${userId}`]: true,
+    })
+    .then(() => dispatch(fetchGroupById(groupId)))
+}
