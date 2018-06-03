@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 import renderer from 'react-test-renderer'
 
 import GroupCreateStatus from './GroupCreateStatus'
@@ -37,4 +37,3 @@ describe('screens/CreateGroup/GroupCreateStatus', () => {
     expect(tree).toMatchSnapshot()
   })
 })
- */
