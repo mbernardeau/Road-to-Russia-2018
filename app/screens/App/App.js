@@ -29,7 +29,6 @@ import RulesPage from 'screens/Rules/Loadable'
 import FAQPage from 'screens/FAQ/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
 import AdminGroupsPage from 'screens/AdminGroups/Loadable'
-import WinnerPage from 'screens/Winner/Loadable'
 import ValidInscriptionPage from 'screens/ValidInscription/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -82,7 +81,6 @@ class App extends React.Component {
             {!isEmpty(user) && <Route path="/groups" component={GroupsPage} />}
             {!isEmpty(user) && <Route path="/creategroup" component={CreateGroupPage} />}
             {!isEmpty(user) && <Route path="/admingroups" component={AdminGroupsPage} />}
-            {!isEmpty(user) && <Route path="/winner" component={WinnerPage} />}
 
             {/* Route accessible avec presence dans une tribu */}
 

@@ -10,8 +10,15 @@
     margin: 5px;
 
     .winner-choice-select-value {
+      font-family: Georgia, Times, 'Times New Roman', serif;
+      line-height: 1.5em;
       text-align: center;
       width: 100%;
+
+      .winner-choice-menuitem {
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        line-height: 1.5em;
+      }
     }
   }
 

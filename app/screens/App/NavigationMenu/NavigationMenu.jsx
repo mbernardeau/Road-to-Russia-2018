@@ -47,20 +47,14 @@ class NavigationMenu extends Component {
             <ListItemText primary="Accueil" />
           </ListItem>
 
-          {/* Route accessibles avec presence dans une tribu */}
-          {isConnected(user) && (
-            <ListItem button onClick={this.goTo('/winner')}>
-              <ListItemText primary="Choix du vainqueur final" />
-            </ListItem>
-          )}
-
+          {/* Route accessibles avec connexion */}
           {isConnected(user) && (
             <ListItem button onClick={this.goTo('/matches')}>
               <ListItemText primary="Pariez" />
             </ListItem>
           )}
 
-          {/* Route accessibles avec presence dans une tribu */}
+          {/* Route accessibles avec connexion */}
           {isConnected(user) && (
             <ListItem button onClick={this.goTo('/ranking')}>
               <ListItemText primary="Classement" />

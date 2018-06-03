@@ -16,6 +16,7 @@ const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
     {FlagTest(teams, userTeam)}
     <div className="winner-choice-select-container">
       <Select
+        className="winner-choice-select-value"
         value={userTeam}
         onChange={onValueChange}
         inputProps={{
@@ -44,12 +45,14 @@ const FlagTest = (teams, userTeam) => {
 const OddTest = (teams, userTeam) => {
   const teamDisplayed = find(teams, team => team.id === userTeam)
 
-  return teamDisplayed && (
-    <Tooltip title="Cote pour la victoire finale" placement="right">
-      <Typography variant="display1" className="winner-choice-odd">
-        {teamDisplayed.winOdd}
-      </Typography>
-    </Tooltip>
+  return (
+    teamDisplayed && (
+      <Tooltip title="Cote pour la victoire finale" placement="right">
+        <Typography variant="display1" className="winner-choice-odd">
+          {teamDisplayed.winOdd}
+        </Typography>
+      </Tooltip>
+    )
   )
 }
 

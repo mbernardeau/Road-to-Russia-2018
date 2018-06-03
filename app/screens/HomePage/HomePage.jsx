@@ -11,11 +11,13 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from '@material-ui/core/Button'
 
+import Button from '@material-ui/core/Button'
 import EventAvailableIcon from '@material-ui/icons/EventAvailable'
 import PollIcon from '@material-ui/icons/Poll'
 import ListIcon from '@material-ui/icons/List'
+
+import Winner from './Winner'
 
 import myImage from '../../assets/visuels/bandeauEvenement2.jpg'
 
@@ -72,7 +74,8 @@ export default class HomePage extends React.PureComponent {
             </Button>
           </div>
         </div>
-        <img alt="Home" src={myImage} />
+        <Winner />
+        <img alt="Home" className="home-logo" src={myImage} />
       </div>
     )
   }

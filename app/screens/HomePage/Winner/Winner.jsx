@@ -42,10 +42,10 @@ class Winner extends Component {
 
     return (
       <Card className="winner-card">
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography className="winner-typo" gutterBottom variant="headline" component="h2">
           Choix du vainqueur final
         </Typography>
-        <Typography color="textSecondary">Quel pays gagnera la coupe du monde ?</Typography>
+        <Typography className="winner-typo" color="textSecondary">Quel pays gagnera la coupe du monde ?</Typography>
         <CardContent>
           <WinnerChoice userTeam={Team} onValueChange={this.handleChange} />
         </CardContent>
