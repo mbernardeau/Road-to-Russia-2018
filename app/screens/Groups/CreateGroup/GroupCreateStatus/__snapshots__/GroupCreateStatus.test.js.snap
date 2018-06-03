@@ -80,7 +80,6 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly when success 1`
             cagnotte
           </a>
           pour valider votre inscription !
-           
         </React.Fragment>
         Tribu 
          créée avec la clé 
@@ -137,12 +136,11 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly without props 1
             cagnotte
           </a>
           pour valider votre inscription !
-           
         </React.Fragment>
         Tribu 
          créée avec la clé 
         <b />
-        
+
       </React.Fragment>
     </span>
   }
