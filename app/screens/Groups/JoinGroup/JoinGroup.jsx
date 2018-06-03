@@ -44,20 +44,20 @@ class JoinGroup extends Component {
         </Typography>
         <br />
         <Typography gutterBottom variant="subheading">
-          Rejoignez une tribu pour vous confrontez à vos amis, collègues, familles...
+          Rejoignez une tribu pour vous confrontez à vos amis, collègues, famille...
+        </Typography>
+        <br />
+        <Typography variant="caption">
+          Entrez le code qui vous a été fourni par l&apos;administrateur de la tribu.
         </Typography>
 
-        <CardContent>
-          <Typography gutterBottom variant="caption">
-            Entrez le code qui vous a été fourni par l&apos;administrateur de la tribu
-          </Typography>
+        <CardContent className="join-group-content">
           <FormControl>
             <TextField
               required
               id="join-group-code"
               label="Code"
               value={code}
-              margin="normal"
               onChange={this.handleSelection}
             />
           </FormControl>
