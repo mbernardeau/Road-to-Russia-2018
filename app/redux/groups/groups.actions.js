@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import randomstring from 'randomstring'
-import { isEmpty } from 'react-redux-firebase'
+import { isEmpty } from 'lodash'
 import { getUserId } from '../user'
 import groupsReducer from './groups'
 

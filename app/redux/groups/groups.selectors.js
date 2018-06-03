@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { isEmpty } from 'react-redux-firebase'
+import { isEmpty } from 'lodash'
 import filter from 'lodash/filter'
 import keyBy from 'lodash/keyBy'
 import groupsReducer from './groups'
