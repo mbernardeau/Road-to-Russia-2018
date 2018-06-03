@@ -7,14 +7,14 @@ import CloseIcon from '@material-ui/icons/Close'
 
 import './GroupCreateStatus.scss'
 
-const GroupCreateStatus = ({ status, group: { name, joinKey }, reason, handleClose }) => (
+const GroupCreateStatus = ({ status, group: { name, joinKey, price }, reason, handleClose }) => (
   <Snackbar
     anchorOrigin={{
       vertical: 'bottom',
       horizontal: 'left',
     }}
     open={!!status}
-    autoHideDuration={6000}
+    autoHideDuration={60000}
     onClose={handleClose}
     SnackbarContentProps={{
       'aria-describedby': 'message-id',
@@ -25,6 +25,20 @@ const GroupCreateStatus = ({ status, group: { name, joinKey }, reason, handleClo
           reason
         ) : (
           <Fragment>
+            {price !== 0 && (
+              <Fragment>
+                Payer {price}€ sur la{' '}
+                <a
+                  title="Site cagnotte"
+                  className="group-create-link"
+                  href="https://www.paypal.com/pools/c/84gsKV8QG8"
+                  target="_blank"
+                >
+                  cagnotte
+                </a>{' '}
+                pour valider votre inscription !{' '}
+              </Fragment>
+            )}
             Tribu {name} créée avec la clé <b>{joinKey}</b> &nbsp;<Link
               className="group-create-link"
               to="/admingroups"
@@ -51,6 +65,7 @@ GroupCreateStatus.propTypes = {
   status: PropTypes.string,
   group: PropTypes.shape({
     name: PropTypes.string,
+    price: PropTypes.number,
     joinKey: PropTypes.string,
   }),
   reason: PropTypes.string,

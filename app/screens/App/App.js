@@ -23,12 +23,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 import HomePage from 'screens/HomePage/Loadable'
 import GroupsPage from 'screens/Groups/Loadable'
 import RankingPage from 'screens/Ranking/Loadable'
-import CreateGroupPage from 'screens/CreateGroup/Loadable'
 import MatchesPage from 'screens/Matches/Loadable'
 import RulesPage from 'screens/Rules/Loadable'
 import FAQPage from 'screens/FAQ/Loadable'
 import MatchesValidationPage from 'screens/MatchesValidation/Loadable'
-import AdminGroupsPage from 'screens/AdminGroups/Loadable'
 import ValidInscriptionPage from 'screens/ValidInscription/Loadable'
 import NotFoundPage from 'screens/NotFoundPage'
 
@@ -79,10 +77,6 @@ class App extends React.Component {
             {!isEmpty(user) && <Route path="/matches" component={MatchesPage} />}
             {!isEmpty(user) && <Route path="/ranking" component={RankingPage} />}
             {!isEmpty(user) && <Route path="/groups" component={GroupsPage} />}
-            {!isEmpty(user) && <Route path="/creategroup" component={CreateGroupPage} />}
-            {!isEmpty(user) && <Route path="/admingroups" component={AdminGroupsPage} />}
-
-            {/* Route accessible avec presence dans une tribu */}
 
             {/* Route accessible pour admin */}
             {!isEmpty(user) &&
