@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
         ...state,
         groupapply: {
           status: 'success',
-          name: action.name,
+          group: action.group,
         },
       }
     case RESET_GROUP_APPLY_STATUS:

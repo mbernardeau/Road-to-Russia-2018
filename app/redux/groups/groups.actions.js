@@ -14,16 +14,36 @@ export const createGroup = group => (dispatch, getState) => {
       createdBy: userId,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       joinKey: randomstring.generate(10),
-      members: {
-        [userId]: true,
-      },
     })
     .then(docRef => docRef.get())
     .then(doc => {
-      const newGroup = doc.data()
       const { id } = doc
-      dispatch(groupsReducer.add({ ...newGroup, id }))
-      dispatch(createGroupSuccess(newGroup))
+
+      if (group.price > 0) {
+        firebase
+          .firestore()
+          .collection('groups')
+          .doc(id)
+          .update({
+            [`awaitingMembers.${userId}`]: true,
+          })
+          .then(() => {
+            dispatch(fetchGroupById(id))
+            dispatch(createGroupSuccess(group))
+          })
+      } else {
+        firebase
+          .firestore()
+          .collection('groups')
+          .doc(id)
+          .update({
+            [`members.${userId}`]: true,
+          })
+          .then(() => {
+            dispatch(fetchGroupById(id))
+            dispatch(createGroupSuccess(group))
+          })
+      }
     })
 }
 
@@ -120,7 +140,7 @@ export const applyInGroup = code => (dispatch, getState) => {
               [`awaitingMembers.${userId}`]: true,
             })
             .then(() => {
-              dispatch(applyGroupSuccess(group.name))
+              dispatch(applyGroupSuccess(group))
               dispatch(fetchGroupById(id))
             })
         } else {
@@ -131,7 +151,7 @@ export const applyInGroup = code => (dispatch, getState) => {
               [`members.${userId}`]: true,
             })
             .then(() => {
-              dispatch(applyGroupSuccess(group.name))
+              dispatch(applyGroupSuccess(group))
               dispatch(fetchGroupById(id))
             })
         }
@@ -148,9 +168,9 @@ export const applyGroupFailed = reason => ({
 
 export const APPLY_GROUP_SUCCESS = 'APPLY_GROUP_SUCCESS'
 
-export const applyGroupSuccess = name => ({
+export const applyGroupSuccess = group => ({
   type: APPLY_GROUP_SUCCESS,
-  name,
+  group,
 })
 
 export const CREATE_GROUP_FAILED = 'CREATE_GROUP_FAILED'

@@ -24,7 +24,7 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly when failed pro
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
@@ -61,12 +61,28 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly when success 1`
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
     >
       <React.Fragment>
+        <React.Fragment>
+          Payer 
+          € sur la
+           
+          <a
+            className="group-create-link"
+            href="https://www.paypal.com/pools/c/84gsKV8QG8"
+            target="_blank"
+            title="Site cagnotte"
+          >
+            cagnotte
+          </a>
+           
+          pour valider votre inscription !
+           
+        </React.Fragment>
         Tribu 
          créée avec la clé 
         <b />
@@ -110,12 +126,28 @@ exports[`screens/CreateGroup/GroupCreateStatus renders correctly without props 1
       "vertical": "bottom",
     }
   }
-  autoHideDuration={6000}
+  autoHideDuration={60000}
   message={
     <span
       id="message-id"
     >
       <React.Fragment>
+        <React.Fragment>
+          Payer 
+          € sur la
+           
+          <a
+            className="group-create-link"
+            href="https://www.paypal.com/pools/c/84gsKV8QG8"
+            target="_blank"
+            title="Site cagnotte"
+          >
+            cagnotte
+          </a>
+           
+          pour valider votre inscription !
+           
+        </React.Fragment>
         Tribu 
          créée avec la clé 
         <b />

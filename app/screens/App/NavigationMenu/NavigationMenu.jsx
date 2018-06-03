@@ -69,23 +69,9 @@ class NavigationMenu extends Component {
           )}
 
           {/* Route accessibles avec connexion */}
-          {!isEmpty(this.props.user) && (
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/groups')}>
-              <ListItemText primary="Rejoindre une tribu" />
-            </ListItem>
-          )}
-
-          {/* Route accessibles avec connexion */}
-          {isConnected(user) && (
-            <ListItem button onClick={this.goTo('/creategroup')}>
-              <ListItemText primary="Créer une tribu" />
-            </ListItem>
-          )}
-
-          {/* Route accessibles avec connexion */}
-          {isConnected(user) && (
-            <ListItem button onClick={this.goTo('/admingroups')}>
-              <ListItemText primary="Administrer mes tribus" />
+              <ListItemText primary="Gestion des tribus" />
             </ListItem>
           )}
 

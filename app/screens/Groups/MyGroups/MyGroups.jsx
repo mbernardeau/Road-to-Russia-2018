@@ -12,13 +12,21 @@ import TableBody from '@material-ui/core/TableBody'
 import Typography from '@material-ui/core/Typography'
 
 import GroupRow from './GroupRow'
+import DisplayPrice from './DisplayPrice'
 
 import './MyGroups.scss'
 
-const MyGroups = ({ groups }) =>
+
+
+const MyGroups = ({ groups, userId }) =>
   isEmpty(groups) ? null : (
     <Card className="my-groups-card">
-      <Typography variant="headline">Mes tribus</Typography>
+      <Typography gutterBottom variant="headline">
+        Mes tribus
+      </Typography>
+
+      {/* Composant qui s'affiche si membre en attente dans au moins un groupe */}
+      <DisplayPrice groups={groups} userId={userId} />
 
       <Table>
         <TableHead>
@@ -35,6 +43,7 @@ const MyGroups = ({ groups }) =>
 
 MyGroups.propTypes = {
   groups: PropTypes.objectOf(PropTypes.shape({})),
+  userId: PropTypes.string.isRequired,
 }
 
 export default MyGroups

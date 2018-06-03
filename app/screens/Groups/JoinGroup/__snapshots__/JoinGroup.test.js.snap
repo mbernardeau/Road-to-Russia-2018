@@ -15,20 +15,21 @@ exports[`screens/JoinGroup renders correctly 1`] = `
     gutterBottom={true}
     variant="subheading"
   >
-    Rejoignez une tribu pour vous confrontez à vos amis, collègues, familles...
+    Rejoignez une tribu pour vous confrontez à vos amis, collègues, famille...
   </Typography>
-  <CardContent>
-    <Typography
-      gutterBottom={true}
-      variant="caption"
-    >
-      Entrez le code qui vous a été fourni par l'administrateur de la tribu
-    </Typography>
+  <br />
+  <Typography
+    variant="caption"
+  >
+    Entrez le code qui vous a été fourni par l'administrateur de la tribu.
+  </Typography>
+  <CardContent
+    className="join-group-content"
+  >
     <FormControl>
       <TextField
         id="join-group-code"
         label="Code"
-        margin="normal"
         onChange={[Function]}
         required={true}
         value=""
