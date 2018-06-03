@@ -110,6 +110,7 @@ Match.defaultProps = {
   match: {},
   teamA: {},
   teamB: {},
+  bet: empty,
 }
 
 Match.propTypes = {
@@ -130,10 +131,6 @@ Match.propTypes = {
     betTeamB: PropTypes.number,
   }),
   saveBet: PropTypes.func.isRequired,
-}
-
-Match.defaultProps = {
-  bet: empty,
 }
 
 export default Match
