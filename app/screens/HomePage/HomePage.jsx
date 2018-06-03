@@ -11,7 +11,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from 'material-ui/Button'
+import Button from '@material-ui/core/Button'
 
 import EventAvailableIcon from '@material-ui/icons/EventAvailable'
 import PollIcon from '@material-ui/icons/Poll'
@@ -23,6 +23,7 @@ import './HomePage.scss'
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class HomePage extends React.PureComponent {
+
   render() {
     const { history } = this.props
     return (
@@ -36,7 +37,7 @@ export default class HomePage extends React.PureComponent {
           <br />
           Fans de foot aux grands coeurs, le site s&apos;engage à reverser 50% des gains à
           l&apos;association humanitaire{' '}
-          <a title="Site PAM" href="https://pourunailleursmeilleur.wordpress.com/">
+          <a title="Site PAM" href="https://pourunailleursmeilleur.wordpress.com/" target="_blank" >
             PAM - Pour un Ailleurs Meilleur
           </a>.
         </p>

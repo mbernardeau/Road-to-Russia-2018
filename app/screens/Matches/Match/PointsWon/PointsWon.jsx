@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import InfoIcon from '@material-ui/icons/Info'
-import Typography from 'material-ui/Typography'
-import Tooltip from 'material-ui/Tooltip'
+import Typography from '@material-ui/core/Typography'
+import Tooltip from '@material-ui/core/Tooltip'
 import isNumber from 'lodash/isNumber'
 
 import './PointsWon.scss'

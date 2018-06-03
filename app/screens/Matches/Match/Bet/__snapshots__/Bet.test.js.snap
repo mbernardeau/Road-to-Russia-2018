@@ -7,11 +7,9 @@ exports[`screens/Match/Bet renders correctly 1`] = `
   <div
     className="bet-title"
   >
-    <img
-      alt="ru"
+    <Flag
       className="bet-flag"
-      src="IMAGE_MOCK"
-      style={undefined}
+      country="ru"
     />
     <div
       className="team-name"
@@ -23,7 +21,6 @@ exports[`screens/Match/Bet renders correctly 1`] = `
     className="bet-select-container"
   >
     <Select
-      disabled={undefined}
       onChange={[MockFunction]}
       renderValue={[Function]}
       type="number"

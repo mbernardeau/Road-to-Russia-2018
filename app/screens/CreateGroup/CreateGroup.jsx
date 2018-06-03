@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from 'material-ui/Button'
-import Card from 'material-ui/Card'
-import CardActions from 'material-ui/Card/CardActions'
-import CardContent from 'material-ui/Card/CardContent'
-import { FormControl, FormHelperText } from 'material-ui/Form'
-import TextField from 'material-ui/TextField'
-import Typography from 'material-ui/Typography'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import FormControl from '@material-ui/core/FormControl'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 
 import CurrencyFormat from './CurrencyFormat'
 

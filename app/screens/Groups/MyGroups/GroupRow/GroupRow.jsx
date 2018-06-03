@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Avatar from 'components/Avatar'
-import { TableCell, TableRow } from 'material-ui/Table'
+import TableCell from '@material-ui/core/TableCell'
+import TableRow from '@material-ui/core/TableRow'
 
 import GroupStatus from './GroupStatus'
 

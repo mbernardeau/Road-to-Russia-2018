@@ -24,11 +24,7 @@ exports[`screens/JoinGroup renders correctly 1`] = `
     >
       Entrez le code qui vous a été fourni par l'administrateur de la tribu
     </Typography>
-    <div
-      className="MuiFormControl-root-1"
-      onBlur={[Function]}
-      onFocus={[Function]}
-    >
+    <FormControl>
       <TextField
         id="join-group-code"
         label="Code"
@@ -37,7 +33,7 @@ exports[`screens/JoinGroup renders correctly 1`] = `
         required={true}
         value=""
       />
-    </div>
+    </FormControl>
   </CardContent>
   <CardActions>
     <Button

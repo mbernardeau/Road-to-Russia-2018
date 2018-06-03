@@ -4,10 +4,10 @@ import moment from 'moment'
 
 import Match from './Match'
 
-jest.mock('material-ui/Card', () => 'Card')
-jest.mock('material-ui/Card/CardContent', () => 'CardContent')
+jest.mock('@material-ui/core/Card', () => 'Card')
+jest.mock('@material-ui/core/CardContent', () => 'CardContent')
 
-jest.mock('material-ui/Divider', () => 'Divider')
+jest.mock('@material-ui/core/Divider', () => 'Divider')
 
 jest.mock('./Bet', () => 'Bet')
 jest.mock('./ValidIcon', () => 'Bet')

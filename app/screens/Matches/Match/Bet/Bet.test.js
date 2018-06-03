@@ -3,8 +3,9 @@ import renderer from 'react-test-renderer'
 
 import Bet from './Bet'
 
-jest.mock('material-ui/Select', () => 'Select')
-jest.mock('material-ui/Menu', () => ({ MenuItem: 'MenuItem' }))
+jest.mock('@material-ui/core/Select', () => 'Select')
+jest.mock('@material-ui/core/MenuItem', () => 'MenuItem')
+jest.mock('components/Flag', () => 'Flag')
 
 describe('screens/Match/Bet', () => {
   const props = {

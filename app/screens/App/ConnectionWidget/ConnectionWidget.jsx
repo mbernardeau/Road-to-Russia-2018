@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { isEmpty } from 'react-redux-firebase'
 import PropTypes from 'prop-types'
-import Button from 'material-ui/Button'
-import Dialog from 'material-ui/Dialog'
+import Button from '@material-ui/core/Button'
+import Dialog from '@material-ui/core/Dialog'
 import ConnectionModal from '../ConnectionModal'
 import User from './User'
 

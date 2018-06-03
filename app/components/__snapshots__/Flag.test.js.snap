@@ -3,9 +3,7 @@
 exports[`components/Flag renders correctly 1`] = `
 <img
   alt="ru"
-  className={undefined}
   src="mock_image"
-  style={undefined}
 />
 `;
 

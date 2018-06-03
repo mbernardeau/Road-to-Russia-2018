@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from 'material-ui/Button'
+import Button from '@material-ui/core/Button'
 import FaGoogle from 'react-icons/lib/fa/google'
 import FaFacebook from 'react-icons/lib/fa/facebook'
-import { DialogContent, DialogTitle } from 'material-ui/Dialog'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
 
 import './ConnectionModal.scss'
 
