@@ -38,7 +38,7 @@ const GroupApplyStatus = ({ status,  group: { name, price }, reason, handleClose
                 >
                   cagnotte
                 </a>{' '}
-                pour valider votre inscription !{' '}
+                pour valider votre inscription !
               </Fragment>
             )}
           </Fragment>

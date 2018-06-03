@@ -35,7 +35,7 @@ const GroupCreateStatus = ({ status, group: { name, joinKey, price }, reason, ha
                 >
                   cagnotte
                 </a>{' '}
-                pour valider votre inscription !{' '}
+                pour valider votre inscription !
               </Fragment>
             )}
             Tribu {name} créée avec la clé <b>{joinKey}</b>.
