@@ -56,7 +56,6 @@ export default class HomePage extends React.PureComponent {
           </div>
           {!isEmpty(user) && (
             <Fragment>
-              {' '}
               <div className="home-button-panel">
                 <p>Tous vos paris : </p>
                 <Button
