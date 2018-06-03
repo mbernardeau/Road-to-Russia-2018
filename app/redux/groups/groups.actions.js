@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import randomstring from 'randomstring'
+import { isEmpty } from 'react-redux-firebase'
 import { getUserId } from '../user'
 import groupsReducer from './groups'
 
@@ -57,7 +58,7 @@ export const fetchGroupsContainingAwaitingMember = () => dispatch => {
         const group = doc.data()
 
         // On integre seulement ceux qui contiennent des membres en attente
-        if (group.awaitingMembers && Object.keys(group.awaitingMembers).length > 0) {
+        if (!isEmpty(group.awaitingMembers)) {
           dispatch(groupsReducer.addOrUpdate({ id: doc.id, ...doc.data() }))
         }
       })

@@ -33,13 +33,17 @@ class ValidInscriptionRow extends Component {
   }
 }
 
+ValidInscriptionRow.defaultProps = {
+  price: 0,
+}
+
 ValidInscriptionRow.propTypes = {
   user: PropTypes.shape({
     displayName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
   }),
   name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.number,
   validApply: PropTypes.func.isRequired,
 }
 

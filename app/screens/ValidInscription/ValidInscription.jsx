@@ -8,7 +8,6 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import Typography from '@material-ui/core/Typography'
-import random from 'lodash/random'
 import map from 'lodash/map'
 
 import ValidInscriptionRow from './ValidInscriptionRow'
@@ -37,7 +36,7 @@ const ValidInscription = ({ groups }) => (
         <TableBody>
           {map(groups, group =>
             map(group.awaitingMembers, (member, key) => (
-              <ValidInscriptionRow key={random(0, 1000000000)} {...group} userId={key} />
+              <ValidInscriptionRow key={`${group.id}${key}`} {...group} userId={key} />
             )),
           )}
         </TableBody>
