@@ -12,33 +12,18 @@ import { isEmpty } from 'react-redux-firebase'
 
 import WorldCupImg from 'assets/2018_FIFA_WC.svg'
 
-const styles = {
-  image: {
-    width: '100%',
-    marginBottom: 3,
-  },
-}
+import './NavigationMenu.scss'
 
-export default class NavigationMenu extends Component {
-  static propTypes = {
-    open: PropTypes.bool.isRequired,
-    closeMenu: PropTypes.func.isRequired,
-    history: PropTypes.shape({
-      location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-      }).isRequired,
-      push: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      admin: PropTypes.bool,
-    }),
-  }
+const isConnected = user => !isEmpty(user)
+const isAdmin = user => isConnected(user) && user.admin
 
+class NavigationMenu extends Component {
   goTo = to => () => {
-    if (this.props.history.location.pathname !== to) {
-      this.props.history.push(to)
+    const { history, closeMenu } = this.props
+    if (history.location.pathname !== to) {
+      history.push(to)
     }
-    this.props.closeMenu()
+    closeMenu()
   }
 
   openPAMTab = () => {
@@ -47,41 +32,41 @@ export default class NavigationMenu extends Component {
   }
 
   render() {
+    const { user } = this.props
     return (
       <Drawer open={this.props.open} onClose={() => this.props.closeMenu()}>
         <List>
           {/* Route accessibles sans connexion */}
           <ListItem button onClick={this.goTo('/')}>
-            <img src={WorldCupImg} style={styles.image} alt="Accueil" />
+            <img src={WorldCupImg} className="navigation-menu-image" alt="Accueil" />
           </ListItem>
           <Divider />
 
-          {/* Route accessibles sans connexion (Doublon page d'acceuil) */}
+          {/* Route accessibles sans connexion (Doublon page d'accueil) */}
           <ListItem button onClick={this.goTo('/')}>
-            <ListItemText primary="Acceuil" />
+            <ListItemText primary="Accueil" />
           </ListItem>
 
           {/* Route accessibles avec presence dans une tribu */}
-          {!isEmpty(this.props.user) && (
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/matches')}>
               <ListItemText primary="Pariez" />
             </ListItem>
           )}
 
           {/* Route accessibles avec presence dans une tribu */}
-          {!isEmpty(this.props.user) && (
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/ranking')}>
               <ListItemText primary="Classement" />
             </ListItem>
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) &&
-            this.props.user.admin && (
+          {isAdmin(user) && (
             <ListItem button onClick={this.goTo('/matchesvalidation')}>
               <ListItemText primary="Validation des matchs" />
             </ListItem>
-          )} 
+          )}
 
           {/* Route accessibles avec connexion */}
           {!isEmpty(this.props.user) && (
@@ -91,22 +76,21 @@ export default class NavigationMenu extends Component {
           )}
 
           {/* Route accessibles avec connexion */}
-          {!isEmpty(this.props.user) && (
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/creategroup')}>
               <ListItemText primary="Créer une tribu" />
             </ListItem>
           )}
 
           {/* Route accessibles avec connexion */}
-          {!isEmpty(this.props.user) && (
+          {isConnected(user) && (
             <ListItem button onClick={this.goTo('/admingroups')}>
               <ListItemText primary="Administrer mes tribus" />
             </ListItem>
           )}
 
           {/* Route accessible pour admin seulement */}
-          {!isEmpty(this.props.user) &&
-            this.props.user.admin && (
+          {isAdmin(user) && (
             <ListItem button onClick={this.goTo('/validinscription')}>
               <ListItemText primary="Valider l'inscription d'un membre" />
             </ListItem>
@@ -131,3 +115,19 @@ export default class NavigationMenu extends Component {
     )
   }
 }
+
+NavigationMenu.propTypes = {
+  open: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired,
+    }).isRequired,
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  user: PropTypes.shape({
+    admin: PropTypes.bool,
+  }),
+}
+
+export default NavigationMenu
