@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer'
 import MyGroups from './MyGroups'
 
 jest.mock('@material-ui/core/Card', () => 'Card')
+jest.mock('@material-ui/core/CardContent', () => 'CardContent')
 jest.mock('@material-ui/core/Table', () => 'Table')
 jest.mock('@material-ui/core/TableBody', () => 'TableBody')
 jest.mock('@material-ui/core/TableCell', () => 'TableCell')
@@ -17,6 +18,7 @@ describe('Groups/MyGroups', () => {
   it('renders correctly when no group joined', () => {
     const props = {
       groups: {},
+      userId: 'myid',
     }
 
     const tree = renderer.create(<MyGroups {...props} />).toJSON()
@@ -27,6 +29,7 @@ describe('Groups/MyGroups', () => {
       groups: {
         idGroup1: { name: 'supergroupe' },
       },
+      userId: 'myid',
     }
 
     const tree = renderer.create(<MyGroups {...props} />).toJSON()

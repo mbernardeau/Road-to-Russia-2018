@@ -18,27 +18,32 @@ exports[`Groups/MyGroups renders correctly when a group is joined 1`] = `
         },
       }
     }
+    userId="myid"
   />
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>
-          Nom de la tribu
-        </TableCell>
-        <TableCell>
-          Créateur
-        </TableCell>
-        <TableCell>
-          Statut
-        </TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <GroupRow
-        name="supergroupe"
-      />
-    </TableBody>
-  </Table>
+  <CardContent
+    className="my-groups-card-content"
+  >
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>
+            Nom de la tribu
+          </TableCell>
+          <TableCell>
+            Créateur
+          </TableCell>
+          <TableCell>
+            Statut
+          </TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <GroupRow
+          name="supergroupe"
+        />
+      </TableBody>
+    </Table>
+  </CardContent>
 </Card>
 `;
 
