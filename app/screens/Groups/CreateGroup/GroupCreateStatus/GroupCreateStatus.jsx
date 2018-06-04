@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import Snackbar from '@material-ui/core/Snackbar'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
@@ -36,15 +35,10 @@ const GroupCreateStatus = ({ status, group: { name, joinKey, price }, reason, ha
                 >
                   cagnotte
                 </a>{' '}
-                pour valider votre inscription !{' '}
+                pour valider votre inscription !
               </Fragment>
             )}
-            Tribu {name} créée avec la clé <b>{joinKey}</b> &nbsp;<Link
-              className="group-create-link"
-              to="/admingroups"
-            >
-              En voir plus
-            </Link>
+            Tribu {name} créée avec la clé <b>{joinKey}</b>.
           </Fragment>
         )}
       </span>
