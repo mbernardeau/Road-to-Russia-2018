@@ -87,7 +87,6 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly when success 1
           </a>
            
           pour valider votre inscription !
-           
         </React.Fragment>
       </React.Fragment>
     </span>
@@ -146,7 +145,6 @@ exports[`screens/JoinGroup/GroupApplyOkSnackbar renders correctly without props 
           </a>
            
           pour valider votre inscription !
-           
         </React.Fragment>
       </React.Fragment>
     </span>
