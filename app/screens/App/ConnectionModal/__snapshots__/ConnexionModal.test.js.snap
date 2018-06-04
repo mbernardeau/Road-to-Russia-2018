@@ -24,6 +24,20 @@ Array [
       <FaFacebook />
         Connexion avec Facebook
     </Button>
+    <br />
+    <p
+      className="MuiTypography-root-1 MuiTypography-body1-10 MuiTypography-gutterBottom-18"
+    >
+      En vous connectant, vous déclarez accepter la 
+      <a
+        href="https://github.com/mbernardeau/Road-to-Russia-2018/blob/master/confidentialite.md"
+        target="_blank"
+      >
+        politique de confidentialité
+      </a>
+       
+      du site.
+    </p>
   </DialogContent>,
 ]
 `;

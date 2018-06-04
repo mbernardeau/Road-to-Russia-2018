@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { isEmpty } from 'react-redux-firebase'
 
 import WorldCupImg from 'assets/2018_FIFA_WC.svg'
+import { openPAMTab } from '../../../utils'
 
 import './NavigationMenu.scss'
 
@@ -24,11 +25,6 @@ class NavigationMenu extends Component {
       history.push(to)
     }
     closeMenu()
-  }
-
-  openPAMTab = () => {
-    const win = window.open('https://pourunailleursmeilleur.wordpress.com/', '_blank')
-    win.focus()
   }
 
   render() {
@@ -93,7 +89,7 @@ class NavigationMenu extends Component {
           </ListItem>
 
           {/* Routes accessibles sans connexion */}
-          <ListItem button onClick={this.openPAMTab}>
+          <ListItem button onClick={openPAMTab}>
             <ListItemText primary="L'association PAM" />
           </ListItem>
         </List>

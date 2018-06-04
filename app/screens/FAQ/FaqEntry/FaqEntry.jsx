@@ -21,7 +21,7 @@ const FaqEntry = ({ question, answer }) => (
 
 FaqEntry.propTypes = {
   question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.node.isRequired,
 }
 
 export default FaqEntry
