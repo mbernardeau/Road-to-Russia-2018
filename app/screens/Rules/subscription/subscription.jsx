@@ -16,7 +16,7 @@ const Subscription = () => (
       activer son compte sur le site. 50 % du prix est reversé à l’association à but humanitaire
       PAM, et les 50 % restants pour la TRIBU choisie.
     </p>
-    <Typography variant="display1">Date de validation des Pronostiques</Typography>
+    <Typography variant="display1">Date de validation des pronostics</Typography>
     <p>
       <b>
         Les pronostics pour chaque match doivent être remplis sur le site avant le début de ceux-ci.
