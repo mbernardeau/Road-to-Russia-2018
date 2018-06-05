@@ -12,9 +12,9 @@ const Playoff = () => (
         la phase de groupe, à un détail près :
         <b> le score final est celui au bout de 90 minutes. </b>
         À ce pronostic, on ajoute le fait
-        <b>qu’il faut donner le vainqueur en cas de prolongation, voire tirs au but</b>. On a donc
-        pour résumer un pronostic à faire sur le score final (comme durant la phase de groupe) et un
-        pronostic à faire sur le vainqueur de la partie.
+        <b>&nbsp;qu’il faut donner le vainqueur en cas de prolongation, voire tirs au but</b>. On a
+        donc pour résumer un pronostic à faire sur le score final (comme durant la phase de groupe)
+        et un pronostic à faire sur le vainqueur de la partie.
       </p>
       <p>
         <u>Répartition des points pour la phase finale</u> :
