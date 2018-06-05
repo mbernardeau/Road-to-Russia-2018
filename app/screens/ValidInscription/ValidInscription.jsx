@@ -22,7 +22,7 @@ const ValidInscription = ({ groups }) => (
     <Typography color="textSecondary">
       Retrouvez ici les membres dont il reste encore à valider l&apos;inscription
     </Typography>
-    <CardContent>
+    <CardContent className="valid-inscription-content">
       <Table>
         <TableHead>
           <TableRow>
