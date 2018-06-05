@@ -11,10 +11,10 @@ const Playoff = () => (
         Le fonctionnement des paris à partir de ce niveau de la compétition est identique à celui de
         la phase de groupe, à un détail près :
         <b> le score final est celui au bout de 90 minutes. </b>
-        A ce pronostique, on ajoute le fait
-        <b>qu’il faut donner le vainqueur en cas de prolongation, voire tirs au but</b>. On a donc
-        pour résumer un pronostique à faire sur le score final (comme durant la phase de groupe) et
-        un pronostique à faire sur le vainqueur de la partie.
+        À ce pronostic, on ajoute le fait
+        <b>&nbsp;qu’il faut donner le vainqueur en cas de prolongation, voire tirs au but</b>. On a
+        donc pour résumer un pronostic à faire sur le score final (comme durant la phase de groupe)
+        et un pronostic à faire sur le vainqueur de la partie.
       </p>
       <p>
         <u>Répartition des points pour la phase finale</u> :
