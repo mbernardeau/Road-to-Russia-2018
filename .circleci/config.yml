@@ -30,14 +30,14 @@ jobs:
             name: Check firebase-tools version
             command: firebase --version
         - run:
+            name: Update lockfile for Greenkeeper branches
+            command: greenkeeper-lockfile-update
+        - run:
             name: npm install
             command: npm ci
         - run:
             name: npm install for firebase functions
             command: cd functions && npm ci
-        - run:
-            name: Update lockfile for Greenkeeper branches
-            command: greenkeeper-lockfile-update
         - save_cache:
             key: dependency-cache-{{ checksum "package.json" }}
             paths:
