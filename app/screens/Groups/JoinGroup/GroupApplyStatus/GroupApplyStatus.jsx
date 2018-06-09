@@ -7,7 +7,7 @@ import CloseIcon from '@material-ui/icons/Close'
 
 import './GroupApplyStatus.scss'
 
-const GroupApplyStatus = ({ status,  group: { name, price }, reason, handleClose }) => (
+const GroupApplyStatus = ({ status, group: { name, price }, reason, handleClose }) => (
   <Snackbar
     anchorOrigin={{
       vertical: 'bottom',
@@ -18,7 +18,7 @@ const GroupApplyStatus = ({ status,  group: { name, price }, reason, handleClose
     onClose={handleClose}
     SnackbarContentProps={{
       'aria-describedby': 'message-id',
-      'className': 'group-apply-snackbar',
+      className: 'group-apply-snackbar',
     }}
     message={
       <span id="message-id">

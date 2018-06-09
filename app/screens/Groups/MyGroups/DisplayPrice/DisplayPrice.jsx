@@ -8,7 +8,12 @@ import { map, filter, sum } from 'lodash'
 import Typography from '@material-ui/core/Typography'
 
 const DisplayPrice = ({ groups, userId }) => {
-  const somme = sum(map(filter(groups, ({ awaitingMembers }) => !isEmpty(awaitingMembers) && awaitingMembers[userId]), 'price'))
+  const somme = sum(
+    map(
+      filter(groups, ({ awaitingMembers }) => !isEmpty(awaitingMembers) && awaitingMembers[userId]),
+      'price',
+    ),
+  )
 
   if (somme === 0) return null
 

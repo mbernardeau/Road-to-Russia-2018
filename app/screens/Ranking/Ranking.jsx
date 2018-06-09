@@ -26,9 +26,7 @@ class Ranking extends Component {
         <div className="ranking-page-div">
           <p>
             Pour pouvoir vous visualiser dans le classement, il vous faut tout d&apos;abord{' '}
-            <Link to="/groups">
-              créer ou rejoindre une tribu
-            </Link>
+            <Link to="/groups">créer ou rejoindre une tribu</Link>
             . Si cela est dejà fait, vérifier que vous avez bien payé le droit d&apos;entrée sur la{' '}
             <a
               title="Site cagnotte"
