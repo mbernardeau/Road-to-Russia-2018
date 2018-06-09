@@ -17,8 +17,6 @@ import DisplayPrice from './DisplayPrice'
 
 import './MyGroups.scss'
 
-
-
 const MyGroups = ({ groups, userId }) =>
   isEmpty(groups) ? null : (
     <Card className="my-groups-card">
