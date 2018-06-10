@@ -11,10 +11,12 @@ import moment from 'moment'
 
 import Odds from './Odds'
 import Bet from './Bet'
+import ChoiceWinner from './ChoiceWinner'
 import ValidIcon from './ValidIcon'
 import MatchInfos from './MatchInfos'
 import Scores from './Scores'
 import PointsWon from './PointsWon'
+import PointsWonPhase from './PointsWonPhase'
 
 import './Match.scss'
 
@@ -39,11 +41,22 @@ class Match extends Component {
 
   isBetValid = () => {
     const scoreValidator = score => isNumber(score) && score >= 0
+    const winnerValidator = winner => winner && (winner === 'A' || winner === 'B')
 
-    return conformsTo(this.state.bet, {
-      betTeamA: scoreValidator,
-      betTeamB: scoreValidator,
-    })
+    if (
+      !conformsTo(this.state.bet, {
+        betTeamA: scoreValidator,
+        betTeamB: scoreValidator,
+      })
+    )
+      return false
+
+    return this.props.match.phase === '0'
+      ? true
+      : this.state.bet.betTeamA !== this.state.bet.betTeamB ||
+          conformsTo(this.state.bet, {
+            betWinner: winnerValidator,
+          })
   }
 
   handleChange = team => ({ target: { value } }) => {
@@ -52,6 +65,18 @@ class Match extends Component {
         bet: {
           ...this.state.bet,
           [`betTeam${team}`]: value,
+        },
+      },
+      this.saveBetIfValid,
+    )
+  }
+
+  handleWinnerChoiceChange = ({ target: { value } }) => {
+    this.setState(
+      {
+        bet: {
+          ...this.state.bet,
+          [`betWinner`]: value,
         },
       },
       this.saveBetIfValid,
@@ -67,7 +92,8 @@ class Match extends Component {
   betSaved = () =>
     this.isBetValid() &&
     this.state.bet.betTeamA === this.props.bet.betTeamA &&
-    this.state.bet.betTeamB === this.props.bet.betTeamB
+    this.state.bet.betTeamB === this.props.bet.betTeamB &&
+    this.state.bet.betWinner === this.props.bet.betWinner
 
   handleTeamAChange = this.handleChange('A')
   handleTeamBChange = this.handleChange('B')
@@ -77,61 +103,72 @@ class Match extends Component {
     const { bet } = this.state
     const past = moment(match.dateTime).isBefore(new Date())
 
-    return match.phase === '0' ? (
-      <Fragment>
-        <Card className="match-card">
-          <CardContent className="match-content">
-            <div className="match-teams">
-              <Bet
-                team={teamA}
-                betValue={bet.betTeamA}
-                onBetValueUpdated={this.handleTeamAChange}
-                past={past}
-              />
-              <Bet
-                team={teamB}
-                betValue={bet.betTeamB}
-                onBetValueUpdated={this.handleTeamBChange}
-                past={past}
-              />
-            </div>
-            {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
-            <Scores {...match} />
-            <PointsWon {...match} {...bet} />
-            <Divider />
-            <MatchInfos match={match} />
-            {!past && <ValidIcon valid={this.betSaved()} />}
-          </CardContent>
-        </Card>
-      </Fragment>
-    ) : match.display && (
-      <Fragment>
-        <Card className="match-card">
-          <CardContent className="match-content">
-            <div className="match-teams">
-              <Bet
-                team={teamA}
-                betValue={bet.betTeamA}
-                onBetValueUpdated={this.handleTeamAChange}
-                past={past}
-              />
-              <Bet
-                team={teamB}
-                betValue={bet.betTeamB}
-                onBetValueUpdated={this.handleTeamBChange}
-                past={past}
-              />
-            </div>
-            {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
-            <Scores {...match} />
-            <PointsWon {...match} {...bet} />
-            <Divider />
-            <MatchInfos match={match} />
-            {!past && <ValidIcon valid={this.betSaved()} />}
-          </CardContent>
-        </Card>
-      </Fragment>
-    )
+    return match.phase === '0'
+      ?  (
+        <Fragment>
+          <Card className="match-card">
+            <CardContent className="match-content">
+              <div className="match-teams">
+                <Bet
+                  team={teamA}
+                  betValue={bet.betTeamA}
+                  onBetValueUpdated={this.handleTeamAChange}
+                  past={past}
+                />
+                <Bet
+                  team={teamB}
+                  betValue={bet.betTeamB}
+                  onBetValueUpdated={this.handleTeamBChange}
+                  past={past}
+                />
+              </div>
+              {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
+              <Scores {...match} />
+              <PointsWon {...match} {...bet} />
+              <Divider />
+              <MatchInfos match={match} />
+              {!past && <ValidIcon valid={this.betSaved()} />}
+            </CardContent>
+          </Card>
+        </Fragment>
+      )
+      : match.display && (
+        <Fragment>
+          <Card className="match-card">
+            <CardContent className="match-content">
+              <div className="match-teams">
+                <Bet
+                  team={teamA}
+                  betValue={bet.betTeamA}
+                  onBetValueUpdated={this.handleTeamAChange}
+                  past={past}
+                />
+                <Bet
+                  team={teamB}
+                  betValue={bet.betTeamB}
+                  onBetValueUpdated={this.handleTeamBChange}
+                  past={past}
+                />
+              </div>
+              {bet.betTeamA && bet.betTeamB && bet.betTeamA === bet.betTeamB ? (
+                <ChoiceWinner
+                  teamA={teamA}
+                  teamB={teamB}
+                  betValue={bet.betWinner}
+                  onBetValueUpdated={this.handleWinnerChoiceChange}
+                  past={past}
+                />
+              ) : null}
+              {!past && <Odds {...match.odds} phase={match.phase} teamA={teamA} teamB={teamB} />}
+              <Scores {...match} />
+              <PointsWonPhase {...match} {...bet} />
+              <Divider />
+              <MatchInfos match={match} />
+              {!past && <ValidIcon valid={this.betSaved()} />}
+            </CardContent>
+          </Card>
+        </Fragment>
+      )
   }
 }
 
@@ -159,6 +196,7 @@ Match.propTypes = {
   bet: PropTypes.shape({
     betTeamA: PropTypes.number,
     betTeamB: PropTypes.number,
+    betWinner: PropTypes.string,
   }),
   saveBet: PropTypes.func.isRequired,
 }
