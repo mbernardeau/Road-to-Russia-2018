@@ -8,6 +8,8 @@ import Tooltip from '@material-ui/core/Tooltip'
 
 import find from 'lodash/find'
 import { map } from 'lodash'
+import moment from 'moment'
+import { COMPETITION_START_DATE } from '../../../App/constants'
 
 import './WinnerChoice.scss'
 
@@ -22,6 +24,7 @@ const WinnerChoice = ({ teams, userTeam, onValueChange }) => (
         inputProps={{
           name: 'userTeam',
         }}
+        disabled={moment().isAfter(COMPETITION_START_DATE)}
       >
         {map(teams, ({ name, id }) => (
           <MenuItem key={id} value={id}>
