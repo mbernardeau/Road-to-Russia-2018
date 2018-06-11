@@ -53,6 +53,7 @@ Les points sont attribués pour chaque match comme ceci :
 | 8èmes de finale | 5 points | 2 points | 0 points | +2 points |
 | 4rts de finale | 8 points | 3 points | 0 points | +3 points |
 | Demi-finale | 13 points | 5 points | 0 points | +5 points |
+| 3ieme place | 15 points | 6 points | 0 points | +6 points |
 | Finale | 22 points | 8 points | 0 points | +8 points |
 
 **Exemple pour un 4rts de finale :**
