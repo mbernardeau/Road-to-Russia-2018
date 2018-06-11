@@ -15,9 +15,9 @@ const findWinner = (scoreA, scoreB) => {
 }
 
 const findFinalWinner = (scoreA, scoreB, winner) => {
-  if (scoreA > scoreB) return 'P1'
+  if (scoreA > scoreB) return 'A'
   if (scoreA === scoreB) return winner
-  return 'P2'
+  return 'B'
 }
 
 const getMessage = (goodScore, goodWinner, finalWinner, hasBet) => {
@@ -71,11 +71,7 @@ const getOdd = (odds, winner) =>
     N: odds.N,
   }[winner])
 
-const getOddFinalWinner = (odds, winner) =>
-  ({
-    P1: odds.P1,
-    P2: odds.P2,
-  }[winner])
+const getOddFinalWinner = (odds, winner) => (winner === 'A' ? odds.P1 : odds.P2)
 
 const getCalculus = (phase, odds, winner, matchFinalWinner, finalWinner, goodScore, goodWinner) => {
   const odd = getOdd(odds, winner)

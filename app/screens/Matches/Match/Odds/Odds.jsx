@@ -13,60 +13,48 @@ const getColor = value => {
   return `#${toHex(r)}${toHex(g)}00`
 }
 
-const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) =>
-  phase && phase === '0' ? (
-    <Fragment>
-      <div className="odds-container">
-        <Tooltip placement="right" title={`Cote de victoire de l'équipe: ${teamA.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(A) }}>
-            {A}
-          </div>
-        </Tooltip>
-        <Tooltip placement="top" title="Cote du match nul">
-          <div className="odd" style={{ backgroundColor: getColor(N) }}>
-            {N}
-          </div>
-        </Tooltip>
-        <Tooltip placement="left" title={`Cote de victoire de l'équipe: ${teamB.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(B) }}>
-            {B}
-          </div>
-        </Tooltip>
-      </div>
-    </Fragment>
-  ) : (
-    <Fragment>
-      <div className="odds-container">
-        <Tooltip placement="right" title={`Cote de victoire de l'équipe: ${teamA.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(A) }}>
-            {A}
-          </div>
-        </Tooltip>
-        <Tooltip placement="top" title="Cote du match nul">
-          <div className="odd" style={{ backgroundColor: getColor(N) }}>
-            {N}
-          </div>
-        </Tooltip>
-        <Tooltip placement="left" title={`Cote de victoire de l'équipe: ${teamB.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(B) }}>
-            {B}
-          </div>
-        </Tooltip>
-      </div>
-      <div className="odds-container">
-        <Tooltip placement="right" title={`Cote de victoire finale de l'équipe: ${teamA.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(P1) }}>
-            {P1}
-          </div>
-        </Tooltip>
-        <Tooltip placement="left" title={`Cote de victoire finale de l'équipe: ${teamB.name}`}>
-          <div className="odd" style={{ backgroundColor: getColor(P2) }}>
-            {P2}
-          </div>
-        </Tooltip>
-      </div>
-    </Fragment>
+const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
+  const oddBasis = (
+    <div className="odds-container">
+      <Tooltip placement="right" title={`Cote de victoire de l'équipe: ${teamA.name}`}>
+        <div className="odd" style={{ backgroundColor: getColor(A) }}>
+          {A}
+        </div>
+      </Tooltip>
+      <Tooltip placement="top" title="Cote du match nul">
+        <div className="odd" style={{ backgroundColor: getColor(N) }}>
+          {N}
+        </div>
+      </Tooltip>
+      <Tooltip placement="left" title={`Cote de victoire de l'équipe: ${teamB.name}`}>
+        <div className="odd" style={{ backgroundColor: getColor(B) }}>
+          {B}
+        </div>
+      </Tooltip>
+    </div>
   )
+
+  return phase &&
+    (phase === '0' ? (
+      oddBasis
+    ) : (
+      <Fragment>
+        {oddBasis}
+        <div className="odds-container">
+          <Tooltip placement="right" title={`Cote de victoire finale de l'équipe: ${teamA.name}`}>
+            <div className="odd" style={{ backgroundColor: getColor(P1) }}>
+              {P1}
+            </div>
+          </Tooltip>
+          <Tooltip placement="left" title={`Cote de victoire finale de l'équipe: ${teamB.name}`}>
+            <div className="odd" style={{ backgroundColor: getColor(P2) }}>
+              {P2}
+            </div>
+          </Tooltip>
+        </div>
+      </Fragment>
+    ))
+}
 
 Odds.propTypes = {
   P1: PropTypes.number,

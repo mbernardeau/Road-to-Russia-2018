@@ -11,8 +11,8 @@ const Scores = ({ scores }) => {
   return (
     <div className="scores-container">
       <Typography variant="display2">
-        <span className={winner === 'P1' ? 'winner' : ''}>{A}</span>&nbsp;-&nbsp;
-        <span className={winner === 'P2' ? 'winner' : ''}>{B}</span>
+        <span className={winner === 'A' ? 'winner' : ''}>{A}</span>&nbsp;-&nbsp;
+        <span className={winner === 'B' ? 'winner' : ''}>{B}</span>
       </Typography>
     </div>
   )
@@ -22,7 +22,7 @@ Scores.propTypes = {
   scores: PropTypes.shape({
     A: PropTypes.number.isRequired,
     B: PropTypes.number.isRequired,
-    winner: PropTypes.oneOf(['P1', 'P2', 'N']),
+    winner: PropTypes.oneOf(['A', 'B', 'N']),
   }),
 }
 

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import PropTypes from 'prop-types'
 
-import { conformsTo, isNumber } from 'lodash'
+import { conformsTo, isNumber, isNil } from 'lodash'
 
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -89,6 +89,9 @@ class Match extends Component {
     }
   }
 
+  displayChoiceWinner = ({ betTeamA, betTeamB }) =>
+    !isNil(betTeamA) && !isNil(betTeamB) && betTeamA === betTeamB
+
   betSaved = () =>
     this.isBetValid() &&
     this.state.bet.betTeamA === this.props.bet.betTeamA &&
@@ -103,8 +106,8 @@ class Match extends Component {
     const { bet } = this.state
     const past = moment(match.dateTime).isBefore(new Date())
 
-    return match.phase === '0'
-      ?  (
+    return (
+      (match.phase === '0' || match.display) && (
         <Fragment>
           <Card className="match-card">
             <CardContent className="match-content">
@@ -122,35 +125,8 @@ class Match extends Component {
                   past={past}
                 />
               </div>
-              {!past && <Odds {...match.odds} teamA={teamA} teamB={teamB} />}
-              <Scores {...match} />
-              <PointsWon {...match} {...bet} />
-              <Divider />
-              <MatchInfos match={match} />
-              {!past && <ValidIcon valid={this.betSaved()} />}
-            </CardContent>
-          </Card>
-        </Fragment>
-      )
-      : match.display && (
-        <Fragment>
-          <Card className="match-card">
-            <CardContent className="match-content">
-              <div className="match-teams">
-                <Bet
-                  team={teamA}
-                  betValue={bet.betTeamA}
-                  onBetValueUpdated={this.handleTeamAChange}
-                  past={past}
-                />
-                <Bet
-                  team={teamB}
-                  betValue={bet.betTeamB}
-                  onBetValueUpdated={this.handleTeamBChange}
-                  past={past}
-                />
-              </div>
-              {bet.betTeamA && bet.betTeamB && bet.betTeamA === bet.betTeamB ? (
+              {match.phase !== '0' &&
+                this.displayChoiceWinner(bet) && (
                 <ChoiceWinner
                   teamA={teamA}
                   teamB={teamB}
@@ -158,10 +134,15 @@ class Match extends Component {
                   onBetValueUpdated={this.handleWinnerChoiceChange}
                   past={past}
                 />
-              ) : null}
+              )}
               {!past && <Odds {...match.odds} phase={match.phase} teamA={teamA} teamB={teamB} />}
-              <Scores {...match} />
-              <PointsWonPhase {...match} {...bet} />
+              {past && <Scores {...match} />}
+              {past &&
+                (match.phase !== '0' ? (
+                  <PointsWon {...match} {...bet} />
+                ) : (
+                  <PointsWonPhase {...match} {...bet} />
+                ))}
               <Divider />
               <MatchInfos match={match} />
               {!past && <ValidIcon valid={this.betSaved()} />}
@@ -169,6 +150,7 @@ class Match extends Component {
           </Card>
         </Fragment>
       )
+    )
   }
 }
 
