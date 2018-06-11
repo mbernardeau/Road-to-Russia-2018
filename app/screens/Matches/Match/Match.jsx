@@ -138,7 +138,7 @@ class Match extends Component {
               {!past && <Odds {...match.odds} phase={match.phase} teamA={teamA} teamB={teamB} />}
               {past && <Scores {...match} />}
               {past &&
-                (match.phase !== '0' ? (
+                (match.phase === '0' ? (
                   <PointsWon {...match} {...bet} />
                 ) : (
                   <PointsWonPhase {...match} {...bet} />
