@@ -10,7 +10,7 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
   // Get final scores
   // odds: {1, 2, A, B, N}
   // scores: {A, B, winner}
-  const { odds, scores } = change.after.data()
+  const { odds, scores, phase } = change.after.data()
   if (
     scores === undefined ||
     scores.A === undefined ||
@@ -32,27 +32,60 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
 
       datas.forEach(doc => {
         // Get a bet
-        const { betTeamA, betTeamB, userId } = doc.data()
+        const bet = doc.data()
+        const { betTeamA, betTeamB, userId } = bet
         const betId = doc.id
         // Did the user win the bet ?
         const realScoreTeamA = scores.A
         const realScoreTeamB = scores.B
-        const betWinner = findWinner(betTeamA, betTeamB)
-        console.log(betWinner)
-        if (betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
-          // perfect match ! Four times team's odd
-          console.log('HOLY SH*T YOU WIN, you guess perfectly the score !')
-          promises.push(updateUserScore(odds, betWinner, userId, 4))
-          promises.push(updatePointsWon(odds, betWinner, betId, 4))
-        } else if (winner === betWinner) {
-          // good result ! Two times team's odd
-          console.log('You only guess the issue of the match (sucker)')
-          promises.push(updateUserScore(odds, betWinner, userId, 2))
-          promises.push(updatePointsWon(odds, betWinner, betId, 2))
+
+        if(!phase || phase === "0") {
+          console.log("Match de phase de poule")
+          const betWinner = findWinner(betTeamA, betTeamB)
+          console.log(betWinner)
+
+          if (betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
+            // perfect match ! Four times team's odd
+            console.log('HOLY SH*T YOU WIN, you guess perfectly the score !')
+            promises.push(updateUserScore(odds, betWinner, userId, 4))
+            promises.push(updatePointsWon(odds, betWinner, betId, 4))
+          } else if (winner === betWinner) {
+            // good result ! Two times team's odd
+            console.log('You only guess the issue of the match (sucker)')
+            promises.push(updateUserScore(odds, betWinner, userId, 2))
+            promises.push(updatePointsWon(odds, betWinner, betId, 2))
+          } else {
+            console.log("YOU LOSE SON, you didn't find the score neither the match issue")
+            promises.push(updateUserScore(odds, betWinner, userId, 0))
+            promises.push(updatePointsWon(odds, betWinner, betId, 0))
+          }
         } else {
-          console.log("YOU LOSE SON, you didn't find the score neither the match issue")
-          promises.push(updateUserScore(odds, betWinner, userId, 0))
-          promises.push(updatePointsWon(odds, betWinner, betId, 0))
+          console.log("Phase finale ", phase)
+          let betWinner = findWinner(betTeamA, betTeamB)
+          if(betWinner === 'N') {
+            betWinner = bet.betWinner // eslint-disable-line
+          }
+          const phaseCoeff = getPhaseCoeff(phase)
+
+          if(betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
+            if(betWinner === winner) {
+              console.log("Bon score + bon vainqueur")
+              promises.push(updateUserScore(odds, betWinner, userId, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
+              promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
+            } else {
+              console.log("Bon score + mauvais vainqueur")
+              promises.push(updateUserScore(odds, betWinner, userId, phaseCoeff.bonScore, 0))
+              promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, 0))
+            }
+          } else if (winner === betWinner) {
+            console.log("Bon vainqueur, mauvais score")
+            promises.push(updateUserScore(odds, betWinner, userId, 0, phaseCoeff.bonVainqueur))
+            promises.push(updatePointsWon(odds, betWinner, betId, 0, phaseCoeff.bonVainqueur))
+          } else {
+            console.log("Mauvais vainqueur, mauvais score")
+            promises.push(updateUserScore(odds, betWinner, userId, 0, 0))
+            promises.push(updatePointsWon(odds, betWinner, betId, 0, 0))
+          }
         }
       })
 
@@ -60,8 +93,9 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
     })
 })
 
-const updateUserScore = (odds, winner, userId, points) => {
+const updateUserScore = (odds, winner, userId, coeff, coeffVainqueur = 0) => {
   const odd = findCote(odds, winner)
+  const oddWinner = findCoteWinner(odds, winner) || 0
   const user = db.collection('users').doc(userId)
 
   console.log(`Updating user score for ${userId}`)
@@ -69,8 +103,8 @@ const updateUserScore = (odds, winner, userId, points) => {
     .runTransaction(t =>
       t.get(user).then(snapshot => {
         const oldScore = snapshot.data().score || 0
-        const newScore = oldScore + points * odd
-        console.log(`User score update ${userId} (${oldScore} + ${points} * ${odd} = ${newScore})`)
+        const newScore = oldScore + coeff * odd + coeffVainqueur * oddWinner
+        console.log(`User score update ${userId} (${oldScore} + ${coeff} * ${odd} + ${coeffVainqueur} * ${oddWinner} = ${newScore})`)
         return t.update(user, { score: newScore })
       })
     )
@@ -78,16 +112,17 @@ const updateUserScore = (odds, winner, userId, points) => {
     .catch(err => console.error(`User ${userId} score update failure:`, err))
 }
 
-const updatePointsWon = (odds, winner, id, points) => {
+const updatePointsWon = (odds, winner, id, coeff, coeffVainqueur) => {
   const odd = findCote(odds, winner)
+  const oddWinner = findCoteWinner(odds, winner) || 0
   const bets = db.collection('bets').doc(id)
 
   console.log(`Updating points won for bet ${id}`)
   return db
     .runTransaction(t =>
-      t.get(bets).then(betSnap => t.update(betSnap.ref, { pointsWon: points * odd }))
+      t.get(bets).then(betSnap => t.update(betSnap.ref, { pointsWon: coeff * odd + coeffVainqueur * oddWinner }))
     )
-    .then(() => console.log(`Bet ${id} update with ${points * odd} points`))
+    .then(() => console.log(`Bet ${id} update with ${coeff * odd + coeffVainqueur * oddWinner} points`))
     .catch(err => {
       console.error(`Bet ${id} update failure:`, err)
     })
@@ -105,3 +140,40 @@ const findCote = (odds, winner) =>
     B: odds.B,
     N: odds.N,
   }[winner])
+
+const findCoteWinner = (odds, winner) => {
+  if(winner === 'A')
+    return odds.P1
+  else if(winner === 'B')
+    return odds.P2
+  return undefined
+}
+
+const getPhaseCoeff = phase =>
+  ({
+    8: {
+      bonScore: 5,
+      bonVainqueur: 2,
+      bonVainqueurFinal: 2,
+    },
+    4: {
+      bonScore: 8,
+      bonVainqueur: 3,
+      bonVainqueurFinal: 3,
+    },
+    2: {
+      bonScore: 13,
+      bonVainqueur: 5,
+      bonVainqueurFinal: 5,
+    },
+    3: {
+      bonScore: 15,
+      bonVainqueur: 6,
+      bonVainqueurFinal: 6,
+    },
+    1: {
+      bonScore: 22,
+      bonVainqueur: 8,
+      bonVainqueurFinal: 8,
+    },
+  }[phase])
