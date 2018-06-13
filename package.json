@@ -263,7 +263,7 @@
     "prop-types": "15.6.1",
     "randomstring": "1.1.5",
     "react": "16.4.1",
-    "react-dom": "16.4.0",
+    "react-dom": "16.4.1",
     "react-helmet": "5.2.0",
     "react-hot-loader": "4.3.1",
     "react-icons": "2.2.7",
