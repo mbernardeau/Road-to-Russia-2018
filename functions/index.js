@@ -112,7 +112,7 @@ const updateUserScore = (odds, winner, userId, coeff, coeffVainqueur = 0) => {
     .catch(err => console.error(`User ${userId} score update failure:`, err))
 }
 
-const updatePointsWon = (odds, winner, id, coeff, coeffVainqueur) => {
+const updatePointsWon = (odds, winner, id, coeff, coeffVainqueur = 0) => {
   const odd = findCote(odds, winner)
   const oddWinner = findCoteWinner(odds, winner) || 0
   const bets = db.collection('bets').doc(id)
