@@ -15,13 +15,15 @@ import OwnRank from './OwnRank'
 import './GroupRanking.scss'
 
 class GroupRanking extends Component {
-  componentWillMount() {
-    this.props.load()
+  componentDidMount() {
+    const { members, load } = this.props
+    load(members)
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.members !== this.props.members) {
-      this.props.load()
+    const { members, id, load } = this.props
+    if (nextProps.members !== members || nextProps.id !== id) {
+      load(nextProps.members)
     }
   }
 
@@ -70,8 +72,10 @@ GroupRanking.propTypes = {
     }),
   ),
   userId: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   load: PropTypes.func.isRequired,
   members: PropTypes.objectOf(PropTypes.bool).isRequired,
+  selection: PropTypes.number,
 }
 
 export default GroupRanking

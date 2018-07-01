@@ -16,8 +16,11 @@ const mapState = (state, { members }) => ({
   userId: getUserId(state),
 })
 
-const mapDispatch = (dispatch, { members }) => ({
-  load: () => dispatch(fetchUsers(members)),
+const mapDispatch = dispatch => ({
+  load: members => dispatch(fetchUsers(members)),
 })
 
-export default connect(mapState, mapDispatch)(GroupRanking)
+export default connect(
+  mapState,
+  mapDispatch,
+)(GroupRanking)
