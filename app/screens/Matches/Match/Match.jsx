@@ -127,14 +127,14 @@ class Match extends Component {
               </div>
               {match.phase !== '0' &&
                 this.displayChoiceWinner(bet) && (
-                <ChoiceWinner
-                  teamA={teamA}
-                  teamB={teamB}
-                  betValue={bet.betWinner}
-                  onBetValueUpdated={this.handleWinnerChoiceChange}
-                  past={past}
-                />
-              )}
+                  <ChoiceWinner
+                    teamA={teamA}
+                    teamB={teamB}
+                    betValue={bet.betWinner}
+                    onBetValueUpdated={this.handleWinnerChoiceChange}
+                    past={past}
+                  />
+                )}
               {!past && <Odds {...match.odds} phase={match.phase} teamA={teamA} teamB={teamB} />}
               {past && <Scores {...match} />}
               {past &&

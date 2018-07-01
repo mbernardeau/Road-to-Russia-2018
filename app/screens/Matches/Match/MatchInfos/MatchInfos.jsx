@@ -12,11 +12,11 @@ const MatchInfos = ({ match, stadium }) => {
 
   return (
     <div className="match-infos-container">
-      <Tooltip title={dateTime.format('LLL')} disableTriggerTouch>
+      <Tooltip title={dateTime.format('LLL')} enterTouchDelay={0}>
         <div>{dateTime.fromNow()}</div>
       </Tooltip>
       <div>•</div>
-      <Tooltip title={<StadiumTooltip {...stadium} />} disableTriggerTouch>
+      <Tooltip title={<StadiumTooltip {...stadium} />} enterTouchDelay={0}>
         <div>{stadium.city}</div>
       </Tooltip>
       <div>•</div>

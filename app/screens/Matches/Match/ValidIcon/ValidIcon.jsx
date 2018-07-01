@@ -9,7 +9,11 @@ import ClearIcon from '@material-ui/icons/Clear'
 import './ValidIcon.scss'
 
 const ValidIcon = ({ valid }) => (
-  <Tooltip title={valid ? 'Paris enregistré' : 'Paris invalide'} placement="right">
+  <Tooltip
+    title={valid ? 'Paris enregistré' : 'Paris invalide'}
+    placement="right"
+    enterTouchDelay={0}
+  >
     <div className="tooltip-svg-container">
       {valid ? <CheckIcon className="valid-icon" /> : <ClearIcon className="invalid-icon" />}
     </div>

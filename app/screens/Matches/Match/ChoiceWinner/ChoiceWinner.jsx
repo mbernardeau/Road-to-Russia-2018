@@ -10,7 +10,12 @@ const ChoiceWinner = ({ teamA, teamB, betValue, onBetValueUpdated, past }) => (
   <div className="bet">
     <div className="bet-select-container">
       <Typography>Choix du vainqueur final en cas de match nul : </Typography>
-      <Select  className="bet-select-value" value={betValue || ''}  onChange={onBetValueUpdated} disabled={past}>
+      <Select
+        className="bet-select-value"
+        value={betValue || ''}
+        onChange={onBetValueUpdated}
+        disabled={past}
+      >
         <MenuItem value="A">{teamA.name}</MenuItem>
         <MenuItem value="B">{teamB.name}</MenuItem>
       </Select>

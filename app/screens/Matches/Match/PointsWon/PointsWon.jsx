@@ -56,7 +56,11 @@ const PointsWon = ({ pointsWon, scores, betTeamA, betTeamB, odds }) => {
         >
           {pointsWon > 0 ? '+' : ''} {pointsWon || 0} point{pointsWon > 1 ? 's' : ''}
         </Typography>
-        <Tooltip title={getCalculus(odds, matchWinner, goodScore, goodWinner)} placement="right">
+        <Tooltip
+          title={getCalculus(odds, matchWinner, goodScore, goodWinner)}
+          placement="right"
+          enterTouchDelay={0}
+        >
           <InfoIcon className="points-won-info-icon" />
         </Tooltip>
       </div>

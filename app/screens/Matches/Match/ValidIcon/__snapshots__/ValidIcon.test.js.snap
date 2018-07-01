@@ -2,6 +2,7 @@
 
 exports[`screens/Match/ValidIcon renders correctly when invalid 1`] = `
 <Tooltip
+  enterTouchDelay={0}
   placement="right"
   title="Paris invalide"
 >
@@ -17,6 +18,7 @@ exports[`screens/Match/ValidIcon renders correctly when invalid 1`] = `
 
 exports[`screens/Match/ValidIcon renders correctly when valid 1`] = `
 <Tooltip
+  enterTouchDelay={0}
   placement="right"
   title="Paris enregistré"
 >
