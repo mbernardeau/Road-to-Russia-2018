@@ -6,6 +6,8 @@ admin.initializeApp(functions.config().firebase)
 
 const db = admin.firestore()
 
+const round = (value, decimals) => Number(`${Math.round(`${value}e${decimals}`)}${`e-${decimals}`}`)
+
 exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate(change => {
   // Get final scores
   // odds: {1, 2, A, B, N}
@@ -99,7 +101,7 @@ const updateUserScore = (odds, winner, finalWinner, userId, oldBetScore = 0, coe
     .runTransaction(t =>
       t.get(user).then(snapshot => {
         const oldScore = snapshot.data().score || 0
-        const newScore = oldScore - oldBetScore + coeff * odd + coeffVainqueur * oddWinner
+        const newScore = round(oldScore - oldBetScore + coeff * odd + coeffVainqueur * oddWinner, 2)
         console.log(`User score update ${userId} (${oldScore} - ${oldBetScore} + ${coeff} * ${odd} + ${coeffVainqueur} * ${oddWinner} = ${newScore})`)
         return t.update(user, { score: newScore })
       })
@@ -116,9 +118,9 @@ const updatePointsWon = (odds, winner, finalWinner, id, coeff, coeffVainqueur = 
   console.log(`Updating points won for bet ${id}`)
   return db
     .runTransaction(t =>
-      t.get(bets).then(betSnap => t.update(betSnap.ref, { pointsWon: coeff * odd + coeffVainqueur * oddWinner }))
+      t.get(bets).then(betSnap => t.update(betSnap.ref, { pointsWon: round(coeff * odd + coeffVainqueur * oddWinner, 2) }))
     )
-    .then(() => console.log(`Bet ${id} update with ${coeff * odd + coeffVainqueur * oddWinner} points`))
+    .then(() => console.log(`Bet ${id} update with ${round(coeff * odd + coeffVainqueur * oddWinner, 2)} points`))
     .catch(err => {
       console.error(`Bet ${id} update failure:`, err)
     })
@@ -126,7 +128,7 @@ const updatePointsWon = (odds, winner, finalWinner, id, coeff, coeffVainqueur = 
 
 const findWinner = (score1, score2) => {
   if (score1 > score2) return 'A'
-  else if (score1 === score2) return 'N'
+  if (score1 === score2) return 'N'
   return 'B'
 }
 
@@ -140,7 +142,7 @@ const findCote = (odds, winner) =>
 const findCoteFinalWinner = (odds, winner) => {
   if(winner === 'A')
     return odds.P1
-  else if(winner === 'B')
+  if(winner === 'B')
     return odds.P2
   return undefined
 }
