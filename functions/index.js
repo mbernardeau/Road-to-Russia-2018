@@ -35,6 +35,8 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
         const bet = doc.data()
         const { betTeamA, betTeamB, userId } = bet
         const betId = doc.id
+        const oldBetScore = bet.pointsWon
+
         // Did the user win the bet ?
         const realScoreTeamA = scores.A
         const realScoreTeamB = scores.B
@@ -47,16 +49,16 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
           if (betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
             // perfect match ! Four times team's odd
             console.log('HOLY SH*T YOU WIN, you guess perfectly the score !')
-            promises.push(updateUserScore(odds, betWinner, userId, 4))
+            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 4))
             promises.push(updatePointsWon(odds, betWinner, betId, 4))
           } else if (winner === betWinner) {
             // good result ! Two times team's odd
             console.log('You only guess the issue of the match (sucker)')
-            promises.push(updateUserScore(odds, betWinner, userId, 2))
+            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 2))
             promises.push(updatePointsWon(odds, betWinner, betId, 2))
           } else {
             console.log("YOU LOSE SON, you didn't find the score neither the match issue")
-            promises.push(updateUserScore(odds, betWinner, userId, 0))
+            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0))
             promises.push(updatePointsWon(odds, betWinner, betId, 0))
           }
         } else {
@@ -70,20 +72,20 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
           if(betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
             if(betWinner === winner) {
               console.log("Bon score + bon vainqueur")
-              promises.push(updateUserScore(odds, betWinner, userId, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
+              promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
               promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
             } else {
               console.log("Bon score + mauvais vainqueur")
-              promises.push(updateUserScore(odds, betWinner, userId, phaseCoeff.bonScore, 0))
+              promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, phaseCoeff.bonScore, 0))
               promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, 0))
             }
           } else if (winner === betWinner) {
             console.log("Bon vainqueur, mauvais score")
-            promises.push(updateUserScore(odds, betWinner, userId, 0, phaseCoeff.bonVainqueur))
+            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0, phaseCoeff.bonVainqueur))
             promises.push(updatePointsWon(odds, betWinner, betId, 0, phaseCoeff.bonVainqueur))
           } else {
             console.log("Mauvais vainqueur, mauvais score")
-            promises.push(updateUserScore(odds, betWinner, userId, 0, 0))
+            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0, 0))
             promises.push(updatePointsWon(odds, betWinner, betId, 0, 0))
           }
         }
@@ -93,7 +95,7 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
     })
 })
 
-const updateUserScore = (odds, winner, userId, coeff, coeffVainqueur = 0) => {
+const updateUserScore = (odds, winner, userId, oldBetScore=0, coeff, coeffVainqueur = 0) => {
   const odd = findCote(odds, winner)
   const oddWinner = findCoteWinner(odds, winner) || 0
   const user = db.collection('users').doc(userId)
@@ -103,8 +105,8 @@ const updateUserScore = (odds, winner, userId, coeff, coeffVainqueur = 0) => {
     .runTransaction(t =>
       t.get(user).then(snapshot => {
         const oldScore = snapshot.data().score || 0
-        const newScore = oldScore + coeff * odd + coeffVainqueur * oddWinner
-        console.log(`User score update ${userId} (${oldScore} + ${coeff} * ${odd} + ${coeffVainqueur} * ${oddWinner} = ${newScore})`)
+        const newScore = oldScore - oldBetScore + coeff * odd + coeffVainqueur * oddWinner
+        console.log(`User score update ${userId} (${oldScore} - ${oldBetScore} + ${coeff} * ${odd} + ${coeffVainqueur} * ${oddWinner} = ${newScore})`)
         return t.update(user, { score: newScore })
       })
     )
