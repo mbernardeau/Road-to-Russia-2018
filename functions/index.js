@@ -49,45 +49,38 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
           if (betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
             // perfect match ! Four times team's odd
             console.log('HOLY SH*T YOU WIN, you guess perfectly the score !')
-            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 4))
-            promises.push(updatePointsWon(odds, betWinner, betId, 4))
+            promises.push(updateUserScore(odds, betWinner, betWinner, userId, oldBetScore, 4))
+            promises.push(updatePointsWon(odds, betWinner, betWinner, betId, 4))
           } else if (winner === betWinner) {
             // good result ! Two times team's odd
             console.log('You only guess the issue of the match (sucker)')
-            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 2))
-            promises.push(updatePointsWon(odds, betWinner, betId, 2))
+            promises.push(updateUserScore(odds, betWinner, betWinner, userId, oldBetScore, 2))
+            promises.push(updatePointsWon(odds, betWinner, betWinner, betId, 2))
           } else {
             console.log("YOU LOSE SON, you didn't find the score neither the match issue")
-            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0))
-            promises.push(updatePointsWon(odds, betWinner, betId, 0))
+            promises.push(updateUserScore(odds, betWinner, betWinner, userId, oldBetScore, 0))
+            promises.push(updatePointsWon(odds, betWinner, betWinner, betId, 0))
           }
         } else {
           console.log("Phase finale ", phase)
-          let betWinner = findWinner(betTeamA, betTeamB)
-          if(betWinner === 'N') {
-            betWinner = bet.betWinner // eslint-disable-line
-          }
+          const betWinner = findWinner(betTeamA, betTeamB)
+          const finalWinner = betWinner === 'N' ? bet.betWinner : betWinner
+
           const phaseCoeff = getPhaseCoeff(phase)
 
-          if(betTeamA === realScoreTeamA && betTeamB === realScoreTeamB) {
-            if(betWinner === winner) {
-              console.log("Bon score + bon vainqueur")
-              promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
-              promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, phaseCoeff.bonVainqueur))
-            } else {
-              console.log("Bon score + mauvais vainqueur")
-              promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, phaseCoeff.bonScore, 0))
-              promises.push(updatePointsWon(odds, betWinner, betId, phaseCoeff.bonScore, 0))
-            }
-          } else if (winner === betWinner) {
-            console.log("Bon vainqueur, mauvais score")
-            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0, phaseCoeff.bonVainqueur))
-            promises.push(updatePointsWon(odds, betWinner, betId, 0, phaseCoeff.bonVainqueur))
-          } else {
-            console.log("Mauvais vainqueur, mauvais score")
-            promises.push(updateUserScore(odds, betWinner, userId, oldBetScore, 0, 0))
-            promises.push(updatePointsWon(odds, betWinner, betId, 0, 0))
-          }
+          const hasGoodWinner = betWinner === findWinner(realScoreTeamA, realScoreTeamB)
+          const hasGoodScore = betTeamA === realScoreTeamA && betTeamB === realScoreTeamB
+          const bonVainqueurFinalCoeff = finalWinner === winner ? phaseCoeff.bonVainqueurFinal : 0
+
+          let phaseVainqueurCoeff = 0
+
+          if(hasGoodScore)
+            phaseVainqueurCoeff = phaseCoeff.bonScore
+          else if(hasGoodWinner)
+            phaseVainqueurCoeff = phaseCoeff.bonVainqueur
+
+          promises.push(updateUserScore(odds, betWinner, finalWinner, userId, oldBetScore, phaseVainqueurCoeff, bonVainqueurFinalCoeff))
+          promises.push(updatePointsWon(odds, betWinner, finalWinner, betId, phaseVainqueurCoeff, bonVainqueurFinalCoeff))
         }
       })
 
@@ -95,9 +88,10 @@ exports.updateScore = functions.firestore.document('matches/{matchId}').onUpdate
     })
 })
 
-const updateUserScore = (odds, winner, userId, oldBetScore=0, coeff, coeffVainqueur = 0) => {
+const updateUserScore = (odds, winner, finalWinner, userId, oldBetScore = 0, coeff, coeffVainqueur = 0) => {
   const odd = findCote(odds, winner)
-  const oddWinner = findCoteWinner(odds, winner) || 0
+  const oddWinner = findCoteFinalWinner(odds, finalWinner) || 0
+
   const user = db.collection('users').doc(userId)
 
   console.log(`Updating user score for ${userId}`)
@@ -114,9 +108,9 @@ const updateUserScore = (odds, winner, userId, oldBetScore=0, coeff, coeffVainqu
     .catch(err => console.error(`User ${userId} score update failure:`, err))
 }
 
-const updatePointsWon = (odds, winner, id, coeff, coeffVainqueur = 0) => {
+const updatePointsWon = (odds, winner, finalWinner, id, coeff, coeffVainqueur = 0) => {
   const odd = findCote(odds, winner)
-  const oddWinner = findCoteWinner(odds, winner) || 0
+  const oddWinner = findCoteFinalWinner(odds, finalWinner) || 0
   const bets = db.collection('bets').doc(id)
 
   console.log(`Updating points won for bet ${id}`)
@@ -143,7 +137,7 @@ const findCote = (odds, winner) =>
     N: odds.N,
   }[winner])
 
-const findCoteWinner = (odds, winner) => {
+const findCoteFinalWinner = (odds, winner) => {
   if(winner === 'A')
     return odds.P1
   else if(winner === 'B')
