@@ -16,17 +16,25 @@ const getColor = value => {
 const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
   const oddBasis = (
     <div className="odds-container">
-      <Tooltip placement="right" title={`Cote de victoire de l'équipe: ${teamA.name}`}>
+      <Tooltip
+        placement="right"
+        title={`Cote de victoire de l'équipe: ${teamA.name}`}
+        enterTouchDelay={0}
+      >
         <div className="odd" style={{ backgroundColor: getColor(A) }}>
           {A}
         </div>
       </Tooltip>
-      <Tooltip placement="top" title="Cote du match nul">
+      <Tooltip placement="top" title="Cote du match nul" enterTouchDelay={0}>
         <div className="odd" style={{ backgroundColor: getColor(N) }}>
           {N}
         </div>
       </Tooltip>
-      <Tooltip placement="left" title={`Cote de victoire de l'équipe: ${teamB.name}`}>
+      <Tooltip
+        placement="left"
+        title={`Cote de victoire de l'équipe: ${teamB.name}`}
+        enterTouchDelay={0}
+      >
         <div className="odd" style={{ backgroundColor: getColor(B) }}>
           {B}
         </div>
@@ -34,19 +42,28 @@ const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
     </div>
   )
 
-  return phase &&
+  return (
+    phase &&
     (phase === '0' ? (
       oddBasis
     ) : (
       <Fragment>
         {oddBasis}
         <div className="odds-container">
-          <Tooltip placement="right" title={`Cote de victoire finale de l'équipe: ${teamA.name}`}>
+          <Tooltip
+            placement="right"
+            title={`Cote de victoire finale de l'équipe: ${teamA.name}`}
+            enterTouchDelay={0}
+          >
             <div className="odd" style={{ backgroundColor: getColor(P1) }}>
               {P1}
             </div>
           </Tooltip>
-          <Tooltip placement="left" title={`Cote de victoire finale de l'équipe: ${teamB.name}`}>
+          <Tooltip
+            placement="left"
+            title={`Cote de victoire finale de l'équipe: ${teamB.name}`}
+            enterTouchDelay={0}
+          >
             <div className="odd" style={{ backgroundColor: getColor(P2) }}>
               {P2}
             </div>
@@ -54,6 +71,7 @@ const Odds = ({ P1, P2, A, B, N, phase, teamA, teamB }) => {
         </div>
       </Fragment>
     ))
+  )
 }
 
 Odds.propTypes = {

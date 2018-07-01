@@ -28,7 +28,15 @@ export const saveBet = (matchId, bet) => (dispatch, getState) => {
     .firestore()
     .collection('bets')
     .doc(`${matchId}_${userId}`)
-    .set({ ...bet, matchId, userId }, { merge: true })
+    .set(
+      {
+        ...bet,
+        matchId,
+        userId,
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+      },
+      { merge: true },
+    )
     .then(() => {
       dispatch(betReducer.addOrUpdate({ id: matchId, ...bet }))
     })

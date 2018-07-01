@@ -81,14 +81,14 @@ const getCalculus = (phase, odds, winner, matchFinalWinner, finalWinner, goodSco
   if (goodScore)
     return finalWinner
       ? `🤩 ${phaseCoeff.bonScore} × ${odd} + ${
-        phaseCoeff.bonVainqueurFinal
-      } x ${oddFinal} = ${phaseCoeff.bonScore * odd + phaseCoeff.bonVainqueurFinal * oddFinal}`
+          phaseCoeff.bonVainqueurFinal
+        } x ${oddFinal} = ${phaseCoeff.bonScore * odd + phaseCoeff.bonVainqueurFinal * oddFinal}`
       : `🤩 ${phaseCoeff.bonScore} × ${odd} = ${4 * odd}`
   if (goodWinner)
     return finalWinner
       ? `😐 ${phaseCoeff.bonVainqueur} × ${odd} + ${
-        phaseCoeff.bonVainqueurFinal
-      } x ${oddFinal} = ${2 * odd + phaseCoeff.bonVainqueurFinal * oddFinal}`
+          phaseCoeff.bonVainqueurFinal
+        } x ${oddFinal} = ${2 * odd + phaseCoeff.bonVainqueurFinal * oddFinal}`
       : `😐 ${phaseCoeff.bonVainqueur} × ${odd} = ${2 * odd}`
   return finalWinner
     ? `😐 ${phaseCoeff.bonVainqueurFinal} x ${oddFinal} = ${phaseCoeff.bonVainqueurFinal *
@@ -132,6 +132,7 @@ const PointsWon = ({ phase, pointsWon, scores, betTeamA, betTeamB, betWinner, od
             goodWinner,
           )}
           placement="right"
+          enterTouchDelay={0}
         >
           <InfoIcon className="points-won-info-icon" />
         </Tooltip>
