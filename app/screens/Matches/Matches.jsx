@@ -30,7 +30,7 @@ class Matches extends Component {
           </Tabs>
         </AppBar>
         <div className="matches-container">
-          {map(matches, (match, key) => <Match match={match} key={key} matchId={key} />)}
+          {map(matches, match => <Match match={match} key={match.id} matchId={match.id} />)}
         </div>
       </Fragment>
     )
@@ -38,8 +38,16 @@ class Matches extends Component {
 }
 
 Matches.propTypes = {
-  finishedMatches: PropTypes.objectOf(PropTypes.object),
-  futureMatches: PropTypes.objectOf(PropTypes.object),
+  finishedMatches: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
+  futureMatches: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  ),
 }
 
 export default Matches
