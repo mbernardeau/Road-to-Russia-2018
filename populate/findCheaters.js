@@ -27,7 +27,16 @@ db.collection('bets')
               .get()
               .then(userDoc => {
                 const { displayName } = userDoc.data()
-                console.log(userId, pointsWon, matchId, updatedAt, dateTime, displayName)
+                const diff = Math.round((updatedAt - dateTime) / 60000)
+                console.log(
+                  userId,
+                  pointsWon,
+                  matchId,
+                  updatedAt,
+                  dateTime,
+                  `+${diff} minutes`,
+                  displayName,
+                )
               })
           }
         })
