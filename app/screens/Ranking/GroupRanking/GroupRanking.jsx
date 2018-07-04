@@ -40,13 +40,13 @@ class GroupRanking extends Component {
             <TableBody>
               {users.map((user, index) => (
                 <TableRow key={user.id} className={user.id === userId ? 'own-ranking-row' : ''}>
-                  <TableCell>
+                  <TableCell padding="none">
                     <Typography variant="title">#{index + 1}</Typography>
                   </TableCell>
-                  <TableCell>
+                  <TableCell padding="dense">
                     <InlineAvatar {...user} />
                   </TableCell>
-                  <TableCell>
+                  <TableCell padding="none">
                     {(user.score || 0).toLocaleString()} point{user.score > 1 && 's'}
                   </TableCell>
                 </TableRow>
