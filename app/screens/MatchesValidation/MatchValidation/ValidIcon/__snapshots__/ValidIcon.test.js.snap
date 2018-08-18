@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screens/Match/ValidIcon renders correctly when invalid 1`] = `
+<Tooltip
+  placement="right"
+  title="Paris invalide"
+>
+  <div
+    className="tooltip-svg-container"
+  >
+    <Clear
+      className="invalid-icon"
+    />
+  </div>
+</Tooltip>
+`;
+
+exports[`screens/Match/ValidIcon renders correctly when valid 1`] = `
+<Tooltip
+  placement="right"
+  title="Paris enregistré"
+>
+  <div
+    className="tooltip-svg-container"
+  >
+    <Check
+      className="valid-icon"
+    />
+  </div>
+</Tooltip>
+`;
