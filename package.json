@@ -280,7 +280,7 @@
     "redux": "4.0.0",
     "redux-firestore": "0.5.7",
     "redux-thunk": "2.3.0",
-    "reselect": "3.0.1",
+    "reselect": "4.0.0",
     "sanitize.css": "6.0.0",
     "tinycolor2": "1.4.1",
     "warning": "4.0.1",
