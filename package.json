@@ -244,7 +244,7 @@
   },
   "dependencies": {
     "@material-ui/core": "3.8.1",
-    "@material-ui/icons": "1.1.0",
+    "@material-ui/icons": "3.0.1",
     "babel-polyfill": "6.26.0",
     "chalk": "2.4.1",
     "compression": "1.7.3",
