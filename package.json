@@ -329,7 +329,7 @@
     "image-webpack-loader": "4.3.1",
     "imports-loader": "0.8.0",
     "jest-cli": "23.2.0",
-    "lint-staged": "7.2.0",
+    "lint-staged": "8.1.5",
     "ngrok": "3.0.1",
     "node-plop": "0.15.0",
     "node-sass": "4.9.1",
