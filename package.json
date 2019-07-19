@@ -257,7 +257,7 @@
     "invariant": "2.2.4",
     "ip": "1.1.5",
     "k-redux-factory": "5.0.2",
-    "lodash": "4.17.10",
+    "lodash": "4.17.15",
     "minimist": "1.2.0",
     "moment": "2.22.2",
     "prop-types": "15.6.2",
