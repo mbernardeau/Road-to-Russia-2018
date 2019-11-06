@@ -271,7 +271,7 @@
     "react-loadable": "5.4.0",
     "react-number-format": "3.4.3",
     "react-placeholder": "3.0.1",
-    "react-redux": "5.0.7",
+    "react-redux": "7.1.2",
     "react-redux-firebase": "2.1.6",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
